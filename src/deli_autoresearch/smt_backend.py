@@ -25,9 +25,46 @@ class SMTBackend:
         return self.inner.run_work(task_id, prompt)
 
     def run_verification(self, task_id: str, prompt: dict[str, Any]) -> BackendEnvelope:
+        if prompt.get("run_grounded_smt"):
+            return self._run_grounded_smt_verification(task_id, prompt)
         if prompt.get("run_smt_verification"):
             return self._run_smt_verification(task_id, prompt)
         return self.inner.run_verification(task_id, prompt)
+
+
+    def _run_grounded_smt_verification(self, task_id, prompt):
+        claim_id = prompt.get("claim_id", "")
+        try:
+            import sys as _sys
+            _sys.path.insert(0, str(_juris_root))
+            from compiler_core.grounded_smt_verifier import GroundedSMTChecker
+            from deli_autoresearch.juris_calculus_bridge import JurisCalculusBridge
+            from deli_autoresearch.constants import JURIS_CALCULUS_ROOT
+            checker = GroundedSMTChecker()
+            bridge = JurisCalculusBridge(JURIS_CALCULUS_ROOT)
+            report = checker.verify_bridge_cases(bridge)
+            if report.all_passed:
+                verdict = "validated"
+                summary = f"SMT grounded semantics: {report.passed}/{report.total} cases SAT-MATCH with Dung definition"
+            else:
+                verdict = "rejected"
+                summary = f"SMT grounded semantics: {report.failed}/{report.total} cases mismatch"
+            evidence_strength = "strong"
+        except Exception as e:
+            verdict = "rejected"
+            summary = f"SMT grounded verification error: {e}"
+            evidence_strength = "weak"
+            report = None
+        payload = {
+            "claim_id": claim_id, "verdict": verdict,
+            "evidence_strength": evidence_strength, "summary": summary,
+            "supporting_evidence": [
+                {"source_kind": "lean_proof", "test_name": r.test_name, "passed": r.passed}
+                for r in (report.results if report else [])
+            ],
+        }
+        agent_id = f"smt_grounded_{claim_id}"
+        return BackendEnvelope(agent_id=agent_id, payload=payload)
 
     def _run_smt_verification(self, task_id: str, prompt: dict[str, Any]) -> BackendEnvelope:
         claim_id = prompt.get("claim_id", "")
