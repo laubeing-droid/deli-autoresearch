@@ -82,4 +82,4 @@ LEGAL_STRONG_SOURCE_KINDS = STRONG_SOURCE_KINDS | {
 
 
 # --- Juris-calculus engine path ---
-JURIS_CALCULUS_ROOT = r"D:\Codex\juris-calculus\源码"
+JURIS_CALCULUS_ROOT = r"D:\Codex\juris-calculus"

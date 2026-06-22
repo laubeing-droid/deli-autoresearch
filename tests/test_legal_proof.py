@@ -21,7 +21,7 @@ from deli_autoresearch.template_runtime import TemplateRuntime
 from deli_autoresearch.utils import claim_id_for
 
 
-JURIS_ROOT = Path(r"D:\Codex\juris-calculus\源码")
+JURIS_ROOT = Path(r"D:\Codex\juris-calculus")
 
 
 # ---- helpers ----

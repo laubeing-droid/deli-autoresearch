@@ -22,7 +22,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="G9 exploration runner")
     parser.add_argument(
         "--juris-root",
-        default=r"D:\Codex\juris-calculus\源码",
+        default=r"D:\Codex\juris-calculus",
         help="Path to juris-calculus source root",
     )
     parser.add_argument("--workspace", default=".", help="AutoResearch workspace root")
