@@ -1,0 +1,16 @@
+[
+  {
+    "strategy_type": "scc_decomposition",
+    "summary": "Verify SCC-based decomposition preserves grounded semantics.",
+    "rationale": "Each SCC can be resolved independently; trivially correct for DAGs.",
+    "origin_iteration": 0,
+    "template_extension": {}
+  },
+  {
+    "strategy_type": "cf2_semantics",
+    "summary": "Test CF2 semantics equivalence on odd-cycle-free graphs.",
+    "rationale": "CF2 is the standard cycle-aware extension; equivalence with grounded on MVM class is the target.",
+    "origin_iteration": 0,
+    "template_extension": {}
+  }
+]

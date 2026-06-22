@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 from .templates.general_research import GeneralResearchTemplate
+from .templates.legal_proof import LegalProofTemplate
 from .templates.math_proof import MathProofTemplate
 
 
 class TemplateRuntime:
     def __init__(self) -> None:
-        templates = [GeneralResearchTemplate(), MathProofTemplate()]
+        templates = [GeneralResearchTemplate(), MathProofTemplate(), LegalProofTemplate()]
         self._templates = {template.name: template for template in templates}
 
     def get(self, template_type: str):

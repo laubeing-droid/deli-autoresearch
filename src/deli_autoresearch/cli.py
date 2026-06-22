@@ -19,7 +19,7 @@ from .heartbeat_service import HeartbeatService
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="deli-autoresearch")
     parser.add_argument("--workspace", default=".", help="Workspace root")
-    parser.add_argument("--backend", choices=["mock", "codex-bridge"], default="mock")
+    parser.add_argument("--backend", choices=["mock", "codex-bridge", "juris-calculus"], default="mock")
     parser.add_argument("--backend-timeout-seconds", type=int, default=300)
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -59,6 +59,11 @@ def make_services(workspace: Path, *, backend_name: str = "mock", backend_timeou
         backend = MockAgentBackend()
     elif backend_name == "codex-bridge":
         backend = CodexAgentBackend(store.runtime_root, timeout_seconds=backend_timeout_seconds)
+    elif backend_name == "juris-calculus":
+        from .juris_calculus_backend import JurisCalculusBackend
+        from .constants import JURIS_CALCULUS_ROOT
+        inner = MockAgentBackend()
+        backend = JurisCalculusBackend(inner, JURIS_CALCULUS_ROOT)
     else:
         raise ValueError(f"Unknown backend: {backend_name}")
     orchestrator = Orchestrator(store, registry, templates, backend)

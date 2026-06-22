@@ -40,6 +40,9 @@ BASE_SOURCE_KINDS = {
     "derived",
     "experiment",
     "model_generated",
+    "z3_counterexample",
+    "lean_proof",
+    "juris_test_pass",
 }
 
 BASE_DIRECTION_TYPES = {
@@ -55,3 +58,28 @@ DEFAULT_TIMEOUT_MULTIPLIER = 3
 MAX_CLAIMS_PER_ITERATION = 3
 MAX_EVIDENCE_PER_CLAIM = 3
 SAME_DIRECTION_RETRY_LIMIT = 2
+
+# --- Legal-proof extension (G9 grounded semantics) ---
+
+LEGAL_DIRECTION_TYPES = {
+    "scc_decomposition",
+    "characteristic_function_relaxation",
+    "stage_extension",
+    "preferred_extension_subset",
+    "cf2_semantics",
+    "semiring_substitution",
+}
+
+ALL_DIRECTION_TYPES = BASE_DIRECTION_TYPES | LEGAL_DIRECTION_TYPES
+
+# z3_counterexample / lean_proof / juris_test_pass are engine-produced,
+# not LLM-generated - so they count as strong evidence.
+LEGAL_STRONG_SOURCE_KINDS = STRONG_SOURCE_KINDS | {
+    "z3_counterexample",
+    "lean_proof",
+    "juris_test_pass",
+}
+
+
+# --- Juris-calculus engine path ---
+JURIS_CALCULUS_ROOT = r"D:\Codex\juris-calculus\源码"
