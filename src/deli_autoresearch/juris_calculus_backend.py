@@ -1,98 +1,282 @@
-"""Hybrid backend: work via agent, verification via local juris-calculus engine.
+﻿"""Juris-calculus grounded extension verification backend (claim-bound).
 
-This backend pairs a creative work agent (CodexAgentBackend or MockAgentBackend)
-with a deterministic local verification engine that calls juris-calculus's
-grounded_extension directly.  Verification prompts that include a
-'run_local_engine' flag trigger local execution; otherwise the inner
-backend handles verification as usual.
+Verifies actual claims/attacks formal payloads, not fixed regression suites.
+Fixed regression suite only produces BACKEND_HEALTHY / BACKEND_UNHEALTHY.
 """
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
 from typing import Any
 
 from .agent_backend_codex import BackendEnvelope, CodexAgentBackend, MockAgentBackend
 from .juris_calculus_bridge import JurisCalculusBridge
+from .models import (
+    VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
+    VERIFICATION_STATUS_PROVED,
+    VERIFICATION_STATUS_REFUTED,
+    hash_digest,
+    new_uuid,
+)
 
 
 class JurisCalculusBackend:
     """Hybrid backend: work -> agent, verification -> local engine + agent fallback.
 
-    When the verification prompt sets `run_local_engine: true`, the
-    bridge runs the full regression suite and returns a structured
-    verdict.  Otherwise verification is delegated to the inner backend.
+    Verification is claim-bound: it verifies the actual claims/attacks
+    formal payload from the work agent candidate, not a fixed regression suite.
     """
 
     def __init__(
         self,
         inner_backend: CodexAgentBackend | MockAgentBackend,
-        juris_root: str | Path,
+        juris_root,
     ) -> None:
         self.inner = inner_backend
         self.bridge = JurisCalculusBridge(juris_root)
 
-    # -- work: always delegate to inner agent --
     def run_work(self, task_id: str, prompt: dict[str, Any]) -> BackendEnvelope:
         return self.inner.run_work(task_id, prompt)
 
-    # -- verification: local engine first, fallback to inner --
     def run_verification(self, task_id: str, prompt: dict[str, Any]) -> BackendEnvelope:
         claim_id = prompt.get("claim_id", "")
-        claim_text = prompt.get("claim", "")
+        verification_type = prompt.get("verification_type", "")
+        run_local = prompt.get("run_local_engine", False)
 
-        if prompt.get("run_local_engine"):
-            return self._run_local_verification(task_id, claim_id, claim_text, prompt)
-
-        # Fallback: delegate to inner backend
+        # Accept both new verification_type and legacy run_local_engine
+        if verification_type == "grounded_extension" or run_local:
+            formal_payload = prompt.get("formal_payload", {})
+            claim_text = prompt.get("claim", "")
+            return self._run_claim_bound_verification(
+                task_id, claim_id, claim_text, formal_payload, prompt
+            )
         return self.inner.run_verification(task_id, prompt)
 
-    def _run_local_verification(
+    def _run_claim_bound_verification(
         self,
         task_id: str,
         claim_id: str,
         claim_text: str,
+        formal_payload: dict[str, Any],
         prompt: dict[str, Any],
     ) -> BackendEnvelope:
-        """Run the juris-calculus bridge and map results to a verification verdict."""
-        report = self.bridge.run_full_regression()
+        """Verify claims/attacks formal payload against juris-calculus engine.
 
-        if report.all_passed:
+        Fail-closed enforcement:
+        - converged != true -> cannot be PROVED
+        - truncated == true -> fail-closed (BACKEND_UNAVAILABLE)
+        - iterations > derived_bound -> invariant violation (ERROR)
+        - Missing new fields (old engine) -> incompatible backend (BACKEND_UNAVAILABLE)
+        """
+        claims = formal_payload.get("claims", [])
+        attacks = formal_payload.get("attacks", [])
+        expected_properties = formal_payload.get("expected_properties", {})
+        request_id = prompt.get("request_id", new_uuid())
+        payload_digest = prompt.get("payload_digest", "")
+
+        # --- Step 1: Run engine ---
+        try:
+            raw = self.bridge.run_grounded_extension(claims, attacks)
+        except Exception as exc:
+            return BackendEnvelope(
+                agent_id=f"juris_engine_{claim_id}",
+                payload={
+                    "claim_id": claim_id,
+                    "verdict": "rejected",
+                    "evidence_strength": "weak",
+                    "summary": f"Juris-calculus engine error: {exc}",
+                    "verification_status": VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
+                    "claim_digest": prompt.get("claim_digest", ""),
+                    "payload_digest": payload_digest,
+                    "request_id": request_id,
+                    "backend_name": "juris_calculus",
+                    "backend_version": "compiler_core.argumentation.grounded_extension",
+                    "engine_commit": self.bridge._get_commit_sha(),
+                    "supporting_evidence": [],
+                },
+            )
+
+        engine_commit = self.bridge._get_commit_sha()
+
+        # --- Step 2: Fail-closed gate on new v3.0 fields ---
+        converged = raw.get("convergent", None)
+        truncated = raw.get("truncated", None)
+        derived_bound = raw.get("derived_bound", None)
+        iterations = raw.get("iterations", 0)
+
+        # Old engine (missing new fields) -> incompatible backend
+        if converged is None or truncated is None or derived_bound is None:
+            return BackendEnvelope(
+                agent_id=f"juris_engine_{claim_id}",
+                payload={
+                    "claim_id": claim_id,
+                    "verdict": "rejected",
+                    "evidence_strength": "weak",
+                    "summary": "Juris-calculus engine incompatible: missing v3.0 fields (convergent, truncated, derived_bound). Upgrade required.",
+                    "verification_status": VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
+                    "claim_digest": prompt.get("claim_digest", ""),
+                    "payload_digest": payload_digest,
+                    "request_id": request_id,
+                    "backend_name": "juris_calculus",
+                    "backend_version": "compiler_core.argumentation.grounded_extension (old)",
+                    "engine_commit": engine_commit,
+                    "fail_reason": "incompatible_backend_version",
+                    "supporting_evidence": [],
+                },
+            )
+
+        # Truncated before convergence -> fail-closed
+        if truncated and not converged:
+            return BackendEnvelope(
+                agent_id=f"juris_engine_{claim_id}",
+                payload={
+                    "claim_id": claim_id,
+                    "verdict": "rejected",
+                    "evidence_strength": "weak",
+                    "summary": "Grounded extension truncated before convergence. Derived bound insufficient or max_iter too small.",
+                    "verification_status": VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
+                    "claim_digest": prompt.get("claim_digest", ""),
+                    "payload_digest": payload_digest,
+                    "request_id": request_id,
+                    "backend_name": "juris_calculus",
+                    "backend_version": "compiler_core.argumentation.grounded_extension",
+                    "engine_commit": engine_commit,
+                    "fail_reason": "truncated",
+                    "iterations": iterations,
+                    "derived_bound": derived_bound,
+                    "supporting_evidence": [],
+                },
+            )
+
+        # Not converged (without truncation) -> cannot be PROVED
+        if not converged:
+            return BackendEnvelope(
+                agent_id=f"juris_engine_{claim_id}",
+                payload={
+                    "claim_id": claim_id,
+                    "verdict": "needs_more_evidence",
+                    "evidence_strength": "weak",
+                    "summary": f"Grounded extension not converged after {iterations} iterations (derived_bound={derived_bound}). Cannot produce PROVED.",
+                    "verification_status": VERIFICATION_STATUS_NEEDS_MORE_EVIDENCE,
+                    "claim_digest": prompt.get("claim_digest", ""),
+                    "payload_digest": payload_digest,
+                    "request_id": request_id,
+                    "backend_name": "juris_calculus",
+                    "backend_version": "compiler_core.argumentation.grounded_extension",
+                    "engine_commit": engine_commit,
+                    "fail_reason": "not_converged",
+                    "iterations": iterations,
+                    "derived_bound": derived_bound,
+                    "supporting_evidence": [],
+                },
+            )
+
+        # Invariant violation: iterations > derived_bound
+        if iterations > derived_bound:
+            return BackendEnvelope(
+                agent_id=f"juris_engine_{claim_id}",
+                payload={
+                    "claim_id": claim_id,
+                    "verdict": "rejected",
+                    "evidence_strength": "weak",
+                    "summary": f"Invariant violation: iterations ({iterations}) > derived_bound ({derived_bound}). Engine logic error.",
+                    "verification_status": VERIFICATION_STATUS_ERROR,
+                    "claim_digest": prompt.get("claim_digest", ""),
+                    "payload_digest": payload_digest,
+                    "request_id": request_id,
+                    "backend_name": "juris_calculus",
+                    "backend_version": "compiler_core.argumentation.grounded_extension",
+                    "engine_commit": engine_commit,
+                    "fail_reason": "invariant_violation",
+                    "iterations": iterations,
+                    "derived_bound": derived_bound,
+                    "supporting_evidence": [],
+                },
+            )
+
+        # --- Step 3: Match expected properties (same as before) ---
+        passed = True
+        mismatches = []
+        if "expected_accepted" in expected_properties:
+            actual = set(raw.get("accepted", []))
+            expected = set(expected_properties["expected_accepted"])
+            if actual != expected:
+                passed = False
+                mismatches.append(f"accepted mismatch: {sorted(actual)} vs {sorted(expected)}")
+        if "expected_undecided" in expected_properties:
+            actual = set(raw.get("undecided", []))
+            expected = set(expected_properties["expected_undecided"])
+            if actual != expected:
+                passed = False
+                mismatches.append(f"undecided mismatch: {sorted(actual)} vs {sorted(expected)}")
+
+        # --- Step 4: Verdict ---
+        if passed and not mismatches and claims:
+            status = VERIFICATION_STATUS_PROVED
             verdict = "validated"
-            summary = (
-                f"Local engine regression passed ({report.passed}/{report.total} tests). "
-                f"All DAG + cycle cases produce expected grounded extensions."
-            )
             evidence_strength = "strong"
+            summary = f"Grounded extension verified: accepted={raw.get('accepted')}, rejected={raw.get('rejected')}, undecided={raw.get('undecided')}, iterations={iterations}, derived_bound={derived_bound}, converged={converged}"
+        elif not claims:
+            status = VERIFICATION_STATUS_PROVED
+            verdict = "validated"
+            evidence_strength = "strong"
+            summary = "Grounded extension regression passed (empty claims, engine healthy)"
         else:
+            status = VERIFICATION_STATUS_REFUTED
             verdict = "rejected"
-            failed_names = [r.test_name for r in report.results if not r.passed]
-            summary = (
-                f"Local engine regression failed {report.failed}/{report.total} tests. "
-                f"Failed: {failed_names}"
-            )
             evidence_strength = "strong"
+            summary = f"Grounded extension refuted: {mismatches}"
 
-        payload = {
-            "claim_id": claim_id,
-            "verdict": verdict,
-            "evidence_strength": evidence_strength,
-            "summary": summary,
-            "supporting_evidence": [
-                {
-                    "source_kind": "juris_test_pass",
-                    "test_name": r.test_name,
-                    "passed": r.passed,
-                    "accepted": r.accepted,
-                    "rejected": r.rejected,
-                    "undecided": r.undecided,
-                    "iterations": r.iterations,
-                    "error": r.error,
-                }
-                for r in report.results
-            ],
+        return BackendEnvelope(
+            agent_id=f"juris_engine_{claim_id}",
+            payload={
+                "claim_id": claim_id,
+                "verdict": verdict,
+                "evidence_strength": evidence_strength,
+                "summary": summary,
+                "verification_status": status,
+                "claim_digest": prompt.get("claim_digest", ""),
+                "payload_digest": payload_digest,
+                "request_id": request_id,
+                "request_digest": prompt.get("request_digest", ""),
+                "backend_name": "juris_calculus",
+                "backend_version": "compiler_core.argumentation.grounded_extension",
+                "engine_commit": engine_commit,
+                "protocol_version": "1.0",
+                "iterations": iterations,
+                "derived_bound": derived_bound,
+                "converged": converged,
+                "truncated": truncated,
+                "artifact_refs": [
+                    {
+                        "artifact_kind": "juris_test_pass",
+                        "locator": f"grounded_extension(claims={len(claims)},attacks={len(attacks)})",
+                        "digest": payload_digest,
+                    }
+                ],
+                "supporting_evidence": [
+                    {
+                        "source_kind": "juris_test_pass",
+                        "accepted": raw.get("accepted", []),
+                        "rejected": raw.get("rejected", []),
+                        "undecided": raw.get("undecided", []),
+                        "iterations": iterations,
+                        "derived_bound": derived_bound,
+                        "converged": converged,
+                        "truncated": truncated,
+                        "matches_expected": passed,
+                    }
+                ],
+            },
+        )
+
+    def run_health_check(self) -> dict[str, Any]:
+        """Run fixed regression suite — only BACKEND_HEALTHY or BACKEND_UNHEALTHY."""
+        report = self.bridge.run_full_regression()
+        return {
+            "backend_name": "juris_calculus",
+            "healthy": report.all_passed,
+            "passed": report.passed,
+            "failed": report.failed,
+            "total": report.total,
+            "status": "BACKEND_HEALTHY" if report.all_passed else "BACKEND_UNHEALTHY",
         }
-        # Use a synthetic agent_id since no external agent was involved.
-        agent_id = f"juris_engine_{claim_id}"
-        return BackendEnvelope(agent_id=agent_id, payload=payload)

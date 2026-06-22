@@ -16,15 +16,22 @@ from typing import Any
 
 @dataclass
 class BridgeResult:
-    """Result of running grounded_extension on a test case."""
+    """Result of running grounded_extension on a test case.
+
+    All v3.0 grounded_extension fields consumed.
+    """
     accepted: list[str]
     rejected: list[str]
     undecided: list[str]
     iterations: int
+    derived_bound: int = 0
+    converged: bool = True
+    truncated: bool = False
+    engine_commit: str = ""
+    protocol_version: str = "1.0"
     test_name: str = ""
     passed: bool = True
     error: str | None = None
-
 
 @dataclass
 class RegressionReport:
@@ -59,6 +66,18 @@ class JurisCalculusBridge:
         mod = importlib.import_module("compiler_core.argumentation")
         self._grounded_fn = mod.grounded_extension
         return self._grounded_fn
+
+    def _get_commit_sha(self) -> str:
+        """Return the juris-calculus HEAD commit SHA."""
+        try:
+            import subprocess
+            result = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=str(self.juris_root), capture_output=True, text=True, timeout=5,
+            )
+            return result.stdout.strip() if result.returncode == 0 else "unknown"
+        except Exception:
+            return "unknown"
 
     def run_grounded_extension(
         self,
@@ -96,6 +115,11 @@ class JurisCalculusBridge:
                 rejected=sorted(raw.get("rejected", [])),
                 undecided=sorted(undecided),
                 iterations=raw.get("iterations", 0),
+                derived_bound=raw.get("derived_bound", 0),
+                converged=raw.get("convergent", False),
+                truncated=raw.get("truncated", False),
+                engine_commit=self._get_commit_sha(),
+                protocol_version="1.0",
                 test_name=name,
                 passed=passed,
             )
