@@ -2,8 +2,6 @@ __pycache__/
 .pytest_cache/
 .benchmark_runtime/
 
-runtime/tasks/
-runtime/bridge/requests/
-runtime/bridge/responses/
+runtime/
 
 *.pyc
