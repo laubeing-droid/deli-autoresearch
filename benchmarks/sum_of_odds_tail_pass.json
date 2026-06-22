@@ -1,0 +1,70 @@
+{
+  "name": "sum_of_odds_tail_pass",
+  "task_id": "benchmark-proof-001",
+  "template": "math_proof",
+  "task_spec": "../examples/math_proof/induction/sum_of_odds/task_spec.md",
+  "rounds": [
+    {
+      "work": {
+        "summary": "Propose the induction-step claim.",
+        "claims": [
+          {
+            "claim_text": "Under the induction hypothesis, adding the next odd number 2n + 1 transforms n^2 into (n + 1)^2.",
+            "evidence": [
+              {
+                "source_kind": "local_file",
+                "locator": "task_spec.md",
+                "quote": "Mathematical induction is allowed"
+              },
+              {
+                "source_kind": "derived",
+                "derivation_summary": "n^2 + (2n + 1) = n^2 + 2n + 1 = (n + 1)^2"
+              }
+            ],
+            "source_kind": "local_file",
+            "verifiable": true
+          }
+        ]
+      },
+      "verification": [
+        {
+          "verdict": "validated",
+          "evidence_strength": "moderate",
+          "summary": "The induction-step algebra is correct.",
+          "supporting_evidence": []
+        }
+      ]
+    },
+    {
+      "work": {
+        "summary": "Tail pass checks the base case.",
+        "claims": [
+          {
+            "claim_text": "The base case n = 1 satisfies 1 = 1^2.",
+            "evidence": [
+              {
+                "source_kind": "derived",
+                "derivation_summary": "Direct substitution gives 1 = 1."
+              },
+              {
+                "source_kind": "local_file",
+                "locator": "task_spec.md",
+                "quote": "For every positive integer n"
+              }
+            ],
+            "source_kind": "local_file",
+            "verifiable": true
+          }
+        ]
+      },
+      "verification": [
+        {
+          "verdict": "validated",
+          "evidence_strength": "moderate",
+          "summary": "The base case is correct.",
+          "supporting_evidence": []
+        }
+      ]
+    }
+  ]
+}

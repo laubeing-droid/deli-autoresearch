@@ -1,0 +1,20 @@
+[
+  {
+    "strategy_type": "reframe_decomposition",
+    "summary": "Break the theorem into base case and induction step.",
+    "rationale": "Induction is explicitly allowed in the task spec.",
+    "origin_iteration": 0,
+    "template_extension": {
+      "proof_style": "induction"
+    }
+  },
+  {
+    "strategy_type": "new_evidence_path",
+    "summary": "Collect algebraic identities that connect consecutive square values.",
+    "rationale": "The target identity has a natural adjacent-square difference.",
+    "origin_iteration": 0,
+    "template_extension": {
+      "proof_style": "algebraic_identity"
+    }
+  }
+]
