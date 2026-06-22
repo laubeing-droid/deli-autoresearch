@@ -1,4 +1,4 @@
-# Contributing to delichen-proofweaver
+# Contributing to Deli AutoResearch
 
 ## Ground Rules
 

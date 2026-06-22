@@ -3,15 +3,15 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "delichen-proofweaver"
+name = "deli-autoresearch"
 version = "0.1.0"
-description = "Long-horizon proof research orchestration framework by DeliChen."
+description = "Long-horizon proof research orchestration framework."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 
 [project.scripts]
-delichen-proofweaver = "deli_autoresearch.cli:main"
+deli-autoresearch = "deli_autoresearch.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

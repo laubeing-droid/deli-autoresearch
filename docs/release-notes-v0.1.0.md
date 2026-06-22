@@ -1,6 +1,6 @@
-# delichen-proofweaver v0.1.0
+# Deli AutoResearch v0.1.0
 
-Initial public release of `delichen-proofweaver`.
+Initial public release of `Deli AutoResearch`.
 
 ## Highlights
 

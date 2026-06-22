@@ -1,6 +1,6 @@
-# delichen-proofweaver
+# Deli AutoResearch
 
-`delichen-proofweaver` is a long-horizon proof research framework for running multi-round mathematical proof exploration with explicit state, verification, pivot rules, and tail-pass completion.
+`Deli AutoResearch` is a long-horizon proof research framework for running multi-round mathematical proof exploration with explicit state, verification, pivot rules, and tail-pass completion.
 
 It is not a one-shot prover. It is a proof-process orchestrator.
 
@@ -35,7 +35,7 @@ pip install -e .
 Installed CLI entrypoint:
 
 ```bash
-delichen-proofweaver doctor
+deli-autoresearch doctor
 ```
 
 Or run directly from source:
@@ -50,7 +50,7 @@ python -m deli_autoresearch.cli --workspace . doctor
 Initialize a proof task:
 
 ```bash
-delichen-proofweaver --workspace . init-task --task-id proof-001 --template math_proof --task-spec-file examples/math_proof/induction/sum_of_odds/task_spec.md
+deli-autoresearch --workspace . init-task --task-id proof-001 --template math_proof --task-spec-file examples/math_proof/induction/sum_of_odds/task_spec.md
 ```
 
 Equivalent source-mode command:
@@ -63,7 +63,7 @@ python -m deli_autoresearch.cli --workspace . init-task --task-id proof-001 --te
 Run one local orchestrator pass with the bridge backend:
 
 ```bash
-delichen-proofweaver --workspace . --backend codex-bridge run-orchestrator-once
+deli-autoresearch --workspace . --backend codex-bridge run-orchestrator-once
 ```
 
 Equivalent source-mode command:
@@ -76,7 +76,7 @@ python -m deli_autoresearch.cli --workspace . --backend codex-bridge run-orchest
 Inspect pending bridge work:
 
 ```bash
-delichen-proofweaver --workspace . --backend codex-bridge bridge-status --show-files
+deli-autoresearch --workspace . --backend codex-bridge bridge-status --show-files
 ```
 
 Equivalent source-mode command:
@@ -137,7 +137,7 @@ Responders must write strict JSON to:
 Run the built-in tail-pass regression scenario:
 
 ```bash
-delichen-proofweaver --workspace . run-benchmark --scenario benchmarks/sum_of_odds_tail_pass.json
+deli-autoresearch --workspace . run-benchmark --scenario benchmarks/sum_of_odds_tail_pass.json
 ```
 
 Equivalent source-mode command:
@@ -176,4 +176,4 @@ Current implementation includes:
 
 ## Naming
 
-`ProofWeaver` means the system weaves isolated claims, lemmas, and evidence into a structured proof process over multiple rounds instead of pretending to solve the whole proof in one shot.
+`Deli AutoResearch` emphasizes the system's role as a structured autonomous research orchestrator rather than a one-shot proof generator.
