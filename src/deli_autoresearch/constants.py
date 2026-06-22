@@ -43,6 +43,7 @@ BASE_SOURCE_KINDS = {
     "z3_counterexample",
     "lean_proof",
     "juris_test_pass",
+    "banach_norm_test",
 }
 
 BASE_DIRECTION_TYPES = {
