@@ -187,6 +187,86 @@ class JurisCalculusBridge:
             },
         ]
 
+
+    # --- Edge-case test suites ---
+
+    @staticmethod
+    def self_loop_cases() -> list[dict[str, Any]]:
+        return [
+            { 'name': 'self_loop_A', 'claims': [{'id': 'A'}], 'attacks': [('A', 'A')],
+              'expected_accepted': set(), 'expected_undecided': {'A'} },
+        ]
+
+    @staticmethod
+    def long_chain_cases() -> list[dict[str, Any]]:
+        return [
+            { 'name': 'long_chain_6_nodes',
+              'claims': [{'id': c} for c in 'ABCDEF'],
+              'attacks': [('A','B'),('B','C'),('C','D'),('D','E'),('E','F')],
+              'expected_accepted': {'A','C','E'}, 'expected_undecided': set() },
+        ]
+
+    @staticmethod
+    def branched_dag_cases() -> list[dict[str, Any]]:
+        return [
+            { 'name': 'branched_dag',
+              'claims': [{'id': c} for c in 'ABCD'],
+              'attacks': [('A','B'),('A','C'),('B','D'),('C','D')],
+              'expected_accepted': {'A','D'}, 'expected_undecided': set() },
+        ]
+
+    @staticmethod
+    def single_node_cases() -> list[dict[str, Any]]:
+        return [
+            { 'name': 'single_node_no_attacks', 'claims': [{'id': 'X'}],
+              'attacks': [], 'expected_accepted': {'X'}, 'expected_undecided': set() },
+        ]
+
+    @staticmethod
+    def disconnected_cases() -> list[dict[str, Any]]:
+        return [
+            { 'name': 'disconnected_dags',
+              'claims': [{'id': c} for c in 'ABCD'],
+              'attacks': [('A','B'),('C','D')],
+              'expected_accepted': {'A','C'}, 'expected_undecided': set() },
+        ]
+
+    @staticmethod
+    def cycle_attacking_dag_cases() -> list[dict[str, Any]]:
+        return [
+            { 'name': 'cycle_attacks_dag',
+              'claims': [{'id': c} for c in 'XYA'],
+              'attacks': [('X','Y'),('Y','X'),('X','A')],
+              'expected_accepted': set(), 'expected_undecided': {'X','Y','A'} },
+        ]
+
+    @staticmethod
+    def dag_attacking_cycle_cases() -> list[dict[str, Any]]:
+        return [
+            { 'name': 'dag_attacks_cycle',
+              'claims': [{'id': c} for c in 'PQXY'],
+              'attacks': [('P','Q'),('P','X'),('X','Y'),('Y','X')],
+              'expected_accepted': {'P', 'Y'}, 'expected_undecided': set() },
+        ]
+
+    @staticmethod
+    def multiple_attackers_cases() -> list[dict[str, Any]]:
+        return [
+            { 'name': 'three_attackers_on_one',
+              'claims': [{'id': c} for c in 'ABCD'],
+              'attacks': [('A','D'),('B','D'),('C','D')],
+              'expected_accepted': {'A','B','C'}, 'expected_undecided': set() },
+        ]
+
+    @staticmethod
+    def nested_scc_cases() -> list[dict[str, Any]]:
+        return [
+            { 'name': 'nested_sccs',
+              'claims': [{'id': c} for c in 'ABCDEF'],
+              'attacks': [('A','B'),('B','C'),('C','A'),('C','D'),('D','E'),('E','D'),('E','F')],
+              'expected_accepted': set(), 'expected_undecided': {'A','B','C','D','E','F'} },
+        ]
+
     def run_full_regression(self) -> RegressionReport:
         """Run all built-in test cases and produce a report."""
         all_cases = (
@@ -195,6 +275,15 @@ class JurisCalculusBridge:
             + self.triangle_cycle_cases()
             + self.even_cycle_cases()
             + self.mixed_cases()
+            + self.self_loop_cases()
+            + self.long_chain_cases()
+            + self.branched_dag_cases()
+            + self.single_node_cases()
+            + self.disconnected_cases()
+            + self.cycle_attacking_dag_cases()
+            + self.dag_attacking_cycle_cases()
+            + self.multiple_attackers_cases()
+            + self.nested_scc_cases()
         )
         report = RegressionReport()
         for case in all_cases:
