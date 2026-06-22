@@ -1,0 +1,60 @@
+﻿{
+  "theorems": [
+    {
+      "theorem_id": "G9A-grounded-unique",
+      "theorem": "For any finite Dung AAF, the grounded extension exists, is unique, and is the least fixed point of the characteristic function F",
+      "assumptions": ["finite argument set", "Dung 1995 semantics"],
+      "proof_artifact": "compiler_core/argumentation.py:grounded_extension()",
+      "proof_type": "Python implementation with derived iteration bound (|AR|+1 steps)",
+      "production_module": "compiler_core/argumentation.py",
+      "engineering_capability": "Three-valued output (IN/OUT/UNDEC) for arbitrary attack graphs; correct cycle handling",
+      "tests": "tests/test_grounded_g9a.py (20 tests, 18 graph types)",
+      "limitations": "Bounded to finite graphs; no inductive proof for arbitrary N (needs Lean)"
+    },
+    {
+      "theorem_id": "G9A-scc-witness",
+      "theorem": "SCC decomposition provides cycle membership witnesses for all UNDEC arguments",
+      "assumptions": ["finite directed graph"],
+      "proof_artifact": "compiler_core/argumentation.py:scc_decomposition()",
+      "proof_type": "Kosaraju SCC algorithm + Dung cycle analysis",
+      "production_module": "compiler_core/argumentation.py",
+      "engineering_capability": "Cycle/SCC witness; human review reasons; dispute deadlock structure",
+      "tests": "tests/test_argumentation_b6.py (8 tests)",
+      "limitations": "Does not handle incremental updates"
+    },
+    {
+      "theorem_id": "G8-horn-derived-bound",
+      "theorem": "Horn fixpoint iteration terminates in at most |heads|+1 steps from any initial facts",
+      "assumptions": ["finite Horn rule set", "monotone T_H operator"],
+      "proof_artifact": "compiler_core/horn_completeness.py:horn_derived_bound()",
+      "proof_type": "Python implementation — derived bound from rule head count",
+      "production_module": "compiler_core/horn_completeness.py",
+      "engineering_capability": "Saturation/convergence/truncation signaling; proof witnesses per fact",
+      "tests": "None yet (wrapper, not integrated into evaluator)",
+      "limitations": "Does not modify FixpointEvaluator; k_max still present as external cutoff"
+    },
+    {
+      "theorem_id": "G10-banach-spectral-ub",
+      "theorem": "For any matrix A, spectral radius ρ(A) ≤ ||A||_max (max-row-sum norm)",
+      "assumptions": ["matrix norm inequality (Horn & Johnson)"],
+      "proof_artifact": "compiler_core/banach_verifier.py:spectral_radius_ub()",
+      "proof_type": "Rigorous upper bound via max-norm; heuristic power iteration for exact estimate",
+      "production_module": "compiler_core/banach_verifier.py",
+      "engineering_capability": "Correct distinction between upper bound and exact spectral radius; convergent stopping rule",
+      "tests": "Existing Banach tests (8/8 pass)",
+      "limitations": "Power iteration is heuristic; block-triangular contraction requires full coupling analysis"
+    }
+  ],
+  "unproved_propositions": [
+    "Arbitrary-N grounded semantics induction (needs Lean)",
+    "Horn completeness without hbound in evaluator body",
+    "Four-stage compositional safety (Horn→AAF→Grounded→Trust Label)",
+    "G9B incremental grounded extension equivalence",
+    "G9B minimal intervention formalization"
+  ],
+  "repos": {
+    "deli-autoresearch": "5cde4c3",
+    "juris-calculus": "0dbf144",
+    "legal-math-modeling": "not yet committed"
+  }
+}

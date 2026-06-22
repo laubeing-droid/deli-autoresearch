@@ -1,0 +1,66 @@
+﻿{
+  "manifest_version": "1.0",
+  "generated": "2026-06-23",
+  "repositories": {
+    "deli-autoresearch": {
+      "commit": "5cde4c3",
+      "branch": "main",
+      "tests_passed": 56,
+      "tests_total": 56,
+      "key_modules": ["file_lock.py", "jsonl_store.py", "state_store.py", "orchestrator.py"]
+    },
+    "juris-calculus": {
+      "commit": "0dbf144",
+      "branch": "main",
+      "tests_passed": 84,
+      "tests_total": 84,
+      "key_modules": ["argumentation.py", "banach_verifier.py", "horn_completeness.py"]
+    },
+    "legal-math-modeling": {
+      "commit": "not yet committed",
+      "branch": "main",
+      "lean_theorems_proved": 0,
+      "lean_theorems_planned": 13
+    }
+  },
+  "verification_status": {
+    "phase_a": "COMPLETE",
+    "phase_b3": "COMPLETE",
+    "phase_b5": "COMPLETE",
+    "phase_b6": "COMPLETE",
+    "phase_d": "PARTIAL",
+    "phase_f1": "COMPLETE",
+    "lean_jobs": 0,
+    "lean_sorry_count": 0,
+    "lean_axiom_count": 0,
+    "z3_proved": 0,
+    "z3_refuted": 0,
+    "z3_timeout": 0,
+    "python_tests_passed": 84,
+    "python_tests_failed": 0,
+    "python_tests_skipped": 0
+  },
+  "capabilities_unlocked": [
+    "Three-valued grounded output (IN/OUT/UNDEC)",
+    "Derived iteration bound (no hardcoded max_iter)",
+    "Convergence/truncation signaling",
+    "SCC decomposition witness",
+    "Cycle detection for UNDEC reasons",
+    "Per-argument label reasons",
+    "Full proof trace with iteration history",
+    "Horn completeness wrapper (derived bound, witnesses)",
+    "Banach spectral_radius corrected (ub + exact)",
+    "Cross-process file locking (O_EXCL atomic)",
+    "JSONL crash recovery with tail quarantine",
+    "Finding event_id idempotency"
+  ],
+  "capabilities_pending": [
+    "G9B incremental grounded extension",
+    "G9B interpretation certificates",
+    "G9B minimal intervention analysis",
+    "G8 Horn completeness in evaluator body",
+    "Four-stage compositional safety",
+    "Lean inductive proofs (13 theorems)"
+  ],
+  "next_highest_value_task": "G9B interpretation certificates — directly serves litigation analysis"
+}
