@@ -1,0 +1,863 @@
+{
+  "stats": {
+    "total": 50,
+    "converged": 50,
+    "truncated": 0,
+    "accepted_count": 98,
+    "undecided_count": 0
+  },
+  "results": [
+    {
+      "rule_id": 0,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 30,
+      "type": "obligation",
+      "text": "规定：“下列涉及国家安全和利益的事项，泄露后可能损害国家在政治、经济、国防、外交等领域的安全和利益的，应当确定为国家秘密：…·（六）维护国家安全活动和追查刑事犯罪中的秘密事项..”该法",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 1,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 30,
+      "type": "obligation",
+      "text": "规定：“机关、单位对承载国家秘密的纸介质、光介质、电磁介质等载体（以下简称国家秘密载体）以及属于国家秘密的设备、产品，应当作出国家秘密标志。涉及国家秘密的电子文件应当按照国家有关规定作出国家秘密标志。不属于国家秘密的，不得作出国家秘密标志。’③《黑龙江省林区中级人民法院发布环境资源审判典型案例（五）一鲍某、鲍某某等非法运输珍贵、濒危野生动物案》，载黑龙江省林区中级人民法院网站，http：/hljl",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 2,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 35,
+      "type": "obligation",
+      "text": "第一编理论篇／第一章刑事法基本原则11涉案枪支的数量，而且应当根据案件情况综合评估社会危害性，坚持主客观相统一，确保罪责刑相适应。这一司法解释的出台，有助于罪责刑相适应原则在此类案件办理中得到切实贯彻，避免出现刑事打击范围过大和量刑畸重的不合理现象。第三节程序法定原则一、准确把握程序法定原则的基本内涵（一）程序法定原则的界定程序法定原则是现代刑事诉讼的基本要求，它包括两层含义：一是立法方面的要求，",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 3,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 36,
+      "type": "obligation",
+      "text": "第1款规定，每个人都享有人身自由与安全的权利，任何人不得被任意逮捕或羁押，除非依据法律所规定的理由并遵守法定的程序，任何人不得被剥夺自由。（二）程序法定原则的具体要求从内容上分析，程序法定原则包含形式和实质两个维度，前者体现为程序合法性，后者体现为程序正当性。程序法定原则的具体要求包括：第一，国家用公开的立法规定严密完备的程序法，程序法既要有效惩罚犯罪的国情，考虑司法解释等规范性文件是对具体应用法",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 4,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 38,
+      "type": "permission",
+      "text": "14刑事审判实务（上册）\n二、强化我国程序性制裁机制，落实程序法定原则如前所述，程序法定原则要求确立程序性制裁机制。程序性制裁其实是指警察、检察官、法官违反法律程序所要承受的一种程序性法律后果。与那种通过追究办案人员的行政责任、民事责任甚至刑事责任来实施的实体性制裁措施不同，程序性制裁是通过宣告无效的方式来追究程序性违法者的法律责任的。在大陆法系国家的刑事诉讼制度中，这种宣告无效也就是通常所说的诉",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 5,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 39,
+      "type": "permission",
+      "text": "第一编理论篇／第一章刑事法基本原则（15这是2012年《刑事诉讼法》修改时明确规定的非法证据排除规则，具有如下几个鲜明特点：一是以成文法的形式确定该规则；?二是重点关注以刑讯逼供等非法方法取得的口供；三是侦查、审查起诉、审判阶段都可以排除非法证据；四是针对不同的对象确立了强制排除和裁量排除两种模式。经过十余年的司法适用，该规则作为典型的程序性制裁机制已经深人审判人员日常工作，对于防范冤错案件、保障",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 6,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 41,
+      "type": "obligation",
+      "text": "的规定，下列案件应当开庭审理：（1）被告人、自诉人及其法定代理人对第一审认定的事实、证据提出异议，可能影响定罪量刑的上诉案件；（2）被告人被判处死刑的上诉案件；（3）人民检察院抗诉的案件；（4）应当开庭审理的其他案件。其中要强化事实证据有异议的案件的二审开庭。实践中存在被告人余刑短、不愿被送监而以对事实证据有异议为由提出的“技术性上诉”，对于该类案件经审查可以不开庭审理。第二，防止程序空转。发挥每",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 7,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 43,
+      "type": "obligation",
+      "text": "第一编理论篇/第一章刑事法基本原则19\n（二）疑罪从无原则的基本要求准确把握疑罪从无原则，有以下三个方面的要求：第一，准确把握无罪推定、存疑有利被告人和疑罪从无的关系。无罪推定和存疑有利被告人包含疑罪从无，无罪推定原则的关键在于确立了被追诉人诉讼主体的地位，其证据法意义在于，除非控诉被告人犯罪的机关或人员能够提供充分的证据证明指控的犯罪事实成立，否则不得认定被告人有罪；存疑有利被告人是指对案件事实",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 8,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 44,
+      "type": "obligation",
+      "text": "20（刑事审判实务（上册）\n对此进一步细化规定：“...（四）证据不足，不能认定被告人有罪的，应当以证据不足、指控的犯罪不能成立，判决宣告被告人无罪；（五）案件部分事实清楚，证据确实、充分的，应当作出有罪或者无罪的判决；对事实不清、证据不足部分，不予认定……此外，2017年《最高人民法院关于全面推进以审判为中心的刑事诉讼制度改革的实施意见》法发［2017】5号）",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 9,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 44,
+      "type": "obligation",
+      "text": "规定：“人民法院作出有罪判决，对于定罪事实应当综合全案证据排除合理怀疑。定罪证据不足的案件，不能认定被告人有罪，应当作出证据不足、指控的犯罪不能成立的无罪判决。定罪证据确实、充分，量刑证据存疑的，应当作出有利于被告人的认定。”这一规定重申了疑罪从无原则，并进一步明确了具备定罪条件但在量刑证据上存疑案件的认定原则。二、刑事审判实践中落实疑罪从无原则的基本情况考察审判实践中对疑罪从无原则的落实情况，可",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 10,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 47,
+      "type": "obligation",
+      "text": "对“证据确实、充分”证明标准的界定，所谓定罪的事实不清、证据不足，从诉讼证明的角度主要是指证据与证据之间、证据与案件事实之间存在矛盾，根据证据认定案件事实的过程不符合逻辑和经验规则，由证据得出的结论不是唯一结论。实践中，疑罪有不同的表现形式，比较常见的就是以非法收集或者真实性缺乏保障的被告人口供作为定案根据的疑罪案件。有的案件，人民检察院提供的证据材料很多，但这些证据材料大多仅能证明犯罪事实存在，",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 11,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 48,
+      "type": "obligation",
+      "text": "24刑事审判实务（上册）\n在实行职权主义的大陆法系国家，普遍奉行证据裁判原则，法律大多明文规定了证据裁判原则。在强调法官依职权调查证据的同时，大陆法系国家一般都规定了严格的证据调查程序，非常强调对于法官裁判的约束，要求裁判必须依靠证据，以规范法官权力的行使，并最终达到发现事实真相的要求。在实行当事人主义的英美法系国家，法律和诉讼理论中虽然没有直接明确证据裁判原则，但是其刑事诉讼中大量存在的规范证据",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 12,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 61,
+      "type": "obligation",
+      "text": "第一编理论篇／第二章宽严相济刑事政策（37（5）债务、劳务纠纷。这是指因民间债务或者劳务而在债务偿还、劳务收人报酬的支付等方面产生的纠纷。实践中，一些地方存在很多因民间借贷而发生的纠纷。拖欠农民工工资等纠纷亦可归人该类。（6）权属、承包纠纷。这是指因土地、山林、草场、果园等的权属或者承包向题而产生的纠纷。尤其是在一些经济欠发达或者土地耕种等在生产、生活中仍具有重要性的地区，这类纠纷一旦发生，往往不",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 13,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 71,
+      "type": "obligation",
+      "text": "第一编理论篇／第二章宽严相济刑事政策47放在化解矛盾上，尽最大努力做好民调、善后工作，促使双方达成谅解，确保案结事了，促进社会和谐。三是坚持程序正义。死刑案件要坚持最严格的证据标准，确保每一道程序严格规范，发挥应有的审查把关功能。落实慎重适用死刑的政策要求，必须切实执行严格统一的证据裁判标准，执行严格统一的法律政策标准。一方面，必须坚持证据裁判原则，执行严格统一的死刑案件证据裁判标准。死刑案件人命",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 14,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 71,
+      "type": "obligation",
+      "text": "规定的“抢劫致人重伤、死亡”之外的其他7种加重情节的，适用死刑必须非常慎重、非常严格。（6）对于共同犯罪致一人死亡，依法应当判处死刑的，原则上只判处罪责最严重的被告人死刑。罪责最严重的被告人如因系未成年人而不适用死刑，或因具有法定、酌定从轻情节被从轻处罚，或因畏罪自杀、患病等原因死亡的，不能对罪责相对较轻的同案其他被告人判处死刑。",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 15,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 78,
+      "type": "obligation",
+      "text": "的规定，防卫是否“明显超过必要限度”，应当综合不法侵害的性质、手段、强度、危害程度和防卫的时机、手段、强度、损害后果等情节，考虑双方力量对比，立足防卫人防卫时所处情境，结合社会公众的一般认知作出判断。因此，对防卫行为明显超过必要限度的判断，应当坚持综合考量、整体评价原则。一是考虑行为限度。防卫人的行为限度取决于侵害人的侵害程度，在衡量防卫行为与侵害行为的程度时，应综合考虑：（1）衡量双方所持工具的",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 16,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 80,
+      "type": "obligation",
+      "text": "第3款将“行凶”与“杀人、抢劫、强奸、绑架”并列规定，根据同类解释规则，此几类并列行为之间应具有“行为方式的同质性、法益侵害的相当性、刑罚当罚的等值性”。因此，行凶虽然在形式上不是具体的杀人、抢劫、强奸和绑架行为，也不同于其他严重危及人身安全的暴力犯罪，但在实质上行凶之暴力程度与它们具有等同性、同质性、相当性，都是严重危及人身安全的暴力行为，非暴力犯罪或一般暴力行为不能认定为行凶。最后，是否使用凶",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 17,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 92,
+      "type": "obligation",
+      "text": "68刑事审判实务（上册）\n自首、立功、累犯、赔偿被害人经济损失等）。量刑时，要根据全案事实情节，确定犯罪的社会危害性，并依法确定所应判处的刑罚。根据《常见犯罪量刑指导意见（试行）》，在量刑过程中，首先要以基本犯罪构成事实为根据，确定量刑起点；其次要以基本犯罪构成事实以外的其他犯罪构成事实为根据增加刑罚量，在量刑起点的基础上确定基准刑；最后要根据犯罪构成事实以外的犯罪事实和（纯粹的）量刑（事实）情节",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 18,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 104,
+      "type": "obligation",
+      "text": "规定了特殊累犯的构成标准，其特殊性体现在两方面：一是前后犯罪的范围特定，仅限于危害国家安全犯罪、恐怖活动犯罪、黑社会性质的组织犯罪；二是时间条件和刑度条件上，不受累犯成立的时间条件和刑度条件的限制，在刑罚执行完毕或赦免后，任何时候再犯上述任一类罪的，都以累犯论处。司法实践中判断累犯成立与否时，如下相关问题较为模糊，需要讨论并明确裁判规则。（一）不满18周岁的人能否成立特殊累犯不满18周岁的人犯罪不",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 19,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 107,
+      "type": "obligation",
+      "text": "所规定的“认为原判刑罚已经执行完毕”，既然其原判刑罚并未执行完毕，自然也不存在成立累犯的问题。此时对被告人应依法撤销假释，并予以数罪并罚。的立场。类似的判断准则同样适用于缓刑犯在考验期满后5年内再故意犯应当判处有期徒刑以上刑罚之罪应否认定为累犯的问题。对此现象，因前罪判处的有故不应认定为累犯，但可作为对新罪确定刑罚的酌定从重情节予以考虑。但若故意犯罪判处有期徒刑并被适用缓刑的，缓刑考验期内因法定情",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 20,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 108,
+      "type": "obligation",
+      "text": "84（刑事审判实务（上册）\n不是累犯而是数罪并罚的问题；如果采取后者的立场，则不存在并罚而属于累犯且应从重处罚的问题。应当说，此种情形下，虽然从前罪的刑事判决书角度来看，该犯罪分子文犯的罪确实在刑罚执行期间，但此时数罪并罚实际已毫无现实意义一一因为此时前罪的余刑仅为数个小时。同时，监狱等行刑机关在服刑最终日释放服刑人员，依法向其出示、发放的刑满释放证（明）当然也具有法律效力，这就表明行为人此时刑罚",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 21,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 108,
+      "type": "permission",
+      "text": "之一的帮助恐怖活动罪和第 291条之一第1款的编造、故意传播虚假恐怖信息罪。组织、领导、参加恐怖组织罪毫无疑问属于恐怖活动犯罪的范畴，但对于帮助恐怖活动罪和编造、故意传播虚假恐怖信息罪是否可以认定为恐怖活动犯罪尚存疑问。我们认为，在相关司法解释出台之前，对此问题还是采取实质合理性的解释论较为妥当，这两种犯罪行为一般不具有暴力性，社会危害性明显低于恐怖活动犯罪本身，被告人的人身危险性也明显低于组织、",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 22,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 109,
+      "type": "obligation",
+      "text": "第二编实体篇/第四章刑罚适用85罪行为，虽然罪名表述并无“恐怖”二字，但这些恐怖组织或者其成员实施的故意杀人罪、爆炸罪、绑架罪等，仍具有恐怖活动犯罪的本质特征，也可以认定属于特殊累犯中的“恐怖活动犯罪”之范围。至于“黑社会性质的组织犯罪”的认定，从文义解释的角度来看，“黑社会领导、参加黑社会性质组织的犯罪，而不是黑社会性质组织所实施的犯罪。故此，不宜将黑社会性质组织实施的所有犯罪都纳入特殊累犯的范",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 23,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 109,
+      "type": "obligation",
+      "text": "从重处罚。这种裁判思路显然对前科（前罪）这一情节进行了两次从重处罚，违反了同一情节禁止重复评价的量刑规则。故此，有前罪而判断是否构成累犯时，只有当后罪本身的具体罪行决定了依法应当判处有期徒刑以上刑罚时，才符合累犯条件，进而决定从重处罚的问题。这种情形在后罪属于情节犯时特别需要注意。（二）累犯的认定与《刑法》",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 24,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 110,
+      "type": "obligation",
+      "text": "规定相冲突。当然，对该种现象不作为累犯认定，并非意味着放纵罪犯，因为对此情形，若依法需要追究行为人在国外所犯之罪的刑事责任，则可考虑进行数罪并罚的问题。（三）数罪并罚情形下的累犯认定累犯的认定在数罪并罚情形下又有相对的复杂性。第一，如果被告人在刑满释放5年之内同时又犯数罪的，该数罪是否每一罪都可认定为累犯而从重处罚？即从重处罚是对每一个罪单独从重，还是并罚后的整体从重？对此，我们认为，累犯既是对犯",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 25,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 112,
+      "type": "obligation",
+      "text": "关于缓刑考察的基本规定，不论前后罪是否为毒品犯罪均应如此处理。对新犯的毒品犯罪认定为毒品再犯是由于行为人前罪为走私等5种毒品犯罪行为而后罪仍为毒品犯罪，基于较强的人身危险性和毒品犯罪从严惩罚的刑事政策，从而认定后罪为毒品再犯，并未违反同一情节重复评价的量刑原则。如果对后罪不认定为毒品再犯，则无从体现对毒品犯罪从严惩处的刑事政策，反而有违罪责刑相适应原则。（二）毒品再犯与累犯的关系如何协调《昆明会议",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 26,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 113,
+      "type": "obligation",
+      "text": "的规定，予以从重处罚，但依法存在适用缓刑或者假释的可能。当然，基于毒品再犯的人身危险性及再犯可能性，对其适用缓刑，应当从严掌握。第四节自首与立功一、自首认定中的疑难问题（一）“自动投案”的认定自动投案一般是指犯罪嫌疑人在犯罪后、归案前，出于本人意志自愿将自己置于司法机关的控制之下，接受审判的行为。自动投案的本质属性体现于投案的主动性和自愿性，实质是将自己置于或最终置于司法机关的控制之下，接受司法机",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 27,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 118,
+      "type": "obligation",
+      "text": "94刑事审判实务（上册）于动机不同，交代犯罪的时间也会有所不同。我们认为，对于如实供述的时间限制，应从是否体现认罪悔罪态度、是否实现节约司法资源宗旨两个角度去把握。对于投案时司法机关已经掌握犯罪事实的案件，嫌疑人应当在初次被讯问时即如实供述，才能体现其悔罪的态度，如果在投案之初不如实供述，在司法机关出示犯罪证据后迫于无奈才交代罪行的，就不能认定为自首。对于投案时司法机关尚未掌握犯罪事实的案件，如果",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 28,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 119,
+      "type": "obligation",
+      "text": "所规定的量刑阶段的立功。（一）立功认定的审查要点1.立功线索来源应具有合法性立功制度隐含着功利主义的价值考量，即司法机关希望通过犯罪分子的揭发或提供重要线索，从而实现节约司法资源、打击犯罪的目的。但在立功的具体认定上须兼顾公正与功利两种价值诉求，追求功利不得以牺牲公正为代价。公正是司法的首要价值。这是司法机关应当坚守的原则。《最高人民法院关于处理自首①参见张某亭故意杀人、盗窃案一交代司法机关尚未掌",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 29,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 122,
+      "type": "obligation",
+      "text": "第2款，揭发的犯罪事实与查实的犯罪事实不具有关联性的，提供的线索或者协助行为对于其他案件的侦破或者其他犯罪嫌疑人的抓捕不具有实际作用的，不能认定为立功表现。如韩某记等抢劫案。被告人到案后提供同案犯的大致藏匿地址，但并不明确，公安机关主要依靠技术侦查手段抓获同案犯，被告人提供的线索未起到实质性作用，不构成立功。又如曲某宇等故意杀人案?。曲某宇现场指认同案犯，但综合分析现场情况，抓捕时系凌晨，现场除曲",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 30,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 126,
+      "type": "obligation",
+      "text": "的规定，决定执行的刑罚。已经执行的刑期，应当计算在新判决决定的刑期以内。”该条规定了“先并后减”规则。审判实务中存在以下疑难问题。（一）如何理解“判决宣告以后”该规定中的“判决宣告以后”应理解为判决宣告并发生法律效力以后还是判决向被告人宣读、告诉以后？因为这里的“判决宣告以后”并未限定是二审判决，故此也完全可能是一审判决。如果是一审判决，则依法判决后并未立即生效，尚有10天的法定上诉期、抗诉期。若",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 31,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 130,
+      "type": "permission",
+      "text": "106刑事审判实务（上册）\n至新罪判决时的羁押期间折抵新罪判决执行时间即可。对于暂予监外执行期满后发现在暂予监外执行期间犯新罪的，前罪是否属于刑罚执行完毕？暂予监外执行虽然改变了服刑场所，但本质上仍是刑罚的一种执行方式。只要暂予监外执行没有终止，暂予监外执行期就应计人刑罚执行期，对于罪犯在暂予监外执行期间犯新罪，但在暂予监外执行完毕后才发现的，因在新罪判决时前罪已经执行完毕，没有可以并罚的余刑，故",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 32,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 131,
+      "type": "obligation",
+      "text": "的规定，决定执行的刑罚。撤销缓刑将前罪刑罚与新罪或漏罪刑罚并罚之后，一般不宜再次适用缓刑，但如被告人并未隐瞒漏罪，且并罚后仍然符合缓刑适用条件的，可以再次适用缓刑。①（二）在判决宣告以后，刑罚执行完毕以前，罪犯因漏罪或者又犯新罪数罪并罚时，原减刑裁定应如何处理根据《最高人民法院关于罪犯因漏罪、新罪数罪并罚时原减刑裁定应如何处理的意见》，罪犯被裁定减刑后，因被发现漏罪或者又犯新罪而依法进行数罪并罚时",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 33,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 132,
+      "type": "prohibition",
+      "text": "108（刑事审判实务（上册）\n酌予考虑。对于罪犯在假释期间又犯新罪数罪并罚时，原减刑裁定也不计人已执行的刑期。①（三）在数罪并罚案件中，从轻、减轻处罚情节应如何适用如果是自首等法定的从轻、减轻处罚情节，因自首是针对自己所犯具体罪行而言，那么从宽处罚只能是针对自首之罪，在其他罪中不能适用，应在能适用的罪中先从轻、减轻处罚，再予以数罪并罚。但如果是立功等法定从轻、减轻处罚情节，因立功是针对他人犯罪而言",
+      "grounded_accepted": [
+        "PREMISE"
+      ],
+      "grounded_rejected": [
+        "CONCLUSION"
+      ],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 34,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 137,
+      "type": "obligation",
+      "text": "第二编实体篇／第四章刑罚适用（113准，符合缓刑适用条件的，在撤销缓刑将漏罪与原罪并罚后，仍然可以再次适用缓刑。（二）缓刑上诉期内实施违法行为是否应被撤销缓刑缓刑上诉期内实施违法行为是否应被撤销缓刑，也是实践中的一个争议问题。如贾某某非法制造、销售非法制造的注册商标标识案°。2023 年1月3 日，一审法院以非法制造、销售非法制造的注册商标标识罪判处贾某某有期徒刑三年，缓刑四年，并处罚金人民币1万",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 35,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 138,
+      "type": "obligation",
+      "text": "之日”的理解存在不同观点。一种观点认为，宣判之时即为判决确定之日。另一种观点认为，缓刑考验期从上诉期满、判决生效时起算。还有一种观点认为，判决确定之日，应以判决书末页的时间为准。我们认为，判决确定之日应是判决发生法律效力之日。对一审法院的判决来说，其宣判之日并不当然发生法律效力。只有当被告人和人民检察院在接到判决书之日起10日内没有提出上诉或抗诉时，一审判决才能发生法律效力。如果从判决宣判之日起计",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 36,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 139,
+      "type": "obligation",
+      "text": "的规定，对被宣告缓刑的犯罪分子撤销缓刑执行原判刑罚的，对其在宣告缓刑前羁押的时间应当折抵刑期。根据上述批复可知，犯罪人的先行羁押时间在一定条件下可折抵刑期。同理，基于同一事实原则，应认为先前的缓刑考验期也可被基于同一犯罪行为所致的缓刑考验期折抵。第七节追诉时效一、追诉时效期限的确定（一）对“法定最高刑”的理解具体犯罪行为的追诉时效以该犯罪行为的法定最高刑为参考系并与之成正比。在我国《刑法》分则罪行",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 37,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 140,
+      "type": "obligation",
+      "text": "的规定，追诉期限从“犯罪之日起”计算。司法实践罪之日”应当理解为犯罪成立之日，即犯罪行为符合全部构成要件之日。如对于不以危害结果作为构成要件的犯罪（如放灭罪等危险犯），实施行为之日即是犯罪之日；对于以危害结果作为构成要件的犯罪（典型的如玩忽职守等过失犯罪情形)，危害结果发生之日才属于犯罪之日；在共同犯罪的场合，应从共犯人中最终的行为终了之日起算对所有共犯人的追诉期限，即在共犯案件中，各被告人的追诉",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 38,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 141,
+      "type": "obligation",
+      "text": "第二编实体篇／第四章刑罚适用117是以起诉时为准，抑或以审判之日为准？如计算到侦查时没有超过追诉期限，而起诉时超过了追诉期限的，如何处理？计算到起诉时没有超过追诉期限，但审判时超过了追诉期限的，怎样解决？这主要涉及对“追诉”的理解。我们认为，追诉是相关司法机关代表国家对犯罪行为依法追究刑事责任（以公诉案件为例），侦查、审查起诉和审判都是追诉的具体表现，只是体现为三个不同的阶段。对于犯罪行为，只要在",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 39,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 143,
+      "type": "permission",
+      "text": "第二编实体篇/第四章刑罚适用（119与审判，在逃期间又犯了乙罪。此时先前的甲罪既涉及时效中断又涉及不受追诉期限的限制问题，二者相竞合的，应适用不受追诉期限的限制还是时效中断的规定？应该说，此时甲罪仅适用不受追诉期限的限制的规定即可，因为时效中断制度虽然导致甲罪时效重新计算，但毕竟还是存在一定法定期限的，而不受追诉期限的限制则根本不受时效的限制。可以这样说，既然甲罪时效不受限制，自然不存在时效中断的",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 40,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 143,
+      "type": "obligation",
+      "text": "的规定，经最高人民检察院核准而不受追诉时效限制的前提是该犯罪行为的法定最高刑为无期徒刑、死刑，经过20年之后认为必须追诉的。这一制度规定对于弥补特殊情形下追诉期限规定的缺陷具有重要意义，既坚持追诉时效制度的基本定位，又为实践留有余地，由最高人民检察院根据案件情况、社会影响等因素决定是否核准，能最大限度发挥刑法惩处犯罪、平衡维护公平正义与保持社会关系平稳的关系之功能。《人民检察院刑事诉讼规则》规定，",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 41,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 144,
+      "type": "obligation",
+      "text": "120（刑事审判实务（上册）该情形必须同时具备两个条件：一是案件已被人民检察院、公安机关、国家安全机关立案侦查或者人民法院受理；二是行为人逃避侦查或者审判。具备这两个条件的，不论经过多长时间，任何时候都可以追诉。如果在司法机关立案侦查或者受理案件以后，行为人并没逃避侦查与审判的，则仍受追诉期限的限制。正确适用该款规定，关键是要正确理解“立案侦查”和“逃避侦查或者审判”的内涵。“立案”是刑事诉讼过程",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 42,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 151,
+      "type": "obligation",
+      "text": "第二编实体篇／第五章危害公共安全罪（127节严重”进行认定过于机械，因为专用散件和通用散件、核心部件和相对次要部件、散件质量等的不同，组装成枪支的可能性也不同，一律按照《审理枪支弹药爆炸物案件解释》“情节严董”的标准量刑，很可能导致罪责刑不相适应。可以综合散件情况，适用《涉压缩气体枪支、气枪铅弹案件批复》裁量刑罚。对于可定罪的涉气枪单一通用散件案件，卖出去的部分较少，查获量大的，可大幅度从宽处理。",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 43,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 155,
+      "type": "obligation",
+      "text": "规定，公安机关交通管理部门应当根据交通事故当事人的行为对发生交通事故所起的作用以及过错的严重程度，确定当事人的责任。（二）责任划分关于如何确定事故责任，2018年5月1日起施行的《道路交通事故处理程序规定》",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 44,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 168,
+      "type": "obligation",
+      "text": "144刑事审判实务（上册）\n（二）关于“道路”“机动车”的认定危险驾驶属行政犯，如无特别需要扩张或者限制解释的理由，对概念性法律术语的规定应当与其对应的行政法规的相关规定保持一致，故对“道路”“机动车”的认定适用《道路交通安全法》有关规定。《道路交通安全法》",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 45,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 171,
+      "type": "obligation",
+      "text": "第二编实体篇／第五章危害公共安全罪（147理醉驾案件意见》之所以要求同步录音录像，主要考虑血液酒精含量鉴定意见是认定行为人醉酒的关键证据，社会鉴定机构和鉴定人员众多，难免存在操作不当之处，如果不影响实质性的鉴定结果，从惩处醉驾犯罪的角度考虑，不宜一律作为非法证据予以排除。如果当事人或者办案单位对鉴定过程有疑问，鉴定机构应当提供完整、清晰的反映送检血样由封装状态解封、取样、添加试剂等操作到运用仪器设",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 46,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 176,
+      "type": "prohibition",
+      "text": "152（刑事审判实务（上册）离行驶，在居民小区、停车场等场所发动车辆起步、掉头时被查获，虽然行驶距离很短，也不属于该类情形；若打算交由他人驾驶，因居民小区、停车场较大或者路况复杂，向代驾人员、亲友说不清交接地点，自行驾车数百米，也可认定为短距离驾驶。在居民小区、停车场以外的其他场所的道路醉驾的，若行为人驾驶的动机和目的符合该类情形，也可予以认定。（七）关于醉驾型紧急避险的认定第一，准确定性。醉驾型",
+      "grounded_accepted": [
+        "PREMISE"
+      ],
+      "grounded_rejected": [
+        "CONCLUSION"
+      ],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 47,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 184,
+      "type": "permission",
+      "text": "160刑事审判实务（上册）\n步严格人罪范围，可将超速比例和速度数值作为严重超速的并列条件。3.高速公路、城市快速路严重超速标准的确定超速与乘客伤害性关系的研究表明，行驶速度越快，发生碰撞时乘客受到重度创伤、死亡的概率越大。高速公路、城市快速路设计最高时速数值已经较高，超速比例不宜过高，故可以50%作为严重超速的比例标准。数值上，对单纯的超速行为限速不宜过低，以突出打击具有高度危险性的行为，可以小型",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 48,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 191,
+      "type": "obligation",
+      "text": "第二编实体篇／第五章危害公共安全罪167承担主要责任。对于直接从事生产、作业活动的人员违反安全管理规定，发生重大生产安全事故的，要综合考虑行为人的从业资格、从业时间、接受安全生产教育培训情况、事故现场条件、是否受到他人强令作业、生产经营单位执行安全生产规章制度的情况等因素认定责任，不能将直接责任简单等同于主要责任。对于负有安全生产管理、监督职责的工作人员，应根据其岗位职责、履职依据、履职时间等，综",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    },
+    {
+      "rule_id": 49,
+      "source": "刑事审判实务上册_ocr.json",
+      "page": 193,
+      "type": "obligation",
+      "text": "第二编实体篇／第五章危害公共安全罪（169\n施必须是直接关系生产安全的设备、设施，关闭、破坏后可能直接导致生产安全事故发生。关闭、破坏与生产安全事故发生不具有直接因果关系的设备、设施的行为，不能认定为本罪。第二，因存在重大事故隐患被依法责令停产停业、停止施工、停止使用有关设备、设施、场所或者立即采取排除危险的整改措施，而拒不执行。成立此种行为的条件比较严格，包括三个方面要求：首先，存在重大事故隐患",
+      "grounded_accepted": [
+        "CONCLUSION",
+        "PREMISE"
+      ],
+      "grounded_rejected": [],
+      "grounded_undecided": [],
+      "converged": true,
+      "truncated": false,
+      "iterations": 2,
+      "derived_bound": 3
+    }
+  ]
+}

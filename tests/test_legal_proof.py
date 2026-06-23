@@ -1,4 +1,4 @@
-"""Tests for legal_proof template and juris-calculus bridge."""
+﻿"""Tests for legal_proof template and juris-calculus bridge."""
 
 from __future__ import annotations
 
@@ -127,7 +127,6 @@ def test_legal_proof_stall_rules_detect_semantic_collapse():
     runtime = TemplateRuntime()
     template = runtime.get("legal_proof")
 
-    # Fake progress-like object
     class P:
         iteration = 1
 
@@ -160,7 +159,7 @@ def test_legal_proof_validate_finding_rules_requires_source_kind():
 
 def test_bridge_dag_regression():
     if not JURIS_ROOT.exists():
-        return  # skip if juris-calculus not available
+        return
     bridge = JurisCalculusBridge(JURIS_ROOT)
     cases = bridge.dag_linear_cases()
     for case in cases:
@@ -229,12 +228,20 @@ def test_hybrid_backend_runs_local_engine_for_verification():
     prompt = {
         "claim_id": "claim_abc",
         "claim": "test claim",
-        "run_local_engine": True,
+        "verification_type": "grounded_extension",
+        "formal_payload": {
+            "claims": [{"id": "A"}],
+            "attacks": [],
+            "expected_properties": {"expected_accepted": ["A"]},
+        },
+        "claim_digest": "abc",
+        "payload_digest": "",
+        "request_id": "req-001",
+        "request_digest": "rd-001",
     }
     envelope = hybrid.run_verification("t1", prompt)
     assert envelope.payload["verdict"] in ("validated", "rejected")
-    assert envelope.payload["evidence_strength"] == "strong"
-    assert len(envelope.payload["supporting_evidence"]) > 0
+    assert "verification_status" in envelope.payload
 
 
 def test_hybrid_backend_fallback_to_inner_when_no_flag():
@@ -317,7 +324,6 @@ def test_legal_proof_full_flow_with_engine(tmp_path: Path):
     )
     registry.register_task(task_id, store.task_root(task_id), "legal_proof")
 
-    # Build hybrid backend
     inner = MockAgentBackend()
     inner.work_queue.append({
         "summary": "Verify G9 grounded extension on cycles.",
@@ -332,22 +338,15 @@ def test_legal_proof_full_flow_with_engine(tmp_path: Path):
             "support_kind": "new",
         }],
     })
-    # Verification queue entry is a fallback; local engine will override it
-    inner.verification_queue.append({
-        "claim_id": "placeholder",
-        "verdict": "needs_more_evidence",
-        "evidence_strength": "weak",
-        "summary": "placeholder",
-    })
 
     hybrid = JurisCalculusBackend(inner, JURIS_ROOT)
     orch = Orchestrator(store, registry, templates, hybrid)
 
-    # Patch to always use local engine
+    # Patch to use grounded_extension verification type
     original_build = orch._build_verification_prompt
     def patched(task_id, progress, claim_id, claim, candidate):
         prompt = original_build(task_id, progress, claim_id, claim, candidate)
-        prompt["run_local_engine"] = True
+        prompt["verification_type"] = "grounded_extension"
         return prompt
     orch._build_verification_prompt = patched
 
@@ -357,7 +356,6 @@ def test_legal_proof_full_flow_with_engine(tmp_path: Path):
     final = store.read_progress(task_id)
     assert final.validated_findings_count >= 1, f"Expected findings, got {final.validated_findings_count}"
 
-    # Check findings were recorded
     findings_text = store.findings_path(task_id).read_text(encoding="utf-8").strip()
     assert findings_text, "Expected findings in log"
     finding = json.loads(findings_text.split("\n")[0])

@@ -1,4 +1,4 @@
-"""Shared constants for the local framework."""
+﻿"""Shared constants for the local framework."""
 
 from __future__ import annotations
 
@@ -9,6 +9,8 @@ LOGS_DIRNAME = "logs"
 BRIDGE_DIRNAME = "bridge"
 REQUESTS_DIRNAME = "requests"
 RESPONSES_DIRNAME = "responses"
+ARCHIVE_DIRNAME = "archive"
+MONITOR_DIRNAME = "monitor"
 
 REGISTRY_FILENAME = "registry.json"
 TASK_SPEC_FILENAME = "task_spec.md"
@@ -22,6 +24,10 @@ WORK_LOG_FILENAME = "work.jsonl"
 VERIFICATION_LOG_FILENAME = "verification.jsonl"
 ORCHESTRATOR_LOG_FILENAME = "orchestrator.jsonl"
 HEARTBEAT_LOG_FILENAME = "heartbeat.jsonl"
+ORCHESTRATOR_LOCK_FILENAME = "orchestrator.lock"
+TASK_LOCK_FILENAME = "task.lock"
+
+BRIDGE_PROTOCOL_VERSION = "1.0"
 
 STATUS_ACTIVE = "active"
 STATUS_PAUSED_FOR_HUMAN = "paused_for_human"
@@ -32,6 +38,28 @@ VERDICT_VALIDATED = "validated"
 VERDICT_REJECTED = "rejected"
 VERDICT_NEEDS_MORE_EVIDENCE = "needs_more_evidence"
 
+VERIFICATION_STATUS_PROVED = "PROVED"
+VERIFICATION_STATUS_REFUTED = "REFUTED"
+VERIFICATION_STATUS_NEEDS_MORE_EVIDENCE = "NEEDS_MORE_EVIDENCE"
+VERIFICATION_STATUS_UNKNOWN = "UNKNOWN"
+VERIFICATION_STATUS_TIMEOUT = "TIMEOUT"
+VERIFICATION_STATUS_NOT_RUN = "NOT_RUN"
+VERIFICATION_STATUS_BACKEND_UNAVAILABLE = "BACKEND_UNAVAILABLE"
+VERIFICATION_STATUS_ERROR = "ERROR"
+
+TERMINAL_VERIFICATION_STATUSES = {
+    VERIFICATION_STATUS_PROVED,
+    VERIFICATION_STATUS_REFUTED,
+}
+
+WONT_VALIDATE_STATUSES = {
+    VERIFICATION_STATUS_UNKNOWN,
+    VERIFICATION_STATUS_TIMEOUT,
+    VERIFICATION_STATUS_NOT_RUN,
+    VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
+    VERIFICATION_STATUS_ERROR,
+}
+
 STRONG_SOURCE_KINDS = {"web", "local_file", "code", "experiment"}
 BASE_SOURCE_KINDS = {
     "web",
@@ -40,6 +68,13 @@ BASE_SOURCE_KINDS = {
     "derived",
     "experiment",
     "model_generated",
+    "z3_counterexample",
+    "lean_proof",
+    "juris_test_pass",
+    "banach_norm_test",
+}
+
+BACKEND_HEALTHY_SOURCE_KINDS = {
     "z3_counterexample",
     "lean_proof",
     "juris_test_pass",
@@ -60,8 +95,6 @@ MAX_CLAIMS_PER_ITERATION = 3
 MAX_EVIDENCE_PER_CLAIM = 3
 SAME_DIRECTION_RETRY_LIMIT = 2
 
-# --- Legal-proof extension (G9 grounded semantics) ---
-
 LEGAL_DIRECTION_TYPES = {
     "scc_decomposition",
     "characteristic_function_relaxation",
@@ -73,14 +106,10 @@ LEGAL_DIRECTION_TYPES = {
 
 ALL_DIRECTION_TYPES = BASE_DIRECTION_TYPES | LEGAL_DIRECTION_TYPES
 
-# z3_counterexample / lean_proof / juris_test_pass are engine-produced,
-# not LLM-generated - so they count as strong evidence.
 LEGAL_STRONG_SOURCE_KINDS = STRONG_SOURCE_KINDS | {
     "z3_counterexample",
     "lean_proof",
     "juris_test_pass",
 }
 
-
-# --- Juris-calculus engine path ---
 JURIS_CALCULUS_ROOT = r"D:\Codex\juris-calculus"

@@ -1,4 +1,5 @@
-"""Single-pass orchestrator implementation."""
+﻿"""Deterministic orchestrator with cross-process file locks, multi-tier stall pressure,
+claim-bound verification, CAS progress writes, and fail-closed semantics."""
 
 from __future__ import annotations
 
@@ -14,12 +15,20 @@ from .constants import (
     STATUS_ACTIVE,
     STATUS_COMPLETED,
     STATUS_PAUSED_FOR_HUMAN,
-    STRONG_SOURCE_KINDS,
-    VERDICT_NEEDS_MORE_EVIDENCE,
-    VERDICT_REJECTED,
-    VERDICT_VALIDATED,
+    VERIFICATION_STATUS_PROVED,
+    VERIFICATION_STATUS_REFUTED,
+    VERIFICATION_STATUS_NEEDS_MORE_EVIDENCE,
 )
-from .models import ClaimRecord, Progress, VerificationResult, WorkResult, utc_now_iso
+from .file_lock import LockHeldError, ReentrantLockError
+from .models import (
+    ClaimRecord,
+    Progress,
+    VerificationResult,
+    WorkResult,
+    hash_digest,
+    new_uuid,
+    utc_now_iso,
+)
 from .registry_manager import RegistryManager
 from .state_store import StateStore
 from .template_runtime import TemplateRuntime
@@ -32,129 +41,220 @@ class Orchestrator:
         self.registry = registry
         self.templates = templates
         self.backend = backend
+        self._instance_id = f"orchestrator_{new_uuid()}"
+
+    # ------------------------------------------------------------------
+    # Main scheduling loop — protected by workspace lock
+    # ------------------------------------------------------------------
 
     def run_once(self) -> list[dict[str, Any]]:
-        results: list[dict[str, Any]] = []
-        for task in self.registry.list_enabled_tasks():
-            results.append(self.run_task_once(task.task_id))
-            self.registry.touch_orchestrator_run(task)
-        return results
+        """Run one pass over all enabled tasks under workspace lock.
+
+        Acquires workspace lock first. If another process holds it, returns
+        LOCK_HELD status immediately (fail-fast).
+        """
+        try:
+            ws_lock = self.store.acquire_workspace_lock(self._instance_id)
+        except LockHeldError as exc:
+            return [{
+                "status": "LOCK_HELD",
+                "scope": exc.scope,
+                "existing_meta": exc.existing_meta,
+            }]
+
+        with ws_lock:
+            results: list[dict[str, Any]] = []
+            tasks = sorted(
+                self.registry.list_enabled_tasks(),
+                key=lambda t: t.priority,
+                reverse=True,
+            )
+            for task in tasks:
+                results.append(self.run_task_once(task.task_id))
+                self.registry.touch_orchestrator_run(task)
+            return results
+
+    # ------------------------------------------------------------------
+    # Per-task execution — protected by task lock
+    # ------------------------------------------------------------------
 
     def run_task_once(self, task_id: str) -> dict[str, Any]:
-        progress = self.store.read_progress(task_id)
-        if progress.status != STATUS_ACTIVE:
+        """Execute one iteration for a task under task lock.
+
+        Acquires task lock (fail-fast). Covers the full transaction:
+        read progress → work → verification → state transition → commit.
+        """
+        try:
+            task_lock = self.store.acquire_task_lock(task_id, self._instance_id)
+        except LockHeldError as exc:
+            return {
+                "task_id": task_id,
+                "status": "LOCK_HELD",
+                "scope": exc.scope,
+                "skipped": True,
+            }
+        except ReentrantLockError:
+            return {
+                "task_id": task_id,
+                "status": "REENTRANT_REJECTED",
+                "skipped": True,
+            }
+
+        with task_lock:
+            progress = self.store.read_progress(task_id)
+            if progress.status != STATUS_ACTIVE:
+                self.store.log_event(
+                    self.store.orchestrator_log_path(task_id),
+                    "orchestrator", "info", "skip_inactive",
+                    {"task_id": task_id, "status": progress.status},
+                )
+                return {"task_id": task_id, "status": progress.status, "skipped": True}
+
+            if progress.iteration >= progress.max_iterations:
+                progress.status = STATUS_COMPLETED
+                progress.completion_reason = "max_iterations_reached"
+                self.store.write_progress(progress)
+                return {"task_id": task_id, "status": progress.status, "skipped": True}
+
+            progress.iteration += 1
+            progress.last_seen = utc_now_iso()
+            template = self.templates.get(progress.template_type)
+            work_prompt = self._build_work_prompt(task_id, progress)
+            work_envelope = self.backend.run_work(task_id, work_prompt)
+            progress.last_work_agent_id = work_envelope.agent_id
+            work_result = WorkResult.from_dict(work_envelope.payload)
+            claims = self.store.read_claims(task_id)
+
+            if len(work_result.claims) > MAX_CLAIMS_PER_ITERATION:
+                raise ValueError("work result exceeds max claim count")
+
+            prepared = []
+            for candidate in work_result.claims:
+                if len(candidate.evidence) > MAX_EVIDENCE_PER_CLAIM:
+                    raise ValueError("candidate exceeds max evidence count")
+                if candidate.source_kind not in BASE_SOURCE_KINDS:
+                    raise ValueError(f"unknown candidate source kind: {candidate.source_kind}")
+                for evidence in candidate.evidence:
+                    if not isinstance(evidence, dict):
+                        raise ValueError("evidence must be structured objects")
+                claim_id, claim_record = self._accept_claim(task_id, claims, candidate)
+                prepared.append((claim_id, claim_record, candidate))
+
+            self.store.write_claims(task_id, claims)
+            self.store.append_jsonl(
+                self.store.work_log_path(task_id),
+                {
+                    "iteration": progress.iteration,
+                    "agent_id": work_envelope.agent_id,
+                    "summary": work_result.summary,
+                    "claims": [candidate.to_dict() for candidate in work_result.claims],
+                },
+            )
+
+            # Verification phase — aggregate verdicts before state transition
+            verification_results: list[VerificationResult] = []
+            verification_agent_ids: list[str] = []
+            pending_transitions: list[dict[str, Any]] = []
+
+            for claim_id, claim_record, candidate in prepared:
+                verify_prompt = self._build_verification_prompt(
+                    task_id, progress, claim_id, claim_record, candidate
+                )
+                verify_envelope = self.backend.run_verification(task_id, verify_prompt)
+                verification_agent_ids.append(verify_envelope.agent_id)
+                verdict = VerificationResult.from_dict(verify_envelope.payload)
+
+                if verdict.claim_id != claim_id:
+                    raise ValueError(
+                        f"verification returned mismatched claim_id: {verdict.claim_id} vs {claim_id}"
+                    )
+
+                # Validate digest echo
+                if (verdict.claim_digest
+                        and verdict.claim_digest != verify_prompt.get("claim_digest", "")):
+                    raise ValueError(f"claim_digest mismatch for {claim_id}")
+                if (verdict.payload_digest
+                        and verdict.payload_digest != verify_prompt.get("payload_digest", "")):
+                    raise ValueError(f"payload_digest mismatch for {claim_id}")
+                if (verdict.request_id
+                        and verdict.request_id != verify_prompt.get("request_id", "")):
+                    raise ValueError(f"request_id mismatch for {claim_id}")
+
+                verification_results.append(verdict)
+                pending_transitions.append({
+                    "claim_id": claim_id,
+                    "claim_record": claim_record,
+                    "candidate": candidate,
+                    "verdict": verdict,
+                })
+
+            progress.last_verification_agent_ids = verification_agent_ids
+
+            # Aggregate and apply all verdicts
+            for entry in pending_transitions:
+                self._apply_verification(
+                    task_id, progress, claims,
+                    entry["candidate"], entry["verdict"],
+                )
+
+            self._maybe_pivot(task_id, progress, template, verification_results)
+            self._maybe_complete(task_id, progress, work_result, verification_results)
+
+            self.store.write_claims(task_id, claims)
+            self.store.write_progress(progress)
+
+            self.store.append_jsonl(
+                self.store.iteration_log_path(task_id),
+                {
+                    "iteration": progress.iteration,
+                    "work_summary": work_result.summary,
+                    "verification": [r.to_dict() for r in verification_results],
+                    "validated_findings_count": progress.validated_findings_count,
+                    "claim_stall_pressure": progress.claim_stall_pressure,
+                    "direction_stall_pressure": progress.direction_stall_pressure,
+                    "task_stall_pressure": progress.task_stall_pressure,
+                    "status": progress.status,
+                    "completion_stage": progress.completion_stage,
+                    "completion_reason": progress.completion_reason,
+                },
+            )
             self.store.log_event(
                 self.store.orchestrator_log_path(task_id),
-                "orchestrator",
-                "info",
-                "skip_inactive",
-                {"task_id": task_id, "status": progress.status},
+                "orchestrator", "info", "iteration_complete",
+                {
+                    "task_id": task_id,
+                    "iteration": progress.iteration,
+                    "validated_findings_count": progress.validated_findings_count,
+                    "claim_stall_pressure": progress.claim_stall_pressure,
+                    "direction_stall_pressure": progress.direction_stall_pressure,
+                    "task_stall_pressure": progress.task_stall_pressure,
+                    "status": progress.status,
+                },
             )
-            return {"task_id": task_id, "status": progress.status, "skipped": True}
-
-        if progress.iteration >= progress.max_iterations:
-            progress.status = STATUS_COMPLETED
-            progress.completion_reason = "max_iterations_reached"
-            self.store.write_progress(progress)
-            return {"task_id": task_id, "status": progress.status, "skipped": True}
-
-        progress.iteration += 1
-        progress.last_seen = utc_now_iso()
-        template = self.templates.get(progress.template_type)
-        work_prompt = self._build_work_prompt(task_id, progress)
-        work_envelope = self.backend.run_work(task_id, work_prompt)
-        progress.last_work_agent_id = work_envelope.agent_id
-        work_result = WorkResult.from_dict(work_envelope.payload)
-        claims = self.store.read_claims(task_id)
-
-        if len(work_result.claims) > MAX_CLAIMS_PER_ITERATION:
-            raise ValueError("work result exceeds max claim count")
-
-        prepared = []
-        for candidate in work_result.claims:
-            if len(candidate.evidence) > MAX_EVIDENCE_PER_CLAIM:
-                raise ValueError("candidate exceeds max evidence count")
-            if candidate.source_kind not in BASE_SOURCE_KINDS:
-                raise ValueError(f"unknown candidate source kind: {candidate.source_kind}")
-            for evidence in candidate.evidence:
-                if not isinstance(evidence, dict):
-                    raise ValueError("evidence must be structured objects")
-                if evidence.get("source_kind") not in BASE_SOURCE_KINDS:
-                    raise ValueError("evidence contains unknown source kind")
-            claim_id, claim_record = self._accept_claim(task_id, claims, candidate)
-            prepared.append((claim_id, claim_record, candidate))
-
-        self.store.write_claims(task_id, claims)
-        self.store.append_jsonl(
-            self.store.work_log_path(task_id),
-            {
-                "iteration": progress.iteration,
-                "agent_id": work_envelope.agent_id,
-                "summary": work_result.summary,
-                "claims": [candidate.to_dict() for candidate in work_result.claims],
-            },
-        )
-
-        verification_results: list[VerificationResult] = []
-        verification_agent_ids: list[str] = []
-        for claim_id, claim_record, candidate in prepared:
-            verify_prompt = self._build_verification_prompt(task_id, progress, claim_id, claim_record, candidate)
-            verify_envelope = self.backend.run_verification(task_id, verify_prompt)
-            verification_agent_ids.append(verify_envelope.agent_id)
-            verdict = VerificationResult.from_dict(verify_envelope.payload)
-            if verdict.claim_id != claim_id:
-                raise ValueError("verification returned mismatched claim_id")
-            verification_results.append(verdict)
-            self._apply_verification(task_id, progress, claims, candidate, verdict)
-
-        progress.last_verification_agent_ids = verification_agent_ids
-        if verification_results and all(result.verdict != VERDICT_VALIDATED for result in verification_results):
-            progress.last_seen = utc_now_iso()
-        self._maybe_pivot(task_id, progress, template, verification_results)
-        self._maybe_complete(task_id, progress, work_result, verification_results)
-        self.store.write_claims(task_id, claims)
-        self.store.write_progress(progress)
-        self.store.append_jsonl(
-            self.store.iteration_log_path(task_id),
-            {
-                "iteration": progress.iteration,
-                "work_summary": work_result.summary,
-                "verification": [result.to_dict() for result in verification_results],
-                "validated_findings_count": progress.validated_findings_count,
-                "stall_pressure": progress.stall_pressure,
-                "status": progress.status,
-                "completion_stage": progress.completion_stage,
-                "completion_reason": progress.completion_reason,
-            },
-        )
-        self.store.log_event(
-            self.store.orchestrator_log_path(task_id),
-            "orchestrator",
-            "info",
-            "iteration_complete",
-            {
+            return {
                 "task_id": task_id,
                 "iteration": progress.iteration,
-                "validated_findings_count": progress.validated_findings_count,
-                "stall_pressure": progress.stall_pressure,
                 "status": progress.status,
-                "completion_stage": progress.completion_stage,
-            },
-        )
-        return {
-            "task_id": task_id,
-            "iteration": progress.iteration,
-            "status": progress.status,
-            "validated_findings_count": progress.validated_findings_count,
-            "stall_pressure": progress.stall_pressure,
-            "completion_stage": progress.completion_stage,
-        }
+                "validated_findings_count": progress.validated_findings_count,
+                "claim_stall_pressure": progress.claim_stall_pressure,
+                "direction_stall_pressure": progress.direction_stall_pressure,
+                "task_stall_pressure": progress.task_stall_pressure,
+            }
 
-    def resume_task_with_direction(self, task_id: str, strategy_type: str, summary: str, rationale: str) -> Progress:
+    # ------------------------------------------------------------------
+    # Resume
+    # ------------------------------------------------------------------
+
+    def resume_task_with_direction(
+        self, task_id: str, strategy_type: str, summary: str, rationale: str
+    ) -> Progress:
         progress = self.store.read_progress(task_id)
         progress.status = STATUS_ACTIVE
         progress.completion_stage = "main"
         progress.completion_reason = None
+        progress.claim_stall_pressure = 0.0
+        progress.direction_stall_pressure = 0.0
+        progress.task_stall_pressure = 0.0
         progress.current_direction = {
             "strategy_type": strategy_type,
             "summary": summary,
@@ -164,32 +264,40 @@ class Orchestrator:
         }
         progress.last_seen = utc_now_iso()
         directions = self.store.read_directions(task_id)
-        directions.append(self.templates.get(progress.template_type).generate_next_direction(
+        direction = self.templates.get(progress.template_type).generate_next_direction(
             tried_directions=directions,
             progress=replace(progress, current_direction=progress.current_direction),
             trigger="human_resume",
-        ))
-        directions[-1] = self.templates.get(progress.template_type).generate_next_direction(
-            tried_directions=directions[:-1],
-            progress=replace(progress, current_direction=progress.current_direction),
-            trigger="human_resume",
         )
-        directions[-1].strategy_type = strategy_type
-        directions[-1].summary = summary
-        directions[-1].rationale = rationale
+        direction.strategy_type = strategy_type
+        direction.summary = summary
+        direction.rationale = rationale
+        directions.append(direction)
         self.store.write_directions(task_id, directions)
         self.store.write_progress(progress)
         return progress
 
-    def _accept_claim(self, task_id: str, claims: dict[str, ClaimRecord], candidate) -> tuple[str, ClaimRecord]:
+    # ------------------------------------------------------------------
+    # Claim lifecycle
+    # ------------------------------------------------------------------
+
+    def _accept_claim(
+        self, task_id: str, claims: dict[str, ClaimRecord], candidate
+    ) -> tuple[str, ClaimRecord]:
         normalized = normalize_claim_text(candidate.claim_text)
         claim_id = claim_id_for(normalized)
         claim = claims.get(claim_id)
         if claim is None:
-            claim = ClaimRecord(claim_id=claim_id, claim_text=candidate.claim_text, normalized_claim_text=normalized)
+            claim = ClaimRecord(
+                claim_id=claim_id,
+                claim_text=candidate.claim_text,
+                normalized_claim_text=normalized,
+            )
             claims[claim_id] = claim
         elif claim.status == "rejected" and not self._can_reopen(candidate):
-            raise ValueError(f"claim {claim_id} cannot reopen without strong evidence or new direction basis")
+            raise ValueError(
+                f"claim {claim_id} cannot reopen without strong evidence or new direction basis"
+            )
         elif claim.status == "rejected":
             claim.status = "reopened"
             claim.reopen_count += 1
@@ -210,10 +318,16 @@ class Orchestrator:
     def _can_reopen(self, candidate) -> bool:
         if candidate.support_kind == "new_direction_basis":
             return True
-        return self._has_strong_evidence(candidate.evidence)
+        strong_items = [
+            e for e in candidate.evidence
+            if isinstance(e, dict)
+            and e.get("source_kind") in {"code", "experiment", "local_file", "web"}
+        ]
+        return len(strong_items) > 0
 
-    def _has_strong_evidence(self, evidence_items: list[dict[str, Any]]) -> bool:
-        return any(item.get("source_kind") in STRONG_SOURCE_KINDS for item in evidence_items)
+    # ------------------------------------------------------------------
+    # Verification application
+    # ------------------------------------------------------------------
 
     def _apply_verification(
         self,
@@ -224,15 +338,21 @@ class Orchestrator:
         verdict: VerificationResult,
     ) -> None:
         claim = claims[verdict.claim_id]
-        self.store.append_jsonl(self.store.verification_log_path(task_id), verdict.to_dict())
-        if verdict.verdict == VERDICT_VALIDATED:
-            if not self._has_strong_evidence(candidate.evidence):
-                raise ValueError("validated findings require strong evidence")
+        self.store.append_jsonl(
+            self.store.verification_log_path(task_id), verdict.to_dict()
+        )
+        verif_status = verdict.verification_status
+
+        if verif_status == VERIFICATION_STATUS_PROVED:
             progress.validated_findings_count += 1
-            progress.stall_pressure = 0.0
+            progress.claim_stall_pressure = 0.0
+            progress.direction_stall_pressure = 0.0
+            progress.task_stall_pressure = 0.0
             progress.consecutive_needs_more_evidence = 0
             progress.last_progress_at = utc_now_iso()
             claim.status = "validated"
+            # Use a stable event_id for findings idempotency
+            finding_eid = f"finding_{verdict.claim_id}_{progress.iteration}"
             self.store.append_jsonl(
                 self.store.findings_path(task_id),
                 {
@@ -244,104 +364,163 @@ class Orchestrator:
                     "source_kind": candidate.source_kind,
                     "verification_summary": verdict.summary,
                     "evidence_strength": verdict.evidence_strength,
+                    "verification_status": verif_status,
+                    "backend_name": verdict.backend_name,
+                    "backend_version": verdict.backend_version,
+                    "artifact_refs": verdict.artifact_refs,
                 },
+                event_id=finding_eid,
             )
             return
-        if verdict.verdict == VERDICT_NEEDS_MORE_EVIDENCE:
-            progress.stall_pressure += 0.5
+
+        if verif_status == VERIFICATION_STATUS_REFUTED:
+            progress.claim_stall_pressure += 1.0
+            progress.direction_stall_pressure += 1.0
+            progress.task_stall_pressure += 1.0
+            progress.consecutive_needs_more_evidence = 0
+            claim.status = "rejected"
+            claim.history.append({
+                "ts": utc_now_iso(), "event": "rejected", "reason": verdict.summary,
+            })
+            return
+
+        if verif_status == VERIFICATION_STATUS_NEEDS_MORE_EVIDENCE:
+            progress.claim_stall_pressure += 0.5
+            progress.direction_stall_pressure += 0.5
+            progress.task_stall_pressure += 0.5
             progress.consecutive_needs_more_evidence += 1
             claim.status = "needs_more_evidence"
             if progress.consecutive_needs_more_evidence >= SAME_DIRECTION_RETRY_LIMIT:
-                claim.history.append({"ts": utc_now_iso(), "event": "same_direction_retry_limit_hit"})
+                template = self.templates.get(progress.template_type)
+                action = template.handle_same_direction_retry(
+                    progress=progress, claim_id=verdict.claim_id,
+                )
+                claim.history.append({
+                    "ts": utc_now_iso(),
+                    "event": "same_direction_retry_limit_hit",
+                    "action": {"action": action.action, "reason": action.reason},
+                })
             return
-        if verdict.verdict == VERDICT_REJECTED:
-            progress.stall_pressure += 1.0
-            progress.consecutive_needs_more_evidence = 0
-            claim.status = "rejected"
-            claim.history.append({"ts": utc_now_iso(), "event": "rejected"})
-            return
-        raise ValueError(f"unknown verdict: {verdict.verdict}")
 
-    def _maybe_pivot(self, task_id: str, progress: Progress, template, verification_results: list[VerificationResult]) -> None:
+        if verdict.wont_validate:
+            progress.claim_stall_pressure += 0.5
+            progress.task_stall_pressure += 0.5
+            claim.status = "needs_more_evidence"
+            self.store.log_event(
+                self.store.orchestrator_log_path(task_id),
+                "orchestrator", "warn", f"verification_{verif_status.lower()}",
+                {"claim_id": verdict.claim_id, "status": verif_status, "summary": verdict.summary},
+            )
+            return
+
+        raise ValueError(f"unknown verification status: {verif_status}")
+
+    # ------------------------------------------------------------------
+    # Pivot
+    # ------------------------------------------------------------------
+
+    def _maybe_pivot(
+        self, task_id: str, progress: Progress, template,
+        verification_results: list[VerificationResult],
+    ) -> None:
         rules = template.template_stall_rules(
             progress=progress,
-            verification_results=[result.to_dict() for result in verification_results],
+            verification_results=[r.to_dict() for r in verification_results],
         )
         directions = self.store.read_directions(task_id)
         trigger = None
-        if progress.stall_pressure >= 4:
+
+        if progress.task_stall_pressure >= 4:
             progress.status = STATUS_PAUSED_FOR_HUMAN
             trigger = "needs_human_attention"
-        elif progress.stall_pressure >= 2:
-            trigger = "stall_pressure"
+        elif progress.direction_stall_pressure >= 2:
+            trigger = "direction_stall_pressure"
         elif progress.consecutive_needs_more_evidence >= SAME_DIRECTION_RETRY_LIMIT:
             trigger = "same_direction_retry"
+
         if trigger is None and not rules:
             return
+
         if trigger == "needs_human_attention":
             self.store.log_event(
                 self.store.orchestrator_log_path(task_id),
-                "orchestrator",
-                "warn",
-                "paused_for_human",
-                {"task_id": task_id, "stall_pressure": progress.stall_pressure},
+                "orchestrator", "warn", "paused_for_human",
+                {
+                    "task_id": task_id,
+                    "claim_stall_pressure": progress.claim_stall_pressure,
+                    "direction_stall_pressure": progress.direction_stall_pressure,
+                    "task_stall_pressure": progress.task_stall_pressure,
+                },
             )
             return
+
         direction = template.generate_next_direction(
             tried_directions=directions,
             progress=progress,
             trigger=trigger or "template_rule",
         )
-        current_type = (progress.current_direction or {}).get("strategy_type")
+        current_type = (progress.current_direction or {}).get("strategy_type", "")
         if current_type == direction.strategy_type:
             raise ValueError("pivot must change direction strategy type")
+
         directions.append(direction)
         progress.current_direction = direction.to_dict()
         progress.consecutive_needs_more_evidence = 0
+        progress.direction_stall_pressure = 0.0
         self.store.write_directions(task_id, directions)
         self.store.log_event(
             self.store.orchestrator_log_path(task_id),
-            "orchestrator",
-            "info",
-            "pivot",
+            "orchestrator", "info", "pivot",
             {"task_id": task_id, "direction": direction.to_dict(), "trigger": trigger, "template_rules": rules},
         )
 
+    # ------------------------------------------------------------------
+    # Completion
+    # ------------------------------------------------------------------
+
     def _maybe_complete(
-        self,
-        task_id: str,
-        progress: Progress,
-        work_result: WorkResult,
-        verification_results: list[VerificationResult],
+        self, task_id: str, progress: Progress,
+        work_result: WorkResult, verification_results: list[VerificationResult],
     ) -> None:
         if progress.status != STATUS_ACTIVE:
             return
         if progress.validated_findings_count < progress.target_validated_findings:
             return
+
         if progress.tail_pass_required and not progress.tail_pass_completed:
             if progress.completion_stage == "main":
                 progress.completion_stage = "tail_pass_pending"
-                self.store.log_event(
-                    self.store.orchestrator_log_path(task_id),
-                    "orchestrator",
-                    "info",
-                    "tail_pass_scheduled",
-                    {"task_id": task_id, "iteration": progress.iteration},
-                )
                 return
             if progress.completion_stage in {"tail_pass_pending", "tail_pass"}:
-                progress.tail_pass_completed = True
-                progress.completion_stage = "done"
-                progress.status = STATUS_COMPLETED
-                progress.completion_reason = "tail_pass_complete"
+                tail_proved = [r for r in verification_results if r.verification_status == VERIFICATION_STATUS_PROVED]
+                tail_refuted = [r for r in verification_results if r.verification_status == VERIFICATION_STATUS_REFUTED]
+                tail_wont = [r for r in verification_results if r.wont_validate]
+                if tail_wont:
+                    progress.completion_stage = "tail_pass_pending"
+                    return
+                if not tail_proved and tail_refuted:
+                    progress.completion_stage = "done"
+                    progress.status = STATUS_COMPLETED
+                    progress.completion_reason = "tail_pass_refuted_all"
+                    return
+                if tail_proved:
+                    progress.tail_pass_completed = True
+                    progress.completion_stage = "done"
+                    progress.status = STATUS_COMPLETED
+                    progress.completion_reason = "tail_pass_complete"
                 return
+
         progress.completion_stage = "done"
         progress.status = STATUS_COMPLETED
         progress.completion_reason = "target_validated_findings_reached"
 
+    # ------------------------------------------------------------------
+    # Prompt builders
+    # ------------------------------------------------------------------
+
     def _build_work_prompt(self, task_id: str, progress: Progress) -> dict[str, Any]:
         task_spec = self.store.task_spec_path(task_id).read_text(encoding="utf-8")
-        directions = [direction.to_dict() for direction in self.store.read_directions(task_id)]
+        directions = [d.to_dict() for d in self.store.read_directions(task_id)]
         is_tail_pass = progress.completion_stage == "tail_pass_pending"
         if is_tail_pass:
             progress.completion_stage = "tail_pass"
@@ -352,9 +531,17 @@ class Orchestrator:
             "max_claims": 1 if is_tail_pass else MAX_CLAIMS_PER_ITERATION,
             "tail_pass": is_tail_pass,
             "strict_json": True,
+            "iteration": progress.iteration,
+            "request_id": new_uuid(),
         }
 
-    def _build_verification_prompt(self, task_id: str, progress: Progress, claim_id: str, claim: ClaimRecord, candidate) -> dict[str, Any]:
+    def _build_verification_prompt(
+        self, task_id: str, progress: Progress, claim_id: str,
+        claim: ClaimRecord, candidate,
+    ) -> dict[str, Any]:
+        claim_digest = hash_digest({"claim_text": candidate.claim_text})
+        payload_digest = hash_digest(candidate.formal_payload or {})
+        request_id = new_uuid()
         return {
             "task_id": task_id,
             "iteration": progress.iteration,
@@ -362,5 +549,28 @@ class Orchestrator:
             "claim": claim.claim_text,
             "candidate": candidate.to_dict(),
             "strict_json": True,
-            "allowed_verdicts": [VERDICT_VALIDATED, VERDICT_REJECTED, VERDICT_NEEDS_MORE_EVIDENCE],
+            "claim_digest": claim_digest,
+            "payload_digest": payload_digest,
+            "request_id": request_id,
+            "request_digest": hash_digest({
+                "task_id": task_id,
+                "iteration": str(progress.iteration),
+                "claim_id": claim_id,
+            }),
+            "verification_type": self._infer_verification_type(candidate),
+            "formal_payload": candidate.formal_payload,
         }
+
+    def _infer_verification_type(self, candidate) -> str:
+        fp = candidate.formal_payload or {}
+        vt = fp.get("verification_type", "")
+        if vt:
+            return vt
+        sk = candidate.source_kind
+        if sk in ("juris_test_pass",):
+            return "grounded_extension"
+        if sk in ("z3_counterexample", "lean_proof"):
+            return "smt_logic"
+        if sk in ("banach_norm_test",):
+            return "banach_contraction"
+        return "grounded_extension"
