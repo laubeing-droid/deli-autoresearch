@@ -83,7 +83,7 @@ class TestCrossRepoIntegration:
                 "expected_properties": {"expected_accepted": ["A"]},
             },
             "verification_type": "grounded_extension",
-            "run_local_engine": True,
+            "claim_bound_contract": True,
         }
         envelope = self.backend.run_verification("task-test", prompt)
         payload = envelope.payload
@@ -102,10 +102,26 @@ class TestCrossRepoIntegration:
                 "expected_properties": {"expected_accepted": ["B"]},  # wrong!
             },
             "verification_type": "grounded_extension",
-            "run_local_engine": True,
+            "claim_bound_contract": True,
         }
         envelope = self.backend.run_verification("task-test", prompt)
         assert envelope.payload["verification_status"] == VERIFICATION_STATUS_REFUTED
+
+    def test_backend_claim_bound_mismatch_fails_closed(self):
+        """Claim-bound path must reject mismatched verification_type."""
+        prompt = {
+            "claim_id": "test-002b",
+            "formal_payload": {
+                "claims": [{"id": "A"}],
+                "attacks": [("A", "B")],
+            },
+            "verification_type": "smt_logic",
+            "claim_bound_contract": True,
+        }
+        envelope = self.backend.run_verification("task-test", prompt)
+        payload = envelope.payload
+        assert payload["verification_status"] == VERIFICATION_STATUS_BACKEND_UNAVAILABLE
+        assert payload["fail_reason"] == "verification_type_mismatch"
 
     # --- Version protocol ---
 
@@ -115,10 +131,10 @@ class TestCrossRepoIntegration:
             "claim_id": "test-003",
             "formal_payload": {
                 "claims": [{"id": "A"}],
-                "attacks": [],
+                "attacks": [("A", "B")],
             },
             "verification_type": "grounded_extension",
-            "run_local_engine": True,
+            "claim_bound_contract": True,
         }
         envelope = self.backend.run_verification("task-test", prompt)
         commit = envelope.payload.get("engine_commit", "")
@@ -130,10 +146,10 @@ class TestCrossRepoIntegration:
             "claim_id": "test-004",
             "formal_payload": {
                 "claims": [{"id": "X"}],
-                "attacks": [],
+                "attacks": [("X", "Y")],
             },
             "verification_type": "grounded_extension",
-            "run_local_engine": True,
+            "claim_bound_contract": True,
         }
         envelope = self.backend.run_verification("task-test", prompt)
         assert envelope.payload.get("protocol_version") == "1.0"

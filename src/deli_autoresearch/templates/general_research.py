@@ -16,6 +16,44 @@ class GeneralResearchTemplate:
             "max_claims_per_iteration": 3,
         }
 
+    def work_prompt_contract(self) -> dict:
+        return {
+            "strict_json": True,
+            "candidate_type": "claim_candidate",
+            "required_fields": ["claim_text"],
+            "optional_fields": [
+                "evidence",
+                "source_kind",
+                "verifiable",
+                "support_kind",
+                "reopen_of",
+                "formal_payload",
+                "claim_digest",
+            ],
+            "formal_payload": {
+                "required": False,
+                "type": "object",
+            },
+        }
+
+    def validate_work_candidate(self, candidate: dict) -> list[str]:
+        if not isinstance(candidate, dict):
+            return ["work candidate must be a structured object"]
+
+        errors: list[str] = []
+        if not candidate.get("claim_text"):
+            errors.append("missing claim_text")
+
+        evidence = candidate.get("evidence")
+        if evidence is not None and not isinstance(evidence, list):
+            errors.append("evidence must be a list when provided")
+
+        formal_payload = candidate.get("formal_payload")
+        if formal_payload is not None and not isinstance(formal_payload, dict):
+            errors.append("formal_payload must be a structured object when provided")
+
+        return errors
+
     def initial_direction(self) -> Direction:
         return Direction(
             strategy_type="new_evidence_path",

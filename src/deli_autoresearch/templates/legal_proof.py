@@ -32,6 +32,35 @@ class LegalProofTemplate(GeneralResearchTemplate):
         ])
         return schema
 
+    def work_prompt_contract(self) -> dict:
+        contract = super().work_prompt_contract()
+        contract.update({
+            "required_fields": [
+                "claim_text",
+                "evidence",
+                "source_kind",
+                "verifiable",
+                "formal_payload",
+            ],
+            "formal_payload": {
+                "required": True,
+                "type": "object",
+                "required_keys": ["claims", "attacks", "verification_type"],
+                "verification_type": "grounded_extension",
+                "claims": {
+                    "required": True,
+                    "non_empty": True,
+                    "entry_required_fields": ["id"],
+                },
+                "attacks": {
+                    "required": True,
+                    "non_empty": True,
+                    "entry_shape": ["source_id", "target_id"],
+                },
+            },
+        })
+        return contract
+
     def initial_direction(self) -> Direction:
         return Direction(
             strategy_type="scc_decomposition",
@@ -90,6 +119,41 @@ class LegalProofTemplate(GeneralResearchTemplate):
             max_iterations=20,
             require_tail_pass=True,
         )
+
+    def validate_work_candidate(self, candidate: dict) -> list[str]:
+        errors = super().validate_work_candidate(candidate)
+        if not isinstance(candidate, dict):
+            return errors
+
+        formal_payload = candidate.get("formal_payload")
+        if not isinstance(formal_payload, dict):
+            errors.append("formal_payload must be a structured object")
+            return errors
+
+        if formal_payload.get("verification_type") != "grounded_extension":
+            errors.append("formal_payload.verification_type must be grounded_extension")
+
+        claims = formal_payload.get("claims")
+        if not isinstance(claims, list) or not claims:
+            errors.append("formal_payload.claims must be a non-empty list")
+        else:
+            for index, claim in enumerate(claims):
+                if not isinstance(claim, dict):
+                    errors.append(f"formal_payload.claims[{index}] must be a structured object")
+                elif not claim.get("id"):
+                    errors.append(f"formal_payload.claims[{index}].id is required")
+
+        attacks = formal_payload.get("attacks")
+        if not isinstance(attacks, list) or not attacks:
+            errors.append("formal_payload.attacks must be a non-empty list")
+        else:
+            for index, attack in enumerate(attacks):
+                if not isinstance(attack, (list, tuple)):
+                    errors.append(f"formal_payload.attacks[{index}] must be a pair")
+                elif len(attack) != 2:
+                    errors.append(f"formal_payload.attacks[{index}] must contain exactly two endpoints")
+
+        return errors
 
     def generate_next_direction(self, *, tried_directions: list[Direction], progress, trigger: str) -> Direction:
         used = {d.strategy_type for d in tried_directions}

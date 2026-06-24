@@ -119,7 +119,7 @@ class Orchestrator:
             progress.iteration += 1
             progress.last_seen = utc_now_iso()
             template = self.templates.get(progress.template_type)
-            work_prompt = self._build_work_prompt(task_id, progress)
+            work_prompt = self._build_work_prompt(task_id, progress, template)
             work_envelope = self.backend.run_work(task_id, work_prompt)
             progress.last_work_agent_id = work_envelope.agent_id
             work_result = WorkResult.from_dict(work_envelope.payload)
@@ -137,6 +137,7 @@ class Orchestrator:
                 for evidence in candidate.evidence:
                     if not isinstance(evidence, dict):
                         raise ValueError("evidence must be structured objects")
+                self._validate_work_candidate(template, candidate)
                 claim_id, claim_record = self._accept_claim(task_id, claims, candidate)
                 prepared.append((claim_id, claim_record, candidate))
 
@@ -158,7 +159,7 @@ class Orchestrator:
 
             for claim_id, claim_record, candidate in prepared:
                 verify_prompt = self._build_verification_prompt(
-                    task_id, progress, claim_id, claim_record, candidate
+                    task_id, progress, claim_id, claim_record, candidate, template
                 )
                 verify_envelope = self.backend.run_verification(task_id, verify_prompt)
                 verification_agent_ids.append(verify_envelope.agent_id)
@@ -518,12 +519,13 @@ class Orchestrator:
     # Prompt builders
     # ------------------------------------------------------------------
 
-    def _build_work_prompt(self, task_id: str, progress: Progress) -> dict[str, Any]:
+    def _build_work_prompt(self, task_id: str, progress: Progress, template) -> dict[str, Any]:
         task_spec = self.store.task_spec_path(task_id).read_text(encoding="utf-8")
         directions = [d.to_dict() for d in self.store.read_directions(task_id)]
         is_tail_pass = progress.completion_stage == "tail_pass_pending"
         if is_tail_pass:
             progress.completion_stage = "tail_pass"
+        work_prompt_contract = self._work_prompt_contract(template)
         return {
             "task_spec": task_spec,
             "progress": progress.to_dict(),
@@ -531,16 +533,18 @@ class Orchestrator:
             "max_claims": 1 if is_tail_pass else MAX_CLAIMS_PER_ITERATION,
             "tail_pass": is_tail_pass,
             "strict_json": True,
+            "work_prompt_contract": work_prompt_contract,
             "iteration": progress.iteration,
             "request_id": new_uuid(),
         }
 
     def _build_verification_prompt(
         self, task_id: str, progress: Progress, claim_id: str,
-        claim: ClaimRecord, candidate,
+        claim: ClaimRecord, candidate, template,
     ) -> dict[str, Any]:
         claim_digest = hash_digest({"claim_text": candidate.claim_text})
-        payload_digest = hash_digest(candidate.formal_payload or {})
+        payload = candidate.formal_payload if isinstance(candidate.formal_payload, dict) else {}
+        payload_digest = hash_digest(payload)
         request_id = new_uuid()
         return {
             "task_id": task_id,
@@ -558,7 +562,8 @@ class Orchestrator:
                 "claim_id": claim_id,
             }),
             "verification_type": self._infer_verification_type(candidate),
-            "formal_payload": candidate.formal_payload,
+            "claim_bound_contract": getattr(template, "name", "") == "legal_proof",
+            "formal_payload": payload,
         }
 
     def _infer_verification_type(self, candidate) -> str:
@@ -574,3 +579,60 @@ class Orchestrator:
         if sk in ("banach_norm_test",):
             return "banach_contraction"
         return "grounded_extension"
+
+    def _work_prompt_contract(self, template) -> dict[str, Any]:
+        contract_fn = getattr(template, "work_prompt_contract", None)
+        contract = contract_fn() if callable(contract_fn) else {}
+        if contract:
+            return contract
+        if getattr(template, "name", "") == "legal_proof":
+            return {
+                "template_name": "legal_proof",
+                "verification_type": "grounded_extension",
+                "required_candidate_fields": [
+                    "claim_text",
+                    "evidence",
+                    "source_kind",
+                    "verifiable",
+                    "formal_payload",
+                ],
+                "formal_payload_required_fields": [
+                    "claims",
+                    "attacks",
+                    "verification_type",
+                ],
+                "formal_payload_constraints": {
+                    "claims_non_empty": True,
+                    "attacks_non_empty": True,
+                    "verification_type": "grounded_extension",
+                },
+            }
+        return {}
+
+    def _validate_work_candidate(self, template, candidate) -> None:
+        payload = candidate.to_dict()
+        errors: list[str] = []
+
+        validator = getattr(template, "validate_work_candidate", None)
+        if callable(validator):
+            errors.extend(validator(payload))
+
+        if getattr(template, "name", "") == "legal_proof":
+            formal_payload = payload.get("formal_payload")
+            if not isinstance(formal_payload, dict) or not formal_payload:
+                errors.append("legal_proof candidate requires a non-empty formal_payload dict")
+            else:
+                claims = formal_payload.get("claims")
+                attacks = formal_payload.get("attacks")
+                verification_type = formal_payload.get("verification_type")
+                if not isinstance(claims, list) or not claims:
+                    errors.append("formal_payload.claims must be a non-empty list")
+                if not isinstance(attacks, list) or not attacks:
+                    errors.append("formal_payload.attacks must be a non-empty list")
+                if verification_type != "grounded_extension":
+                    errors.append("formal_payload.verification_type must be grounded_extension")
+
+        if errors:
+            raise ValueError(
+                "work candidate failed template contract: " + "; ".join(errors)
+            )

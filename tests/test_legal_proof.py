@@ -123,6 +123,154 @@ def test_legal_proof_completion_policy_target_3():
     assert policy.require_tail_pass is True
 
 
+def test_general_research_work_prompt_contract_is_loose():
+    runtime = TemplateRuntime()
+    template = runtime.get("general_research")
+    contract = template.work_prompt_contract()
+    assert contract["strict_json"] is True
+    assert contract["formal_payload"]["required"] is False
+    assert "claim_text" in contract["required_fields"]
+    assert template.validate_work_candidate({"claim_text": "bare minimum"}) == []
+    assert template.validate_work_candidate({
+        "claim_text": "with optional structure",
+        "evidence": [{"note": "any list shape is fine here"}],
+        "formal_payload": {"anything": "json"},
+    }) == []
+    assert any(
+        "evidence must be a list when provided" in error
+        for error in template.validate_work_candidate({
+            "claim_text": "bad evidence",
+            "evidence": "not-a-list",
+        })
+    )
+    assert any(
+        "formal_payload must be a structured object when provided" in error
+        for error in template.validate_work_candidate({
+            "claim_text": "bad payload",
+            "formal_payload": "not-a-dict",
+        })
+    )
+
+
+def test_legal_proof_work_prompt_contract_requires_claim_bound_payload():
+    runtime = TemplateRuntime()
+    contract = runtime.get("legal_proof").work_prompt_contract()
+    assert contract["strict_json"] is True
+    assert contract["required_fields"] == [
+        "claim_text",
+        "evidence",
+        "source_kind",
+        "verifiable",
+        "formal_payload",
+    ]
+    assert contract["formal_payload"]["required"] is True
+    assert contract["formal_payload"]["type"] == "object"
+    assert contract["formal_payload"]["required_keys"] == [
+        "claims",
+        "attacks",
+        "verification_type",
+    ]
+    assert contract["formal_payload"]["verification_type"] == "grounded_extension"
+    assert contract["formal_payload"]["claims"]["required"] is True
+    assert contract["formal_payload"]["claims"]["non_empty"] is True
+    assert contract["formal_payload"]["claims"]["entry_required_fields"] == ["id"]
+    assert contract["formal_payload"]["attacks"]["required"] is True
+    assert contract["formal_payload"]["attacks"]["non_empty"] is True
+
+
+def test_legal_proof_validate_work_candidate_rejects_missing_contract_payload():
+    runtime = TemplateRuntime()
+    template = runtime.get("legal_proof")
+
+    valid_candidate = {
+        "claim_text": "A and B form a grounded-extension cycle case.",
+        "evidence": [
+            {"source_kind": "code", "locator": "argumentation.py:42"},
+        ],
+        "source_kind": "code",
+        "verifiable": True,
+        "formal_payload": {
+            "claims": [{"id": "A"}, {"id": "B"}],
+            "attacks": [["A", "B"]],
+            "verification_type": "grounded_extension",
+        },
+    }
+    assert template.validate_work_candidate(valid_candidate) == []
+
+    missing_formal_payload = {
+        "claim_text": "A and B form a grounded-extension cycle case.",
+        "evidence": [
+            {"source_kind": "code", "locator": "argumentation.py:42"},
+        ],
+        "source_kind": "code",
+        "verifiable": True,
+    }
+    errors = template.validate_work_candidate(missing_formal_payload)
+    assert any("formal_payload must be a structured object" in e for e in errors)
+
+    missing_claims = {
+        "claim_text": "A and B form a grounded-extension cycle case.",
+        "evidence": [
+            {"source_kind": "code", "locator": "argumentation.py:42"},
+        ],
+        "source_kind": "code",
+        "verifiable": True,
+        "formal_payload": {
+            "attacks": [["A", "B"]],
+            "verification_type": "grounded_extension",
+        },
+    }
+    errors = template.validate_work_candidate(missing_claims)
+    assert any("formal_payload.claims must be a non-empty list" in e for e in errors)
+
+    missing_attacks = {
+        "claim_text": "A and B form a grounded-extension cycle case.",
+        "evidence": [
+            {"source_kind": "code", "locator": "argumentation.py:42"},
+        ],
+        "source_kind": "code",
+        "verifiable": True,
+        "formal_payload": {
+            "claims": [{"id": "A"}, {"id": "B"}],
+            "verification_type": "grounded_extension",
+        },
+    }
+    errors = template.validate_work_candidate(missing_attacks)
+    assert any("formal_payload.attacks must be a non-empty list" in e for e in errors)
+
+    empty_claims = {
+        "claim_text": "A and B form a grounded-extension cycle case.",
+        "evidence": [
+            {"source_kind": "code", "locator": "argumentation.py:42"},
+        ],
+        "source_kind": "code",
+        "verifiable": True,
+        "formal_payload": {
+            "claims": [],
+            "attacks": [["A", "B"]],
+            "verification_type": "grounded_extension",
+        },
+    }
+    errors = template.validate_work_candidate(empty_claims)
+    assert any("formal_payload.claims must be a non-empty list" in e for e in errors)
+
+    empty_attacks = {
+        "claim_text": "A and B form a grounded-extension cycle case.",
+        "evidence": [
+            {"source_kind": "code", "locator": "argumentation.py:42"},
+        ],
+        "source_kind": "code",
+        "verifiable": True,
+        "formal_payload": {
+            "claims": [{"id": "A"}, {"id": "B"}],
+            "attacks": [],
+            "verification_type": "grounded_extension",
+        },
+    }
+    errors = template.validate_work_candidate(empty_attacks)
+    assert any("formal_payload.attacks must be a non-empty list" in e for e in errors)
+
+
 def test_legal_proof_stall_rules_detect_semantic_collapse():
     runtime = TemplateRuntime()
     template = runtime.get("legal_proof")
@@ -283,6 +431,11 @@ def test_legal_proof_orchestrator_runs_with_mock(tmp_path: Path):
             "source_kind": "code",
             "verifiable": True,
             "support_kind": "new",
+            "formal_payload": {
+                "claims": [{"id": "A"}, {"id": "B"}],
+                "attacks": [["A", "B"]],
+                "verification_type": "grounded_extension",
+            },
         }],
     })
     backend.verification_queue.append({
@@ -336,6 +489,11 @@ def test_legal_proof_full_flow_with_engine(tmp_path: Path):
             "source_kind": "code",
             "verifiable": True,
             "support_kind": "new",
+            "formal_payload": {
+                "claims": [{"id": "A"}, {"id": "B"}],
+                "attacks": [["A", "B"]],
+                "verification_type": "grounded_extension",
+            },
         }],
     })
 
@@ -344,8 +502,8 @@ def test_legal_proof_full_flow_with_engine(tmp_path: Path):
 
     # Patch to use grounded_extension verification type
     original_build = orch._build_verification_prompt
-    def patched(task_id, progress, claim_id, claim, candidate):
-        prompt = original_build(task_id, progress, claim_id, claim, candidate)
+    def patched(task_id, progress, claim_id, claim, candidate, template):
+        prompt = original_build(task_id, progress, claim_id, claim, candidate, template)
         prompt["verification_type"] = "grounded_extension"
         return prompt
     orch._build_verification_prompt = patched
