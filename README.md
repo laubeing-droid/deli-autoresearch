@@ -177,3 +177,11 @@ Current implementation includes:
 ## Naming
 
 `Deli AutoResearch` emphasizes the system's role as a structured autonomous research orchestrator rather than a one-shot proof generator.
+
+## Research Methodology
+
+Deli is a research method, not just a tool:
+
+- [Methodology](docs/research/methodology.md) -- stall/pivot state machine, claim lifecycle, orchestrator principle
+- [Case Study: Legal Formalization](docs/research/case-study-legal-formalization.md) -- applying Deli to mathematical proof exploration
+- [Template Authoring Guide](docs/research/template-authoring-guide.md) -- how to create domain-specific research templates
