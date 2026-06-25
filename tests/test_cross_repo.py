@@ -263,5 +263,44 @@ class TestCrossRepoIntegration:
         assert cert["proof_depth"] == 1
 
 
+    # --- Horn completeness cross-repo ---
+
+    def test_bridge_minimal_support_computes_backward_closure(self):
+        """Horn minimal support set traverses backward dependency chain."""
+        initial = {"fact_a", "fact_b"}
+        rules = [
+            {"head": "C", "body": ["fact_a", "fact_b"]},
+            {"head": "D", "body": ["C"]},
+        ]
+        result = self.bridge.compute_horn_minimal_support("D", initial, rules)
+        assert result == {"fact_a", "fact_b"}
+
+    def test_bridge_minimal_rebuttal_finds_hitting_set(self):
+        initial = {"fact_a", "fact_b", "fact_c"}
+        rules = [
+            {"head": "X", "body": ["fact_a", "fact_b"]},
+            {"head": "X", "body": ["fact_a", "fact_c"]},
+        ]
+        result = self.bridge.compute_horn_minimal_rebuttal("X", initial, rules)
+        assert len(result) >= 1
+        assert "fact_a" in result
+
+    def test_bridge_missing_evidence_detects_gap(self):
+        initial = {"fact_a"}
+        rules = [{"head": "C", "body": ["fact_a", "fact_b"]}]
+        report = self.bridge.compute_horn_missing_evidence("C", initial, rules)
+        assert report["missing_facts"] == ["fact_b"]
+
+    def test_bridge_rule_impact_propagates_downstream(self):
+        initial = {"a", "b"}
+        rules = [
+            {"head": "C", "body": ["a", "b"], "id": "r_c"},
+            {"head": "D", "body": ["C"], "id": "r_d"},
+        ]
+        impact = self.bridge.analyze_horn_rule_impact("r_c", rules, initial)
+        assert impact["total_affected"] == 2
+        assert impact["severity"] == "minor"
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v", "-s"])

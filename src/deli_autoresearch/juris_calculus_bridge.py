@@ -292,6 +292,43 @@ class JurisCalculusBridge:
               'expected_accepted': set(), 'expected_undecided': {'A','B','C','D','E','F'} },
         ]
 
+
+    def compute_horn_minimal_support(
+        self,
+        conclusion: str,
+        initial_facts: set[str],
+        rules: list[dict[str, Any]],
+    ) -> set[str]:
+        mod = importlib.import_module('compiler_core.horn_completeness')
+        return mod.compute_minimal_support(conclusion, initial_facts, rules)
+
+    def compute_horn_minimal_rebuttal(
+        self,
+        conclusion: str,
+        initial_facts: set[str],
+        rules: list[dict[str, Any]],
+    ) -> list[str]:
+        mod = importlib.import_module('compiler_core.horn_completeness')
+        return mod.compute_minimal_rebuttal(conclusion, initial_facts, rules)
+
+    def compute_horn_missing_evidence(
+        self,
+        conclusion: str,
+        initial_facts: set[str],
+        rules: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        mod = importlib.import_module('compiler_core.horn_completeness')
+        return mod.compute_missing_evidence(conclusion, initial_facts, rules)
+
+    def analyze_horn_rule_impact(
+        self,
+        rule_id: str,
+        rules: list[dict[str, Any]],
+        initial_facts: set[str],
+    ) -> dict[str, Any]:
+        mod = importlib.import_module('compiler_core.horn_completeness')
+        return mod.analyze_rule_impact(rule_id, rules, initial_facts)
+
     def run_full_regression(self) -> RegressionReport:
         """Run all built-in test cases and produce a report."""
         all_cases = (
