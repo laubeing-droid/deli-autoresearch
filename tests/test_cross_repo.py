@@ -302,5 +302,50 @@ class TestCrossRepoIntegration:
         assert impact["severity"] == "minor"
 
 
+    # --- P2 batch litigation integration ---
+
+    def test_backend_runs_batch_litigation_pipeline(self):
+        """Backend batch litigation runs full Horn->AAF->grounded pipeline."""
+        cases = [
+            {
+                "case_id": "chain",
+                "facts": ["a", "b"],
+                "horn_rules": [
+                    {"head": "C", "body": ["a", "b"]},
+                    {"head": "D", "body": ["C"]},
+                ],
+                "target_claims": ["C", "D"],
+            }
+        ]
+        result = self.backend.run_litigation_batch(cases)
+        assert result["batch_report"]["all_passed"]
+        assert result["batch_report"]["total_cases"] == 1
+        case = result["batch_report"]["cases"][0]
+        assert case["case_id"] == "chain"
+        assert len(case["certificates"]) >= 1
+        assert len(case["rule_impacts"]) >= 1
+        assert case["certificates_count"] >= 1
+        assert result["engine_commit"] != ""
+        assert result["protocol_version"] == "1.0"
+
+    def test_legal_proof_template_runs_batch_through_backend(self):
+        """legal_proof template run_litigation_batch delegates to backend."""
+        import sys, os
+        sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")
+        from deli_autoresearch.template_runtime import TemplateRuntime
+        rt = TemplateRuntime()
+        legal = rt.get("legal_proof")
+        cases = [
+            {
+                "case_id": "t1",
+                "facts": ["x", "y"],
+                "horn_rules": [{"head": "Z", "body": ["x", "y"]}],
+                "target_claims": ["Z"],
+            }
+        ]
+        result = legal.run_litigation_batch(self.backend, cases)
+        assert result["batch_report"]["all_passed"]
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v", "-s"])

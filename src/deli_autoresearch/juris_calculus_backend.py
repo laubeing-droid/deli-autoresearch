@@ -12,6 +12,11 @@ from .agent_backend_codex import BackendEnvelope, CodexAgentBackend, MockAgentBa
 from .certificate_payload import GroundedExtensionCertificate
 from .independent_checker import IndependentCheckerRegistry
 from .juris_calculus_bridge import JurisCalculusBridge
+from .batch_litigation import (
+    BatchLitigationCase,
+    BatchReport,
+    run_batch_litigation as _run_batch_litigation,
+)
 from .models import (
     VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
     VERIFICATION_STATUS_ERROR,
@@ -366,4 +371,58 @@ class JurisCalculusBackend:
             "failed": report.failed,
             "total": report.total,
             "status": "BACKEND_HEALTHY" if report.all_passed else "BACKEND_UNHEALTHY",
+        }
+
+    def run_litigation_batch(
+        self,
+        cases: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        """Run a batch of litigation cases through Horn fixpoint + grounded extension.
+
+        Each case dict must contain:
+          - case_id: str
+          - facts: list[str]
+          - horn_rules: list[dict] with head/body/id
+          - target_claims: list[str]
+
+        Returns the BatchReport as a dict plus a summary field for Deli findings.
+        """
+        batch_cases = [
+            BatchLitigationCase(
+                case_id=case["case_id"],
+                facts=set(case["facts"]),
+                horn_rules=case["horn_rules"],
+                target_claims=case["target_claims"],
+            )
+            for case in cases
+        ]
+        report = _run_batch_litigation(batch_cases, juris_root=str(self.bridge.juris_root))
+        return {
+            "backend_name": "juris_calculus",
+            "batch_report": {
+                "total_cases": report.total_cases,
+                "pass_count": report.pass_count,
+                "fail_count": report.fail_count,
+                "all_passed": report.all_passed,
+                "cases": [
+                    {
+                        "case_id": r.case_id,
+                        "horn_saturated": r.horn_saturated,
+                        "horn_witnesses": r.horn_witnesses,
+                        "grounded_accepted": r.grounded_accepted,
+                        "grounded_rejected": r.grounded_rejected,
+                        "grounded_undecided": r.grounded_undecided,
+                        "certificates_count": len(r.certificates),
+                        "impacts_count": len(r.rule_impacts),
+                        "missing_evidence_count": len(r.missing_evidence),
+                        "total_findings": r.total_findings,
+                        "certificates": r.certificates,
+                        "rule_impacts": r.rule_impacts,
+                        "missing_evidence": r.missing_evidence,
+                    }
+                    for r in report.cases
+                ],
+            },
+            "engine_commit": self.bridge._get_commit_sha(),
+            "protocol_version": "1.0",
         }

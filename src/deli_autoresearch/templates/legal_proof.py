@@ -155,6 +155,26 @@ class LegalProofTemplate(GeneralResearchTemplate):
 
         return errors
 
+    def run_litigation_batch(
+        self,
+        backend,
+        cases: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        """Run a deterministic batch litigation pipeline through juris-calculus.
+
+        Bypasses the work/verification loop entirely. Each case is processed
+        through Horn fixpoint -> AAF -> grounded extension, with full
+        certificate/proof-trace/SCC-witness/impact/missing-evidence feedback.
+
+        Args:
+            backend: JurisCalculusBackend instance.
+            cases: List of batch case dictionaries.
+
+        Returns:
+            Structured dict with BatchReport + engine metadata.
+        """
+        return backend.run_litigation_batch(cases)
+
     def generate_next_direction(self, *, tried_directions: list[Direction], progress, trigger: str) -> Direction:
         used = {d.strategy_type for d in tried_directions}
         current = (progress.current_direction or {}).get("strategy_type")
