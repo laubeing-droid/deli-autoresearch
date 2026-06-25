@@ -347,5 +347,28 @@ class TestCrossRepoIntegration:
         assert result["batch_report"]["all_passed"]
 
 
+    # --- P3 research automation ---
+
+    def test_research_automation_ranks_breakthroughs(self):
+        """P3 breakthrough scoring returns ranked candidates from jc."""
+        import sys, os
+        sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")
+        from deli_autoresearch.research_automation import run_research_automation
+        report = run_research_automation(juris_root=JURIS_ROOT)
+        assert len(report.breakthroughs) >= 10
+        assert len(report.capability_map) >= 10
+        assert report.benchmark_results.get("all_passed") is True
+        assert report.top_priority != ""
+
+    def test_research_automation_benchmark_replay_passes(self):
+        """Standard benchmark cases all pass against current engine."""
+        import sys, os
+        sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")
+        from deli_autoresearch.research_automation import run_benchmark_replay
+        result = run_benchmark_replay(juris_root=JURIS_ROOT)
+        assert result["all_passed"]
+        assert result["total_cases"] >= 3
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v", "-s"])
