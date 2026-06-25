@@ -3,7 +3,66 @@
 ## Current
 
 ```
-status: IDLE
-last_verified_commit: a2afb25
-next: Track C data protocols (after Track A/B complete)
+status: IN_PROGRESS
+last_verified_commit: 0998897
+phase: Phase 4 - 功能扩展深化
 ```
+
+## Track Status
+
+### Track A: Formal Core Release (COMPLETE)
+- legal-math-modeling formal-core release closed (cde13f0)
+- GitHub Actions clean build passed
+- AxiomAudit independent build passed
+- Scan guards: 0 sorry, 0 admit, 0 custom axiom, 0 theorem : True
+- Theorem manifest: 39 core + 43 extended + 32 supporting = 75 total
+
+### Track B: Banach (DEFERRED)
+- Separate worktree: D:\Claude\数学证明\legal-math-banach
+- Route audit complete; scaling isomorphism path confirmed
+- Mathlib ContractingWith API targets identified
+- Not blocking mainline
+
+### Track C: Data Protocols (DEFERRED)
+- 38-constant calibration, DP adjacency, robust regression protocols
+- Schema defined; real data acquisition pending
+
+### Phase 4: Functionality Deepening (IN_PROGRESS)
+- Priority: litigation capability > litigation automation > research automation
+- P1 delivered:
+  - incremental grounded correctness fixes (source SCC bug + external-attacker safety gate)
+  - minimal defense witness / shortest defense chain (greedy set cover + Z3 verify)
+  - defense_paths, proof_depth, minimal_witnesses on LabelCertificate
+  - cross-repo litigation certificate bridge (jc -> Deli)
+- Test baseline: jc 227 passed, Deli 77 passed (18 cross-repo)
+- Next P1 targets:
+  - minimal support / rebuttal sets
+  - rule change impact analysis
+  - missing evidence checklist
+- P2 (litigation automation):
+  - legal_proof template batch litigation tasks
+  - jc certificate / proof trace / SCC witness auto-feedback to Deli
+- P3 (research automation):
+  - breakthrough scoring automation
+  - multi-task registry scheduling
+
+## Cross-Repo Verification Gates
+
+| Gate | Status | Evidence |
+|------|--------|----------|
+| legal-math-modeling clean build | PASS | GitHub Actions run + local lake build |
+| legal-math-modeling axiom audit | PASS | lake build +JurisLean.AxiomAudit |
+| Deli cross-repo tests | PASS | 18 passed in test_cross_repo.py |
+| jc full tests | PASS | 227 passed, 38 skipped |
+| incremental grounded equivalence | PASS | 6 tests with full-recompute cross-check |
+| litigation certificate minimal witness | PASS | cross-repo bridge verified |
+
+## Next-Stage Feature Expansion Entry
+
+Phase 4 is active. The entry point is:
+1. P1 litigation capabilities are partially landed; next batch is minimal-support/rebuttal/impact-analysis
+2. P2 litigation automation depends on completing P1 surface
+3. P3 research automation depends on P1 + P2 stability
+
+The expansion is bottlenecked on implementation within jc, not on formal-core work.
+Banach remains a separate independent track, not blocking functionality deepening.
