@@ -1,4 +1,4 @@
-﻿# Phase A: Trusted Research Infrastructure Re-Audit
+# Phase A: Trusted Research Infrastructure Re-Audit
 
 **Date**: 2026-06-23
 **Repository**: Deli AutoResearch (`D:\Claude\数学证明自动研究`)

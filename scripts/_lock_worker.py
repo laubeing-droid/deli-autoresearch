@@ -1,4 +1,4 @@
-﻿import json, os, sys, time
+import json, os, sys, time
 sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")
 from pathlib import Path
 from deli_autoresearch.state_store import StateStore

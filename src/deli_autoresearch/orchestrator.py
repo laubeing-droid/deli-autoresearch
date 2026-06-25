@@ -1,4 +1,4 @@
-﻿"""Deterministic orchestrator with cross-process file locks, multi-tier stall pressure,
+"""Deterministic orchestrator with cross-process file locks, multi-tier stall pressure,
 claim-bound verification, CAS progress writes, and fail-closed semantics."""
 
 from __future__ import annotations

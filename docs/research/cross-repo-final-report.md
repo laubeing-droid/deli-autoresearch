@@ -1,4 +1,4 @@
-﻿# Cross-Repo Final Report: Math Breakthrough → Engineering Capability
+# Cross-Repo Final Report: Math Breakthrough → Engineering Capability
 
 **Date**: 2026-06-23
 **Repos**: legal-math-modeling, juris-calculus, Deli AutoResearch

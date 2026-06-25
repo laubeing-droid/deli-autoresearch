@@ -1,4 +1,4 @@
-﻿# Formal Trust Boundary
+# Formal Trust Boundary
 
 ## Lean Proof Coverage
 - **Status**: NOT YET DEPLOYED

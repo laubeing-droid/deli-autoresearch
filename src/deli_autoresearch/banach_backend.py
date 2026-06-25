@@ -1,4 +1,4 @@
-﻿"""G10 Banach multi-dimensional contraction verification backend (claim-bound).
+"""G10 Banach multi-dimensional contraction verification backend (claim-bound).
 
 Verifies actual matrices/operators from formal payload, not fixed regression suites.
 """

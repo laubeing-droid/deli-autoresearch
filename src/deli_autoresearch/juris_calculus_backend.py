@@ -1,4 +1,4 @@
-﻿"""Juris-calculus grounded extension verification backend (claim-bound).
+"""Juris-calculus grounded extension verification backend (claim-bound).
 
 Verifies actual claims/attacks formal payloads, not fixed regression suites.
 Fixed regression suite only produces BACKEND_HEALTHY / BACKEND_UNHEALTHY.

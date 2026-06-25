@@ -1,4 +1,4 @@
-﻿"""Cross-process file locking via atomic O_EXCL file creation (Windows + POSIX).
+"""Cross-process file locking via atomic O_EXCL file creation (Windows + POSIX).
 
 Uses os.O_CREAT | os.O_EXCL to atomically create a lock file.
 On Windows, file creation is truly atomic and works across processes.

@@ -1,4 +1,4 @@
-﻿"""Tests for legal_proof template and juris-calculus bridge."""
+"""Tests for legal_proof template and juris-calculus bridge."""
 
 from __future__ import annotations
 

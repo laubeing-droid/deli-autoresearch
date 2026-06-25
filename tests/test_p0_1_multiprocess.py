@@ -1,4 +1,4 @@
-﻿"""Phase 0.1 real multi-process acceptance tests.
+"""Phase 0.1 real multi-process acceptance tests.
 
 Uses multiprocessing (spawn) on Windows for true cross-process isolation.
 """

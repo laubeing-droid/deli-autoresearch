@@ -1,4 +1,4 @@
-﻿"""SMT/Z3 formal verification backend (claim-bound, fail-closed).
+"""SMT/Z3 formal verification backend (claim-bound, fail-closed).
 
 Verifies actual Z3 constraints from formal payload.
 Z3 unavailable, timeout, or unknown NEVER produce "validated".

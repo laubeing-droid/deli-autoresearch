@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Historical data migration: mark old findings as LEGACY_UNBOUND_VERIFICATION.
 
 Usage:

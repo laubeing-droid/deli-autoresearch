@@ -1,4 +1,4 @@
-﻿"""R1: Cross-repo integration tests — real end-to-end Deli <-> juris-calculus bridge."""
+"""R1: Cross-repo integration tests — real end-to-end Deli <-> juris-calculus bridge."""
 import pathlib, sys, json, pytest
 
 sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")

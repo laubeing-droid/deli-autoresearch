@@ -1,4 +1,4 @@
-﻿# PLANS.md -- Execution State
+# PLANS.md -- Execution State
 
 ## Current
 

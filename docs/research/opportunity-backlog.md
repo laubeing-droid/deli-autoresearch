@@ -1,4 +1,4 @@
-﻿# Opportunity Backlog — Math Breakthrough Candidates
+# Opportunity Backlog — Math Breakthrough Candidates
 
 Scoring: EngineeringUnlockScore × VerificationReadiness / (ProofDifficulty + ImplementationDistance)
 

@@ -1,4 +1,4 @@
-﻿"""Lock-protected JSONL append with tail recovery and event_id uniqueness.
+"""Lock-protected JSONL append with tail recovery and event_id uniqueness.
 
 Every append_jsonl call acquires a per-file OS lock, writes a complete
 single-line JSON record, flushes, and optionally fsyncs for business-critical

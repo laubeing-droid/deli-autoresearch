@@ -1,4 +1,4 @@
-﻿"""Dataclasses used by the framework."""
+"""Dataclasses used by the framework."""
 
 from __future__ import annotations
 

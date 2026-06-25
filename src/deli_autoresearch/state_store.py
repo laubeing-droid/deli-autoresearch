@@ -1,4 +1,4 @@
-﻿"""Filesystem-backed state and log store with cross-process file locks and atomic writes."""
+"""Filesystem-backed state and log store with cross-process file locks and atomic writes."""
 
 from __future__ import annotations
 

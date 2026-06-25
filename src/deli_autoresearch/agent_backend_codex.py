@@ -1,4 +1,4 @@
-﻿"""Agent backend abstraction for mock and file-bridge execution.
+"""Agent backend abstraction for mock and file-bridge execution.
 
 Bridge protocol v1.0: atomic request/response with UUID-bound request_id,
 response validation, and consumed-response archive.

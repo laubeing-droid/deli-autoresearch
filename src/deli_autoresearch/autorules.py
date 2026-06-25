@@ -1,4 +1,4 @@
-﻿"""Phase F4: AutoResearch Running Rules for Deli AutoResearch.
+"""Phase F4: AutoResearch Running Rules for Deli AutoResearch.
 
 Each research task must comply with these constraints:
 1. Verification MUST be against formal payload bound to current claim

@@ -1,4 +1,4 @@
-﻿"""Shared constants for the local framework."""
+"""Shared constants for the local framework."""
 
 from __future__ import annotations
 
