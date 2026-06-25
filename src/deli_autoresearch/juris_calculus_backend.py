@@ -9,6 +9,8 @@ from __future__ import annotations
 from typing import Any
 
 from .agent_backend_codex import BackendEnvelope, CodexAgentBackend, MockAgentBackend
+from .certificate_payload import GroundedExtensionCertificate
+from .independent_checker import IndependentCheckerRegistry
 from .juris_calculus_bridge import JurisCalculusBridge
 from .models import (
     VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
@@ -35,6 +37,7 @@ class JurisCalculusBackend:
     ) -> None:
         self.inner = inner_backend
         self.bridge = JurisCalculusBridge(juris_root)
+        self.independent_checker = IndependentCheckerRegistry(juris_root=str(juris_root))
 
     def run_work(self, task_id: str, prompt: dict[str, Any]) -> BackendEnvelope:
         return self.inner.run_work(task_id, prompt)
@@ -112,14 +115,14 @@ class JurisCalculusBackend:
                     summary="Claim-bound verification requires non-empty formal_payload.claims.",
                     fail_reason="missing_claims",
                 )
-            if not isinstance(attacks, list) or not attacks:
+            if not isinstance(attacks, list):
                 return self._backend_unavailable(
                     claim_id=claim_id,
                     request_id=request_id,
                     payload_digest=payload_digest,
                     prompt=prompt,
                     engine_commit=engine_commit,
-                    summary="Claim-bound verification requires non-empty formal_payload.attacks.",
+                    summary="Claim-bound verification requires list formal_payload.attacks.",
                     fail_reason="missing_attacks",
                 )
         else:
@@ -207,7 +210,40 @@ class JurisCalculusBackend:
                 derived_bound=derived_bound,
             )
 
-        # --- Step 3: Match expected properties (same as before) ---
+        # --- Step 3: Independent checker gate ---
+        cert = GroundedExtensionCertificate.from_engine_result(
+            claims,
+            attacks,
+            raw,
+            engine_commit=engine_commit,
+        )
+        independent_check = self.independent_checker.verify_all(cert)
+        if independent_check["overall"] == "rejected":
+            return self._backend_unavailable(
+                claim_id=claim_id,
+                request_id=request_id,
+                payload_digest=payload_digest,
+                prompt=prompt,
+                engine_commit=engine_commit,
+                summary=f"Independent checker refuted grounded result: {independent_check['violations']}",
+                fail_reason="independent_checker_refuted",
+                verification_status=VERIFICATION_STATUS_ERROR,
+            )
+        if independent_check["overall"] == "inconclusive":
+            return self._backend_unavailable(
+                claim_id=claim_id,
+                request_id=request_id,
+                payload_digest=payload_digest,
+                prompt=prompt,
+                engine_commit=engine_commit,
+                summary=f"Independent checker inconclusive: {independent_check['violations']}",
+                fail_reason="independent_checker_inconclusive",
+                verdict="needs_more_evidence",
+                verification_status=VERIFICATION_STATUS_NEEDS_MORE_EVIDENCE,
+                evidence_strength="weak",
+            )
+
+        # --- Step 4: Match expected properties (same as before) ---
         passed = True
         mismatches = []
         if "expected_accepted" in expected_properties:
@@ -223,7 +259,7 @@ class JurisCalculusBackend:
                 passed = False
                 mismatches.append(f"undecided mismatch: {sorted(actual)} vs {sorted(expected)}")
 
-        # --- Step 4: Verdict ---
+        # --- Step 5: Verdict ---
         if passed and not mismatches and claims:
             status = VERIFICATION_STATUS_PROVED
             verdict = "validated"
@@ -260,6 +296,7 @@ class JurisCalculusBackend:
                 "derived_bound": derived_bound,
                 "converged": converged,
                 "truncated": truncated,
+                "independent_checker": independent_check,
                 "artifact_refs": [
                     {
                         "artifact_kind": "juris_test_pass",
@@ -278,6 +315,7 @@ class JurisCalculusBackend:
                         "converged": converged,
                         "truncated": truncated,
                         "matches_expected": passed,
+                        "checker_overall": independent_check["overall"],
                     }
                 ],
             },
@@ -311,6 +349,7 @@ class JurisCalculusBackend:
             "backend_name": "juris_calculus",
             "backend_version": backend_version,
             "engine_commit": engine_commit,
+            "protocol_version": "1.0",
             "fail_reason": fail_reason,
             "supporting_evidence": [],
         }

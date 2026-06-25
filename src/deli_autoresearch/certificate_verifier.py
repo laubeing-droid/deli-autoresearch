@@ -1,18 +1,18 @@
- """Independent certificate verifier — R4 production chain.
+"""Independent certificate verifier — R4 production chain.
 
- Verifies grounded extension certificates without calling the same
- grounded_extension implementation. Uses independent reasoning:
- checks fixpoint property, monotonicity constraints, convergence criteria.
+Verifies grounded extension certificates without calling the same
+grounded_extension implementation. Uses independent reasoning:
+checks fixpoint property, monotonicity constraints, convergence criteria.
 
- This forms the production chain: output → certificate → independent verifier.
- """
+This forms the production chain: output -> certificate -> independent verifier.
+"""
 
- from __future__ import annotations
+from __future__ import annotations
 
- from typing import Any
+from typing import Any
 
 
- class CertificateVerifier:
+class CertificateVerifier:
     """Independent verification of grounded extension certificates.
 
     Does NOT call grounded_extension. Instead checks:
@@ -31,20 +31,13 @@
         claimed_out: list[str],
         claimed_undec: list[str],
     ) -> dict[str, Any]:
-        """Independently verify a grounded extension claim.
-
-        Returns a dict with:
-        - verified: bool
-        - status: "VERIFIED" | "REFUTED" | "INCONCLUSIVE"
-        - violations: list of human-readable violations found
-        """
+        """Independently verify a grounded extension claim."""
         violations = []
         arg_set = set(arguments)
         in_set = set(claimed_in)
         out_set = set(claimed_out)
         undec_set = set(claimed_undec)
 
-        # 0. Coverage check: all arguments must be classified
         all_claimed = in_set | out_set | undec_set
         missing = arg_set - all_claimed
         if missing:
@@ -53,7 +46,6 @@
         if extra:
             violations.append(f"Unknown arguments in output: {sorted(extra)}")
 
-        # 1. No overlap between IN, OUT, UNDEC
         if in_set & out_set:
             violations.append(f"IN ∩ OUT non-empty: {sorted(in_set & out_set)}")
         if in_set & undec_set:
@@ -61,27 +53,21 @@
         if out_set & undec_set:
             violations.append(f"OUT ∩ UNDEC non-empty: {sorted(out_set & undec_set)}")
 
-        # Build attack graph for checking
         attackers_of: dict[str, set[str]] = {a: set() for a in arguments}
         for src, tgt in attacks:
             if src in arg_set and tgt in arg_set:
                 attackers_of[tgt].add(src)
 
-        # 2. IN soundness: every IN arg has all attackers defeated by IN
         for a in in_set:
             for attacker in attackers_of.get(a, set()):
-                # Check: is there a defender in IN that attacks this attacker?
                 defender_found = False
                 for defender in in_set:
                     if (defender, attacker) in attacks:
                         defender_found = True
                         break
                 if not defender_found:
-                    violations.append(
-                        f"IN({a}): attacker {attacker} has no defender in IN"
-                    )
+                    violations.append(f"IN({a}): attacker {attacker} has no defender in IN")
 
-        # 3. OUT soundness: every OUT arg has at least one attacker in IN
         for a in out_set:
             has_in_attacker = False
             for attacker in attackers_of.get(a, set()):
@@ -91,9 +77,7 @@
             if not has_in_attacker:
                 violations.append(f"OUT({a}): no attacker found in IN")
 
-        # 4. UNDEC consistency: each UNDEC arg should not satisfy IN or OUT conditions
         for a in undec_set:
-            # Check if it should be IN: all attackers defeated by IN
             all_defeated = True
             for attacker in attackers_of.get(a, set()):
                 defender_found = False
@@ -105,17 +89,15 @@
                     all_defeated = False
                     break
             if all_defeated and attackers_of.get(a, set()):
-                violations.append(f"UNDEC({a}): all attackers defeated by IN — should be IN")
+                violations.append(f"UNDEC({a}): all attackers defeated by IN -> should be IN")
             if all_defeated and not attackers_of.get(a, set()):
-                # No attackers means should be IN under grounded semantics
-                violations.append(f"UNDEC({a}): has no attackers — should be IN")
+                violations.append(f"UNDEC({a}): has no attackers -> should be IN")
 
-            # Check if it should be OUT: has an attacker in IN
             has_in_attacker = any(
                 attacker in in_set for attacker in attackers_of.get(a, set())
             )
             if has_in_attacker:
-                violations.append(f"UNDEC({a}): has attacker in IN — should be OUT")
+                violations.append(f"UNDEC({a}): has attacker in IN -> should be OUT")
 
         if violations:
             return {

@@ -5,6 +5,11 @@ sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")
 from deli_autoresearch.juris_calculus_bridge import JurisCalculusBridge, BridgeResult
 from deli_autoresearch.juris_calculus_backend import JurisCalculusBackend
 from deli_autoresearch.agent_backend_codex import MockAgentBackend
+from deli_autoresearch.canonical_fixture import CanonicalTestSuite
+from deli_autoresearch.certificate_payload import GroundedExtensionCertificate
+from deli_autoresearch.independent_checker import IndependentCheckerRegistry
+from deli_autoresearch.lean_manifest import LeanManifest
+from deli_autoresearch.lean_refinement import LeanRefinementBridge
 from deli_autoresearch.models import (
     VERIFICATION_STATUS_PROVED, VERIFICATION_STATUS_REFUTED,
     VERIFICATION_STATUS_NEEDS_MORE_EVIDENCE, VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
@@ -70,6 +75,32 @@ class TestCrossRepoIntegration:
         assert report.failed == 0
         assert report.all_passed
 
+    def test_independent_checker_verifies_canonical_case(self):
+        case = next(c for c in CanonicalTestSuite.grounded_extension_cases() if c.name == "singleton")
+        raw = self.bridge.run_grounded_extension(case.claims, case.attacks)
+        cert = GroundedExtensionCertificate.from_engine_result(
+            case.claims,
+            case.attacks,
+            raw,
+            engine_commit=self.bridge._get_commit_sha(),
+        )
+        registry = IndependentCheckerRegistry(juris_root=JURIS_ROOT)
+        result = registry.verify_all(cert)
+        assert result["overall"] == "verified"
+
+    def test_lean_manifest_uses_formal_release_manifest(self):
+        manifest = LeanManifest()
+        assert manifest.total_theorems == 75
+        assert manifest.build_status == "PASS"
+        assert manifest.is_strong_evidence("grounded_is_least_fixed_point")
+
+    def test_refinement_bridge_runs_cross_repo_regression(self):
+        refinement = LeanRefinementBridge(juris_root=JURIS_ROOT)
+        report = refinement.run_cross_repo_regression()
+        assert report.total >= 14
+        assert report.failed == 0
+        assert report.all_passed
+
     # --- Backend-level: fail-closed gates ---
 
     def test_backend_normal_case_proved(self):
@@ -91,6 +122,7 @@ class TestCrossRepoIntegration:
         assert payload["verdict"] == "validated"
         assert "converged" in str(payload)
         assert "engine_commit" in payload
+        assert payload["independent_checker"]["overall"] == "verified"
 
     def test_backend_missing_expected_fails(self):
         """If expected properties don't match, must REFUTE."""
@@ -167,6 +199,26 @@ class TestCrossRepoIntegration:
         assert result.converged
         assert not result.truncated
         assert result.iterations <= result.derived_bound
+
+    def test_backend_independent_checker_refutation_fails_closed(self):
+        prompt = {
+            "claim_id": "test-005",
+            "formal_payload": {
+                "claims": [{"id": "A"}],
+                "attacks": [],
+                "expected_properties": {"expected_accepted": ["A"]},
+            },
+            "verification_type": "grounded_extension",
+            "claim_bound_contract": True,
+        }
+        self.backend.independent_checker.verify_all = lambda cert: {
+            "overall": "rejected",
+            "checker_results": {"forced": {"status": "REFUTED"}},
+            "violations": ["forced refutation"],
+        }
+        envelope = self.backend.run_verification("task-test", prompt)
+        assert envelope.payload["verification_status"] == VERIFICATION_STATUS_ERROR
+        assert envelope.payload["fail_reason"] == "independent_checker_refuted"
 
 
 if __name__ == "__main__":
