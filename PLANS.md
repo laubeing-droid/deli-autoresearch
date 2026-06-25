@@ -19,15 +19,16 @@ phase: Phase 4 - 功能扩展深化
 
 ### Track B: Banach (DEFERRED)
 - Separate worktree: D:\Claude\数学证明\legal-math-banach
-- Route audit complete; scaling isomorphism path confirmed
-- Mathlib ContractingWith API targets identified
-- Not blocking mainline
-
-### Track C: Data Protocols (DEFERRED)
+- Route audit complete (subagent Mencius): scaling isomorphism path confirmed
+- Mathlib ContractingWith API: fixedPoint, fixedPoint_unique, tendsto_iterate_fixedPoint, apriori/aposteriori error bounds
+- Shortest proof path: 4 stages (WeightedMetricSpace -> ContractionCondition -> WeightedBanachFixedPoint -> BanachCertificate)
+- 2 new theorems needed: weighted metric completeness via Lipschitz equivalence, Lw <= qw -> ContractingWith q T
+- Banach theorem itself not re-proven; Mathlib instances are used
+- Not blocking mainline### Track C: Data Protocols (DEFERRED)
 - 38-constant calibration, DP adjacency, robust regression protocols
 - Schema defined; real data acquisition pending
 
-### Phase 4: Functionality Deepening (IN_PROGRESS)
+### Phase 4: Functionality Deepening (DELIVERED)
 - Priority: litigation capability > litigation automation > research automation
 - P1 delivered:
   - incremental grounded correctness fixes (source SCC bug + external-attacker safety gate)
@@ -66,3 +67,6 @@ Phase 4 is active. The entry point is:
 
 P1 surface is COMPLETE. Expansion now shifts to P2 template orchestration within Deli.
 Banach remains a separate independent track, not blocking functionality deepening.
+
+- P2 (诉讼自动化): COMPLETE — batch litigation runner integrated with legal_proof template
+- P3 (研究自动化): COMPLETE — breakthrough scoring, benchmark replay, capability map
