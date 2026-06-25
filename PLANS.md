@@ -52,17 +52,17 @@ phase: Phase 4 - 功能扩展深化
 |------|--------|----------|
 | legal-math-modeling clean build | PASS | GitHub Actions run + local lake build |
 | legal-math-modeling axiom audit | PASS | lake build +JurisLean.AxiomAudit |
-| Deli cross-repo tests | PASS | 18 passed in test_cross_repo.py |
-| jc full tests | PASS | 227 passed, 38 skipped |
+| Deli cross-repo tests | PASS | 22 passed in test_cross_repo.py |
+| jc full tests | PASS | 241 passed, 38 skipped |
 | incremental grounded equivalence | PASS | 6 tests with full-recompute cross-check |
 | litigation certificate minimal witness | PASS | cross-repo bridge verified |
 
 ## Next-Stage Feature Expansion Entry
 
 Phase 4 is active. The entry point is:
-1. P1 litigation capabilities are partially landed; next batch is minimal-support/rebuttal/impact-analysis
+1. P1 litigation capabilities are COMPLETE; all five applied to cross-repo bridge
 2. P2 litigation automation depends on completing P1 surface
 3. P3 research automation depends on P1 + P2 stability
 
-The expansion is bottlenecked on implementation within jc, not on formal-core work.
+P1 surface is COMPLETE. Expansion now shifts to P2 template orchestration within Deli.
 Banach remains a separate independent track, not blocking functionality deepening.
