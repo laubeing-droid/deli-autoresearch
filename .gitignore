@@ -8,3 +8,19 @@ runtime/
 
 *.olean
 *.ilean
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Scratch/experiment files
+_dfp*
+_fix*
+_write*
+_lock_*
+
+# OS artifacts
+%SystemDrive%
+Desktop.ini
+Thumbs.db

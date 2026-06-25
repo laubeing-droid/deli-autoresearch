@@ -1,5 +1,7 @@
 # Deli AutoResearch
 
+[![CI](https://github.com/laubeing-droid/deli-autoresearch/actions/workflows/ci.yml/badge.svg)](https://github.com/laubeing-droid/deli-autoresearch/actions/workflows/ci.yml)
+
 `Deli AutoResearch` is a long-horizon proof research framework for running multi-round mathematical proof exploration with explicit state, verification, pivot rules, and tail-pass completion.
 
 It is not a one-shot prover. It is a proof-process orchestrator.
