@@ -221,5 +221,47 @@ class TestCrossRepoIntegration:
         assert envelope.payload["fail_reason"] == "independent_checker_refuted"
 
 
+    # --- Litigation certificate cross-repo ---
+
+    def test_bridge_generates_litigation_certificate_with_minimal_witnesses(self):
+        claims = [{"id": "A"}, {"id": "B"}, {"id": "C"}, {"id": "D"}]
+        attacks = [("B", "A"), ("C", "A"), ("D", "B"), ("D", "C")]
+        cert = self.bridge.generate_litigation_certificate("A", claims, attacks)
+        assert cert["label"] == "IN"
+        assert cert["attackers"] == ["B", "C"]
+        assert cert["minimal_witnesses"] == ["D"]
+        assert cert["witnesses"] == ["D"]
+        assert cert["proof_depth"] == 1
+        assert cert["defense_paths"] == [
+            {"target": "A", "attacker": "B", "defenders": ["D"]},
+            {"target": "A", "attacker": "C", "defenders": ["D"]},
+        ]
+
+    def test_bridge_generates_undecided_certificate_with_correct_witnesses(self):
+        claims = [{"id": "A"}, {"id": "B"}, {"id": "C"}]
+        attacks = [("A", "B"), ("B", "A"), ("B", "C")]
+        cert = self.bridge.generate_litigation_certificate("C", claims, attacks)
+        assert cert["label"] == "UNDEC"
+        assert cert["attackers"] == ["B"]
+        assert cert["witnesses"] == ["B"]
+
+    def test_bridge_proof_depth_zero_for_unattacked_in(self):
+        claims = [{"id": "X"}]
+        attacks = []
+        cert = self.bridge.generate_litigation_certificate("X", claims, attacks)
+        assert cert["label"] == "IN"
+        assert cert["attackers"] == []
+        assert cert["proof_depth"] == 0
+        assert cert["minimal_witnesses"] == []
+
+    def test_bridge_out_argument_proof_depth_one(self):
+        claims = [{"id": "A"}, {"id": "B"}]
+        attacks = [("A", "B")]
+        cert = self.bridge.generate_litigation_certificate("B", claims, attacks)
+        assert cert["label"] == "OUT"
+        assert cert["attackers"] == ["A"]
+        assert cert["proof_depth"] == 1
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v", "-s"])

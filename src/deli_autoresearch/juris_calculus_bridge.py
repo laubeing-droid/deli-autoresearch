@@ -56,6 +56,7 @@ class JurisCalculusBridge:
     def __init__(self, juris_root: str | Path) -> None:
         self.juris_root = Path(juris_root).resolve()
         self._grounded_fn = None
+        self._certificate_fn = None
 
     def _ensure_import(self) -> Any:
         if self._grounded_fn is not None:
@@ -325,3 +326,42 @@ class JurisCalculusBridge:
                 report.failed += 1
             report.results.append(result)
         return report
+    def _ensure_certificate_import(self) -> Any:
+        if self._certificate_fn is not None:
+            return self._certificate_fn
+        root_str = str(self.juris_root)
+        if root_str not in sys.path:
+            sys.path.insert(0, root_str)
+        mod = importlib.import_module("compiler_core.litigation_engineering")
+        self._certificate_fn = mod.generate_certificate
+        return self._certificate_fn
+
+    def generate_litigation_certificate(
+        self,
+        argument_id: str,
+        claims: list[dict[str, Any]],
+        attacks: list[tuple[str, str]],
+        *,
+        result: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        """Generate a litigation certificate for one argument via juris-calculus.
+
+        Returns ``LabelCertificate`` fields as a plain dict. Each IN
+        argument includes minimal_witnesses, defense_paths, and proof_depth.
+        """
+        if result is None:
+            result = self.run_grounded_extension(claims, attacks)
+        fn = self._ensure_certificate_import()
+        cert = fn(argument_id, claims, attacks, result)
+        return {
+            "argument_id": cert.argument_id,
+            "label": cert.label,
+            "reason": cert.reason,
+            "witnesses": cert.witnesses,
+            "verifiable": cert.verifiable,
+            "attackers": cert.attackers,
+            "minimal_witnesses": cert.minimal_witnesses,
+            "defense_paths": cert.defense_paths,
+            "proof_depth": cert.proof_depth,
+            "verification_payload": cert.verification_payload,
+        }
