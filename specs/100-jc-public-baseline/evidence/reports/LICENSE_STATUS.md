@@ -16,7 +16,8 @@ You are free to:
   any purpose, even commercially...
 
 ### runtime
-- **NO ROOT LICENSE FOUND** - requires human review
+- Root license: `LICENSE` (added 2026-06-27, commit 8df3d81)
+- License: CC-BY-4.0 (matches formal repository)
 
 ## File-Level Markers
 

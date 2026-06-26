@@ -1,5 +1,7 @@
 {
   "generated_at": "2026-06-27T00:00:00Z",
+  "updated_at": "2026-06-27T12:00:00Z",
+  "update_reason": "juris-calculus HEAD advanced after LICENSE addition (HREQ-100-03)",
   "baselines": [
     {
       "repo": "deli-autoresearch",
@@ -18,7 +20,7 @@
     {
       "repo": "juris-calculus",
       "url": "https://github.com/laubeing-droid/juris-calculus",
-      "head_sha": "e1a40eaab5768e100d4df1d0b6e9ea9476f54299",
+      "head_sha": "8df3d8140f0b3841980acffd84afaf55f23a38e0",
       "branch": "main",
       "role": "runtime"
     }
