@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SpecRunResult",
+  "description": "Structured output from a headless Claude Code spec-run execution",
+  "type": "object",
+  "required": [
+    "spec_id",
+    "task_id",
+    "phase",
+    "status",
+    "worker",
+    "changed_files",
+    "acceptance_passed",
+    "acceptance_failed",
+    "ci_status",
+    "verifier_verdict",
+    "red_team_verdict",
+    "next_action"
+  ],
+  "properties": {
+    "spec_id": {
+      "type": "string",
+      "description": "Specification identifier (e.g., ULK-210, SPEC-000)",
+      "pattern": "^(ULK|SPEC)-\\d{3}$"
+    },
+    "task_id": {
+      "type": "string",
+      "description": "Task identifier (e.g., TASK-003, TASK-210-005)",
+      "pattern": "^TASK-\\d{3}(-\\d{3})?$"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["REQUIREMENTS", "DESIGN", "TASKS", "EXECUTE", "VERIFY", "RED_TEAM", "COMPLETE"],
+      "description": "Current lifecycle phase"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["COMPLETE", "REWORK", "BLOCKED", "HUMAN_DECISION_REQUIRED", "IN_PROGRESS"],
+      "description": "Task outcome status"
+    },
+    "worker": {
+      "type": "string",
+      "enum": ["spec-coordinator", "requirements-analyst", "formal-architect", "lean-prover", "runtime-engineer", "verifier", "red-team"],
+      "description": "Agent that performed the work"
+    },
+    "changed_files": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of file paths modified during execution"
+    },
+    "acceptance_passed": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of acceptance criteria that passed"
+    },
+    "acceptance_failed": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of acceptance criteria that failed"
+    },
+    "ci_status": {
+      "type": "string",
+      "enum": ["green", "red", "pending", "skipped"],
+      "description": "CI pipeline status"
+    },
+    "ci_run_url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "URL to the CI run (null if skipped)"
+    },
+    "verifier_verdict": {
+      "type": ["string", "null"],
+      "enum": ["PASS_CANDIDATE", "REWORK", "BLOCKED", "HUMAN_DECISION_REQUIRED", null],
+      "description": "Verifier agent output"
+    },
+    "red_team_verdict": {
+      "type": ["string", "null"],
+      "enum": ["PASS", "PASS_WITH_LIMITS", "REJECT", "HUMAN_DECISION_REQUIRED", null],
+      "description": "Red team agent output"
+    },
+    "adversarial_votes": {
+      "type": ["object", "null"],
+      "properties": {
+        "agent1": { "type": "string" },
+        "agent2": { "type": "string" },
+        "agent3": { "type": "string" }
+      },
+      "description": "Individual adversarial agent votes"
+    },
+    "human_decision_id": {
+      "type": ["string", "null"],
+      "description": "Human decision ID if HUMAN_DECISION_REQUIRED"
+    },
+    "commit_sha": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{7,40}$",
+      "description": "Git commit SHA of the task's work"
+    },
+    "next_action": {
+      "type": "string",
+      "enum": ["SELECT_NEXT_TASK", "WAIT_FOR_CI", "WAIT_FOR_HUMAN", "REWORK_TASK", "SPEC_COMPLETE"],
+      "description": "Recommended next action for the coordinator"
+    }
+  },
+  "additionalProperties": false
+}
