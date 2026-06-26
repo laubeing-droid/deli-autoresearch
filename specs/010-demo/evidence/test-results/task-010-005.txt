@@ -1,0 +1,1 @@
+{"task": "TASK-010-005", "verifier_verdict": "PASS_CANDIDATE", "acceptance_passed": 1, "acceptance_failed": 0}

@@ -1,0 +1,54 @@
+name: Lean Formal Proof CI
+on:
+  push:
+    branches: [main, "spec/**"]
+    paths: ["proofs/lean/**/*.lean", "lakefile.lean", "lean-toolchain"]
+  pull_request:
+    paths: ["proofs/lean/**/*.lean", "lakefile.lean", "lean-toolchain"]
+
+jobs:
+  formal-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Cache Lake packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.lake/packages
+            .lake/build
+          key: lean-${{ hashFiles('lean-toolchain', 'lakefile.lean') }}
+          restore-keys: lean-
+
+      - name: Build all
+        run: lake build
+
+      - name: Axiom audit
+        run: lake build +JurisLean.AxiomAudit
+
+      - name: Zero tolerance - sorry (blocking path)
+        run: |
+          python scripts/sorry-gate.py --ledger SORRY_LEDGER.md --strict-for blocking
+
+      - name: Zero tolerance - admit
+        run: |
+          grep -rn "admit" proofs/lean/ --include="*.lean" && exit 1 || echo "admit = 0"
+
+      - name: Zero tolerance - custom axioms
+        run: |
+          grep -rn "^axiom " proofs/lean/ --include="*.lean" && exit 1 || echo "custom_axiom = 0"
+
+      - name: Zero tolerance - theorem : True
+        run: |
+          grep -rn "theorem.*:.*True" proofs/lean/ --include="*.lean" | grep -v "import" | grep -v "--" && exit 1 || echo "trivial_theorem = 0"
+
+      - name: Theorem hash gate
+        run: |
+          python scripts/theorem-hash-gate.py --expected-dir specs/*/evidence/hashes/

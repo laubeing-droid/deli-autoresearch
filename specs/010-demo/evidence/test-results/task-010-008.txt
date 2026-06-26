@@ -1,0 +1,2 @@
+Resume detected: status=IN_PROGRESS, interrupted_at=TASK-010-007
+Next task: TASK-010-008 (resume verification)

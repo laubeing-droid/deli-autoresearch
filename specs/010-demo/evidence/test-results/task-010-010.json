@@ -1,0 +1,9 @@
+{
+  "task": "TASK-010-010",
+  "sorry_gate_tests": {
+    "unregistered_sorry": {"expected": "FAIL", "actual": "FAIL", "pass": true},
+    "blocking_path_sorry": {"expected": "FAIL", "actual": "FAIL", "pass": true},
+    "registered_sorry": {"note": "skipped — no non-blocking .lean files in demo"}
+  },
+  "verdict": "PASS"
+}

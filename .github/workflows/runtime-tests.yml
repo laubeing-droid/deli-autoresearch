@@ -1,0 +1,41 @@
+name: JC Runtime Tests
+on:
+  push:
+    branches: [main, "spec/**"]
+    paths:
+      - "juris-calculus/**/*.py"
+      - "juris-calculus/**/*.yaml"
+      - "tests/**"
+  pull_request:
+    paths:
+      - "juris-calculus/**/*.py"
+      - "juris-calculus/**/*.yaml"
+      - "tests/**"
+
+jobs:
+  runtime-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install JC dependencies
+        run: pip install -e ./juris-calculus[test]
+
+      - name: Horn monotonicity test
+        run: pytest tests/spec/test_horn_differential.py -q
+
+      - name: Schema round-trip test
+        run: python tools/schema_roundtrip_gate.py --ci
+
+      - name: Certificate mutation tests
+        run: pytest tests/spec/test_certificate_mutations.py -q
+
+      - name: Runtime conformance gate
+        run: python tools/runtime_conformance_gate.py
+
+      - name: Field loss gate
+        run: python tools/field_loss_gate.py --ci

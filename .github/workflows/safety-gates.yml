@@ -1,0 +1,34 @@
+name: Safety Gates
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: LICENSE unchanged
+        run: |
+          if git diff HEAD~1 -- LICENSE | grep -q "^[+-]"; then
+            echo "ERROR: LICENSE file modified"
+            exit 1
+          fi
+
+      - name: No auto release tags
+        run: |
+          if git tag -l | grep -q "^release-"; then
+            echo "ERROR: release tag detected"
+            exit 1
+          fi
+
+      - name: Target theorems not weakened
+        run: python scripts/theorem-strength-gate.py
+
+      - name: No sorry in blocking path
+        run: python scripts/sorry-gate.py --strict-for blocking

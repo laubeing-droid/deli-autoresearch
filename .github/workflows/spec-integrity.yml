@@ -1,0 +1,27 @@
+name: Spec Integrity
+on:
+  push:
+    branches: [main, "spec/**"]
+  pull_request:
+
+jobs:
+  spec-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate spec completeness
+        run: python scripts/validate-spec-completeness.py
+
+      - name: Validate evidence exists
+        run: python scripts/validate-evidence.py
+
+      - name: Validate dependency DAG
+        run: python scripts/check-dependency-dag.py
+
+      - name: Validate sorry ledger
+        run: python scripts/validate-sorry-ledger.py

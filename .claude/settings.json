@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hook": ".claude/hooks/block-dangerous-command.py"
+      },
+      {
+        "matcher": "Write|Edit",
+        "hook": ".claude/hooks/enforce-file-scope.py"
+      },
+      {
+        "matcher": "Write|Edit",
+        "hook": ".claude/hooks/enforce-spec-state.py"
+      },
+      {
+        "matcher": "Write|Edit",
+        "hook": ".claude/hooks/protect-theorem-statement.py"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hook": ".claude/hooks/record-evidence.py"
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "*",
+        "hook": ".claude/hooks/validate-subagent-output.py"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hook": ".claude/hooks/validate-stop.py"
+      }
+    ]
+  }
+}

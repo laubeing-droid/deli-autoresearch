@@ -1,0 +1,20 @@
+schema_version: "1.0"
+spec_id: "SPEC-000"
+title: "Claude Code Control Layer"
+status: "COMPLETE"
+
+repositories:
+  - id: "control"
+    path: "."
+    access: "read_write"
+
+dependencies: []
+
+allowed_paths:
+  control:
+    - "CLAUDE.md"
+    - ".claude/**"
+    - "specs/000-claude-code-control/**"
+    - "scripts/**"
+    - ".github/workflows/**"
+    - "SORRY_LEDGER.md"

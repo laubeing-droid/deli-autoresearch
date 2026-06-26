@@ -1,0 +1,18 @@
+schema_version: "1.0"
+spec_id: "SPEC-010"
+title: "Control Layer Demo"
+status: "COMPLETE"
+
+repositories:
+  - id: "control"
+    path: "."
+    access: "read_write"
+
+dependencies:
+  - "SPEC-000"
+
+allowed_paths:
+  control:
+    - "specs/010-demo/**"
+    - "demo/**"
+    - "tests/demo/**"
