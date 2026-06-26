@@ -1,0 +1,21 @@
+schema_version: "1.0"
+spec_id: "SPEC-100"
+title: "JC Public Baseline"
+status: "COMPLETE"
+
+repositories:
+  - id: "control"
+    path: "."
+    access: "read_write"
+  - id: "formal"
+    path: "../legal-math-modeling"
+    access: "read_only"
+  - id: "runtime"
+    path: "../juris-calculus"
+    access: "read_only"
+
+dependencies: ["SPEC-000", "SPEC-010"]
+
+allowed_paths:
+  control:
+    - "specs/100-jc-public-baseline/**"

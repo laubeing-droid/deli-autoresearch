@@ -1,0 +1,11 @@
+{
+  "spec_id": "SPEC-100",
+  "title": "JC Public Baseline",
+  "status": "COMPLETE",
+  "current_phase": "COMPLETE",
+  "tasks_completed": 23,
+  "tasks_total": 23,
+  "red_team_verdict": "PASS_WITH_LIMITS",
+  "coverage_validation": "PASS",
+  "last_updated": "2026-06-26T18:34:00Z"
+}

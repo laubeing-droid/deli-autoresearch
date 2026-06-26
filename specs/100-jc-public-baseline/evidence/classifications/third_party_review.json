@@ -1,0 +1,139 @@
+{
+  "category": "THIRD_PARTY_REVIEW",
+  "count": 19,
+  "files": [
+    {
+      "path": "data/external/compas_scores_two_years.csv",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/abercrombie.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/consumer_contracts_qa.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/definition_extraction.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/diversity_6.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/function_of_decision_section.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/hearsay.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/insurance_policy_interpretation.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/international_citizenship_questions.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/rule_qa.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/legalbench/ucc_v_common_law.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "data/external/supreme_court/extracted_rules.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "proofs/lean/juris_lean/lake-manifest.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "Dependency manifest referencing third-party packages"
+    },
+    {
+      "path": "proofs/lean/juris_lean/lakefile.lean",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "Dependency manifest referencing third-party packages"
+    },
+    {
+      "path": "proofs/lean/juris_lean/lean-toolchain",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "Dependency manifest referencing third-party packages"
+    },
+    {
+      "path": "reports/bayesian_calibration/compas_calibration.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "reports/bayesian_calibration/legalbench_analysis.json",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "External dataset or third-party code"
+    },
+    {
+      "path": "requirements.txt",
+      "repo": "formal",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "Dependency manifest referencing third-party packages"
+    },
+    {
+      "path": "requirements.txt",
+      "repo": "runtime",
+      "category": "THIRD_PARTY_REVIEW",
+      "confidence": "HIGH",
+      "reason": "Dependency manifest referencing third-party packages"
+    }
+  ]
+}

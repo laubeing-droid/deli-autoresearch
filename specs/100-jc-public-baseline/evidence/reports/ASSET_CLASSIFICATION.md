@@ -1,0 +1,1050 @@
+# ASSET CLASSIFICATION
+
+Generated: 2026-06-26T18:33:45Z
+
+Total classified paths: **1022**
+
+## Summary
+
+### PUBLIC_STANDARD (85 files)
+
+- `.claude/rules/00-formal-proof.md` (formal) - HIGH: Claude Code control infrastructure
+- `.claude/rules/10-git-safety.md` (formal) - HIGH: Claude Code control infrastructure
+- `.gitattributes` (formal) - HIGH: Repository standard configuration
+- `.gitignore` (formal) - HIGH: Repository standard configuration
+- `AGENTS.md` (formal) - HIGH: Project specification or documentation standard
+- `CITATION.cff` (formal) - HIGH: Project specification or documentation standard
+- `README.md` (formal) - HIGH: Project specification or documentation standard
+- `README_CN.md` (formal) - HIGH: Project specification or documentation standard
+- `data/README.md` (formal) - HIGH: Project specification or documentation standard
+- `docs/audit/trust_label_schema.json` (formal) - HIGH: Schema definition file
+- `docs/history/README.md` (formal) - HIGH: Project specification or documentation standard
+- `docs/ontology/core_ontology.yaml` (formal) - HIGH: Ontology/standard definition
+- `paper/README.md` (formal) - HIGH: Project specification or documentation standard
+- `program/schemas/final_report.schema.json` (formal) - HIGH: Schema definition file
+- `program/schemas/program_state.schema.json` (formal) - HIGH: Schema definition file
+- `proofs/README.md` (formal) - HIGH: Project specification or documentation standard
+- `proofs/engineering_proof_artifacts/aaf/README.md` (formal) - HIGH: Project specification or documentation standard
+- `proofs/engineering_proof_artifacts/banach/README.md` (formal) - HIGH: Project specification or documentation standard
+- `proofs/engineering_proof_artifacts/fixpoint/README.md` (formal) - HIGH: Project specification or documentation standard
+- `proofs/engineering_proof_artifacts/galois/README.md` (formal) - HIGH: Project specification or documentation standard
+- `proofs/engineering_proof_artifacts/graph_similarity/README.md` (formal) - HIGH: Project specification or documentation standard
+- `proofs/engineering_proof_artifacts/horn/README.md` (formal) - HIGH: Project specification or documentation standard
+- `proofs/engineering_proof_artifacts/statistics/README.md` (formal) - HIGH: Project specification or documentation standard
+- `proofs/lean/README.md` (formal) - HIGH: Project specification or documentation standard
+- `theory/conjecture/README.md` (formal) - HIGH: Project specification or documentation standard
+- `theory/spec/README.md` (formal) - HIGH: Project specification or documentation standard
+- `.claude/rules/00-runtime-refinement.md` (runtime) - HIGH: Claude Code control infrastructure
+- `.claude/rules/10-git-safety.md` (runtime) - HIGH: Claude Code control infrastructure
+- `.gitignore` (runtime) - HIGH: Repository standard configuration
+- `AGENTS.md` (runtime) - HIGH: Project specification or documentation standard
+- `CHANGELOG.md` (runtime) - HIGH: Project specification or documentation standard
+- `CLAUDE.md` (runtime) - HIGH: Project specification or documentation standard
+- `README.md` (runtime) - HIGH: Project specification or documentation standard
+- `README_CN.md` (runtime) - HIGH: Project specification or documentation standard
+- `configs/base_ontology.yaml` (runtime) - HIGH: Ontology/standard definition
+- `configs/core_ontology.yaml` (runtime) - HIGH: Ontology/standard definition
+- `configs/domain_mapping.json` (runtime) - HIGH: Standard manifest or mapping
+- `configs/en_US/L0_overrides_us.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/en_US/US_Adapter.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/en_US/domain_config.example.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/en_US/llm_distilled_full.json` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/en_US/rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/en_US/state_combined_terms.json` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/en_US/state_router.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/hk/blocking_rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/hk/extended_rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/hk/provenance.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/hk/rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/hk/rules_expanded.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/hk/term_L0_mappings.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/hk/trilingual_alignment.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/juris_blueprint.json` (runtime) - HIGH: Standard manifest or mapping
+- `configs/knowledge_base/hk_library/critical_annotations.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/lexicon_index.json` (runtime) - HIGH: Standard manifest or mapping
+- `configs/prc_us_alignment/blocking_rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/prc_us_alignment/long_tail_collision_matrix.json` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/prc_us_alignment/meta_constraints.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/prc_us_alignment/procedural_justice_rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/prc_us_alignment/spc_rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/prc_us_alignment/term_L0_mappings.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/prc_us_alignment/term_L0_mappings_batch2.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/prc_us_alignment/trirail_matrix_report.json` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/typed_ir/README.md` (runtime) - HIGH: Project specification or documentation standard
+- `configs/uk/rules_candidates.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/us/blocking_rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/us/modal_mapping.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/us/rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/us/term_L0_mappings.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/us/threat_signatures/nj_pen_signature.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/us/threat_signatures/wi_enf_signature.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/zh_CN/classifier_rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/zh_CN/concept_registry.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/zh_CN/concept_registry_ocr.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/zh_CN/criminal_complexity.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/zh_CN/domain_config.example.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/zh_CN/dp_policy.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/zh_CN/ontology_map.yaml` (runtime) - HIGH: Ontology/standard definition
+- `configs/zh_CN/router_moe.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/zh_CN/rules.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `configs/zh_CN/source_manifest.yaml` (runtime) - MEDIUM: Configuration/rule standard
+- `mcp_manifest.json` (runtime) - HIGH: Standard manifest or mapping
+- `neural/contracts/feature_schema.yaml` (runtime) - HIGH: Neural contract schema
+- `neural/contracts/model_card_schema.yaml` (runtime) - HIGH: Neural contract schema
+- `neural/contracts/output_schema.yaml` (runtime) - HIGH: Neural contract schema
+- `neural/contracts/promotion_policy.yaml` (runtime) - HIGH: Neural contract schema
+
+### PUBLIC_FORMAL (120 files)
+
+- `proofs/alloy/rosetta_functor.als` (formal) - HIGH: Alloy formal specification
+- `proofs/engineering_proof_artifacts/ARTIFACT_MANIFEST.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/engineering_proof_artifacts/aaf/dung_grounded_extension.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/aaf/stratified_correspondence.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/adversarial/adversarial_input_checks.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/adversarial/adversarial_results.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/engineering_proof_artifacts/adversarial/extended_adversarial_checks.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/adversarial/extended_adversarial_results.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/engineering_proof_artifacts/banach/BanachEffectiveNodes.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/engineering_proof_artifacts/banach/banach_effective_nodes.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/cbl/t15_cbl_non_interference_exhaustive.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/cross_jurisdiction/no_functor_finite_checker.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/dp/dp_floor_clipping_analysis.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/dp/laplace_scalar_mechanism.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/engineering_proof_artifacts/dp/ratio_preserving_boundary.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/engineering_proof_artifacts/fixpoint/evaluator_termination_model.tla` (formal) - HIGH: TLA+ formal specification
+- `proofs/engineering_proof_artifacts/fixpoint/production_bounded_termination.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/galois/FiniteGaloisAdjunction.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/engineering_proof_artifacts/galois/finite_galois_adjunction.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/graph_similarity/graph_similarity_range.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/graph_similarity/graph_similarity_range.smt2` (formal) - HIGH: SMT-LIB formal specification
+- `proofs/engineering_proof_artifacts/graph_similarity/graph_similarity_range_z3.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/graph_similarity/metric_counterexamples.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/horn/bounded_horn_correctness.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/horn/bounded_horn_z3.smt2` (formal) - HIGH: SMT-LIB formal specification
+- `proofs/engineering_proof_artifacts/horn/horn_termination_measure.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/proof_run_results.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/engineering_proof_artifacts/rosetta/audit_t94_us_hk_candidates.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/rosetta/build_t85_local_batch.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/rosetta/merge_all_data.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/rosetta/run_t85_t94.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/rosetta/t85_t94_data_extractor.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/run_all_proofs.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/statistics/clipped_theilsen_refutation.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/engineering_proof_artifacts/statistics/siegel_repeated_median_verifier.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/formal_verification_logs/01_experiment_plan.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/formal_verification_logs/05_verification_run_report.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/formal_verification_logs/06_audit_prompt.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/formal_verification_logs/07_logic_audit_report.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/lean/BANACH_MATHLIB_API_LOCK.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/lean/BanachEffectiveNodes.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/AxiomAudit.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/BanachCertificate.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/BanachComplete.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/BanachContraction.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/BanachEffectiveNodes.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/BanachFixedPoint.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/BanachScratch.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/BanachWeightedNorm.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/Basic.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/ContractionCondition.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/DungAAF.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/DungDefinitions.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/DungFixedPoint.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/FiniteGaloisAdjunction.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/FiniteMonotoneIteration.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/FiniteRosetta.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/HornDefinitions.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/HornFixedPoint.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/HornOperationalRefinement.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/JC_Formalization.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/ScratchApi.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/SupZeroLemma.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/TemporalKripke.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/UnifiedModel.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/JurisLean/WeightedSupNorm.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/_axiom_audit.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/_check.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/_test.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/lean/juris_lean/_test_omega.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/strict_proof_baseline/aaf_grounded_extension_summary.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/evaluator_nonmonotone_counterexample.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/lean/BanachEffectiveNodes.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/strict_proof_baseline/lean/FiniteGaloisAdjunction.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/strict_proof_baseline/lean/FiniteRosetta.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/strict_proof_baseline/p0a_category/FiniteRosetta.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/strict_proof_baseline/p0a_category/counterexamples.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0a_category/finite_no_total_mapping_checker.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/strict_proof_baseline/p0a_category/real_data_insufficiency_witness.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0a_category/real_data_insufficiency_witness.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/strict_proof_baseline/p0a_category/theorem_statement.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0a_category/toy_proof_result.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0b_dp_lattice/cross_jurisdiction_lattice_counterexample.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0b_dp_lattice/cross_jurisdiction_morphism.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/strict_proof_baseline/p0b_dp_lattice/dp_finite_lattice.smt2` (formal) - HIGH: SMT-LIB formal specification
+- `proofs/strict_proof_baseline/p0b_dp_lattice/dp_finite_lattice_proof.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/strict_proof_baseline/p0b_dp_lattice/theorem_statement.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0c_banach/BanachEffectiveNodes.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/strict_proof_baseline/p0c_banach/pairwise_lipschitz_checker.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/strict_proof_baseline/p0c_banach/proof_insufficiency_witness.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0c_banach/theorem_statement.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0c_banach/toy_proof_result.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0d_privilege_epsilon/FiniteGaloisAdjunction.lean` (formal) - HIGH: Lean 4 formal proof or definition
+- `proofs/strict_proof_baseline/p0d_privilege_epsilon/countermodel.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0d_privilege_epsilon/privilege_epsilon_refutation.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/strict_proof_baseline/p0d_privilege_epsilon/theorem_statement.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p0d_privilege_epsilon/two_model_witness.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p1e_aaf/aaf_grounded_extension_proof.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/strict_proof_baseline/p1e_aaf/aaf_grounded_extension_summary.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p1e_aaf/evaluator_nonmonotone_counterexample.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p1e_aaf/evaluator_nonmonotone_counterexample.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/strict_proof_baseline/p1e_aaf/stratified_evaluator_correctness_conditions.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/p1e_aaf/theorem_statement.md` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/proof_run_results.json` (formal) - MEDIUM: Formal verification evidence or documentation
+- `proofs/strict_proof_baseline/run_all_proofs.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/strict_proof_baseline/smt/cn_privilege_lattice.smt2` (formal) - HIGH: SMT-LIB formal specification
+- `proofs/strict_proof_baseline/smt/cn_privilege_lattice_z3.py` (formal) - HIGH: Formal verification engineering artifact
+- `proofs/tla/evaluator_termination.tla` (formal) - HIGH: TLA+ formal specification
+- `theory/bridge/bridge_fixpoint.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/conjecture/kolmogorov_mdl_rules.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/mutation/mutation_suite.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/spec/__init__.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/spec/abstract_interpretation_unified.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/spec/canonical_semantics.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/spec/certificate_schema.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/spec/ddl_core.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/spec/hierarchical_bayes_alpha.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/spec/horn_aaf_contract.py` (formal) - HIGH: Mathematical theory implementation
+- `theory/spec/reference_semantics.py` (formal) - HIGH: Mathematical theory implementation
+
+### PUBLIC_CORE (20 files)
+
+- `addons/cn/__init__.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/cn/adapter.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/cn/modal_mapping.yaml` (runtime) - HIGH: Jurisdiction adapter
+- `addons/federation/__init__.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/federation/common_law.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/hk/__init__.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/hk/adapter.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/us/__init__.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/us/_l0_map.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/us/adapter.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/us/alignment.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/us/parser.py` (runtime) - HIGH: Jurisdiction adapter
+- `addons/us/us_lookup.py` (runtime) - HIGH: Jurisdiction adapter
+- `mcp_server.py` (runtime) - HIGH: MCP server runtime
+- `neural/registry/model_registry.yaml` (runtime) - MEDIUM: Neural model registry/contract
+- `neural/registry/sample-domain-router.model_card.yaml` (runtime) - MEDIUM: Neural model registry/contract
+- `tools/action_agent/__init__.py` (runtime) - HIGH: Tool runtime
+- `tools/action_agent/cli.py` (runtime) - HIGH: Tool runtime
+- `tools/action_agent/compiler.py` (runtime) - HIGH: Tool runtime
+- `tools/action_agent/state_to_text.py` (runtime) - HIGH: Tool runtime
+
+### PUBLIC_REFERENCE (778 files)
+
+- `.github/workflows/banach-build.yml` (formal) - MEDIUM: General file in public repo
+- `.github/workflows/lean-build.yml` (formal) - MEDIUM: General file in public repo
+- `LICENSE` (formal) - MEDIUM: General file in public repo
+- `SORRY_LEDGER.md` (formal) - MEDIUM: General file in public repo
+- `_restore.py` (formal) - MEDIUM: General file in public repo
+- `build-logs/20260624-204838/build-result.json` (formal) - HIGH: Build log output
+- `build-logs/20260624-204838/lake-build.log` (formal) - HIGH: Build log output
+- `build-logs/20260624-210317/build-result.json` (formal) - HIGH: Build log output
+- `build-logs/20260624-210317/lake-build.log` (formal) - HIGH: Build log output
+- `data/aaf_legal/aaf_validation_summary.json` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/rebuttal_patterns.jsonl` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_civil_mitigation.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_criminal_but2.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_criminal_but3.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_defense_limitation.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_force_majeure.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_necessity.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_rebuttable_presumption.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_self_defense.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_third_party_fault.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_tort_exemption.csv` (formal) - HIGH: Reference dataset
+- `data/aaf_legal/yd_victim_fault.csv` (formal) - HIGH: Reference dataset
+- `data/banach_pricing/lipschitz_estimates.json` (formal) - HIGH: Reference dataset
+- `data/banach_pricing/pricing_evidence.csv` (formal) - HIGH: Reference dataset
+- `data/banach_pricing/pricing_evidence_summary.json` (formal) - HIGH: Reference dataset
+- `data/banach_pricing/timesheet_anonymized.csv` (formal) - HIGH: Reference dataset
+- `data/benchmarks/multi_model_cases.jsonl` (formal) - HIGH: Reference dataset
+- `data/category_rosetta/T8.5_T9.4_data_collection_prompt.md` (formal) - MEDIUM: General file in public repo
+- `data/category_rosetta/T8.5_merged_clean.csv` (formal) - HIGH: Reference dataset
+- `data/category_rosetta/T9.4_merged_clean.csv` (formal) - HIGH: Reference dataset
+- `data/category_rosetta/claim_mapping.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_admin_record_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_attorney_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_case_metadata_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_court_filing_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_expert_report2_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_expert_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_important_data_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_minor_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_personal_info_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_pre_trial_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_privacy_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_published_opinion_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_settlement_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_state_secret_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_statute_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_search_trade_secret_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_test_encoding.json` (formal) - HIGH: Reference dataset
+- `data/cn_legal/_test_encoding_case.json` (formal) - HIGH: Reference dataset
+- `data/cn_legal/admin_cases.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/admin_cases_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/admin_claims.json` (formal) - HIGH: Reference dataset
+- `data/cn_legal/admin_statutes.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/admin_statutes_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/administrative_cases.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/administrative_statutes.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/claim_vocabulary_cn.jsonl` (formal) - HIGH: Reference dataset
+- `data/cn_legal/cn_source_manifest.jsonl` (formal) - HIGH: Reference dataset
+- `data/cn_legal/contract_cases.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/contract_cases_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/contract_claims.json` (formal) - HIGH: Reference dataset
+- `data/cn_legal/contract_statutes.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/contract_statutes_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/corporate_cases.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/corporate_cases_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/corporate_claims.json` (formal) - HIGH: Reference dataset
+- `data/cn_legal/corporate_statutes.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/corporate_statutes_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/criminal_cases.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/criminal_cases_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/criminal_claims.json` (formal) - HIGH: Reference dataset
+- `data/cn_legal/criminal_statutes.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/criminal_statutes_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/data_cases.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/data_cases2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/data_cases_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/data_claims.json` (formal) - HIGH: Reference dataset
+- `data/cn_legal/data_crossborder_cases.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/data_crossborder_statutes.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/data_statutes.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/data_statutes_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/test_utf8.jsonl` (formal) - HIGH: Reference dataset
+- `data/cn_legal/tort_cases.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/tort_cases_v2.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/tort_claims.json` (formal) - HIGH: Reference dataset
+- `data/cn_legal/tort_statutes.csv` (formal) - HIGH: Reference dataset
+- `data/cn_legal/tort_statutes_v2.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/cn_court_filing_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/cn_evidence_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/cn_expert_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/cn_guiding_case_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/cn_lawyer_confidentiality_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/cn_minor_record_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/cn_settlement_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/cn_statute_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/cn_trade_secret_semantic.csv` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/jurisdiction_lattices.json` (formal) - HIGH: Reference dataset
+- `data/dp_privilege/legal_sources.jsonl` (formal) - HIGH: Reference dataset
+- `data/galois_semantics/alpha_gamma_samples.jsonl` (formal) - HIGH: Reference dataset
+- `data/galois_semantics/galois_18_audit_summary.json` (formal) - HIGH: Reference dataset
+- `data/galois_semantics/theorem_dependency_graph.json` (formal) - HIGH: Reference dataset
+- `data/hk_legal/hk_fact_patterns.jsonl` (formal) - HIGH: Reference dataset
+- `data/hk_legal/hk_legal_sources.jsonl` (formal) - HIGH: Reference dataset
+- `data/hk_legal/hk_obstruction_legal_basis.json` (formal) - HIGH: Reference dataset
+- `data/hk_legal/hk_privilege_lattice.json` (formal) - HIGH: Reference dataset
+- `data/legal_validation_results.json` (formal) - MEDIUM: General file in public repo
+- `data/us_legal/us_fact_patterns.jsonl` (formal) - HIGH: Reference dataset
+- `data/us_legal/us_legal_sources.jsonl` (formal) - HIGH: Reference dataset
+- `data/us_legal/us_obstruction_legal_basis.json` (formal) - HIGH: Reference dataset
+- `data/us_legal/us_privilege_lattice.json` (formal) - HIGH: Reference dataset
+- `docs/analysis/contract-breach-vertical-slice.md` (formal) - HIGH: Documentation
+- `docs/analysis/jc-transition-gate-status.md` (formal) - HIGH: Documentation
+- `docs/analysis/k3_analysis_result.json` (formal) - HIGH: Documentation
+- `docs/analysis/license-permission-priority-slice.md` (formal) - HIGH: Documentation
+- `docs/analysis/next-stage-spec-first-roadmap.md` (formal) - HIGH: Documentation
+- `docs/analysis/paper_theory_alignment.md` (formal) - HIGH: Documentation
+- `docs/audit/codex_audit_report_20260619.md` (formal) - HIGH: Documentation
+- `docs/audit/codex_handoff.md` (formal) - HIGH: Documentation
+- `docs/audit/codex_handoff_response.md` (formal) - HIGH: Documentation
+- `docs/audit/codex_review_rounds.md` (formal) - HIGH: Documentation
+- `docs/audit/counterexample_registry.json` (formal) - HIGH: Documentation
+- `docs/audit/failed_or_refuted_theorems.md` (formal) - HIGH: Documentation
+- `docs/audit/final_audit_acceptance.md` (formal) - HIGH: Documentation
+- `docs/audit/proof_ledger.json` (formal) - HIGH: Documentation
+- `docs/audit/theorem_status_matrix.md` (formal) - HIGH: Documentation
+- `docs/final-closure/additional-breakthroughs.md` (formal) - HIGH: Documentation
+- `docs/final-closure/baseline.md` (formal) - HIGH: Documentation
+- `docs/final-closure/final-report.md` (formal) - HIGH: Documentation
+- `docs/formal-release/ALLOWED_CLAIMS.md` (formal) - HIGH: Documentation
+- `docs/formal-release/C0_FOUR_STAGE_SAFETY.md` (formal) - HIGH: Documentation
+- `docs/formal-release/FINAL_FORMAL_RELEASE_REPORT.md` (formal) - HIGH: Documentation
+- `docs/formal-release/FORBIDDEN_CLAIMS.md` (formal) - HIGH: Documentation
+- `docs/formal-release/FORMAL_RELEASE_REPORT.md` (formal) - HIGH: Documentation
+- `docs/formal-release/axiom_audit.txt` (formal) - HIGH: Documentation
+- `docs/formal-release/theorem_manifest.json` (formal) - HIGH: Documentation
+- `docs/history/development_log_20260523_0614.md` (formal) - HIGH: Documentation
+- `docs/history/development_log_20260616_0617.md` (formal) - HIGH: Documentation
+- `docs/history/llm_machine_provability.md` (formal) - HIGH: Documentation
+- `docs/history/socratic_200_rounds.md` (formal) - HIGH: Documentation
+- `docs/history/socratic_200_rounds_deep.md` (formal) - HIGH: Documentation
+- `"docs/modeling/01_\346\225\260\345\255\246\351\200\206\345\220\221\345\267\245\347\250\213_cn.md"` (formal) - MEDIUM: General file in public repo
+- `"docs/modeling/02_\351\200\206\345\220\221\345\267\245\347\250\213\345\256\241\350\256\241.md"` (formal) - MEDIUM: General file in public repo
+- `"docs/modeling/03_\346\225\260\345\255\246\346\250\241\345\236\213\350\257\246\346\236\220_cn.md"` (formal) - MEDIUM: General file in public repo
+- `"docs/modeling/04_\347\256\227\346\263\225\345\256\236\347\216\260\345\210\206\346\236\220_cn.md"` (formal) - MEDIUM: General file in public repo
+- `"docs/modeling/05_\344\274\230\345\214\226\346\212\245\345\221\212_cn.md"` (formal) - MEDIUM: General file in public repo
+- `"docs/modeling/06_\347\254\254\345\233\233\351\230\266\346\256\265\351\252\214\350\257\201_cn.md"` (formal) - MEDIUM: General file in public repo
+- `"docs/modeling/07_\345\220\221Codex\344\272\244\346\216\245.md"` (formal) - MEDIUM: General file in public repo
+- `"docs/modeling/08_Codex\344\272\244\346\216\245\345\233\236\345\272\224.md"` (formal) - MEDIUM: General file in public repo
+- `docs/remediation/lean_manifest.json` (formal) - HIGH: Documentation
+- `docs/remediation/theorem-proofs.md` (formal) - HIGH: Documentation
+- `paper/ai_liability_infrastructure.md` (formal) - MEDIUM: General file in public repo
+- `paper/argument_strength.md` (formal) - MEDIUM: General file in public repo
+- `paper/argumentation_frameworks.md` (formal) - MEDIUM: General file in public repo
+- `paper/dp_impossibility.md` (formal) - MEDIUM: General file in public repo
+- `paper/explainable_legal_reasoning.md` (formal) - MEDIUM: General file in public repo
+- `paper/graph_similarity_topology.md` (formal) - MEDIUM: General file in public repo
+- `paper/icail_full_paper.md` (formal) - MEDIUM: General file in public repo
+- `paper/legal_analogy.md` (formal) - MEDIUM: General file in public repo
+- `paper/legal_reasoning_paradigms.md` (formal) - MEDIUM: General file in public repo
+- `paper/main.md` (formal) - MEDIUM: General file in public repo
+- `paper/main.tex` (formal) - MEDIUM: General file in public repo
+- `paper/main_cn.md` (formal) - MEDIUM: General file in public repo
+- `paper/mathematical_structures.md` (formal) - MEDIUM: General file in public repo
+- `paper/multi_ai_formalization.md` (formal) - MEDIUM: General file in public repo
+- `paper/non_monotonicity.md` (formal) - MEDIUM: General file in public repo
+- `paper/probabilistic_legal_reasoning.md` (formal) - MEDIUM: General file in public repo
+- `paper/references.bib` (formal) - MEDIUM: General file in public repo
+- `paper/sections/01_introduction.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/02_preliminaries.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/03_ontology.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/04_horn_closure.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/05_aaf_argumentation.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/06_stratified_evaluator.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/07_kripke_temporal.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/08_category_rosetta.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/09_banach_contraction.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/10_dp_privilege.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/11_non_interference.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/12_evidence_calibrated.tex` (formal) - HIGH: Academic paper or research content
+- `paper/sections/13_conclusion.tex` (formal) - HIGH: Academic paper or research content
+- `program/MEGA_GOAL.md` (formal) - MEDIUM: General file in public repo
+- `program/PLANS.md` (formal) - MEDIUM: General file in public repo
+- `program/PROGRAM_STATE.json` (formal) - MEDIUM: General file in public repo
+- `program/run-night.ps1` (formal) - MEDIUM: General file in public repo
+- `proofs/strict_proof_baseline/p0a_category/claim_mapping.csv` (formal) - MEDIUM: General file in public repo
+- `reports/bayesian_calibration/calibration_likelihood_ratios.png` (formal) - HIGH: Report or analysis output
+- `reports/bayesian_calibration/calibration_manifest.jsonl` (formal) - HIGH: Report or analysis output
+- `reports/bayesian_calibration/calibration_prior_posterior.png` (formal) - HIGH: Report or analysis output
+- `reports/bayesian_calibration/calibration_report.csv` (formal) - HIGH: Report or analysis output
+- `reports/bayesian_calibration/calibration_report.md` (formal) - HIGH: Report or analysis output
+- `reports/bayesian_calibration/calibration_v2.json` (formal) - HIGH: Report or analysis output
+- `reports/bayesian_calibration/calibration_v2_loo.json` (formal) - HIGH: Report or analysis output
+- `reports/bayesian_calibration/proof_outcomes.png` (formal) - HIGH: Report or analysis output
+- `reports/cross_audit_doubao_gemini.md` (formal) - MEDIUM: General file in public repo
+- `reports/doubao500_report.md` (formal) - MEDIUM: General file in public repo
+- `reports/doubao_audit.txt` (formal) - MEDIUM: General file in public repo
+- `reports/doubao_decisions.md` (formal) - MEDIUM: General file in public repo
+- `reports/doubao_decisions_text.md` (formal) - MEDIUM: General file in public repo
+- `reports/doubao_full.txt` (formal) - MEDIUM: General file in public repo
+- `reports/external_data_sources.md` (formal) - MEDIUM: General file in public repo
+- `reports/gemini500_report.md` (formal) - MEDIUM: General file in public repo
+- `reports/gemini_11000.md` (formal) - MEDIUM: General file in public repo
+- `reports/gemini_3000.md` (formal) - MEDIUM: General file in public repo
+- `reports/gemini_6000.md` (formal) - MEDIUM: General file in public repo
+- `reports/gemini_audit.txt` (formal) - MEDIUM: General file in public repo
+- `reports/gemini_decisions.md` (formal) - MEDIUM: General file in public repo
+- `reports/gemini_decisions_text.md` (formal) - MEDIUM: General file in public repo
+- `reports/mdl_fp/fp_by_status.png` (formal) - HIGH: Report or analysis output
+- `reports/mdl_fp/mdl_by_domain.png` (formal) - HIGH: Report or analysis output
+- `reports/mdl_fp/mdl_fp_comprehensive_v3.json` (formal) - HIGH: Report or analysis output
+- `reports/mdl_fp/mdl_fp_detail.csv` (formal) - HIGH: Report or analysis output
+- `reports/mdl_fp/mdl_fp_report.md` (formal) - HIGH: Report or analysis output
+- `reports/mdl_fp/mdl_fp_scatter.png` (formal) - HIGH: Report or analysis output
+- `reports/mdl_fp/mdl_fp_structural_v2.json` (formal) - HIGH: Report or analysis output
+- `reports/obstruction/obstruction_witness.json` (formal) - HIGH: Report or analysis output
+- `reports/verification/banach_multidim_results.json` (formal) - HIGH: Report or analysis output
+- `reports/verification/baseline_results.json` (formal) - HIGH: Report or analysis output
+- `reports/verification/t85_t94_results.json` (formal) - HIGH: Report or analysis output
+- `reports/verification/verification_results.json` (formal) - HIGH: Report or analysis output
+- `scripts/finalize-external-build.py` (formal) - MEDIUM: General file in public repo
+- `scripts/request-external-build.ps1` (formal) - MEDIUM: General file in public repo
+- `scripts/scan_lean_guards.py` (formal) - MEDIUM: General file in public repo
+- `tests/spec/test_spec_transition.py` (formal) - HIGH: Test fixture or test code
+- `theory/__init__.py` (formal) - MEDIUM: General file in public repo
+- `theory/__main__.py` (formal) - MEDIUM: General file in public repo
+- `theory/abstract_interpretation_unified.py` (formal) - MEDIUM: General file in public repo
+- `theory/analogical_reasoning.py` (formal) - MEDIUM: General file in public repo
+- `theory/arbitration_reasoning.py` (formal) - MEDIUM: General file in public repo
+- `theory/argument_clustering.py` (formal) - MEDIUM: General file in public repo
+- `theory/argument_strength_ordering.py` (formal) - MEDIUM: General file in public repo
+- `theory/argumentation_horn_unification.py` (formal) - MEDIUM: General file in public repo
+- `theory/aspic_plus_framework.py` (formal) - MEDIUM: General file in public repo
+- `theory/banach_multidim.py` (formal) - MEDIUM: General file in public repo
+- `theory/banach_pricing_contraction.py` (formal) - MEDIUM: General file in public repo
+- `theory/bayesian_calibration.py` (formal) - MEDIUM: General file in public repo
+- `theory/bayesian_legal_reasoning.py` (formal) - MEDIUM: General file in public repo
+- `theory/bounded_horn_correctness.py` (formal) - MEDIUM: General file in public repo
+- `theory/burden_of_proof_tracker.py` (formal) - MEDIUM: General file in public repo
+- `theory/case_retrieval.py` (formal) - MEDIUM: General file in public repo
+- `theory/category_theory_rosetta.py` (formal) - MEDIUM: General file in public repo
+- `theory/compliance_monitoring.py` (formal) - MEDIUM: General file in public repo
+- `theory/counts_as_institutional_facts.py` (formal) - MEDIUM: General file in public repo
+- `theory/criminal_sentencing.py` (formal) - MEDIUM: General file in public repo
+- `theory/cross_border_data.py` (formal) - MEDIUM: General file in public repo
+- `theory/damages_attribute_grammar.py` (formal) - MEDIUM: General file in public repo
+- `theory/data_quality_label.py` (formal) - MEDIUM: General file in public repo
+- `theory/deontic_procedural_justice.py` (formal) - MEDIUM: General file in public repo
+- `theory/dialectical_argumentation_tree.py` (formal) - MEDIUM: General file in public repo
+- `theory/dp_legal_privilege.py` (formal) - MEDIUM: General file in public repo
+- `theory/evidence_credibility_axioms.py` (formal) - MEDIUM: General file in public repo
+- `theory/evidence_dependency_manager.py` (formal) - MEDIUM: General file in public repo
+- `theory/evidence_evaluation.py` (formal) - MEDIUM: General file in public repo
+- `theory/formal_concept_analysis.py` (formal) - MEDIUM: General file in public repo
+- `theory/galois_reverse_index.py` (formal) - MEDIUM: General file in public repo
+- `theory/gradual_verification_soundness.py` (formal) - MEDIUM: General file in public repo
+- `theory/graph_metric.py` (formal) - MEDIUM: General file in public repo
+- `theory/hierarchical_bayes_alpha.py` (formal) - MEDIUM: General file in public repo
+- `theory/hypothesis_horn_pbt.py` (formal) - MEDIUM: General file in public repo
+- `theory/interest_balancing.py` (formal) - MEDIUM: General file in public repo
+- `theory/ip_valuation.py` (formal) - MEDIUM: General file in public repo
+- `theory/judgment_deviation.py` (formal) - MEDIUM: General file in public repo
+- `theory/juris_engine.py` (formal) - MEDIUM: General file in public repo
+- `theory/jurisdiction_guard.py` (formal) - MEDIUM: General file in public repo
+- `theory/k3_empirical_analysis.py` (formal) - MEDIUM: General file in public repo
+- `theory/kolmogorov_mdl_rules.py` (formal) - MEDIUM: General file in public repo
+- `theory/kripke_supersedes_corrects.py` (formal) - MEDIUM: General file in public repo
+- `theory/legal_interpretation.py` (formal) - MEDIUM: General file in public repo
+- `theory/litigation_game_theory.py` (formal) - MEDIUM: General file in public repo
+- `theory/mdl_fp_analysis.py` (formal) - MEDIUM: General file in public repo
+- `theory/model_status.py` (formal) - MEDIUM: General file in public repo
+- `theory/non_interference_cbl.py` (formal) - MEDIUM: General file in public repo
+- `theory/paradigm_incommensurability.py` (formal) - MEDIUM: General file in public repo
+- `theory/policy_expressiveness.py` (formal) - MEDIUM: General file in public repo
+- `theory/precedent_reasoning.py` (formal) - MEDIUM: General file in public repo
+- `theory/probabilistic_damages.py` (formal) - MEDIUM: General file in public repo
+- `theory/rough_set_discretionary.py` (formal) - MEDIUM: General file in public repo
+- `theory/sympy_evidence_proofs.py` (formal) - MEDIUM: General file in public repo
+- `theory/temporal_integration.py` (formal) - MEDIUM: General file in public repo
+- `theory/temporal_kripke_ltl.py` (formal) - MEDIUM: General file in public repo
+- `theory/temporal_law_engine.py` (formal) - MEDIUM: General file in public repo
+- `theory/temporal_statute_law.py` (formal) - MEDIUM: General file in public repo
+- `theory/trirail_complexity.py` (formal) - MEDIUM: General file in public repo
+- `theory/z3_kripke_mutex.py` (formal) - MEDIUM: General file in public repo
+- `theory/z3_temporal_induction.py` (formal) - MEDIUM: General file in public repo
+- `verification/verification_engine.py` (formal) - MEDIUM: General file in public repo
+- `.github/workflows/auto-release.yml` (runtime) - MEDIUM: General file in public repo
+- `SORRY_LEDGER.md` (runtime) - MEDIUM: General file in public repo
+- `addons/__init__.py` (runtime) - MEDIUM: General file in public repo
+- `benchmarks/relevance/manifest.yaml` (runtime) - HIGH: Benchmark manifest
+- `compiler_core/__init__.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/adapter_base.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/adjudication_draft.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/arbitration_reasoning.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/argumentation.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/automated_pipeline.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/banach_verifier.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/batch_processor.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/bayesian_calibration.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/breakthrough_candidates.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/breakthrough_verification.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/burden_of_proof.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/canonical_serialization.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/certificate_checker.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/classifier.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/completion_status.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/compliance_monitoring.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/composition_safety.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/config_paths.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/conflict_of_laws.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/constraint_validator.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/criminal_complexity.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/criminal_sentencing.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/cross_jurisdiction_compare.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/cross_jurisdiction_router.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/dacl_graph.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/ddl_preclassifier.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/de_jure_auditor.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/defeasible_priority.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/domain_config.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/dp_policy_loader.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/entity_anonymizer.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/evaluator.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/evidence_chain_validator.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/evidence_checklist.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/evidence_evaluation.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/experience_contracts.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/g8_evaluator_patch.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/grounded_smt_verifier.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/horn_completeness.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/incremental_grounded.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/independent_grounded_checker.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/inference_cache.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/invariance_metrics.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/ip_valuation.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/juris_blueprint.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/kg_recall.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/language_renderer.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/legal_compiler.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/legal_ir_v3.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/legal_memory.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/legal_reasoning.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/litigation_engineering.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/litigation_renderer.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/metrics_collector.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/multi_jurisdiction_orchestrator.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/multi_solver_router.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/neural_leaf.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/neural_yaml_sync.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/parallax_inference.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/plugin_registry.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/prc_collision_engine.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/proleg_translator.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/promotion_candidate.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/proof_trace.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/proof_trace_renderer.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/proof_trace_visualizer.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/proof_tree.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/provider.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/result_diff.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/result_exporter.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/rule_router.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/semantic_compiler_contract.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/shadow_state.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/smt_sidecar.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/source_anchor.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/source_manifest.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/spec_shadow_harness.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/step_verifier.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/stratified_evaluator.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/tool_cache.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/transformer.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/trust_labels.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/type_checker.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/types.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/universal_grounded_smt.py` (runtime) - MEDIUM: General file in public repo
+- `compiler_core/validity_state_machine.py` (runtime) - MEDIUM: General file in public repo
+- `config/constants_registry.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/L0_overrides_cn.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/L0_overrides_hk.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/agent_collaboration_protocol.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/domain_corporate.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/juris_contracts.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/juris_phase_matrix.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/jurisdiction_spec_template.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/knowledge_layers.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/obstruction_registry.yaml` (runtime) - MEDIUM: General file in public repo
+- `configs/perf_patterns.yaml` (runtime) - MEDIUM: General file in public repo
+- `data/cross_jurisdiction_claims.csv` (runtime) - MEDIUM: General file in public repo
+- `data/damages_calibration.csv` (runtime) - MEDIUM: General file in public repo
+- `data/golden_corpus/gc01.json` (runtime) - HIGH: Reference dataset
+- `data/golden_corpus/gc02.json` (runtime) - HIGH: Reference dataset
+- `data/golden_corpus/gc03.json` (runtime) - HIGH: Reference dataset
+- `data/golden_corpus/gc04.json` (runtime) - HIGH: Reference dataset
+- `data/golden_corpus/gc05.json` (runtime) - HIGH: Reference dataset
+- `data/golden_corpus/gc06.json` (runtime) - HIGH: Reference dataset
+- `data/golden_corpus/gc07.json` (runtime) - HIGH: Reference dataset
+- `data/golden_corpus/gc08.json` (runtime) - HIGH: Reference dataset
+- `data/golden_corpus/gc09.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/MANIFEST.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0000.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0001.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0002.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0003.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0004.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0005.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0006.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0007.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0008.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0009.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0010.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0011.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0012.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0013.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0014.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0015.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0016.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0017.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0018.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0019.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0020.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0021.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0022.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0023.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0024.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0025.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0026.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0027.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0028.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0029.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0030.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0031.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0032.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0033.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0034.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0035.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0036.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0037.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0038.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0039.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0040.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0041.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0042.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0043.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0044.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0045.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0046.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0047.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0048.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0049.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0050.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0051.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0052.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0053.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0054.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0055.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0056.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0057.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0058.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0059.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0060.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0061.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0062.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0063.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0064.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0065.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0066.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0067.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0068.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0069.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0070.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0071.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0072.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0073.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0074.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0075.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0076.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0077.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0078.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0079.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0080.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0081.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0082.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0083.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0084.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0085.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0086.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0087.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0088.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0089.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0090.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0091.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0092.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0093.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0094.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0095.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0096.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0097.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0098.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0099.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0100.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0101.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0102.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0103.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0104.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0105.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0106.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0107.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0108.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0109.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0110.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0111.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0112.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0113.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0114.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0115.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0116.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0117.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0118.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0119.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0120.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0121.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0122.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0123.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0124.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0125.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0126.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0127.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0128.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0129.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0130.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0131.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0132.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0133.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0134.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0135.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0136.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0137.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0138.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0139.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0140.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0141.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0142.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0143.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0144.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0145.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0146.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0147.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0148.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0149.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0150.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0151.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0152.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0153.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0154.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0155.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0156.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0157.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0158.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0159.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0160.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0161.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0162.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0163.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0164.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0165.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0166.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0167.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0168.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0169.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0170.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0171.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0172.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0173.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0174.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0175.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0176.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0177.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0178.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0179.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0180.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0181.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0182.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0183.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0184.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0185.json` (runtime) - HIGH: Reference dataset
+- `data/spc_golden_corpus/SPC-0186.json` (runtime) - HIGH: Reference dataset
+- `docs/final-closure/dp-trust-boundary.md` (runtime) - HIGH: Documentation
+- `docs/final-closure/graph-similarity-contract.md` (runtime) - HIGH: Documentation
+- `docs/final-closure/robust-regression-contract.md` (runtime) - HIGH: Documentation
+- `docs/p0_p2_execution_roadmap.md` (runtime) - MEDIUM: General file in public repo
+- `docs/remediation/g8-truncation-map.md` (runtime) - HIGH: Documentation
+- `docs/rules_schema_spec.md` (runtime) - MEDIUM: General file in public repo
+- `metainfer_integration_plan_20260612.md` (runtime) - MEDIUM: General file in public repo
+- `pipeline/__init__.py` (runtime) - MEDIUM: General file in public repo
+- `pipeline/adversarial_pipeline.py` (runtime) - MEDIUM: General file in public repo
+- `pipeline/build_ocr_index.py` (runtime) - MEDIUM: General file in public repo
+- `pipeline/extract_concepts.py` (runtime) - MEDIUM: General file in public repo
+- `pipeline/fix_single_premise.py` (runtime) - MEDIUM: General file in public repo
+- `pipeline/guardian.py` (runtime) - MEDIUM: General file in public repo
+- `pipeline/llm_client.py` (runtime) - MEDIUM: General file in public repo
+- `pipeline/pipeline.py` (runtime) - MEDIUM: General file in public repo
+- `pipeline/prc_us_alignment.py` (runtime) - MEDIUM: General file in public repo
+- `pipeline/schemas.py` (runtime) - MEDIUM: General file in public repo
+- `reports/blind_reconstruction_audit.md` (runtime) - MEDIUM: General file in public repo
+- `scripts/audit-engine.sh` (runtime) - MEDIUM: General file in public repo
+- `tests/conftest.py` (runtime) - MEDIUM: General file in public repo
+- `tests/fixtures/ci_promotion_candidate.json` (runtime) - HIGH: Test fixture or test code
+- `tests/fixtures/ci_requests.jsonl` (runtime) - HIGH: Test fixture or test code
+- `"tests/fixtures/distill_candidates/\345\210\221\344\272\213\345\256\241\345\210\244\345\256\236\345\212\241\344\270\212\345\206\214.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\210\221\344\272\213\345\256\241\345\210\244\345\256\236\345\212\241\344\270\212\345\206\214_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\210\221\344\272\213\345\256\241\345\210\244\345\256\236\345\212\241\344\270\213\345\206\214.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\210\221\344\272\213\345\256\241\345\210\244\345\256\236\345\212\241\344\270\213\345\206\214_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\233\275\345\256\266\350\265\224\345\201\277\345\256\241\345\210\244\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\233\275\345\256\266\350\265\224\345\201\277\345\256\241\345\210\244\345\256\236\345\212\241_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\256\241\345\210\244\347\233\221\347\235\243\345\256\236\345\212\241\344\270\212\345\206\214.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\256\241\345\210\244\347\233\221\347\235\243\345\256\236\345\212\241\344\270\212\345\206\214_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\256\241\345\210\244\347\233\221\347\235\243\345\256\236\345\212\241\344\270\213\345\206\214.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\256\241\345\210\244\347\233\221\347\235\243\345\256\236\345\212\241\344\270\213\345\206\214_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\256\241\345\210\244\347\256\241\347\220\206\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\345\256\241\345\210\244\347\256\241\347\220\206\345\256\236\345\212\241_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\211\247\350\241\214\346\241\210\344\273\266\345\212\236\347\220\206\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\211\247\350\241\214\346\241\210\344\273\266\345\212\236\347\220\206\345\256\236\345\212\241_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\234\252\346\210\220\345\271\264\344\272\272\345\256\241\345\210\244\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\234\252\346\210\220\345\271\264\344\272\272\345\256\241\345\210\244\345\256\236\345\212\241_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2411.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2411_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2412.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2412_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2413.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2413_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2414.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2414_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2415.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2415_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2416.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\2416_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\266\211\345\244\226\345\225\206\344\272\213\346\265\267\344\272\213\345\256\241\345\210\244\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\266\211\345\244\226\345\225\206\344\272\213\346\265\267\344\272\213\345\256\241\345\210\244\345\256\236\345\212\241\345\222\214\345\233\275\351\231\205\345\217\270\346\263\225\345\215\217\345\212\251_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\266\211\346\270\257\346\276\263\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\346\266\211\346\270\257\346\276\263\346\260\221\345\225\206\344\272\213\345\256\241\345\210\244\345\256\236\345\212\241\345\222\214\345\214\272\351\231\205\345\217\270\346\263\225\345\215\217\345\212\251_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\347\216\257\345\242\203\350\265\204\346\272\220\345\256\241\345\210\244\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\347\216\257\345\242\203\350\265\204\346\272\220\345\256\241\345\210\244\345\256\236\345\212\241_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\347\237\245\350\257\206\344\272\247\346\235\203\345\256\241\345\210\244\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\347\237\245\350\257\206\344\272\247\346\235\203\345\256\241\345\210\244\345\256\236\345\212\241_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\347\253\213\346\241\210\345\267\245\344\275\234\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\347\253\213\346\241\210\345\267\245\344\275\234\345\256\236\345\212\241_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\350\241\214\346\224\277\345\256\241\345\210\244\345\256\236\345\212\241.yaml"` (runtime) - MEDIUM: General file in public repo
+- `"tests/fixtures/distill_candidates/\350\241\214\346\224\277\345\256\241\345\210\244\345\256\236\345\212\241_auto.yaml"` (runtime) - MEDIUM: General file in public repo
+- `tests/fixtures/legal_ir_v3_sample.yaml` (runtime) - HIGH: Test fixture or test code
+- `tests/fixtures/rule_migration_sample.yaml` (runtime) - HIGH: Test fixture or test code
+- `tests/relevance_sensitivity/contract_basics.yaml` (runtime) - HIGH: Test fixture or test code
+- `tests/relevance_sensitivity/temporal_exception_paraphrase.yaml` (runtime) - HIGH: Test fixture or test code
+- `tests/run_benchmark_zh.py` (runtime) - MEDIUM: General file in public repo
+- `tests/stress_test_facts.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_argumentation_b6.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_canonical_serialization.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_composition_safety.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_conflict_case.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_cross_domain.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_grounded_g9a.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_horn_completeness.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_incremental_grounded.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_independent_checker.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_litigation_edge_cases.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_litigation_engineering.py` (runtime) - MEDIUM: General file in public repo
+- `tests/test_mcp_smoke.py` (runtime) - MEDIUM: General file in public repo
+- `tests/unit/__init__.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_adjudication_draft_and_smt.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_adversarial.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_agent_protocol.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_anti_degradation.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_argumentation.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_build_phases.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_conflict_of_laws.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_constraint_validator.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_criminal_complexity.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_dacl_graph.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_ddl_modal_gate.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_ddl_preclassifier.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_evaluator.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_final_gaps.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_harness.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_kg_audit.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_language_renderer.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_litigation_renderer.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_llm_bridge.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_neural_guardrails.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_new_modules.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_nonmonotone_regression.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_p0_auditability.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_p1_ir_smt.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_p2_shadow_neural_contracts.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_perf_blueprint.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_phase_harness.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_platform.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_plugin_registry.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_promotion_gate.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_relevance_benchmark.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_relevance_reporting.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_rule_migration_and_llm_batch.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_semantic_compiler.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_spec_shadow_harness.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_stratified_evaluator.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_training_export.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_trirail_collision.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_trust_labels.py` (runtime) - HIGH: Test fixture or test code
+- `tests/unit/test_zh_rules.py` (runtime) - HIGH: Test fixture or test code
+- `tools/action_agent/partners_memo.j2` (runtime) - MEDIUM: General file in public repo
+- `tools/adjudication_draft_runner.py` (runtime) - MEDIUM: General file in public repo
+- `tools/adversarial_near_miss_generator.py` (runtime) - MEDIUM: General file in public repo
+- `tools/agent_protocol_auditor.py` (runtime) - MEDIUM: General file in public repo
+- `tools/audit_blind_reconstruction.py` (runtime) - MEDIUM: General file in public repo
+- `tools/audit_full.py` (runtime) - MEDIUM: General file in public repo
+- `tools/auto_distill.py` (runtime) - MEDIUM: General file in public repo
+- `tools/batch_litigation_runner.py` (runtime) - MEDIUM: General file in public repo
+- `tools/blueprint_completeness_meter.py` (runtime) - MEDIUM: General file in public repo
+- `tools/blueprint_contract_auditor.py` (runtime) - MEDIUM: General file in public repo
+- `tools/calibrate_weights.py` (runtime) - MEDIUM: General file in public repo
+- `tools/concept_disambiguator.py` (runtime) - MEDIUM: General file in public repo
+- `tools/dacl_graph_runner.py` (runtime) - MEDIUM: General file in public repo
+- `tools/damage_estimator.py` (runtime) - MEDIUM: General file in public repo
+- `tools/ddl_remedy_pool_filler.py` (runtime) - MEDIUM: General file in public repo
+- `tools/de_jure_audit_runner.py` (runtime) - MEDIUM: General file in public repo
+- `tools/distill_jurisdiction.py` (runtime) - MEDIUM: General file in public repo
+- `tools/e2e_evidence_collector.py` (runtime) - MEDIUM: General file in public repo
+- `tools/export_training_corpus.py` (runtime) - MEDIUM: General file in public repo
+- `tools/gen_us_adapter.py` (runtime) - MEDIUM: General file in public repo
+- `tools/import_source_verifier.py` (runtime) - MEDIUM: General file in public repo
+- `tools/ir_v3_checker.py` (runtime) - MEDIUM: General file in public repo
+- `tools/kb_search.py` (runtime) - MEDIUM: General file in public repo
+- `tools/kg_audit_common.py` (runtime) - MEDIUM: General file in public repo
+- `tools/kg_audit_loop.py` (runtime) - MEDIUM: General file in public repo
+- `tools/kg_completeness_auditor.py` (runtime) - MEDIUM: General file in public repo
+- `tools/kg_correctness_auditor.py` (runtime) - MEDIUM: General file in public repo
+- `tools/knowledge_graph_builder.py` (runtime) - MEDIUM: General file in public repo
+- `tools/llm_batch_acceptor.py` (runtime) - MEDIUM: General file in public repo
+- `tools/llm_batch_contract.py` (runtime) - MEDIUM: General file in public repo
+- `tools/llm_batch_orchestrator.py` (runtime) - MEDIUM: General file in public repo
+- `tools/llm_bridge.py` (runtime) - MEDIUM: General file in public repo
+- `tools/mdl_fp_analysis.py` (runtime) - MEDIUM: General file in public repo
+- `tools/module_interface_checker.py` (runtime) - MEDIUM: General file in public repo
+- `tools/multi_model_comparison.py` (runtime) - MEDIUM: General file in public repo
+- `tools/neural_contract_auditor.py` (runtime) - MEDIUM: General file in public repo
+- `tools/ocr_error_fixer.py` (runtime) - MEDIUM: General file in public repo
+- `tools/operator_registry.py` (runtime) - MEDIUM: General file in public repo
+- `tools/parallax_test.py` (runtime) - MEDIUM: General file in public repo
+- `tools/perf_baseline.py` (runtime) - MEDIUM: General file in public repo
+- `tools/perf_compare.py` (runtime) - MEDIUM: General file in public repo
+- `tools/perf_to_blueprint.py` (runtime) - MEDIUM: General file in public repo
+- `tools/phase_runner.py` (runtime) - MEDIUM: General file in public repo
+- `tools/platform_check.py` (runtime) - MEDIUM: General file in public repo
+- `tools/press_long_tail.py` (runtime) - MEDIUM: General file in public repo
+- `tools/promotion_gate.py` (runtime) - MEDIUM: General file in public repo
+- `tools/pruner.py` (runtime) - MEDIUM: General file in public repo
+- `tools/quality_dashboard.py` (runtime) - MEDIUM: General file in public repo
+- `tools/recovery_guard.py` (runtime) - MEDIUM: General file in public repo
+- `tools/relevance_dataset_builder.py` (runtime) - MEDIUM: General file in public repo
+- `tools/relevance_sensitivity_runner.py` (runtime) - MEDIUM: General file in public repo
+- `tools/rule_classifier.py` (runtime) - MEDIUM: General file in public repo
+- `tools/rule_conflict_detector.py` (runtime) - MEDIUM: General file in public repo
+- `tools/rule_coverage_analyzer.py` (runtime) - MEDIUM: General file in public repo
+- `tools/rule_deduplicator.py` (runtime) - MEDIUM: General file in public repo
+- `tools/rule_freshness_checker.py` (runtime) - MEDIUM: General file in public repo
+- `tools/rule_quality_auditor.py` (runtime) - MEDIUM: General file in public repo
+- `tools/rule_quality_sampler.py` (runtime) - MEDIUM: General file in public repo
+- `tools/rule_to_ir_migrator.py` (runtime) - MEDIUM: General file in public repo
+- `tools/rule_version_tracker.py` (runtime) - MEDIUM: General file in public repo
+- `tools/run_parallax_matrix.py` (runtime) - MEDIUM: General file in public repo
+- `tools/run_trirail_matrix.py` (runtime) - MEDIUM: General file in public repo
+- `tools/self_healing_loop.py` (runtime) - MEDIUM: General file in public repo
+- `tools/semantic_compile_batch.py` (runtime) - MEDIUM: General file in public repo
+- `tools/shadow_divergence_report.py` (runtime) - MEDIUM: General file in public repo
+- `tools/shadow_runner.py` (runtime) - MEDIUM: General file in public repo
+- `tools/shape_checker.py` (runtime) - MEDIUM: General file in public repo
+- `tools/smt_evaluator_compare.py` (runtime) - MEDIUM: General file in public repo
+- `tools/spec_shadow_runner.py` (runtime) - MEDIUM: General file in public repo
+- `tools/test_quality_auditor.py` (runtime) - MEDIUM: General file in public repo
+- `tools/verification_replay.py` (runtime) - MEDIUM: General file in public repo
+
+### COMMERCIAL_PRIVATE_FUTURE (0 files)
+
+
+### PATENT_REVIEW (0 files)
+
+
+### THIRD_PARTY_REVIEW (19 files)
+
+- `data/external/compas_scores_two_years.csv` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/abercrombie.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/consumer_contracts_qa.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/definition_extraction.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/diversity_6.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/function_of_decision_section.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/hearsay.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/insurance_policy_interpretation.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/international_citizenship_questions.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/rule_qa.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/legalbench/ucc_v_common_law.json` (formal) - HIGH: External dataset or third-party code
+- `data/external/supreme_court/extracted_rules.json` (formal) - HIGH: External dataset or third-party code
+- `proofs/lean/juris_lean/lake-manifest.json` (formal) - HIGH: Dependency manifest referencing third-party packages
+- `proofs/lean/juris_lean/lakefile.lean` (formal) - HIGH: Dependency manifest referencing third-party packages
+- `proofs/lean/juris_lean/lean-toolchain` (formal) - HIGH: Dependency manifest referencing third-party packages
+- `reports/bayesian_calibration/compas_calibration.json` (formal) - HIGH: External dataset or third-party code
+- `reports/bayesian_calibration/legalbench_analysis.json` (formal) - HIGH: External dataset or third-party code
+- `requirements.txt` (formal) - HIGH: Dependency manifest referencing third-party packages
+- `requirements.txt` (runtime) - HIGH: Dependency manifest referencing third-party packages

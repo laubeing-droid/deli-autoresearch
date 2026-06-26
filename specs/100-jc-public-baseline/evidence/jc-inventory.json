@@ -1,0 +1,3445 @@
+{
+  "repo": "juris-calculus",
+  "head_sha": "e1a40eaab5768e100d4df1d0b6e9ea9476f54299",
+  "file_count": 573,
+  "files": [
+    {
+      "path": ".claude/rules/00-runtime-refinement.md",
+      "size_bytes": 589,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": ".claude/rules/10-git-safety.md",
+      "size_bytes": 245,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": ".github/workflows/auto-release.yml",
+      "size_bytes": 1127,
+      "extension": ".yml",
+      "repo": "runtime"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 1943,
+      "extension": "(none)",
+      "repo": "runtime"
+    },
+    {
+      "path": "AGENTS.md",
+      "size_bytes": 3015,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 12318,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "CLAUDE.md",
+      "size_bytes": 3015,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 8098,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "README_CN.md",
+      "size_bytes": 4236,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "SORRY_LEDGER.md",
+      "size_bytes": 626,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/__init__.py",
+      "size_bytes": 68,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/cn/__init__.py",
+      "size_bytes": 767,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/cn/adapter.py",
+      "size_bytes": 6989,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/cn/modal_mapping.yaml",
+      "size_bytes": 2144,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/federation/__init__.py",
+      "size_bytes": 424,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/federation/common_law.py",
+      "size_bytes": 3176,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/hk/__init__.py",
+      "size_bytes": 459,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/hk/adapter.py",
+      "size_bytes": 9678,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/us/__init__.py",
+      "size_bytes": 660,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/us/_l0_map.py",
+      "size_bytes": 8240,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/us/adapter.py",
+      "size_bytes": 8095,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/us/alignment.py",
+      "size_bytes": 12537,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/us/parser.py",
+      "size_bytes": 2810,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "addons/us/us_lookup.py",
+      "size_bytes": 8242,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "benchmarks/relevance/manifest.yaml",
+      "size_bytes": 720,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/__init__.py",
+      "size_bytes": 103,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/adapter_base.py",
+      "size_bytes": 3778,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/adjudication_draft.py",
+      "size_bytes": 3716,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/arbitration_reasoning.py",
+      "size_bytes": 495,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/argumentation.py",
+      "size_bytes": 15093,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/automated_pipeline.py",
+      "size_bytes": 5291,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/banach_verifier.py",
+      "size_bytes": 8457,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/batch_processor.py",
+      "size_bytes": 4501,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/bayesian_calibration.py",
+      "size_bytes": 4570,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/breakthrough_candidates.py",
+      "size_bytes": 18436,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/breakthrough_verification.py",
+      "size_bytes": 6657,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/burden_of_proof.py",
+      "size_bytes": 1389,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/canonical_serialization.py",
+      "size_bytes": 4279,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/certificate_checker.py",
+      "size_bytes": 3910,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/classifier.py",
+      "size_bytes": 5088,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/completion_status.py",
+      "size_bytes": 2421,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/compliance_monitoring.py",
+      "size_bytes": 508,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/composition_safety.py",
+      "size_bytes": 12580,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/config_paths.py",
+      "size_bytes": 2779,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/conflict_of_laws.py",
+      "size_bytes": 2374,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/constraint_validator.py",
+      "size_bytes": 13087,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/criminal_complexity.py",
+      "size_bytes": 15033,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/criminal_sentencing.py",
+      "size_bytes": 610,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/cross_jurisdiction_compare.py",
+      "size_bytes": 2595,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/cross_jurisdiction_router.py",
+      "size_bytes": 2229,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/dacl_graph.py",
+      "size_bytes": 8883,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/ddl_preclassifier.py",
+      "size_bytes": 10010,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/de_jure_auditor.py",
+      "size_bytes": 4203,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/defeasible_priority.py",
+      "size_bytes": 1355,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/domain_config.py",
+      "size_bytes": 4368,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/dp_policy_loader.py",
+      "size_bytes": 3653,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/entity_anonymizer.py",
+      "size_bytes": 1909,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/evaluator.py",
+      "size_bytes": 32943,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/evidence_chain_validator.py",
+      "size_bytes": 4598,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/evidence_checklist.py",
+      "size_bytes": 3834,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/evidence_evaluation.py",
+      "size_bytes": 1154,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/experience_contracts.py",
+      "size_bytes": 2616,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/g8_evaluator_patch.py",
+      "size_bytes": 5542,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/grounded_smt_verifier.py",
+      "size_bytes": 7397,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/horn_completeness.py",
+      "size_bytes": 14852,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/incremental_grounded.py",
+      "size_bytes": 11296,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/independent_grounded_checker.py",
+      "size_bytes": 6081,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/inference_cache.py",
+      "size_bytes": 988,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/invariance_metrics.py",
+      "size_bytes": 3624,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/ip_valuation.py",
+      "size_bytes": 573,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/juris_blueprint.py",
+      "size_bytes": 1129,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/kg_recall.py",
+      "size_bytes": 871,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/language_renderer.py",
+      "size_bytes": 6233,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/legal_compiler.py",
+      "size_bytes": 1603,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/legal_ir_v3.py",
+      "size_bytes": 4772,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/legal_memory.py",
+      "size_bytes": 1508,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/legal_reasoning.py",
+      "size_bytes": 1344,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/litigation_engineering.py",
+      "size_bytes": 19335,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/litigation_renderer.py",
+      "size_bytes": 17139,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/metrics_collector.py",
+      "size_bytes": 922,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/multi_jurisdiction_orchestrator.py",
+      "size_bytes": 3019,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/multi_solver_router.py",
+      "size_bytes": 3318,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/neural_leaf.py",
+      "size_bytes": 8390,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/neural_yaml_sync.py",
+      "size_bytes": 5357,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/parallax_inference.py",
+      "size_bytes": 7798,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/plugin_registry.py",
+      "size_bytes": 2824,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/prc_collision_engine.py",
+      "size_bytes": 15179,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/proleg_translator.py",
+      "size_bytes": 1095,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/promotion_candidate.py",
+      "size_bytes": 1249,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/proof_trace.py",
+      "size_bytes": 2059,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/proof_trace_renderer.py",
+      "size_bytes": 2205,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/proof_trace_visualizer.py",
+      "size_bytes": 1423,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/proof_tree.py",
+      "size_bytes": 2860,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/provider.py",
+      "size_bytes": 2851,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/result_diff.py",
+      "size_bytes": 885,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/result_exporter.py",
+      "size_bytes": 959,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/rule_router.py",
+      "size_bytes": 4482,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/semantic_compiler_contract.py",
+      "size_bytes": 3670,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/shadow_state.py",
+      "size_bytes": 1952,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/smt_sidecar.py",
+      "size_bytes": 5453,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/source_anchor.py",
+      "size_bytes": 604,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/source_manifest.py",
+      "size_bytes": 2402,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/spec_shadow_harness.py",
+      "size_bytes": 26039,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/step_verifier.py",
+      "size_bytes": 5244,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/stratified_evaluator.py",
+      "size_bytes": 5048,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/tool_cache.py",
+      "size_bytes": 980,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/transformer.py",
+      "size_bytes": 2538,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/trust_labels.py",
+      "size_bytes": 2158,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/type_checker.py",
+      "size_bytes": 2149,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/types.py",
+      "size_bytes": 6192,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/universal_grounded_smt.py",
+      "size_bytes": 8155,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "compiler_core/validity_state_machine.py",
+      "size_bytes": 4859,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "config/constants_registry.yaml",
+      "size_bytes": 461,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/L0_overrides_cn.yaml",
+      "size_bytes": 1006,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/L0_overrides_hk.yaml",
+      "size_bytes": 2530,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/agent_collaboration_protocol.yaml",
+      "size_bytes": 2151,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/base_ontology.yaml",
+      "size_bytes": 2585,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/core_ontology.yaml",
+      "size_bytes": 35963,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/domain_corporate.yaml",
+      "size_bytes": 2151,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/domain_mapping.json",
+      "size_bytes": 2070,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/en_US/L0_overrides_us.yaml",
+      "size_bytes": 31865,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/en_US/US_Adapter.yaml",
+      "size_bytes": 69342,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/en_US/domain_config.example.yaml",
+      "size_bytes": 3964,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/en_US/llm_distilled_full.json",
+      "size_bytes": 159663,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/en_US/rules.yaml",
+      "size_bytes": 11,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/en_US/state_combined_terms.json",
+      "size_bytes": 70065,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/en_US/state_router.yaml",
+      "size_bytes": 9918,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/hk/blocking_rules.yaml",
+      "size_bytes": 11045,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/hk/extended_rules.yaml",
+      "size_bytes": 14906,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/hk/provenance.yaml",
+      "size_bytes": 754,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/hk/rules.yaml",
+      "size_bytes": 41469,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/hk/rules_expanded.yaml",
+      "size_bytes": 137677,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/hk/term_L0_mappings.yaml",
+      "size_bytes": 272594,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/hk/trilingual_alignment.yaml",
+      "size_bytes": 2721,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/juris_blueprint.json",
+      "size_bytes": 6576,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/juris_contracts.yaml",
+      "size_bytes": 9405,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/juris_phase_matrix.yaml",
+      "size_bytes": 11704,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/jurisdiction_spec_template.yaml",
+      "size_bytes": 460,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/knowledge_base/hk_library/critical_annotations.yaml",
+      "size_bytes": 7809,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/knowledge_layers.yaml",
+      "size_bytes": 812,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/lexicon_index.json",
+      "size_bytes": 118102,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/obstruction_registry.yaml",
+      "size_bytes": 8621,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/perf_patterns.yaml",
+      "size_bytes": 1621,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/prc_us_alignment/blocking_rules.yaml",
+      "size_bytes": 15333,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/prc_us_alignment/long_tail_collision_matrix.json",
+      "size_bytes": 283,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/prc_us_alignment/meta_constraints.yaml",
+      "size_bytes": 2414,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/prc_us_alignment/procedural_justice_rules.yaml",
+      "size_bytes": 5361,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/prc_us_alignment/spc_rules.yaml",
+      "size_bytes": 12756,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/prc_us_alignment/term_L0_mappings.yaml",
+      "size_bytes": 42492,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/prc_us_alignment/term_L0_mappings_batch2.yaml",
+      "size_bytes": 27717,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/prc_us_alignment/trirail_matrix_report.json",
+      "size_bytes": 10474,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/typed_ir/README.md",
+      "size_bytes": 796,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/uk/rules_candidates.yaml",
+      "size_bytes": 3014,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/us/blocking_rules.yaml",
+      "size_bytes": 9384,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/us/modal_mapping.yaml",
+      "size_bytes": 2281,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/us/rules.yaml",
+      "size_bytes": 60719,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/us/term_L0_mappings.yaml",
+      "size_bytes": 22147,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/us/threat_signatures/nj_pen_signature.yaml",
+      "size_bytes": 6923,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/us/threat_signatures/wi_enf_signature.yaml",
+      "size_bytes": 6781,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/classifier_rules.yaml",
+      "size_bytes": 2268,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/concept_registry.yaml",
+      "size_bytes": 1169060,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/concept_registry_ocr.yaml",
+      "size_bytes": 53487,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/criminal_complexity.yaml",
+      "size_bytes": 2269,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/domain_config.example.yaml",
+      "size_bytes": 3910,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/dp_policy.yaml",
+      "size_bytes": 794,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/ontology_map.yaml",
+      "size_bytes": 19314,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/router_moe.yaml",
+      "size_bytes": 2428,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/rules.yaml",
+      "size_bytes": 13975565,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "configs/zh_CN/source_manifest.yaml",
+      "size_bytes": 2219,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/cross_jurisdiction_claims.csv",
+      "size_bytes": 3834791,
+      "extension": ".csv",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/damages_calibration.csv",
+      "size_bytes": 267311,
+      "extension": ".csv",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/golden_corpus/gc01.json",
+      "size_bytes": 987,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/golden_corpus/gc02.json",
+      "size_bytes": 836,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/golden_corpus/gc03.json",
+      "size_bytes": 788,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/golden_corpus/gc04.json",
+      "size_bytes": 839,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/golden_corpus/gc05.json",
+      "size_bytes": 761,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/golden_corpus/gc06.json",
+      "size_bytes": 672,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/golden_corpus/gc07.json",
+      "size_bytes": 649,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/golden_corpus/gc08.json",
+      "size_bytes": 740,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/golden_corpus/gc09.json",
+      "size_bytes": 739,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/MANIFEST.json",
+      "size_bytes": 460,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0000.json",
+      "size_bytes": 1383,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0001.json",
+      "size_bytes": 1812,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0002.json",
+      "size_bytes": 2621,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0003.json",
+      "size_bytes": 2636,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0004.json",
+      "size_bytes": 2627,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0005.json",
+      "size_bytes": 1895,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0006.json",
+      "size_bytes": 2145,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0007.json",
+      "size_bytes": 2621,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0008.json",
+      "size_bytes": 1637,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0009.json",
+      "size_bytes": 2544,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0010.json",
+      "size_bytes": 2642,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0011.json",
+      "size_bytes": 2627,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0012.json",
+      "size_bytes": 2622,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0013.json",
+      "size_bytes": 2626,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0014.json",
+      "size_bytes": 1628,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0015.json",
+      "size_bytes": 2636,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0016.json",
+      "size_bytes": 2636,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0017.json",
+      "size_bytes": 2462,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0018.json",
+      "size_bytes": 2323,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0019.json",
+      "size_bytes": 2629,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0020.json",
+      "size_bytes": 2596,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0021.json",
+      "size_bytes": 2272,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0022.json",
+      "size_bytes": 2451,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0023.json",
+      "size_bytes": 1605,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0024.json",
+      "size_bytes": 2641,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0025.json",
+      "size_bytes": 2235,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0026.json",
+      "size_bytes": 1968,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0027.json",
+      "size_bytes": 2628,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0028.json",
+      "size_bytes": 1976,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0029.json",
+      "size_bytes": 2635,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0030.json",
+      "size_bytes": 2056,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0031.json",
+      "size_bytes": 1890,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0032.json",
+      "size_bytes": 2072,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0033.json",
+      "size_bytes": 2625,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0034.json",
+      "size_bytes": 2600,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0035.json",
+      "size_bytes": 2585,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0036.json",
+      "size_bytes": 2625,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0037.json",
+      "size_bytes": 1900,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0038.json",
+      "size_bytes": 2523,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0039.json",
+      "size_bytes": 2004,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0040.json",
+      "size_bytes": 2544,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0041.json",
+      "size_bytes": 2397,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0042.json",
+      "size_bytes": 2577,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0043.json",
+      "size_bytes": 1420,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0044.json",
+      "size_bytes": 1509,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0045.json",
+      "size_bytes": 2625,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0046.json",
+      "size_bytes": 2580,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0047.json",
+      "size_bytes": 2578,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0048.json",
+      "size_bytes": 2625,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0049.json",
+      "size_bytes": 2076,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0050.json",
+      "size_bytes": 2570,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0051.json",
+      "size_bytes": 1875,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0052.json",
+      "size_bytes": 2124,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0053.json",
+      "size_bytes": 1615,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0054.json",
+      "size_bytes": 2606,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0055.json",
+      "size_bytes": 2629,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0056.json",
+      "size_bytes": 1896,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0057.json",
+      "size_bytes": 2074,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0058.json",
+      "size_bytes": 1737,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0059.json",
+      "size_bytes": 2636,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0060.json",
+      "size_bytes": 2595,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0061.json",
+      "size_bytes": 2652,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0062.json",
+      "size_bytes": 972,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0063.json",
+      "size_bytes": 891,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0064.json",
+      "size_bytes": 1780,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0065.json",
+      "size_bytes": 1527,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0066.json",
+      "size_bytes": 1224,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0067.json",
+      "size_bytes": 1686,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0068.json",
+      "size_bytes": 2679,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0069.json",
+      "size_bytes": 1446,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0070.json",
+      "size_bytes": 2631,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0071.json",
+      "size_bytes": 2606,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0072.json",
+      "size_bytes": 2196,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0073.json",
+      "size_bytes": 2304,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0074.json",
+      "size_bytes": 2685,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0075.json",
+      "size_bytes": 2555,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0076.json",
+      "size_bytes": 2213,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0077.json",
+      "size_bytes": 1773,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0078.json",
+      "size_bytes": 2622,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0079.json",
+      "size_bytes": 2643,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0080.json",
+      "size_bytes": 2619,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0081.json",
+      "size_bytes": 1827,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0082.json",
+      "size_bytes": 2532,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0083.json",
+      "size_bytes": 2637,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0084.json",
+      "size_bytes": 2625,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0085.json",
+      "size_bytes": 1935,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0086.json",
+      "size_bytes": 2625,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0087.json",
+      "size_bytes": 2611,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0088.json",
+      "size_bytes": 2619,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0089.json",
+      "size_bytes": 2615,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0090.json",
+      "size_bytes": 2622,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0091.json",
+      "size_bytes": 2619,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0092.json",
+      "size_bytes": 2625,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0093.json",
+      "size_bytes": 2449,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0094.json",
+      "size_bytes": 1823,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0095.json",
+      "size_bytes": 1914,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0096.json",
+      "size_bytes": 1590,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0097.json",
+      "size_bytes": 2633,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0098.json",
+      "size_bytes": 1941,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0099.json",
+      "size_bytes": 2609,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0100.json",
+      "size_bytes": 2490,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0101.json",
+      "size_bytes": 2615,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0102.json",
+      "size_bytes": 2067,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0103.json",
+      "size_bytes": 2643,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0104.json",
+      "size_bytes": 1716,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0105.json",
+      "size_bytes": 2471,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0106.json",
+      "size_bytes": 2466,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0107.json",
+      "size_bytes": 2176,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0108.json",
+      "size_bytes": 1852,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0109.json",
+      "size_bytes": 2595,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0110.json",
+      "size_bytes": 1448,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0111.json",
+      "size_bytes": 2220,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0112.json",
+      "size_bytes": 2022,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0113.json",
+      "size_bytes": 2631,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0114.json",
+      "size_bytes": 2597,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0115.json",
+      "size_bytes": 1713,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0116.json",
+      "size_bytes": 2286,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0117.json",
+      "size_bytes": 2484,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0118.json",
+      "size_bytes": 2631,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0119.json",
+      "size_bytes": 2643,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0120.json",
+      "size_bytes": 2625,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0121.json",
+      "size_bytes": 2643,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0122.json",
+      "size_bytes": 2580,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0123.json",
+      "size_bytes": 2160,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0124.json",
+      "size_bytes": 2573,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0125.json",
+      "size_bytes": 2454,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0126.json",
+      "size_bytes": 1883,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0127.json",
+      "size_bytes": 1960,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0128.json",
+      "size_bytes": 2616,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0129.json",
+      "size_bytes": 2643,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0130.json",
+      "size_bytes": 2570,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0131.json",
+      "size_bytes": 2056,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0132.json",
+      "size_bytes": 2622,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0133.json",
+      "size_bytes": 2320,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0134.json",
+      "size_bytes": 2579,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0135.json",
+      "size_bytes": 954,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0136.json",
+      "size_bytes": 1952,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0137.json",
+      "size_bytes": 1584,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0138.json",
+      "size_bytes": 1775,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0139.json",
+      "size_bytes": 2598,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0140.json",
+      "size_bytes": 1680,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0141.json",
+      "size_bytes": 2612,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0142.json",
+      "size_bytes": 2613,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0143.json",
+      "size_bytes": 2331,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0144.json",
+      "size_bytes": 2641,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0145.json",
+      "size_bytes": 2625,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0146.json",
+      "size_bytes": 1461,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0147.json",
+      "size_bytes": 1472,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0148.json",
+      "size_bytes": 2030,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0149.json",
+      "size_bytes": 2349,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0150.json",
+      "size_bytes": 2643,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0151.json",
+      "size_bytes": 2264,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0152.json",
+      "size_bytes": 2270,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0153.json",
+      "size_bytes": 1806,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0154.json",
+      "size_bytes": 2184,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0155.json",
+      "size_bytes": 2607,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0156.json",
+      "size_bytes": 1891,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0157.json",
+      "size_bytes": 2241,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0158.json",
+      "size_bytes": 2607,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0159.json",
+      "size_bytes": 2141,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0160.json",
+      "size_bytes": 2190,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0161.json",
+      "size_bytes": 2410,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0162.json",
+      "size_bytes": 954,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0163.json",
+      "size_bytes": 1428,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0164.json",
+      "size_bytes": 2682,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0165.json",
+      "size_bytes": 2336,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0166.json",
+      "size_bytes": 2123,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0167.json",
+      "size_bytes": 2008,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0168.json",
+      "size_bytes": 2600,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0169.json",
+      "size_bytes": 1925,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0170.json",
+      "size_bytes": 2636,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0171.json",
+      "size_bytes": 2426,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0172.json",
+      "size_bytes": 1490,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0173.json",
+      "size_bytes": 2566,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0174.json",
+      "size_bytes": 2618,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0175.json",
+      "size_bytes": 2174,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0176.json",
+      "size_bytes": 1790,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0177.json",
+      "size_bytes": 1985,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0178.json",
+      "size_bytes": 2624,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0179.json",
+      "size_bytes": 1394,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0180.json",
+      "size_bytes": 2324,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0181.json",
+      "size_bytes": 1931,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0182.json",
+      "size_bytes": 2423,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0183.json",
+      "size_bytes": 1649,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0184.json",
+      "size_bytes": 2354,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0185.json",
+      "size_bytes": 2552,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0186.json",
+      "size_bytes": 2614,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "docs/final-closure/dp-trust-boundary.md",
+      "size_bytes": 956,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "docs/final-closure/graph-similarity-contract.md",
+      "size_bytes": 1445,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "docs/final-closure/robust-regression-contract.md",
+      "size_bytes": 815,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "docs/p0_p2_execution_roadmap.md",
+      "size_bytes": 1670,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "docs/remediation/g8-truncation-map.md",
+      "size_bytes": 3318,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "docs/rules_schema_spec.md",
+      "size_bytes": 2628,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "mcp_manifest.json",
+      "size_bytes": 10951,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "mcp_server.py",
+      "size_bytes": 35510,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "metainfer_integration_plan_20260612.md",
+      "size_bytes": 2054,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "neural/contracts/feature_schema.yaml",
+      "size_bytes": 364,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "neural/contracts/model_card_schema.yaml",
+      "size_bytes": 301,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "neural/contracts/output_schema.yaml",
+      "size_bytes": 280,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "neural/contracts/promotion_policy.yaml",
+      "size_bytes": 288,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "neural/registry/model_registry.yaml",
+      "size_bytes": 269,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "neural/registry/sample-domain-router.model_card.yaml",
+      "size_bytes": 335,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/__init__.py",
+      "size_bytes": 44,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/adversarial_pipeline.py",
+      "size_bytes": 7876,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/build_ocr_index.py",
+      "size_bytes": 4016,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/extract_concepts.py",
+      "size_bytes": 11864,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/fix_single_premise.py",
+      "size_bytes": 4077,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/guardian.py",
+      "size_bytes": 6586,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/llm_client.py",
+      "size_bytes": 6712,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/pipeline.py",
+      "size_bytes": 24850,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/prc_us_alignment.py",
+      "size_bytes": 12537,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "pipeline/schemas.py",
+      "size_bytes": 1176,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "reports/blind_reconstruction_audit.md",
+      "size_bytes": 440,
+      "extension": ".md",
+      "repo": "runtime"
+    },
+    {
+      "path": "requirements.txt",
+      "size_bytes": 170,
+      "extension": ".txt",
+      "repo": "runtime"
+    },
+    {
+      "path": "scripts/audit-engine.sh",
+      "size_bytes": 810,
+      "extension": ".sh",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/conftest.py",
+      "size_bytes": 658,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/fixtures/ci_promotion_candidate.json",
+      "size_bytes": 188,
+      "extension": ".json",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/fixtures/ci_requests.jsonl",
+      "size_bytes": 174,
+      "extension": ".jsonl",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\233\\275\\345\\256\\266\\350\\265\\224\\345\\201\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\233\\275\\345\\256\\266\\350\\265\\224\\345\\201\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\256\\241\\347\\220\\206\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\256\\241\\347\\220\\206\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\211\\247\\350\\241\\214\\346\\241\\210\\344\\273\\266\\345\\212\\236\\347\\220\\206\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\211\\247\\350\\241\\214\\346\\241\\210\\344\\273\\266\\345\\212\\236\\347\\220\\206\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\234\\252\\346\\210\\220\\345\\271\\264\\344\\272\\272\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\234\\252\\346\\210\\220\\345\\271\\264\\344\\272\\272\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2411.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2411_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2412.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2412_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2413.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2413_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2414.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2414_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2415.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2415_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2416.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2416_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\345\\244\\226\\345\\225\\206\\344\\272\\213\\346\\265\\267\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\345\\244\\226\\345\\225\\206\\344\\272\\213\\346\\265\\267\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\345\\222\\214\\345\\233\\275\\351\\231\\205\\345\\217\\270\\346\\263\\225\\345\\215\\217\\345\\212\\251_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\346\\270\\257\\346\\276\\263\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\346\\270\\257\\346\\276\\263\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\345\\222\\214\\345\\214\\272\\351\\231\\205\\345\\217\\270\\346\\263\\225\\345\\215\\217\\345\\212\\251_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\216\\257\\345\\242\\203\\350\\265\\204\\346\\272\\220\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\216\\257\\345\\242\\203\\350\\265\\204\\346\\272\\220\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\237\\245\\350\\257\\206\\344\\272\\247\\346\\235\\203\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\237\\245\\350\\257\\206\\344\\272\\247\\346\\235\\203\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\253\\213\\346\\241\\210\\345\\267\\245\\344\\275\\234\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\253\\213\\346\\241\\210\\345\\267\\245\\344\\275\\234\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\350\\241\\214\\346\\224\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\350\\241\\214\\346\\224\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "size_bytes": 0,
+      "extension": ".yaml\"",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/fixtures/legal_ir_v3_sample.yaml",
+      "size_bytes": 508,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/fixtures/rule_migration_sample.yaml",
+      "size_bytes": 752,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/relevance_sensitivity/contract_basics.yaml",
+      "size_bytes": 1097,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/relevance_sensitivity/temporal_exception_paraphrase.yaml",
+      "size_bytes": 1417,
+      "extension": ".yaml",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/run_benchmark_zh.py",
+      "size_bytes": 16153,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/stress_test_facts.py",
+      "size_bytes": 3037,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_argumentation_b6.py",
+      "size_bytes": 1802,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_canonical_serialization.py",
+      "size_bytes": 5115,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_composition_safety.py",
+      "size_bytes": 2236,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_conflict_case.py",
+      "size_bytes": 5204,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_cross_domain.py",
+      "size_bytes": 4013,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_grounded_g9a.py",
+      "size_bytes": 4603,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_horn_completeness.py",
+      "size_bytes": 4563,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_incremental_grounded.py",
+      "size_bytes": 2942,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_independent_checker.py",
+      "size_bytes": 6029,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_litigation_edge_cases.py",
+      "size_bytes": 5513,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_litigation_engineering.py",
+      "size_bytes": 4197,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/test_mcp_smoke.py",
+      "size_bytes": 2171,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/__init__.py",
+      "size_bytes": 0,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_adjudication_draft_and_smt.py",
+      "size_bytes": 2693,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_adversarial.py",
+      "size_bytes": 2488,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_agent_protocol.py",
+      "size_bytes": 273,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_anti_degradation.py",
+      "size_bytes": 1972,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_argumentation.py",
+      "size_bytes": 898,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_build_phases.py",
+      "size_bytes": 2391,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_conflict_of_laws.py",
+      "size_bytes": 2294,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_constraint_validator.py",
+      "size_bytes": 1994,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_criminal_complexity.py",
+      "size_bytes": 3250,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_dacl_graph.py",
+      "size_bytes": 2890,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_ddl_modal_gate.py",
+      "size_bytes": 10695,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_ddl_preclassifier.py",
+      "size_bytes": 2505,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_evaluator.py",
+      "size_bytes": 3422,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_final_gaps.py",
+      "size_bytes": 650,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_harness.py",
+      "size_bytes": 1105,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_kg_audit.py",
+      "size_bytes": 1109,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_language_renderer.py",
+      "size_bytes": 4520,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_litigation_renderer.py",
+      "size_bytes": 4200,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_llm_bridge.py",
+      "size_bytes": 959,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_neural_guardrails.py",
+      "size_bytes": 3401,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_new_modules.py",
+      "size_bytes": 7805,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_nonmonotone_regression.py",
+      "size_bytes": 2925,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_p0_auditability.py",
+      "size_bytes": 4008,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_p1_ir_smt.py",
+      "size_bytes": 3788,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_p2_shadow_neural_contracts.py",
+      "size_bytes": 2511,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_perf_blueprint.py",
+      "size_bytes": 800,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_phase_harness.py",
+      "size_bytes": 2060,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_platform.py",
+      "size_bytes": 969,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_plugin_registry.py",
+      "size_bytes": 2264,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_promotion_gate.py",
+      "size_bytes": 2383,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_relevance_benchmark.py",
+      "size_bytes": 1711,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_relevance_reporting.py",
+      "size_bytes": 860,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_rule_migration_and_llm_batch.py",
+      "size_bytes": 12905,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_semantic_compiler.py",
+      "size_bytes": 2868,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_spec_shadow_harness.py",
+      "size_bytes": 1877,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_stratified_evaluator.py",
+      "size_bytes": 2884,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_training_export.py",
+      "size_bytes": 3003,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_trirail_collision.py",
+      "size_bytes": 8011,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_trust_labels.py",
+      "size_bytes": 935,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tests/unit/test_zh_rules.py",
+      "size_bytes": 9201,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/action_agent/__init__.py",
+      "size_bytes": 511,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/action_agent/cli.py",
+      "size_bytes": 5570,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/action_agent/compiler.py",
+      "size_bytes": 8539,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/action_agent/partners_memo.j2",
+      "size_bytes": 6867,
+      "extension": ".j2",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/action_agent/state_to_text.py",
+      "size_bytes": 11455,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/adjudication_draft_runner.py",
+      "size_bytes": 3145,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/adversarial_near_miss_generator.py",
+      "size_bytes": 4765,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/agent_protocol_auditor.py",
+      "size_bytes": 3733,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/audit_blind_reconstruction.py",
+      "size_bytes": 7364,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/audit_full.py",
+      "size_bytes": 5794,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/auto_distill.py",
+      "size_bytes": 7197,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/batch_litigation_runner.py",
+      "size_bytes": 8278,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/blueprint_completeness_meter.py",
+      "size_bytes": 1385,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/blueprint_contract_auditor.py",
+      "size_bytes": 9433,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/calibrate_weights.py",
+      "size_bytes": 2772,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/concept_disambiguator.py",
+      "size_bytes": 1428,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/dacl_graph_runner.py",
+      "size_bytes": 4431,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/damage_estimator.py",
+      "size_bytes": 1578,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/ddl_remedy_pool_filler.py",
+      "size_bytes": 3247,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/de_jure_audit_runner.py",
+      "size_bytes": 1067,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/distill_jurisdiction.py",
+      "size_bytes": 28535,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/e2e_evidence_collector.py",
+      "size_bytes": 2818,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/export_training_corpus.py",
+      "size_bytes": 5662,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/gen_us_adapter.py",
+      "size_bytes": 19089,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/import_source_verifier.py",
+      "size_bytes": 2249,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/ir_v3_checker.py",
+      "size_bytes": 1769,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/kb_search.py",
+      "size_bytes": 2770,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/kg_audit_common.py",
+      "size_bytes": 1645,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/kg_audit_loop.py",
+      "size_bytes": 4789,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/kg_completeness_auditor.py",
+      "size_bytes": 3036,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/kg_correctness_auditor.py",
+      "size_bytes": 2497,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/knowledge_graph_builder.py",
+      "size_bytes": 1836,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/llm_batch_acceptor.py",
+      "size_bytes": 8352,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/llm_batch_contract.py",
+      "size_bytes": 7326,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/llm_batch_orchestrator.py",
+      "size_bytes": 5153,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/llm_bridge.py",
+      "size_bytes": 2571,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/mdl_fp_analysis.py",
+      "size_bytes": 1591,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/module_interface_checker.py",
+      "size_bytes": 1832,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/multi_model_comparison.py",
+      "size_bytes": 2247,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/neural_contract_auditor.py",
+      "size_bytes": 4870,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/ocr_error_fixer.py",
+      "size_bytes": 943,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/operator_registry.py",
+      "size_bytes": 20544,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/parallax_test.py",
+      "size_bytes": 19251,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/perf_baseline.py",
+      "size_bytes": 4167,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/perf_compare.py",
+      "size_bytes": 2431,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/perf_to_blueprint.py",
+      "size_bytes": 5665,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/phase_runner.py",
+      "size_bytes": 6033,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/platform_check.py",
+      "size_bytes": 3520,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/press_long_tail.py",
+      "size_bytes": 20481,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/promotion_gate.py",
+      "size_bytes": 5559,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/pruner.py",
+      "size_bytes": 5136,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/quality_dashboard.py",
+      "size_bytes": 1669,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/recovery_guard.py",
+      "size_bytes": 1336,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/relevance_dataset_builder.py",
+      "size_bytes": 4553,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/relevance_sensitivity_runner.py",
+      "size_bytes": 7735,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/rule_classifier.py",
+      "size_bytes": 2281,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/rule_conflict_detector.py",
+      "size_bytes": 952,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/rule_coverage_analyzer.py",
+      "size_bytes": 1710,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/rule_deduplicator.py",
+      "size_bytes": 857,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/rule_freshness_checker.py",
+      "size_bytes": 663,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/rule_quality_auditor.py",
+      "size_bytes": 8264,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/rule_quality_sampler.py",
+      "size_bytes": 782,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/rule_to_ir_migrator.py",
+      "size_bytes": 11052,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/rule_version_tracker.py",
+      "size_bytes": 355,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/run_parallax_matrix.py",
+      "size_bytes": 36395,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/run_trirail_matrix.py",
+      "size_bytes": 26537,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/self_healing_loop.py",
+      "size_bytes": 2784,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/semantic_compile_batch.py",
+      "size_bytes": 4900,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/shadow_divergence_report.py",
+      "size_bytes": 2555,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/shadow_runner.py",
+      "size_bytes": 9093,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/shape_checker.py",
+      "size_bytes": 2741,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/smt_evaluator_compare.py",
+      "size_bytes": 4200,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/spec_shadow_runner.py",
+      "size_bytes": 3769,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/test_quality_auditor.py",
+      "size_bytes": 1129,
+      "extension": ".py",
+      "repo": "runtime"
+    },
+    {
+      "path": "tools/verification_replay.py",
+      "size_bytes": 2120,
+      "extension": ".py",
+      "repo": "runtime"
+    }
+  ]
+}

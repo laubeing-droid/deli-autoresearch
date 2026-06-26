@@ -1,0 +1,4104 @@
+{
+  "repos": [
+    {
+      "repo": "formal",
+      "file_count": 449,
+      "markers": [
+        {
+          "path": ".claude/rules/00-formal-proof.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": ".claude/rules/10-git-safety.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": ".gitattributes",
+          "marker": "no_marker"
+        },
+        {
+          "path": ".github/workflows/banach-build.yml",
+          "marker": "no_marker"
+        },
+        {
+          "path": ".github/workflows/lean-build.yml",
+          "marker": "no_marker"
+        },
+        {
+          "path": ".gitignore",
+          "marker": "no_marker"
+        },
+        {
+          "path": "AGENTS.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "CITATION.cff",
+          "marker": "data_file"
+        },
+        {
+          "path": "LICENSE",
+          "marker": "no_marker"
+        },
+        {
+          "path": "README.md",
+          "marker": "license_reference"
+        },
+        {
+          "path": "README_CN.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "SORRY_LEDGER.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "_restore.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "build-logs/20260624-204838/build-result.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "build-logs/20260624-204838/lake-build.log",
+          "marker": "no_marker"
+        },
+        {
+          "path": "build-logs/20260624-210317/build-result.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "build-logs/20260624-210317/lake-build.log",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/aaf_legal/aaf_validation_summary.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/aaf_legal/rebuttal_patterns.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_civil_mitigation.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_criminal_but2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_criminal_but3.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_defense_limitation.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_force_majeure.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_necessity.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_rebuttable_presumption.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_self_defense.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_third_party_fault.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_tort_exemption.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/aaf_legal/yd_victim_fault.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/banach_pricing/lipschitz_estimates.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/banach_pricing/pricing_evidence.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/banach_pricing/pricing_evidence_summary.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/banach_pricing/timesheet_anonymized.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/benchmarks/multi_model_cases.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/category_rosetta/T8.5_T9.4_data_collection_prompt.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/category_rosetta/T8.5_merged_clean.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/category_rosetta/T9.4_merged_clean.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/category_rosetta/claim_mapping.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_admin_record_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_attorney_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_case_metadata_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_court_filing_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_expert_report2_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_expert_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_important_data_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_minor_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_personal_info_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_pre_trial_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_privacy_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_published_opinion_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_settlement_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_state_secret_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_statute_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_search_trade_secret_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/_test_encoding.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/cn_legal/_test_encoding_case.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/cn_legal/admin_cases.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/admin_cases_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/admin_claims.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/cn_legal/admin_statutes.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/admin_statutes_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/administrative_cases.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/administrative_statutes.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/claim_vocabulary_cn.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/cn_source_manifest.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/contract_cases.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/contract_cases_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/contract_claims.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/cn_legal/contract_statutes.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/contract_statutes_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/corporate_cases.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/corporate_cases_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/corporate_claims.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/cn_legal/corporate_statutes.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/corporate_statutes_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/criminal_cases.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/criminal_cases_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/criminal_claims.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/cn_legal/criminal_statutes.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/criminal_statutes_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/data_cases.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/data_cases2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/data_cases_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/data_claims.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/cn_legal/data_crossborder_cases.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/data_crossborder_statutes.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/data_statutes.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/data_statutes_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/test_utf8.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/tort_cases.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/tort_cases_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/tort_claims.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/cn_legal/tort_statutes.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/cn_legal/tort_statutes_v2.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/cn_court_filing_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/cn_evidence_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/cn_expert_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/cn_guiding_case_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/cn_lawyer_confidentiality_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/cn_minor_record_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/cn_settlement_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/cn_statute_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/cn_trade_secret_semantic.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/dp_privilege/jurisdiction_lattices.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/dp_privilege/legal_sources.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/external/compas_scores_two_years.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/external/legalbench/abercrombie.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/external/legalbench/consumer_contracts_qa.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/external/legalbench/definition_extraction.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/external/legalbench/diversity_6.json",
+          "marker": "copyright_header"
+        },
+        {
+          "path": "data/external/legalbench/function_of_decision_section.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/external/legalbench/hearsay.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/external/legalbench/insurance_policy_interpretation.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/external/legalbench/international_citizenship_questions.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/external/legalbench/rule_qa.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/external/legalbench/ucc_v_common_law.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/external/supreme_court/extracted_rules.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/galois_semantics/alpha_gamma_samples.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/galois_semantics/galois_18_audit_summary.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/galois_semantics/theorem_dependency_graph.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/hk_legal/hk_fact_patterns.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/hk_legal/hk_legal_sources.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/hk_legal/hk_obstruction_legal_basis.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/hk_legal/hk_privilege_lattice.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/legal_validation_results.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/us_legal/us_fact_patterns.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/us_legal/us_legal_sources.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/us_legal/us_obstruction_legal_basis.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/us_legal/us_privilege_lattice.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/analysis/contract-breach-vertical-slice.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/analysis/jc-transition-gate-status.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/analysis/k3_analysis_result.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/analysis/license-permission-priority-slice.md",
+          "marker": "license_reference"
+        },
+        {
+          "path": "docs/analysis/next-stage-spec-first-roadmap.md",
+          "marker": "license_reference"
+        },
+        {
+          "path": "docs/analysis/paper_theory_alignment.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/codex_audit_report_20260619.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/codex_handoff.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/codex_handoff_response.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/codex_review_rounds.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/counterexample_registry.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/failed_or_refuted_theorems.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/final_audit_acceptance.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/proof_ledger.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/theorem_status_matrix.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/audit/trust_label_schema.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/final-closure/additional-breakthroughs.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/final-closure/baseline.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/final-closure/final-report.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/formal-release/ALLOWED_CLAIMS.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/formal-release/C0_FOUR_STAGE_SAFETY.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/formal-release/FINAL_FORMAL_RELEASE_REPORT.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/formal-release/FORBIDDEN_CLAIMS.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/formal-release/FORMAL_RELEASE_REPORT.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/formal-release/axiom_audit.txt",
+          "marker": "data_file"
+        },
+        {
+          "path": "docs/formal-release/theorem_manifest.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/history/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/history/development_log_20260523_0614.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/history/development_log_20260616_0617.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/history/llm_machine_provability.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/history/socratic_200_rounds.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/history/socratic_200_rounds_deep.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"docs/modeling/01_\\346\\225\\260\\345\\255\\246\\351\\200\\206\\345\\220\\221\\345\\267\\245\\347\\250\\213_cn.md\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"docs/modeling/02_\\351\\200\\206\\345\\220\\221\\345\\267\\245\\347\\250\\213\\345\\256\\241\\350\\256\\241.md\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"docs/modeling/03_\\346\\225\\260\\345\\255\\246\\346\\250\\241\\345\\236\\213\\350\\257\\246\\346\\236\\220_cn.md\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"docs/modeling/04_\\347\\256\\227\\346\\263\\225\\345\\256\\236\\347\\216\\260\\345\\210\\206\\346\\236\\220_cn.md\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"docs/modeling/05_\\344\\274\\230\\345\\214\\226\\346\\212\\245\\345\\221\\212_cn.md\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"docs/modeling/06_\\347\\254\\254\\345\\233\\233\\351\\230\\266\\346\\256\\265\\351\\252\\214\\350\\257\\201_cn.md\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"docs/modeling/07_\\345\\220\\221Codex\\344\\272\\244\\346\\216\\245.md\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"docs/modeling/08_Codex\\344\\272\\244\\346\\216\\245\\345\\233\\236\\345\\272\\224.md\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/ontology/core_ontology.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/remediation/lean_manifest.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/remediation/theorem-proofs.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/ai_liability_infrastructure.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/argument_strength.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/argumentation_frameworks.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/dp_impossibility.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/explainable_legal_reasoning.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/graph_similarity_topology.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/icail_full_paper.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/legal_analogy.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/legal_reasoning_paradigms.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/main.md",
+          "marker": "license_reference"
+        },
+        {
+          "path": "paper/main.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/main_cn.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/mathematical_structures.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/multi_ai_formalization.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/non_monotonicity.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/probabilistic_legal_reasoning.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/references.bib",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/01_introduction.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/02_preliminaries.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/03_ontology.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/04_horn_closure.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/05_aaf_argumentation.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/06_stratified_evaluator.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/07_kripke_temporal.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/08_category_rosetta.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/09_banach_contraction.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/10_dp_privilege.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/11_non_interference.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/12_evidence_calibrated.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "paper/sections/13_conclusion.tex",
+          "marker": "no_marker"
+        },
+        {
+          "path": "program/MEGA_GOAL.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "program/PLANS.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "program/PROGRAM_STATE.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "program/run-night.ps1",
+          "marker": "no_marker"
+        },
+        {
+          "path": "program/schemas/final_report.schema.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "program/schemas/program_state.schema.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/alloy/rosetta_functor.als",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/ARTIFACT_MANIFEST.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/aaf/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/aaf/dung_grounded_extension.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/aaf/stratified_correspondence.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/adversarial/adversarial_input_checks.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/adversarial/adversarial_results.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/adversarial/extended_adversarial_checks.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/adversarial/extended_adversarial_results.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/banach/BanachEffectiveNodes.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/banach/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/banach/banach_effective_nodes.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/cbl/t15_cbl_non_interference_exhaustive.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/cross_jurisdiction/no_functor_finite_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/dp/dp_floor_clipping_analysis.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/dp/laplace_scalar_mechanism.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/dp/ratio_preserving_boundary.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/fixpoint/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/fixpoint/evaluator_termination_model.tla",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/fixpoint/production_bounded_termination.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/galois/FiniteGaloisAdjunction.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/galois/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/galois/finite_galois_adjunction.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/graph_similarity/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/graph_similarity/graph_similarity_range.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/graph_similarity/graph_similarity_range.smt2",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/graph_similarity/graph_similarity_range_z3.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/graph_similarity/metric_counterexamples.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/horn/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/horn/bounded_horn_correctness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/horn/bounded_horn_z3.smt2",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/horn/horn_termination_measure.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/proof_run_results.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/rosetta/audit_t94_us_hk_candidates.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/rosetta/build_t85_local_batch.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/rosetta/merge_all_data.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/rosetta/run_t85_t94.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/rosetta/t85_t94_data_extractor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/run_all_proofs.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/statistics/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/statistics/clipped_theilsen_refutation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/engineering_proof_artifacts/statistics/siegel_repeated_median_verifier.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/formal_verification_logs/01_experiment_plan.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/formal_verification_logs/05_verification_run_report.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/formal_verification_logs/06_audit_prompt.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/formal_verification_logs/07_logic_audit_report.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/BANACH_MATHLIB_API_LOCK.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/BanachEffectiveNodes.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/AxiomAudit.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/BanachCertificate.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/BanachComplete.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/BanachContraction.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/BanachEffectiveNodes.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/BanachFixedPoint.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/BanachScratch.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/BanachWeightedNorm.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/Basic.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/ContractionCondition.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/DungAAF.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/DungDefinitions.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/DungFixedPoint.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/FiniteGaloisAdjunction.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/FiniteMonotoneIteration.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/FiniteRosetta.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/HornDefinitions.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/HornFixedPoint.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/HornOperationalRefinement.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/JC_Formalization.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/ScratchApi.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/SupZeroLemma.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/TemporalKripke.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/UnifiedModel.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/JurisLean/WeightedSupNorm.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/_axiom_audit.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/_check.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/_test.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/_test_omega.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/lake-manifest.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/lakefile.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/lean/juris_lean/lean-toolchain",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/aaf_grounded_extension_summary.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/evaluator_nonmonotone_counterexample.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/lean/BanachEffectiveNodes.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/lean/FiniteGaloisAdjunction.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/lean/FiniteRosetta.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0a_category/FiniteRosetta.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0a_category/claim_mapping.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0a_category/counterexamples.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0a_category/finite_no_total_mapping_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0a_category/real_data_insufficiency_witness.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0a_category/real_data_insufficiency_witness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0a_category/theorem_statement.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0a_category/toy_proof_result.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0b_dp_lattice/cross_jurisdiction_lattice_counterexample.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0b_dp_lattice/cross_jurisdiction_morphism.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0b_dp_lattice/dp_finite_lattice.smt2",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0b_dp_lattice/dp_finite_lattice_proof.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0b_dp_lattice/theorem_statement.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0c_banach/BanachEffectiveNodes.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0c_banach/pairwise_lipschitz_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0c_banach/proof_insufficiency_witness.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0c_banach/theorem_statement.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0c_banach/toy_proof_result.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/FiniteGaloisAdjunction.lean",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/countermodel.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/privilege_epsilon_refutation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/theorem_statement.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/two_model_witness.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p1e_aaf/aaf_grounded_extension_proof.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p1e_aaf/aaf_grounded_extension_summary.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p1e_aaf/evaluator_nonmonotone_counterexample.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p1e_aaf/evaluator_nonmonotone_counterexample.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p1e_aaf/stratified_evaluator_correctness_conditions.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/p1e_aaf/theorem_statement.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/proof_run_results.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/run_all_proofs.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/smt/cn_privilege_lattice.smt2",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/strict_proof_baseline/smt/cn_privilege_lattice_z3.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "proofs/tla/evaluator_termination.tla",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/bayesian_calibration/calibration_likelihood_ratios.png",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/bayesian_calibration/calibration_manifest.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "reports/bayesian_calibration/calibration_prior_posterior.png",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/bayesian_calibration/calibration_report.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "reports/bayesian_calibration/calibration_report.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/bayesian_calibration/calibration_v2.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/bayesian_calibration/calibration_v2_loo.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/bayesian_calibration/compas_calibration.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/bayesian_calibration/legalbench_analysis.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/bayesian_calibration/proof_outcomes.png",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/cross_audit_doubao_gemini.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/doubao500_report.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/doubao_audit.txt",
+          "marker": "data_file"
+        },
+        {
+          "path": "reports/doubao_decisions.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/doubao_decisions_text.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/doubao_full.txt",
+          "marker": "data_file"
+        },
+        {
+          "path": "reports/external_data_sources.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/gemini500_report.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/gemini_11000.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/gemini_3000.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/gemini_6000.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/gemini_audit.txt",
+          "marker": "data_file"
+        },
+        {
+          "path": "reports/gemini_decisions.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/gemini_decisions_text.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/mdl_fp/fp_by_status.png",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/mdl_fp/mdl_by_domain.png",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/mdl_fp/mdl_fp_comprehensive_v3.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/mdl_fp/mdl_fp_detail.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "reports/mdl_fp/mdl_fp_report.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/mdl_fp/mdl_fp_scatter.png",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/mdl_fp/mdl_fp_structural_v2.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/obstruction/obstruction_witness.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/verification/banach_multidim_results.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/verification/baseline_results.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/verification/t85_t94_results.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/verification/verification_results.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "requirements.txt",
+          "marker": "data_file"
+        },
+        {
+          "path": "scripts/finalize-external-build.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "scripts/request-external-build.ps1",
+          "marker": "no_marker"
+        },
+        {
+          "path": "scripts/scan_lean_guards.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/spec/test_spec_transition.py",
+          "marker": "license_reference"
+        },
+        {
+          "path": "theory/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/__main__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/abstract_interpretation_unified.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/analogical_reasoning.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/arbitration_reasoning.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/argument_clustering.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/argument_strength_ordering.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/argumentation_horn_unification.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/aspic_plus_framework.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/banach_multidim.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/banach_pricing_contraction.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/bayesian_calibration.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/bayesian_legal_reasoning.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/bounded_horn_correctness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/bridge/bridge_fixpoint.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/burden_of_proof_tracker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/case_retrieval.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/category_theory_rosetta.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/compliance_monitoring.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/conjecture/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/conjecture/kolmogorov_mdl_rules.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/counts_as_institutional_facts.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/criminal_sentencing.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/cross_border_data.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/damages_attribute_grammar.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/data_quality_label.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/deontic_procedural_justice.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/dialectical_argumentation_tree.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/dp_legal_privilege.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/evidence_credibility_axioms.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/evidence_dependency_manager.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/evidence_evaluation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/formal_concept_analysis.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/galois_reverse_index.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/gradual_verification_soundness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/graph_metric.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/hierarchical_bayes_alpha.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/hypothesis_horn_pbt.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/interest_balancing.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/ip_valuation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/judgment_deviation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/juris_engine.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/jurisdiction_guard.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/k3_empirical_analysis.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/kolmogorov_mdl_rules.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/kripke_supersedes_corrects.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/legal_interpretation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/litigation_game_theory.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/mdl_fp_analysis.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/model_status.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/mutation/mutation_suite.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/non_interference_cbl.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/paradigm_incommensurability.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/policy_expressiveness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/precedent_reasoning.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/probabilistic_damages.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/rough_set_discretionary.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/spec/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/spec/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/spec/abstract_interpretation_unified.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/spec/canonical_semantics.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/spec/certificate_schema.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/spec/ddl_core.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/spec/hierarchical_bayes_alpha.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/spec/horn_aaf_contract.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/spec/reference_semantics.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/sympy_evidence_proofs.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/temporal_integration.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/temporal_kripke_ltl.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/temporal_law_engine.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/temporal_statute_law.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/trirail_complexity.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/z3_kripke_mutex.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "theory/z3_temporal_induction.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "verification/verification_engine.py",
+          "marker": "no_marker"
+        }
+      ]
+    },
+    {
+      "repo": "runtime",
+      "file_count": 573,
+      "markers": [
+        {
+          "path": ".claude/rules/00-runtime-refinement.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": ".claude/rules/10-git-safety.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": ".github/workflows/auto-release.yml",
+          "marker": "no_marker"
+        },
+        {
+          "path": ".gitignore",
+          "marker": "no_marker"
+        },
+        {
+          "path": "AGENTS.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "CLAUDE.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "README_CN.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "SORRY_LEDGER.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/cn/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/cn/adapter.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/cn/modal_mapping.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/federation/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/federation/common_law.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/hk/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/hk/adapter.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/us/__init__.py",
+          "marker": "copyright_header"
+        },
+        {
+          "path": "addons/us/_l0_map.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/us/adapter.py",
+          "marker": "copyright_header"
+        },
+        {
+          "path": "addons/us/alignment.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/us/parser.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "addons/us/us_lookup.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "benchmarks/relevance/manifest.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/adapter_base.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/adjudication_draft.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/arbitration_reasoning.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/argumentation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/automated_pipeline.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/banach_verifier.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/batch_processor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/bayesian_calibration.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/breakthrough_candidates.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/breakthrough_verification.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/burden_of_proof.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/canonical_serialization.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/certificate_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/classifier.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/completion_status.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/compliance_monitoring.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/composition_safety.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/config_paths.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/conflict_of_laws.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/constraint_validator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/criminal_complexity.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/criminal_sentencing.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/cross_jurisdiction_compare.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/cross_jurisdiction_router.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/dacl_graph.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/ddl_preclassifier.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/de_jure_auditor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/defeasible_priority.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/domain_config.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/dp_policy_loader.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/entity_anonymizer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/evaluator.py",
+          "marker": "license_reference"
+        },
+        {
+          "path": "compiler_core/evidence_chain_validator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/evidence_checklist.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/evidence_evaluation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/experience_contracts.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/g8_evaluator_patch.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/grounded_smt_verifier.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/horn_completeness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/incremental_grounded.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/independent_grounded_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/inference_cache.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/invariance_metrics.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/ip_valuation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/juris_blueprint.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/kg_recall.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/language_renderer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/legal_compiler.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/legal_ir_v3.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/legal_memory.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/legal_reasoning.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/litigation_engineering.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/litigation_renderer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/metrics_collector.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/multi_jurisdiction_orchestrator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/multi_solver_router.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/neural_leaf.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/neural_yaml_sync.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/parallax_inference.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/plugin_registry.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/prc_collision_engine.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/proleg_translator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/promotion_candidate.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/proof_trace.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/proof_trace_renderer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/proof_trace_visualizer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/proof_tree.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/provider.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/result_diff.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/result_exporter.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/rule_router.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/semantic_compiler_contract.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/shadow_state.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/smt_sidecar.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/source_anchor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/source_manifest.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/spec_shadow_harness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/step_verifier.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/stratified_evaluator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/tool_cache.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/transformer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/trust_labels.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/type_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/types.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/universal_grounded_smt.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "compiler_core/validity_state_machine.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "config/constants_registry.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/L0_overrides_cn.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/L0_overrides_hk.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/agent_collaboration_protocol.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/base_ontology.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/core_ontology.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/domain_corporate.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/domain_mapping.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/en_US/L0_overrides_us.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/en_US/US_Adapter.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/en_US/domain_config.example.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/en_US/llm_distilled_full.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/en_US/rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/en_US/state_combined_terms.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/en_US/state_router.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/hk/blocking_rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/hk/extended_rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/hk/provenance.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/hk/rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/hk/rules_expanded.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/hk/term_L0_mappings.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/hk/trilingual_alignment.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/juris_blueprint.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/juris_contracts.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/juris_phase_matrix.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/jurisdiction_spec_template.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/knowledge_base/hk_library/critical_annotations.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/knowledge_layers.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/lexicon_index.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/obstruction_registry.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/perf_patterns.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/prc_us_alignment/blocking_rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/prc_us_alignment/long_tail_collision_matrix.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/prc_us_alignment/meta_constraints.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/prc_us_alignment/procedural_justice_rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/prc_us_alignment/spc_rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/prc_us_alignment/term_L0_mappings.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/prc_us_alignment/term_L0_mappings_batch2.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/prc_us_alignment/trirail_matrix_report.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/typed_ir/README.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/uk/rules_candidates.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/us/blocking_rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/us/modal_mapping.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/us/rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/us/term_L0_mappings.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/us/threat_signatures/nj_pen_signature.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/us/threat_signatures/wi_enf_signature.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/classifier_rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/concept_registry.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/concept_registry_ocr.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/criminal_complexity.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/domain_config.example.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/dp_policy.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/ontology_map.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/router_moe.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/rules.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "configs/zh_CN/source_manifest.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/cross_jurisdiction_claims.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/damages_calibration.csv",
+          "marker": "data_file"
+        },
+        {
+          "path": "data/golden_corpus/gc01.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/golden_corpus/gc02.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/golden_corpus/gc03.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/golden_corpus/gc04.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/golden_corpus/gc05.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/golden_corpus/gc06.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/golden_corpus/gc07.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/golden_corpus/gc08.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/golden_corpus/gc09.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/MANIFEST.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0000.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0001.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0002.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0003.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0004.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0005.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0006.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0007.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0008.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0009.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0010.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0011.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0012.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0013.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0014.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0015.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0016.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0017.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0018.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0019.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0020.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0021.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0022.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0023.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0024.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0025.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0026.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0027.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0028.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0029.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0030.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0031.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0032.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0033.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0034.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0035.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0036.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0037.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0038.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0039.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0040.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0041.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0042.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0043.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0044.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0045.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0046.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0047.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0048.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0049.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0050.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0051.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0052.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0053.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0054.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0055.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0056.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0057.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0058.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0059.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0060.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0061.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0062.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0063.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0064.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0065.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0066.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0067.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0068.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0069.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0070.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0071.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0072.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0073.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0074.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0075.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0076.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0077.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0078.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0079.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0080.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0081.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0082.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0083.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0084.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0085.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0086.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0087.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0088.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0089.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0090.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0091.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0092.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0093.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0094.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0095.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0096.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0097.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0098.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0099.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0100.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0101.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0102.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0103.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0104.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0105.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0106.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0107.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0108.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0109.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0110.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0111.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0112.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0113.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0114.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0115.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0116.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0117.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0118.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0119.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0120.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0121.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0122.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0123.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0124.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0125.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0126.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0127.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0128.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0129.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0130.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0131.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0132.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0133.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0134.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0135.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0136.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0137.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0138.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0139.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0140.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0141.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0142.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0143.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0144.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0145.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0146.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0147.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0148.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0149.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0150.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0151.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0152.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0153.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0154.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0155.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0156.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0157.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0158.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0159.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0160.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0161.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0162.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0163.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0164.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0165.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0166.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0167.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0168.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0169.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0170.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0171.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0172.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0173.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0174.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0175.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0176.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0177.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0178.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0179.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0180.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0181.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0182.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0183.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0184.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0185.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "data/spc_golden_corpus/SPC-0186.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/final-closure/dp-trust-boundary.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/final-closure/graph-similarity-contract.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/final-closure/robust-regression-contract.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/p0_p2_execution_roadmap.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/remediation/g8-truncation-map.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "docs/rules_schema_spec.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "mcp_manifest.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "mcp_server.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "metainfer_integration_plan_20260612.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "neural/contracts/feature_schema.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "neural/contracts/model_card_schema.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "neural/contracts/output_schema.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "neural/contracts/promotion_policy.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "neural/registry/model_registry.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "neural/registry/sample-domain-router.model_card.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/adversarial_pipeline.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/build_ocr_index.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/extract_concepts.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/fix_single_premise.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/guardian.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/llm_client.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/pipeline.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/prc_us_alignment.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "pipeline/schemas.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "reports/blind_reconstruction_audit.md",
+          "marker": "no_marker"
+        },
+        {
+          "path": "requirements.txt",
+          "marker": "data_file"
+        },
+        {
+          "path": "scripts/audit-engine.sh",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/conftest.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/fixtures/ci_promotion_candidate.json",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/fixtures/ci_requests.jsonl",
+          "marker": "data_file"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\233\\275\\345\\256\\266\\350\\265\\224\\345\\201\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\233\\275\\345\\256\\266\\350\\265\\224\\345\\201\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\256\\241\\347\\220\\206\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\256\\241\\347\\220\\206\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\211\\247\\350\\241\\214\\346\\241\\210\\344\\273\\266\\345\\212\\236\\347\\220\\206\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\211\\247\\350\\241\\214\\346\\241\\210\\344\\273\\266\\345\\212\\236\\347\\220\\206\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\234\\252\\346\\210\\220\\345\\271\\264\\344\\272\\272\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\234\\252\\346\\210\\220\\345\\271\\264\\344\\272\\272\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2411.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2411_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2412.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2412_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2413.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2413_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2414.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2414_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2415.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2415_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2416.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2416_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\345\\244\\226\\345\\225\\206\\344\\272\\213\\346\\265\\267\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\345\\244\\226\\345\\225\\206\\344\\272\\213\\346\\265\\267\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\345\\222\\214\\345\\233\\275\\351\\231\\205\\345\\217\\270\\346\\263\\225\\345\\215\\217\\345\\212\\251_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\346\\270\\257\\346\\276\\263\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\346\\270\\257\\346\\276\\263\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\345\\222\\214\\345\\214\\272\\351\\231\\205\\345\\217\\270\\346\\263\\225\\345\\215\\217\\345\\212\\251_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\347\\216\\257\\345\\242\\203\\350\\265\\204\\346\\272\\220\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\347\\216\\257\\345\\242\\203\\350\\265\\204\\346\\272\\220\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\347\\237\\245\\350\\257\\206\\344\\272\\247\\346\\235\\203\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\347\\237\\245\\350\\257\\206\\344\\272\\247\\346\\235\\203\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\347\\253\\213\\346\\241\\210\\345\\267\\245\\344\\275\\234\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\347\\253\\213\\346\\241\\210\\345\\267\\245\\344\\275\\234\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\350\\241\\214\\346\\224\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "\"tests/fixtures/distill_candidates/\\350\\241\\214\\346\\224\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/fixtures/legal_ir_v3_sample.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/fixtures/rule_migration_sample.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/relevance_sensitivity/contract_basics.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/relevance_sensitivity/temporal_exception_paraphrase.yaml",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/run_benchmark_zh.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/stress_test_facts.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_argumentation_b6.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_canonical_serialization.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_composition_safety.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_conflict_case.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_cross_domain.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_grounded_g9a.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_horn_completeness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_incremental_grounded.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_independent_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_litigation_edge_cases.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_litigation_engineering.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/test_mcp_smoke.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_adjudication_draft_and_smt.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_adversarial.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_agent_protocol.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_anti_degradation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_argumentation.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_build_phases.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_conflict_of_laws.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_constraint_validator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_criminal_complexity.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_dacl_graph.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_ddl_modal_gate.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_ddl_preclassifier.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_evaluator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_final_gaps.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_harness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_kg_audit.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_language_renderer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_litigation_renderer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_llm_bridge.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_neural_guardrails.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_new_modules.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_nonmonotone_regression.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_p0_auditability.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_p1_ir_smt.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_p2_shadow_neural_contracts.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_perf_blueprint.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_phase_harness.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_platform.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_plugin_registry.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_promotion_gate.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_relevance_benchmark.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_relevance_reporting.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_rule_migration_and_llm_batch.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_semantic_compiler.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_spec_shadow_harness.py",
+          "marker": "license_reference"
+        },
+        {
+          "path": "tests/unit/test_stratified_evaluator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_training_export.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_trirail_collision.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_trust_labels.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tests/unit/test_zh_rules.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/action_agent/__init__.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/action_agent/cli.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/action_agent/compiler.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/action_agent/partners_memo.j2",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/action_agent/state_to_text.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/adjudication_draft_runner.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/adversarial_near_miss_generator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/agent_protocol_auditor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/audit_blind_reconstruction.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/audit_full.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/auto_distill.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/batch_litigation_runner.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/blueprint_completeness_meter.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/blueprint_contract_auditor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/calibrate_weights.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/concept_disambiguator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/dacl_graph_runner.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/damage_estimator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/ddl_remedy_pool_filler.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/de_jure_audit_runner.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/distill_jurisdiction.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/e2e_evidence_collector.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/export_training_corpus.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/gen_us_adapter.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/import_source_verifier.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/ir_v3_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/kb_search.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/kg_audit_common.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/kg_audit_loop.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/kg_completeness_auditor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/kg_correctness_auditor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/knowledge_graph_builder.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/llm_batch_acceptor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/llm_batch_contract.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/llm_batch_orchestrator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/llm_bridge.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/mdl_fp_analysis.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/module_interface_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/multi_model_comparison.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/neural_contract_auditor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/ocr_error_fixer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/operator_registry.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/parallax_test.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/perf_baseline.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/perf_compare.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/perf_to_blueprint.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/phase_runner.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/platform_check.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/press_long_tail.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/promotion_gate.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/pruner.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/quality_dashboard.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/recovery_guard.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/relevance_dataset_builder.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/relevance_sensitivity_runner.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/rule_classifier.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/rule_conflict_detector.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/rule_coverage_analyzer.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/rule_deduplicator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/rule_freshness_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/rule_quality_auditor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/rule_quality_sampler.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/rule_to_ir_migrator.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/rule_version_tracker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/run_parallax_matrix.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/run_trirail_matrix.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/self_healing_loop.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/semantic_compile_batch.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/shadow_divergence_report.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/shadow_runner.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/shape_checker.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/smt_evaluator_compare.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/spec_shadow_runner.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/test_quality_auditor.py",
+          "marker": "no_marker"
+        },
+        {
+          "path": "tools/verification_replay.py",
+          "marker": "no_marker"
+        }
+      ]
+    }
+  ]
+}

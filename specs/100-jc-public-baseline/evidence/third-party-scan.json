@@ -1,0 +1,92 @@
+{
+  "repos": [
+    {
+      "repo": "formal",
+      "third_party_count": 18,
+      "items": [
+        {
+          "path": "data/external/compas_scores_two_years.csv",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/abercrombie.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/consumer_contracts_qa.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/definition_extraction.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/diversity_6.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/function_of_decision_section.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/hearsay.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/insurance_policy_interpretation.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/international_citizenship_questions.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/rule_qa.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/legalbench/ucc_v_common_law.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "data/external/supreme_court/extracted_rules.json",
+          "type": "external_directory"
+        },
+        {
+          "path": "proofs/lean/juris_lean/lake-manifest.json",
+          "type": "dependency_manifest"
+        },
+        {
+          "path": "proofs/lean/juris_lean/lakefile.lean",
+          "type": "dependency_manifest"
+        },
+        {
+          "path": "proofs/lean/juris_lean/lean-toolchain",
+          "type": "dependency_manifest"
+        },
+        {
+          "path": "reports/bayesian_calibration/compas_calibration.json",
+          "type": "external_dataset"
+        },
+        {
+          "path": "reports/bayesian_calibration/legalbench_analysis.json",
+          "type": "external_dataset"
+        },
+        {
+          "path": "requirements.txt",
+          "type": "dependency_manifest"
+        }
+      ]
+    },
+    {
+      "repo": "runtime",
+      "third_party_count": 1,
+      "items": [
+        {
+          "path": "requirements.txt",
+          "type": "dependency_manifest"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5452 @@
+{
+  "category": "PUBLIC_REFERENCE",
+  "count": 778,
+  "files": [
+    {
+      "path": ".github/workflows/banach-build.yml",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": ".github/workflows/lean-build.yml",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "LICENSE",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "SORRY_LEDGER.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "_restore.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "build-logs/20260624-204838/build-result.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Build log output"
+    },
+    {
+      "path": "build-logs/20260624-204838/lake-build.log",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Build log output"
+    },
+    {
+      "path": "build-logs/20260624-210317/build-result.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Build log output"
+    },
+    {
+      "path": "build-logs/20260624-210317/lake-build.log",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Build log output"
+    },
+    {
+      "path": "data/aaf_legal/aaf_validation_summary.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/rebuttal_patterns.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_civil_mitigation.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_criminal_but2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_criminal_but3.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_defense_limitation.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_force_majeure.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_necessity.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_rebuttable_presumption.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_self_defense.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_third_party_fault.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_tort_exemption.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/aaf_legal/yd_victim_fault.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/banach_pricing/lipschitz_estimates.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/banach_pricing/pricing_evidence.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/banach_pricing/pricing_evidence_summary.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/banach_pricing/timesheet_anonymized.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/benchmarks/multi_model_cases.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/category_rosetta/T8.5_T9.4_data_collection_prompt.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "data/category_rosetta/T8.5_merged_clean.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/category_rosetta/T9.4_merged_clean.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/category_rosetta/claim_mapping.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_admin_record_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_attorney_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_case_metadata_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_court_filing_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_expert_report2_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_expert_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_important_data_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_minor_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_personal_info_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_pre_trial_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_privacy_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_published_opinion_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_settlement_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_state_secret_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_statute_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_search_trade_secret_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_test_encoding.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/_test_encoding_case.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/admin_cases.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/admin_cases_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/admin_claims.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/admin_statutes.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/admin_statutes_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/administrative_cases.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/administrative_statutes.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/claim_vocabulary_cn.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/cn_source_manifest.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/contract_cases.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/contract_cases_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/contract_claims.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/contract_statutes.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/contract_statutes_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/corporate_cases.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/corporate_cases_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/corporate_claims.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/corporate_statutes.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/corporate_statutes_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/criminal_cases.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/criminal_cases_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/criminal_claims.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/criminal_statutes.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/criminal_statutes_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/data_cases.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/data_cases2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/data_cases_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/data_claims.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/data_crossborder_cases.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/data_crossborder_statutes.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/data_statutes.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/data_statutes_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/test_utf8.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/tort_cases.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/tort_cases_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/tort_claims.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/tort_statutes.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/cn_legal/tort_statutes_v2.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/cn_court_filing_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/cn_evidence_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/cn_expert_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/cn_guiding_case_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/cn_lawyer_confidentiality_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/cn_minor_record_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/cn_settlement_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/cn_statute_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/cn_trade_secret_semantic.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/jurisdiction_lattices.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/dp_privilege/legal_sources.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/galois_semantics/alpha_gamma_samples.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/galois_semantics/galois_18_audit_summary.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/galois_semantics/theorem_dependency_graph.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/hk_legal/hk_fact_patterns.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/hk_legal/hk_legal_sources.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/hk_legal/hk_obstruction_legal_basis.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/hk_legal/hk_privilege_lattice.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/legal_validation_results.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "data/us_legal/us_fact_patterns.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/us_legal/us_legal_sources.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/us_legal/us_obstruction_legal_basis.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/us_legal/us_privilege_lattice.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "docs/analysis/contract-breach-vertical-slice.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/analysis/jc-transition-gate-status.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/analysis/k3_analysis_result.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/analysis/license-permission-priority-slice.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/analysis/next-stage-spec-first-roadmap.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/analysis/paper_theory_alignment.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/audit/codex_audit_report_20260619.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/audit/codex_handoff.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/audit/codex_handoff_response.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/audit/codex_review_rounds.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/audit/counterexample_registry.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/audit/failed_or_refuted_theorems.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/audit/final_audit_acceptance.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/audit/proof_ledger.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/audit/theorem_status_matrix.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/final-closure/additional-breakthroughs.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/final-closure/baseline.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/final-closure/final-report.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/formal-release/ALLOWED_CLAIMS.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/formal-release/C0_FOUR_STAGE_SAFETY.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/formal-release/FINAL_FORMAL_RELEASE_REPORT.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/formal-release/FORBIDDEN_CLAIMS.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/formal-release/FORMAL_RELEASE_REPORT.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/formal-release/axiom_audit.txt",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/formal-release/theorem_manifest.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/history/development_log_20260523_0614.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/history/development_log_20260616_0617.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/history/llm_machine_provability.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/history/socratic_200_rounds.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/history/socratic_200_rounds_deep.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "\"docs/modeling/01_\\346\\225\\260\\345\\255\\246\\351\\200\\206\\345\\220\\221\\345\\267\\245\\347\\250\\213_cn.md\"",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"docs/modeling/02_\\351\\200\\206\\345\\220\\221\\345\\267\\245\\347\\250\\213\\345\\256\\241\\350\\256\\241.md\"",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"docs/modeling/03_\\346\\225\\260\\345\\255\\246\\346\\250\\241\\345\\236\\213\\350\\257\\246\\346\\236\\220_cn.md\"",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"docs/modeling/04_\\347\\256\\227\\346\\263\\225\\345\\256\\236\\347\\216\\260\\345\\210\\206\\346\\236\\220_cn.md\"",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"docs/modeling/05_\\344\\274\\230\\345\\214\\226\\346\\212\\245\\345\\221\\212_cn.md\"",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"docs/modeling/06_\\347\\254\\254\\345\\233\\233\\351\\230\\266\\346\\256\\265\\351\\252\\214\\350\\257\\201_cn.md\"",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"docs/modeling/07_\\345\\220\\221Codex\\344\\272\\244\\346\\216\\245.md\"",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"docs/modeling/08_Codex\\344\\272\\244\\346\\216\\245\\345\\233\\236\\345\\272\\224.md\"",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "docs/remediation/lean_manifest.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/remediation/theorem-proofs.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "paper/ai_liability_infrastructure.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/argument_strength.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/argumentation_frameworks.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/dp_impossibility.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/explainable_legal_reasoning.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/graph_similarity_topology.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/icail_full_paper.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/legal_analogy.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/legal_reasoning_paradigms.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/main.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/main.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/main_cn.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/mathematical_structures.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/multi_ai_formalization.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/non_monotonicity.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/probabilistic_legal_reasoning.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/references.bib",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "paper/sections/01_introduction.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/02_preliminaries.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/03_ontology.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/04_horn_closure.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/05_aaf_argumentation.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/06_stratified_evaluator.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/07_kripke_temporal.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/08_category_rosetta.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/09_banach_contraction.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/10_dp_privilege.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/11_non_interference.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/12_evidence_calibrated.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "paper/sections/13_conclusion.tex",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Academic paper or research content"
+    },
+    {
+      "path": "program/MEGA_GOAL.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "program/PLANS.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "program/PROGRAM_STATE.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "program/run-night.ps1",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0a_category/claim_mapping.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/bayesian_calibration/calibration_likelihood_ratios.png",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/bayesian_calibration/calibration_manifest.jsonl",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/bayesian_calibration/calibration_prior_posterior.png",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/bayesian_calibration/calibration_report.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/bayesian_calibration/calibration_report.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/bayesian_calibration/calibration_v2.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/bayesian_calibration/calibration_v2_loo.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/bayesian_calibration/proof_outcomes.png",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/cross_audit_doubao_gemini.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/doubao500_report.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/doubao_audit.txt",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/doubao_decisions.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/doubao_decisions_text.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/doubao_full.txt",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/external_data_sources.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/gemini500_report.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/gemini_11000.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/gemini_3000.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/gemini_6000.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/gemini_audit.txt",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/gemini_decisions.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/gemini_decisions_text.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/mdl_fp/fp_by_status.png",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/mdl_fp/mdl_by_domain.png",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/mdl_fp/mdl_fp_comprehensive_v3.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/mdl_fp/mdl_fp_detail.csv",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/mdl_fp/mdl_fp_report.md",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/mdl_fp/mdl_fp_scatter.png",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/mdl_fp/mdl_fp_structural_v2.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/obstruction/obstruction_witness.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/verification/banach_multidim_results.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/verification/baseline_results.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/verification/t85_t94_results.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "reports/verification/verification_results.json",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Report or analysis output"
+    },
+    {
+      "path": "scripts/finalize-external-build.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "scripts/request-external-build.ps1",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "scripts/scan_lean_guards.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/spec/test_spec_transition.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "theory/__init__.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/__main__.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/abstract_interpretation_unified.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/analogical_reasoning.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/arbitration_reasoning.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/argument_clustering.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/argument_strength_ordering.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/argumentation_horn_unification.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/aspic_plus_framework.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/banach_multidim.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/banach_pricing_contraction.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/bayesian_calibration.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/bayesian_legal_reasoning.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/bounded_horn_correctness.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/burden_of_proof_tracker.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/case_retrieval.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/category_theory_rosetta.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/compliance_monitoring.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/counts_as_institutional_facts.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/criminal_sentencing.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/cross_border_data.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/damages_attribute_grammar.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/data_quality_label.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/deontic_procedural_justice.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/dialectical_argumentation_tree.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/dp_legal_privilege.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/evidence_credibility_axioms.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/evidence_dependency_manager.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/evidence_evaluation.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/formal_concept_analysis.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/galois_reverse_index.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/gradual_verification_soundness.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/graph_metric.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/hierarchical_bayes_alpha.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/hypothesis_horn_pbt.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/interest_balancing.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/ip_valuation.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/judgment_deviation.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/juris_engine.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/jurisdiction_guard.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/k3_empirical_analysis.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/kolmogorov_mdl_rules.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/kripke_supersedes_corrects.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/legal_interpretation.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/litigation_game_theory.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/mdl_fp_analysis.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/model_status.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/non_interference_cbl.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/paradigm_incommensurability.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/policy_expressiveness.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/precedent_reasoning.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/probabilistic_damages.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/rough_set_discretionary.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/sympy_evidence_proofs.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/temporal_integration.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/temporal_kripke_ltl.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/temporal_law_engine.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/temporal_statute_law.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/trirail_complexity.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/z3_kripke_mutex.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "theory/z3_temporal_induction.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "verification/verification_engine.py",
+      "repo": "formal",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": ".github/workflows/auto-release.yml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "SORRY_LEDGER.md",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "addons/__init__.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "benchmarks/relevance/manifest.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Benchmark manifest"
+    },
+    {
+      "path": "compiler_core/__init__.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/adapter_base.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/adjudication_draft.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/arbitration_reasoning.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/argumentation.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/automated_pipeline.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/banach_verifier.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/batch_processor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/bayesian_calibration.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/breakthrough_candidates.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/breakthrough_verification.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/burden_of_proof.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/canonical_serialization.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/certificate_checker.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/classifier.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/completion_status.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/compliance_monitoring.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/composition_safety.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/config_paths.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/conflict_of_laws.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/constraint_validator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/criminal_complexity.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/criminal_sentencing.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/cross_jurisdiction_compare.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/cross_jurisdiction_router.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/dacl_graph.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/ddl_preclassifier.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/de_jure_auditor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/defeasible_priority.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/domain_config.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/dp_policy_loader.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/entity_anonymizer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/evaluator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/evidence_chain_validator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/evidence_checklist.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/evidence_evaluation.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/experience_contracts.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/g8_evaluator_patch.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/grounded_smt_verifier.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/horn_completeness.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/incremental_grounded.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/independent_grounded_checker.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/inference_cache.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/invariance_metrics.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/ip_valuation.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/juris_blueprint.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/kg_recall.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/language_renderer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/legal_compiler.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/legal_ir_v3.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/legal_memory.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/legal_reasoning.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/litigation_engineering.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/litigation_renderer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/metrics_collector.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/multi_jurisdiction_orchestrator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/multi_solver_router.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/neural_leaf.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/neural_yaml_sync.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/parallax_inference.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/plugin_registry.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/prc_collision_engine.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/proleg_translator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/promotion_candidate.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/proof_trace.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/proof_trace_renderer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/proof_trace_visualizer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/proof_tree.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/provider.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/result_diff.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/result_exporter.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/rule_router.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/semantic_compiler_contract.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/shadow_state.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/smt_sidecar.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/source_anchor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/source_manifest.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/spec_shadow_harness.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/step_verifier.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/stratified_evaluator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/tool_cache.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/transformer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/trust_labels.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/type_checker.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/types.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/universal_grounded_smt.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "compiler_core/validity_state_machine.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "config/constants_registry.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/L0_overrides_cn.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/L0_overrides_hk.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/agent_collaboration_protocol.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/domain_corporate.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/juris_contracts.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/juris_phase_matrix.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/jurisdiction_spec_template.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/knowledge_layers.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/obstruction_registry.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "configs/perf_patterns.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "data/cross_jurisdiction_claims.csv",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "data/damages_calibration.csv",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "data/golden_corpus/gc01.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/golden_corpus/gc02.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/golden_corpus/gc03.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/golden_corpus/gc04.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/golden_corpus/gc05.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/golden_corpus/gc06.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/golden_corpus/gc07.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/golden_corpus/gc08.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/golden_corpus/gc09.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/MANIFEST.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0000.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0001.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0002.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0003.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0004.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0005.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0006.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0007.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0008.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0009.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0010.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0011.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0012.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0013.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0014.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0015.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0016.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0017.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0018.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0019.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0020.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0021.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0022.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0023.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0024.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0025.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0026.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0027.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0028.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0029.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0030.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0031.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0032.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0033.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0034.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0035.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0036.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0037.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0038.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0039.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0040.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0041.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0042.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0043.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0044.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0045.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0046.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0047.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0048.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0049.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0050.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0051.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0052.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0053.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0054.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0055.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0056.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0057.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0058.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0059.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0060.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0061.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0062.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0063.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0064.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0065.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0066.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0067.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0068.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0069.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0070.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0071.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0072.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0073.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0074.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0075.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0076.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0077.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0078.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0079.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0080.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0081.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0082.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0083.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0084.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0085.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0086.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0087.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0088.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0089.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0090.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0091.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0092.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0093.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0094.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0095.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0096.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0097.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0098.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0099.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0100.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0101.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0102.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0103.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0104.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0105.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0106.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0107.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0108.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0109.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0110.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0111.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0112.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0113.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0114.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0115.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0116.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0117.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0118.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0119.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0120.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0121.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0122.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0123.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0124.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0125.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0126.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0127.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0128.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0129.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0130.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0131.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0132.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0133.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0134.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0135.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0136.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0137.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0138.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0139.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0140.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0141.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0142.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0143.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0144.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0145.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0146.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0147.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0148.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0149.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0150.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0151.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0152.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0153.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0154.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0155.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0156.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0157.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0158.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0159.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0160.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0161.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0162.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0163.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0164.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0165.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0166.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0167.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0168.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0169.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0170.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0171.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0172.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0173.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0174.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0175.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0176.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0177.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0178.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0179.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0180.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0181.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0182.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0183.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0184.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0185.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "data/spc_golden_corpus/SPC-0186.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Reference dataset"
+    },
+    {
+      "path": "docs/final-closure/dp-trust-boundary.md",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/final-closure/graph-similarity-contract.md",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/final-closure/robust-regression-contract.md",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/p0_p2_execution_roadmap.md",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "docs/remediation/g8-truncation-map.md",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Documentation"
+    },
+    {
+      "path": "docs/rules_schema_spec.md",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "metainfer_integration_plan_20260612.md",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/__init__.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/adversarial_pipeline.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/build_ocr_index.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/extract_concepts.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/fix_single_premise.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/guardian.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/llm_client.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/pipeline.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/prc_us_alignment.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "pipeline/schemas.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "reports/blind_reconstruction_audit.md",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "scripts/audit-engine.sh",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/conftest.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/fixtures/ci_promotion_candidate.json",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/fixtures/ci_requests.jsonl",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\210\\221\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\233\\275\\345\\256\\266\\350\\265\\224\\345\\201\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\233\\275\\345\\256\\266\\350\\265\\224\\345\\201\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\212\\345\\206\\214_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\233\\221\\347\\235\\243\\345\\256\\236\\345\\212\\241\\344\\270\\213\\345\\206\\214_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\256\\241\\347\\220\\206\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\345\\256\\241\\345\\210\\244\\347\\256\\241\\347\\220\\206\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\211\\247\\350\\241\\214\\346\\241\\210\\344\\273\\266\\345\\212\\236\\347\\220\\206\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\211\\247\\350\\241\\214\\346\\241\\210\\344\\273\\266\\345\\212\\236\\347\\220\\206\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\234\\252\\346\\210\\220\\345\\271\\264\\344\\272\\272\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\234\\252\\346\\210\\220\\345\\271\\264\\344\\272\\272\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2411.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2411_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2412.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2412_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2413.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2413_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2414.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2414_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2415.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2415_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2416.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\2416_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\345\\244\\226\\345\\225\\206\\344\\272\\213\\346\\265\\267\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\345\\244\\226\\345\\225\\206\\344\\272\\213\\346\\265\\267\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\345\\222\\214\\345\\233\\275\\351\\231\\205\\345\\217\\270\\346\\263\\225\\345\\215\\217\\345\\212\\251_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\346\\270\\257\\346\\276\\263\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\346\\266\\211\\346\\270\\257\\346\\276\\263\\346\\260\\221\\345\\225\\206\\344\\272\\213\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241\\345\\222\\214\\345\\214\\272\\351\\231\\205\\345\\217\\270\\346\\263\\225\\345\\215\\217\\345\\212\\251_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\216\\257\\345\\242\\203\\350\\265\\204\\346\\272\\220\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\216\\257\\345\\242\\203\\350\\265\\204\\346\\272\\220\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\237\\245\\350\\257\\206\\344\\272\\247\\346\\235\\203\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\237\\245\\350\\257\\206\\344\\272\\247\\346\\235\\203\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\253\\213\\346\\241\\210\\345\\267\\245\\344\\275\\234\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\347\\253\\213\\346\\241\\210\\345\\267\\245\\344\\275\\234\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\350\\241\\214\\346\\224\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "\"tests/fixtures/distill_candidates/\\350\\241\\214\\346\\224\\277\\345\\256\\241\\345\\210\\244\\345\\256\\236\\345\\212\\241_auto.yaml\"",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/fixtures/legal_ir_v3_sample.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/fixtures/rule_migration_sample.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/relevance_sensitivity/contract_basics.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/relevance_sensitivity/temporal_exception_paraphrase.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/run_benchmark_zh.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/stress_test_facts.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_argumentation_b6.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_canonical_serialization.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_composition_safety.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_conflict_case.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_cross_domain.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_grounded_g9a.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_horn_completeness.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_incremental_grounded.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_independent_checker.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_litigation_edge_cases.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_litigation_engineering.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/test_mcp_smoke.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tests/unit/__init__.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_adjudication_draft_and_smt.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_adversarial.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_agent_protocol.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_anti_degradation.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_argumentation.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_build_phases.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_conflict_of_laws.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_constraint_validator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_criminal_complexity.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_dacl_graph.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_ddl_modal_gate.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_ddl_preclassifier.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_evaluator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_final_gaps.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_harness.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_kg_audit.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_language_renderer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_litigation_renderer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_llm_bridge.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_neural_guardrails.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_new_modules.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_nonmonotone_regression.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_p0_auditability.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_p1_ir_smt.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_p2_shadow_neural_contracts.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_perf_blueprint.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_phase_harness.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_platform.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_plugin_registry.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_promotion_gate.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_relevance_benchmark.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_relevance_reporting.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_rule_migration_and_llm_batch.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_semantic_compiler.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_spec_shadow_harness.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_stratified_evaluator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_training_export.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_trirail_collision.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_trust_labels.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tests/unit/test_zh_rules.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "HIGH",
+      "reason": "Test fixture or test code"
+    },
+    {
+      "path": "tools/action_agent/partners_memo.j2",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/adjudication_draft_runner.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/adversarial_near_miss_generator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/agent_protocol_auditor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/audit_blind_reconstruction.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/audit_full.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/auto_distill.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/batch_litigation_runner.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/blueprint_completeness_meter.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/blueprint_contract_auditor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/calibrate_weights.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/concept_disambiguator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/dacl_graph_runner.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/damage_estimator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/ddl_remedy_pool_filler.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/de_jure_audit_runner.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/distill_jurisdiction.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/e2e_evidence_collector.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/export_training_corpus.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/gen_us_adapter.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/import_source_verifier.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/ir_v3_checker.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/kb_search.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/kg_audit_common.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/kg_audit_loop.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/kg_completeness_auditor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/kg_correctness_auditor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/knowledge_graph_builder.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/llm_batch_acceptor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/llm_batch_contract.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/llm_batch_orchestrator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/llm_bridge.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/mdl_fp_analysis.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/module_interface_checker.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/multi_model_comparison.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/neural_contract_auditor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/ocr_error_fixer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/operator_registry.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/parallax_test.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/perf_baseline.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/perf_compare.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/perf_to_blueprint.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/phase_runner.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/platform_check.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/press_long_tail.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/promotion_gate.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/pruner.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/quality_dashboard.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/recovery_guard.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/relevance_dataset_builder.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/relevance_sensitivity_runner.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/rule_classifier.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/rule_conflict_detector.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/rule_coverage_analyzer.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/rule_deduplicator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/rule_freshness_checker.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/rule_quality_auditor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/rule_quality_sampler.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/rule_to_ir_migrator.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/rule_version_tracker.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/run_parallax_matrix.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/run_trirail_matrix.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/self_healing_loop.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/semantic_compile_batch.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/shadow_divergence_report.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/shadow_runner.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/shape_checker.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/smt_evaluator_compare.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/spec_shadow_runner.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/test_quality_auditor.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    },
+    {
+      "path": "tools/verification_replay.py",
+      "repo": "runtime",
+      "category": "PUBLIC_REFERENCE",
+      "confidence": "MEDIUM",
+      "reason": "General file in public repo"
+    }
+  ]
+}

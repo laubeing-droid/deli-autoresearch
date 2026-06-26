@@ -1,0 +1,146 @@
+{
+  "category": "PUBLIC_CORE",
+  "count": 20,
+  "files": [
+    {
+      "path": "addons/cn/__init__.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/cn/adapter.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/cn/modal_mapping.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/federation/__init__.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/federation/common_law.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/hk/__init__.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/hk/adapter.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/us/__init__.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/us/_l0_map.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/us/adapter.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/us/alignment.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/us/parser.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "addons/us/us_lookup.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Jurisdiction adapter"
+    },
+    {
+      "path": "mcp_server.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "MCP server runtime"
+    },
+    {
+      "path": "neural/registry/model_registry.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "MEDIUM",
+      "reason": "Neural model registry/contract"
+    },
+    {
+      "path": "neural/registry/sample-domain-router.model_card.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "MEDIUM",
+      "reason": "Neural model registry/contract"
+    },
+    {
+      "path": "tools/action_agent/__init__.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Tool runtime"
+    },
+    {
+      "path": "tools/action_agent/cli.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Tool runtime"
+    },
+    {
+      "path": "tools/action_agent/compiler.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Tool runtime"
+    },
+    {
+      "path": "tools/action_agent/state_to_text.py",
+      "repo": "runtime",
+      "category": "PUBLIC_CORE",
+      "confidence": "HIGH",
+      "reason": "Tool runtime"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-27T00:00:00Z",
+  "baselines": [
+    {
+      "repo": "deli-autoresearch",
+      "url": "https://github.com/laubeing-droid/deli-autoresearch",
+      "head_sha": "205a8e7f7dce94b839bda7f7d44a6678f7c62f27",
+      "branch": "main",
+      "role": "control"
+    },
+    {
+      "repo": "legal-math-modeling",
+      "url": "https://github.com/laubeing-droid/legal-math-modeling",
+      "head_sha": "f4d665137e06696fc099d0e188ac0f4e63ee8411",
+      "branch": "main",
+      "role": "formal"
+    },
+    {
+      "repo": "juris-calculus",
+      "url": "https://github.com/laubeing-droid/juris-calculus",
+      "head_sha": "e1a40eaab5768e100d4df1d0b6e9ea9476f54299",
+      "branch": "main",
+      "role": "runtime"
+    }
+  ]
+}

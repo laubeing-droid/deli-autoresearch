@@ -1,0 +1,9 @@
+{
+  "total_inventory": 1022,
+  "total_classified": 1022,
+  "unclassified_count": 0,
+  "duplicate_count": 0,
+  "unclassified": [],
+  "duplicates": [],
+  "verdict": "PASS"
+}

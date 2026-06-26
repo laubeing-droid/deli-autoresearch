@@ -1,0 +1,50 @@
+{
+  "spec_id": "SPEC-100",
+  "task_id": "TASK-100-022",
+  "verdict": "PASS_WITH_LIMITS",
+  "findings": [
+    {
+      "id": "RT-100-001",
+      "severity": "INFO",
+      "check": "Overclaiming secrecy on public content",
+      "result": "PASS",
+      "detail": "No files classified as trade secret. All 1022 paths classified as publicly accessible."
+    },
+    {
+      "id": "RT-100-002",
+      "severity": "INFO",
+      "check": "Underclaiming sensitivity on patent content",
+      "result": "PASS",
+      "detail": "No PATENT_REVIEW items identified. Banach-related theory files noted but classified as COMMERCIAL_PRIVATE_FUTURE with LOW confidence."
+    },
+    {
+      "id": "RT-100-003",
+      "severity": "WARNING",
+      "check": "Ambiguous legally-binding language",
+      "result": "PASS_WITH_LIMITS",
+      "detail": "DISCLOSURE_FREEZE.md uses 'prohibited' language. This is advisory for internal use, not legally binding. Recommend adding disclaimer that this is an internal planning document."
+    },
+    {
+      "id": "RT-100-004",
+      "severity": "WARNING",
+      "check": "Missing disclaimers",
+      "result": "PASS_WITH_LIMITS",
+      "detail": "DISCLOSURE_FREEZE.md and PUBLIC_BASELINE_MANIFEST.md should include disclaimer: 'This document is for internal project planning purposes only and does not constitute legal advice or create legal obligations.'"
+    },
+    {
+      "id": "RT-100-005",
+      "severity": "INFO",
+      "check": "COMMERCIAL_PRIVATE_FUTURE overclaiming",
+      "result": "PASS",
+      "detail": "No COMMERCIAL_PRIVATE_FUTURE paths identified. No risk of overclaiming current public content as future-private."
+    }
+  ],
+  "recommendations": [
+    "Add internal-use disclaimer to DISCLOSURE_FREEZE.md",
+    "Add internal-use disclaimer to PUBLIC_BASELINE_MANIFEST.md",
+    "Address HREQ-100-03 (juris-calculus missing LICENSE) before Playbook C"
+  ],
+  "overall": "PASS_WITH_LIMITS",
+  "blocking_issues": 0,
+  "non_blocking_issues": 2
+}

@@ -1,0 +1,601 @@
+{
+  "category": "PUBLIC_STANDARD",
+  "count": 85,
+  "files": [
+    {
+      "path": ".claude/rules/00-formal-proof.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Claude Code control infrastructure"
+    },
+    {
+      "path": ".claude/rules/10-git-safety.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Claude Code control infrastructure"
+    },
+    {
+      "path": ".gitattributes",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Repository standard configuration"
+    },
+    {
+      "path": ".gitignore",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Repository standard configuration"
+    },
+    {
+      "path": "AGENTS.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "CITATION.cff",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "README_CN.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "data/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "docs/audit/trust_label_schema.json",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Schema definition file"
+    },
+    {
+      "path": "docs/history/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "docs/ontology/core_ontology.yaml",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Ontology/standard definition"
+    },
+    {
+      "path": "paper/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "program/schemas/final_report.schema.json",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Schema definition file"
+    },
+    {
+      "path": "program/schemas/program_state.schema.json",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Schema definition file"
+    },
+    {
+      "path": "proofs/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/aaf/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/banach/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/fixpoint/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/galois/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/graph_similarity/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/horn/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/statistics/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "proofs/lean/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "theory/conjecture/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "theory/spec/README.md",
+      "repo": "formal",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": ".claude/rules/00-runtime-refinement.md",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Claude Code control infrastructure"
+    },
+    {
+      "path": ".claude/rules/10-git-safety.md",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Claude Code control infrastructure"
+    },
+    {
+      "path": ".gitignore",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Repository standard configuration"
+    },
+    {
+      "path": "AGENTS.md",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "CLAUDE.md",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "README.md",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "README_CN.md",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "configs/base_ontology.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Ontology/standard definition"
+    },
+    {
+      "path": "configs/core_ontology.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Ontology/standard definition"
+    },
+    {
+      "path": "configs/domain_mapping.json",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Standard manifest or mapping"
+    },
+    {
+      "path": "configs/en_US/L0_overrides_us.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/en_US/US_Adapter.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/en_US/domain_config.example.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/en_US/llm_distilled_full.json",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/en_US/rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/en_US/state_combined_terms.json",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/en_US/state_router.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/hk/blocking_rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/hk/extended_rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/hk/provenance.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/hk/rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/hk/rules_expanded.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/hk/term_L0_mappings.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/hk/trilingual_alignment.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/juris_blueprint.json",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Standard manifest or mapping"
+    },
+    {
+      "path": "configs/knowledge_base/hk_library/critical_annotations.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/lexicon_index.json",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Standard manifest or mapping"
+    },
+    {
+      "path": "configs/prc_us_alignment/blocking_rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/prc_us_alignment/long_tail_collision_matrix.json",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/prc_us_alignment/meta_constraints.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/prc_us_alignment/procedural_justice_rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/prc_us_alignment/spc_rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/prc_us_alignment/term_L0_mappings.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/prc_us_alignment/term_L0_mappings_batch2.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/prc_us_alignment/trirail_matrix_report.json",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/typed_ir/README.md",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Project specification or documentation standard"
+    },
+    {
+      "path": "configs/uk/rules_candidates.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/us/blocking_rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/us/modal_mapping.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/us/rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/us/term_L0_mappings.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/us/threat_signatures/nj_pen_signature.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/us/threat_signatures/wi_enf_signature.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/zh_CN/classifier_rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/zh_CN/concept_registry.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/zh_CN/concept_registry_ocr.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/zh_CN/criminal_complexity.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/zh_CN/domain_config.example.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/zh_CN/dp_policy.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/zh_CN/ontology_map.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Ontology/standard definition"
+    },
+    {
+      "path": "configs/zh_CN/router_moe.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/zh_CN/rules.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "configs/zh_CN/source_manifest.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "MEDIUM",
+      "reason": "Configuration/rule standard"
+    },
+    {
+      "path": "mcp_manifest.json",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Standard manifest or mapping"
+    },
+    {
+      "path": "neural/contracts/feature_schema.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Neural contract schema"
+    },
+    {
+      "path": "neural/contracts/model_card_schema.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Neural contract schema"
+    },
+    {
+      "path": "neural/contracts/output_schema.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Neural contract schema"
+    },
+    {
+      "path": "neural/contracts/promotion_policy.yaml",
+      "repo": "runtime",
+      "category": "PUBLIC_STANDARD",
+      "confidence": "HIGH",
+      "reason": "Neural contract schema"
+    }
+  ]
+}

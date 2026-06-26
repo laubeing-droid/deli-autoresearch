@@ -1,0 +1,846 @@
+{
+  "category": "PUBLIC_FORMAL",
+  "count": 120,
+  "files": [
+    {
+      "path": "proofs/alloy/rosetta_functor.als",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Alloy formal specification"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/ARTIFACT_MANIFEST.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/aaf/dung_grounded_extension.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/aaf/stratified_correspondence.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/adversarial/adversarial_input_checks.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/adversarial/adversarial_results.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/adversarial/extended_adversarial_checks.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/adversarial/extended_adversarial_results.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/banach/BanachEffectiveNodes.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/banach/banach_effective_nodes.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/cbl/t15_cbl_non_interference_exhaustive.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/cross_jurisdiction/no_functor_finite_checker.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/dp/dp_floor_clipping_analysis.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/dp/laplace_scalar_mechanism.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/dp/ratio_preserving_boundary.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/fixpoint/evaluator_termination_model.tla",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "TLA+ formal specification"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/fixpoint/production_bounded_termination.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/galois/FiniteGaloisAdjunction.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/galois/finite_galois_adjunction.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/graph_similarity/graph_similarity_range.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/graph_similarity/graph_similarity_range.smt2",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "SMT-LIB formal specification"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/graph_similarity/graph_similarity_range_z3.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/graph_similarity/metric_counterexamples.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/horn/bounded_horn_correctness.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/horn/bounded_horn_z3.smt2",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "SMT-LIB formal specification"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/horn/horn_termination_measure.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/proof_run_results.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/rosetta/audit_t94_us_hk_candidates.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/rosetta/build_t85_local_batch.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/rosetta/merge_all_data.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/rosetta/run_t85_t94.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/rosetta/t85_t94_data_extractor.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/run_all_proofs.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/statistics/clipped_theilsen_refutation.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/engineering_proof_artifacts/statistics/siegel_repeated_median_verifier.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/formal_verification_logs/01_experiment_plan.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/formal_verification_logs/05_verification_run_report.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/formal_verification_logs/06_audit_prompt.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/formal_verification_logs/07_logic_audit_report.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/lean/BANACH_MATHLIB_API_LOCK.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/lean/BanachEffectiveNodes.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/AxiomAudit.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/BanachCertificate.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/BanachComplete.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/BanachContraction.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/BanachEffectiveNodes.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/BanachFixedPoint.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/BanachScratch.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/BanachWeightedNorm.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/Basic.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/ContractionCondition.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/DungAAF.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/DungDefinitions.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/DungFixedPoint.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/FiniteGaloisAdjunction.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/FiniteMonotoneIteration.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/FiniteRosetta.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/HornDefinitions.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/HornFixedPoint.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/HornOperationalRefinement.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/JC_Formalization.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/ScratchApi.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/SupZeroLemma.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/TemporalKripke.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/UnifiedModel.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/JurisLean/WeightedSupNorm.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/_axiom_audit.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/_check.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/_test.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/lean/juris_lean/_test_omega.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/aaf_grounded_extension_summary.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/evaluator_nonmonotone_counterexample.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/lean/BanachEffectiveNodes.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/lean/FiniteGaloisAdjunction.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/lean/FiniteRosetta.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0a_category/FiniteRosetta.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0a_category/counterexamples.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0a_category/finite_no_total_mapping_checker.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0a_category/real_data_insufficiency_witness.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0a_category/real_data_insufficiency_witness.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0a_category/theorem_statement.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0a_category/toy_proof_result.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0b_dp_lattice/cross_jurisdiction_lattice_counterexample.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0b_dp_lattice/cross_jurisdiction_morphism.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0b_dp_lattice/dp_finite_lattice.smt2",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "SMT-LIB formal specification"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0b_dp_lattice/dp_finite_lattice_proof.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0b_dp_lattice/theorem_statement.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0c_banach/BanachEffectiveNodes.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0c_banach/pairwise_lipschitz_checker.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0c_banach/proof_insufficiency_witness.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0c_banach/theorem_statement.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0c_banach/toy_proof_result.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/FiniteGaloisAdjunction.lean",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Lean 4 formal proof or definition"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/countermodel.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/privilege_epsilon_refutation.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/theorem_statement.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p0d_privilege_epsilon/two_model_witness.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p1e_aaf/aaf_grounded_extension_proof.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p1e_aaf/aaf_grounded_extension_summary.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p1e_aaf/evaluator_nonmonotone_counterexample.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p1e_aaf/evaluator_nonmonotone_counterexample.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p1e_aaf/stratified_evaluator_correctness_conditions.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/p1e_aaf/theorem_statement.md",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/proof_run_results.json",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "MEDIUM",
+      "reason": "Formal verification evidence or documentation"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/run_all_proofs.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/smt/cn_privilege_lattice.smt2",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "SMT-LIB formal specification"
+    },
+    {
+      "path": "proofs/strict_proof_baseline/smt/cn_privilege_lattice_z3.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Formal verification engineering artifact"
+    },
+    {
+      "path": "proofs/tla/evaluator_termination.tla",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "TLA+ formal specification"
+    },
+    {
+      "path": "theory/bridge/bridge_fixpoint.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/conjecture/kolmogorov_mdl_rules.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/mutation/mutation_suite.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/spec/__init__.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/spec/abstract_interpretation_unified.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/spec/canonical_semantics.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/spec/certificate_schema.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/spec/ddl_core.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/spec/hierarchical_bayes_alpha.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/spec/horn_aaf_contract.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    },
+    {
+      "path": "theory/spec/reference_semantics.py",
+      "repo": "formal",
+      "category": "PUBLIC_FORMAL",
+      "confidence": "HIGH",
+      "reason": "Mathematical theory implementation"
+    }
+  ]
+}
