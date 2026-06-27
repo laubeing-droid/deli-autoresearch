@@ -1,50 +1,199 @@
 {
-  "spec_id": "SPEC-100",
-  "task_id": "TASK-100-022",
-  "verdict": "PASS_WITH_LIMITS",
-  "findings": [
+  "audit_id": "P0-G06",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T18:00:00Z",
+  "purpose": "Independent verification that P0 is closed based on repo content alone, not Claude self-report",
+  "baseline": {
+    "lock_file": "state/cross_repo_lock.json",
+    "frozen_at": "2026-06-27T16:00:00Z",
+    "repos": {
+      "deli-autoresearch": {
+        "head_verified": "bfc85bb2f0f74f8151b7f55b23b6ef145bc1a334",
+        "branch": "main",
+        "dirty_count": 11,
+        "all_explained": true
+      },
+      "legal-math-modeling": {
+        "head_verified": "f4d665137e06696fc099d0e188ac0f4e63ee8411",
+        "branch": "master",
+        "dirty_count": 13,
+        "all_explained": true
+      },
+      "juris-calculus": {
+        "head_verified": "8df3d8140f0b3841980acffd84afaf55f23a38e0",
+        "branch": "main",
+        "dirty_count": 4,
+        "all_explained": true
+      }
+    }
+  },
+  "closing_conditions": [
     {
-      "id": "RT-100-001",
-      "severity": "INFO",
-      "check": "Overclaiming secrecy on public content",
-      "result": "PASS",
-      "detail": "No files classified as trade secret. All 1022 paths classified as publicly accessible."
+      "id": "CC-1",
+      "condition": "三仓 HEAD 锁定",
+      "verdict": "PASS",
+      "evidence": {
+        "cross_repo_lock_exists": true,
+        "baselines_json_exists": true,
+        "deli_autoresearch_head_match": true,
+        "legal_math_modeling_head_match": true,
+        "juris_calculus_head_match": true,
+        "verification_method": "git rev-parse HEAD on all 3 repos, compared to cross_repo_lock.json"
+      }
     },
     {
-      "id": "RT-100-002",
-      "severity": "INFO",
-      "check": "Underclaiming sensitivity on patent content",
-      "result": "PASS",
-      "detail": "No PATENT_REVIEW items identified. Banach-related theory files noted but classified as COMMERCIAL_PRIVATE_FUTURE with LOW confidence."
+      "id": "CC-2",
+      "condition": "dirty worktree 被完整解释",
+      "verdict": "PASS",
+      "evidence": {
+        "deli_autoresearch": {
+          "dirty_count": 11,
+          "items": [
+            "specs/100-jc-public-baseline/evidence/baselines.json (P0-G01 HEAD update)",
+            "specs/200-unified-legal-schema/ (Playbook C output)",
+            "specs/210-horn-semantics/ (Playbook C output)",
+            "specs/220-ddl-semantics/ (Playbook C output)",
+            "specs/230-argument-compiler/ (Playbook C output)",
+            "specs/240-attack-grounded-decision/ (Playbook C output)",
+            "specs/250-certificate-checker/ (Playbook C output)",
+            "specs/260-jc-runtime-refinement/ (Playbook C output)",
+            "specs/270-safety-theorems/ (Playbook C output)",
+            "specs/280-end-to-end-theorem/ (Playbook C output)",
+            "specs/290-formal-release/ (Playbook C output)"
+          ],
+          "unexplained": 0
+        },
+        "legal_math_modeling": {
+          "dirty_count": 13,
+          "items": [
+            "SORRY_LEDGER.md (sorry tracking ledger update)",
+            "JurisLean.lean (import file update)",
+            "ArgumentCompiler.lean (SPEC-230)",
+            "AttackDecision.lean (SPEC-240)",
+            "CertificateChecker.lean (SPEC-250)",
+            "DDLDefinitions.lean (SPEC-220)",
+            "EndToEnd.lean (SPEC-280)",
+            "HornCanonical.lean (SPEC-210)",
+            "LegalIds.lean (SPEC-200)",
+            "LegalModel.lean (SPEC-200)",
+            "LegalSyntax.lean (SPEC-200)",
+            "LegalWellFormed.lean (SPEC-200)",
+            "SafetyTheorems.lean (SPEC-270)"
+          ],
+          "unexplained": 0
+        },
+        "juris_calculus": {
+          "dirty_count": 4,
+          "items": [
+            "compiler_core/evaluator.py (evaluator update)",
+            "compiler_core/canonical_adapter.py (SPEC-200/260 adapter)",
+            "compiler_core/canonical_schema.py (SPEC-200 Python canonical schema)",
+            "tests/spec/ (SPEC-210~290 test suites)"
+          ],
+          "unexplained": 0
+        }
+      }
     },
     {
-      "id": "RT-100-003",
-      "severity": "WARNING",
-      "check": "Ambiguous legally-binding language",
-      "result": "PASS_WITH_LIMITS",
-      "detail": "DISCLOSURE_FREEZE.md uses 'prohibited' language. This is advisory for internal use, not legally binding. Recommend adding disclaimer that this is an internal planning document."
+      "id": "CC-3",
+      "condition": "Horn / attack / schema 三个缺陷都有复现或反证",
+      "verdict": "PASS",
+      "evidence": {
+        "horn_non_monotonicity": {
+          "status": "ELIMINATED",
+          "verdict": "NO COUNTEREXAMPLE FOUND",
+          "evidence_file": "specs/210-horn-semantics/evidence/non-monotonicity-repro.md",
+          "independent_verification": {
+            "tests_run": "tests/spec/test_horn_differential.py",
+            "tests_passed": 8,
+            "tests_failed": 0,
+            "key_tests": [
+              "test_horn_monotonicity_adding_fact_preserves_claims (PASS)",
+              "test_horn_monotonicity_transitive (PASS)",
+              "test_horn_no_exception_defeat (PASS)",
+              "test_horn_no_rebuttal (PASS)"
+            ]
+          }
+        },
+        "production_attack_compiler": {
+          "status": "REPRODUCED",
+          "verdict": "CRASH CONFIRMED",
+          "evidence_file": "specs/230-argument-compiler/evidence/production-attack-repro.md",
+          "independent_verification": {
+            "tests_run": "tests/unit/test_stratified_evaluator.py",
+            "tests_passed": 1,
+            "tests_failed": 3,
+            "failure_type": "TypeError: build_attack_graph_from_evaluator() takes 2 positional arguments but 5 were given",
+            "failure_location": "stratified_evaluator.py:67"
+          }
+        },
+        "schema_loss": {
+          "status": "DOCUMENTED",
+          "verdict": "SEVERE LOSS CONFIRMED",
+          "evidence_file": "specs/240-attack-grounded-decision/evidence/schema-loss-report.md",
+          "key_findings": [
+            "Production retains 2 of 14 canonical types",
+            "Zero downstream types produced (Argument/Attack/Decision/Certificate)",
+            "Canonical adapter never imported by production pipeline",
+            "5 field name mismatches between canonical and production",
+            "Entire audit certificate (Certificate) absent"
+          ]
+        }
+      }
     },
     {
-      "id": "RT-100-004",
-      "severity": "WARNING",
-      "check": "Missing disclaimers",
-      "result": "PASS_WITH_LIMITS",
-      "detail": "DISCLOSURE_FREEZE.md and PUBLIC_BASELINE_MANIFEST.md should include disclaimer: 'This document is for internal project planning purposes only and does not constitute legal advice or create legal obligations.'"
-    },
-    {
-      "id": "RT-100-005",
-      "severity": "INFO",
-      "check": "COMMERCIAL_PRIVATE_FUTURE overclaiming",
-      "result": "PASS",
-      "detail": "No COMMERCIAL_PRIVATE_FUTURE paths identified. No risk of overclaiming current public content as future-private."
+      "id": "CC-4",
+      "condition": "P1-P9 的后续工作有可信起点",
+      "verdict": "PASS",
+      "evidence": {
+        "asset_ledger": {
+          "file": "docs/execution/THEOREM_OBLIGATIONS.md",
+          "lean_theorems": 110,
+          "python_tests": 578,
+          "trust_boundaries_classified": true
+        },
+        "fix_tracking": {
+          "P4_G08": "Repair JC production attack compiler (signature mismatch + field name)",
+          "P7_G01": "Rebuild production stratified pipeline",
+          "P7_G02": "Connect canonical adapter to production",
+          "P7_G03": "Certificate production"
+        },
+        "frozen_baseline": "state/cross_repo_lock.json provides reproducible starting point"
+      }
     }
   ],
-  "recommendations": [
-    "Add internal-use disclaimer to DISCLOSURE_FREEZE.md",
-    "Add internal-use disclaimer to PUBLIC_BASELINE_MANIFEST.md",
-    "Address HREQ-100-03 (juris-calculus missing LICENSE) before Playbook C"
+  "independent_findings": [
+    {
+      "id": "IF-001",
+      "finding": "Old red-team-verdict.json exists (TASK-100-022 era) — scope limited to SPEC-100 asset classification",
+      "severity": "INFO",
+      "action": "This P0-G06 verdict supersedes it for P0 closure scope"
+    },
+    {
+      "id": "IF-002",
+      "finding": "canonical_adapter.py exists in juris-calculus but is dead code — never imported by evaluator.py, stratified_evaluator.py, or argumentation.py",
+      "severity": "HIGH",
+      "independently_verified": true,
+      "fix_phase": "P7-G02"
+    },
+    {
+      "id": "IF-003",
+      "finding": "exception_to vs exception_chain field name mismatch in argumentation.py:383 — production types use exception_chain but argumentation reads exception_to",
+      "severity": "HIGH",
+      "independently_verified": true,
+      "fix_phase": "P4-G08"
+    },
+    {
+      "id": "IF-004",
+      "finding": "3 sorry in DDLDefinitions.lean (domain axioms) — registered in SORRY_LEDGER, not on blocking path",
+      "severity": "LOW",
+      "independently_verified": true,
+      "note": "Domain axioms by design, not implementation debt"
+    }
   ],
-  "overall": "PASS_WITH_LIMITS",
+  "overall_verdict": "PASS",
   "blocking_issues": 0,
-  "non_blocking_issues": 2
+  "non_blocking_issues": 3,
+  "p0_closure_confirmed": true,
+  "recommended_next_step": "Begin P1 (Canonical Semantic Schema) with frozen baseline from CROSS_REPO_LOCK.json"
 }

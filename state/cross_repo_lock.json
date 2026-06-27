@@ -1,0 +1,99 @@
+{
+  "frozen_at": "2026-06-27T16:00:00Z",
+  "purpose": "P0-G01 cross-repo baseline freeze per Playbook E",
+  "playbook": "playbook_e_unified_kernel_p0_p9_claude_execution.md",
+  "playbook_section": "3.3 P0-G01",
+  "repos": {
+    "deli-autoresearch": {
+      "head": "bfc85bb2f0f74f8151b7f55b23b6ef145bc1a334",
+      "branch": "main",
+      "dirty_count": 11,
+      "dirty_files": [
+        "specs/100-jc-public-baseline/evidence/baselines.json",
+        "specs/200-unified-legal-schema/",
+        "specs/210-horn-semantics/",
+        "specs/220-ddl-semantics/",
+        "specs/230-argument-compiler/",
+        "specs/240-attack-grounded-decision/",
+        "specs/250-certificate-checker/",
+        "specs/260-jc-runtime-refinement/",
+        "specs/270-safety-theorems/",
+        "specs/280-end-to-end-theorem/",
+        "specs/290-formal-release/"
+      ],
+      "dirty_explanation": {
+        "specs/100-jc-public-baseline/evidence/baselines.json": "Modified by P0-G01 to update HEAD sha",
+        "specs/200-unified-legal-schema/": "SPEC-200 unified legal schema (Playbook C output)",
+        "specs/210-horn-semantics/": "SPEC-210 Horn semantics (Playbook C output)",
+        "specs/220-ddl-semantics/": "SPEC-220 DDL semantics (Playbook C output)",
+        "specs/230-argument-compiler/": "SPEC-230 argument compiler (Playbook C output)",
+        "specs/240-attack-grounded-decision/": "SPEC-240 attack/grounded/decision (Playbook C output)",
+        "specs/250-certificate-checker/": "SPEC-250 certificate checker (Playbook C output)",
+        "specs/260-jc-runtime-refinement/": "SPEC-260 JC runtime refinement (Playbook C output)",
+        "specs/270-safety-theorems/": "SPEC-270 safety theorems (Playbook C output)",
+        "specs/280-end-to-end-theorem/": "SPEC-280 end-to-end theorem (Playbook C output)",
+        "specs/290-formal-release/": "SPEC-290 formal release evidence (Playbook C output)"
+      }
+    },
+    "legal-math-modeling": {
+      "head": "f4d665137e06696fc099d0e188ac0f4e63ee8411",
+      "branch": "master",
+      "dirty_count": 13,
+      "dirty_files": [
+        "SORRY_LEDGER.md",
+        "proofs/lean/juris_lean/JurisLean.lean",
+        "proofs/lean/juris_lean/JurisLean/ArgumentCompiler.lean",
+        "proofs/lean/juris_lean/JurisLean/AttackDecision.lean",
+        "proofs/lean/juris_lean/JurisLean/CertificateChecker.lean",
+        "proofs/lean/juris_lean/JurisLean/DDLDefinitions.lean",
+        "proofs/lean/juris_lean/JurisLean/EndToEnd.lean",
+        "proofs/lean/juris_lean/JurisLean/HornCanonical.lean",
+        "proofs/lean/juris_lean/JurisLean/LegalIds.lean",
+        "proofs/lean/juris_lean/JurisLean/LegalModel.lean",
+        "proofs/lean/juris_lean/JurisLean/LegalSyntax.lean",
+        "proofs/lean/juris_lean/JurisLean/LegalWellFormed.lean",
+        "proofs/lean/juris_lean/JurisLean/SafetyTheorems.lean"
+      ],
+      "dirty_explanation": {
+        "SORRY_LEDGER.md": "Modified: sorry tracking ledger updated during Playbook C",
+        "proofs/lean/juris_lean/JurisLean.lean": "Modified: import file updated for new modules",
+        "proofs/lean/juris_lean/JurisLean/ArgumentCompiler.lean": "SPEC-230: Lean argument compiler definitions and proofs",
+        "proofs/lean/juris_lean/JurisLean/AttackDecision.lean": "SPEC-240: Lean attack/decision definitions and proofs",
+        "proofs/lean/juris_lean/JurisLean/CertificateChecker.lean": "SPEC-250: Lean certificate checker soundness proof",
+        "proofs/lean/juris_lean/JurisLean/DDLDefinitions.lean": "SPEC-220: DDL modality definitions (3 sorry, domain axioms)",
+        "proofs/lean/juris_lean/JurisLean/EndToEnd.lean": "SPEC-280: End-to-end refinement theorem",
+        "proofs/lean/juris_lean/JurisLean/HornCanonical.lean": "SPEC-210: Horn canonical derivation and proofs",
+        "proofs/lean/juris_lean/JurisLean/LegalIds.lean": "SPEC-200: Typed legal identifiers",
+        "proofs/lean/juris_lean/JurisLean/LegalModel.lean": "SPEC-200: Legal model type definitions",
+        "proofs/lean/juris_lean/JurisLean/LegalSyntax.lean": "SPEC-200: Canonical legal syntax types",
+        "proofs/lean/juris_lean/JurisLean/LegalWellFormed.lean": "SPEC-200: WellFormed predicates",
+        "proofs/lean/juris_lean/JurisLean/SafetyTheorems.lean": "SPEC-270: Safety predicate definitions and proofs"
+      }
+    },
+    "juris-calculus": {
+      "head": "8df3d8140f0b3841980acffd84afaf55f23a38e0",
+      "branch": "main",
+      "dirty_count": 4,
+      "dirty_files": [
+        "compiler_core/evaluator.py",
+        "compiler_core/canonical_adapter.py",
+        "compiler_core/canonical_schema.py",
+        "tests/spec/"
+      ],
+      "dirty_explanation": {
+        "compiler_core/evaluator.py": "Modified: evaluator updated for canonical schema integration",
+        "compiler_core/canonical_adapter.py": "SPEC-200/260: Canonical schema adapter for production runtime",
+        "compiler_core/canonical_schema.py": "SPEC-200: Python canonical JSON schema (mirrors Lean types)",
+        "tests/spec/": "SPEC-210~290: All spec-level differential and integration tests"
+      }
+    }
+  },
+  "validation_commands": [
+    "git -C deli-autoresearch rev-parse HEAD",
+    "git -C deli-autoresearch status --short",
+    "git -C legal-math-modeling rev-parse HEAD",
+    "git -C legal-math-modeling status --short",
+    "git -C juris-calculus rev-parse HEAD",
+    "git -C juris-calculus status --short"
+  ]
+}

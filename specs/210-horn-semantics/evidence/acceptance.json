@@ -1,0 +1,18 @@
+{
+  "lean_build": "PASS",
+  "lean_modules": ["JurisLean.HornCanonical"],
+  "sorry_count": 0,
+  "admit_count": 0,
+  "custom_axiom_count": 0,
+  "python_tests_passed": 318,
+  "python_tests_failed": 0,
+  "python_tests_skipped": 38,
+  "spec210_tests_passed": 8,
+  "spec210_tests_failed": 0,
+  "runtime_changes": [
+    "Removed exception chain penetration from _apply_rule_horn",
+    "Added fact_to_rules_horn (premises only, no exception atoms)",
+    "evaluate_horn uses fact_to_rules_horn (monotone)",
+    "evaluate continues to use full fact_to_rules (with exceptions)"
+  ]
+}

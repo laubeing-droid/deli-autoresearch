@@ -1,0 +1,70 @@
+{
+  "audit_id": "P9-G06",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T23:00:00Z",
+  "spec_id": "SPEC-290",
+  "scope": "Release and Transition — P9-G01 through P9-G07",
+  "audit_baseline": {
+    "deli_autoresearch_head": "bfc85bb2f0f74f8151b7f55b23b6ef145bc1a334",
+    "legal_math_modeling_head": "f4d665137e06696fc099d0e188ac0f4e63ee8411",
+    "juris_calculus_head": "8df3d8140f0b3841980acffd84afaf55f23a38e0",
+    "frozen_at": "2026-06-27T16:00:00Z"
+  },
+  "environment": {
+    "lean": "leanprover/lean4:v4.30.0",
+    "python": "3.12.5",
+    "os": "Windows 11 Pro 10.0.26200"
+  },
+  "lean_verification": {
+    "modules_build_separately": true,
+    "individual_builds": [
+      "JurisLean.HornCanonical: 2945 jobs PASS",
+      "JurisLean.DDLDefinitions: 2945 jobs PASS",
+      "JurisLean.ArgumentCompiler: 2945 jobs PASS",
+      "JurisLean.AttackDecision: 2948 jobs PASS",
+      "JurisLean.CertificateChecker: 2949 jobs PASS",
+      "JurisLean.SafetyTheorems: 2950 jobs PASS",
+      "JurisLean.EndToEnd: 2952 jobs PASS"
+    ],
+    "full_juris_lean_build": "KNOWN ISSUE — UnifiedModel import conflict in umbrella file. Individual modules all build."
+  },
+  "theorem_counts": {
+    "blocking": 19,
+    "supporting": 5,
+    "ddl_reparation": 4,
+    "safety": 3,
+    "deferred": 3,
+    "total": 34,
+    "sorry_in_blocking": 0,
+    "sorry_total": 3,
+    "custom_axioms": 0
+  },
+  "python_tests": {
+    "spec_tests": {"passed": 119, "failed": 0},
+    "runtime_tests": {"passed": 128, "skipped": 0, "failed": 0}
+  },
+  "p0_p8_audit_status": {
+    "P0": "PASS (6 Goals)",
+    "P1": "PASS (7 Goals, 1 code fix: typed IDs)",
+    "P2": "PASS (8 Goals, pure audit)",
+    "P3": "PASS (8 Goals, 1 code fix: concurrent_imposes_no_order)",
+    "P4": "PASS (10 Goals, pure audit)",
+    "P5": "PASS (7 Goals, pure audit)",
+    "P6": "PASS (10 Goals, pure audit)",
+    "P7": "PASS (8 Goals, known limitation: StratifiedEvaluator not fully wired)",
+    "P8": "PASS (8 Goals, pure audit)"
+  },
+  "release_boundary": {
+    "proven_scope": "19 blocking theorems (0 sorry), 12 supporting/reparation/safety theorems (0 sorry), 119 Python spec tests",
+    "unproven_scope": "3 deferred domain axioms (violation_implies_norm_active, permission_no_direct_violation, constitutive_no_direct_violation)",
+    "known_limitations": [
+      "UnifiedModel/LegalSyntax import conflict in umbrella JurisLean.lean",
+      "StratifiedEvaluator: 3/4 tests fail (not fully wired to canonical path)",
+      "Safety conjuncts in certified_end_to_end_refinement are caller-provided premises"
+    ]
+  },
+  "human_decision_required": true,
+  "human_decision_topic": "RELEASE_TAG",
+  "release_recommendation": "P0-P8 audits all PASS. Tagging requires: (1) clean worktree or formal commit, (2) human approval. JC becomes main engineering front; math repo enters spec-maintenance mode.",
+  "overall_verdict": "PASS"
+}

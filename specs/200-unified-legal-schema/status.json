@@ -1,0 +1,23 @@
+{
+  "spec_id": "SPEC-200",
+  "title": "Unified Legal Schema",
+  "status": "COMPLETE",
+  "current_phase": "COMPLETE",
+  "tasks_completed": 30,
+  "tasks_total": 30,
+  "red_team_verdict": "PASS",
+  "ci_gates": {
+    "field_loss_count": 0,
+    "id_conflation_count": 0,
+    "unknown_version_accepted": 0
+  },
+  "lean_modules": [
+    "JurisLean.LegalIds",
+    "JurisLean.LegalSyntax",
+    "JurisLean.LegalModel",
+    "JurisLean.LegalWellFormed"
+  ],
+  "python_tests_passed": 14,
+  "sorry_count": 0,
+  "last_updated": "2026-06-27T21:30:00Z"
+}

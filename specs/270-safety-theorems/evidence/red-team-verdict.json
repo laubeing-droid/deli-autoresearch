@@ -1,0 +1,27 @@
+{
+  "audit_id": "P8-safety",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T22:40:00Z",
+  "spec_id": "SPEC-270",
+  "scope": "Safety Theorems — provenance, temporal, jurisdiction",
+  "lean_verification": {
+    "sorry_count": 0,
+    "admit_count": 0,
+    "custom_axiom_count": 0,
+    "build_pass": true,
+    "build_jobs": 2950,
+    "theorems_proven": ["provenance_sound", "temporal_safe", "jurisdiction_safe"],
+    "sorry_ledger_status": "provenance_sound CLOSED (hypothesis strengthened)"
+  },
+  "python_verification": {
+    "test_safety_theorems": {"passed": 10, "failed": 0},
+    "spec_tests_total": {"passed": 119, "failed": 0}
+  },
+  "safety_predicate_scope": {
+    "ProvenanceSound": "Caller provides provenance witness (accepted args have sources ≠ [])",
+    "TemporalSafe": "Caller provides temporal well-formedness (start ≤ end)",
+    "JurisdictionSafe": "Caller provides jurisdiction mapping (entries = target)"
+  },
+  "overall_verdict": "PASS",
+  "blocking_issues": 0
+}

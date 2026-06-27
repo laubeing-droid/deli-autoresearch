@@ -1,0 +1,22 @@
+schema_version: "1.0"
+spec_id: "SPEC-210"
+title: "Positive Horn Semantics"
+status: "COMPLETE"
+repositories:
+  - id: "control"
+    path: "."
+    access: "read_write"
+  - id: "formal"
+    path: "../legal-math-modeling"
+    access: "read_write"
+  - id: "runtime"
+    path: "../juris-calculus"
+    access: "read_write"
+dependencies: ["SPEC-200"]
+allowed_paths:
+  formal:
+    - "proofs/lean/juris_lean/JurisLean/HornCanonical.lean"
+  runtime:
+    - "compiler_core/evaluator.py"
+    - "tests/unit/test_evaluator.py"
+    - "tests/spec/test_horn_differential.py"

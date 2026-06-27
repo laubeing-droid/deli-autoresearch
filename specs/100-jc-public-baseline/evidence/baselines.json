@@ -1,12 +1,12 @@
 {
   "generated_at": "2026-06-27T00:00:00Z",
-  "updated_at": "2026-06-27T12:00:00Z",
-  "update_reason": "juris-calculus HEAD advanced after LICENSE addition (HREQ-100-03)",
+  "updated_at": "2026-06-27T16:00:00Z",
+  "update_reason": "P0-G01 cross-repo baseline freeze per Playbook E",
   "baselines": [
     {
       "repo": "deli-autoresearch",
       "url": "https://github.com/laubeing-droid/deli-autoresearch",
-      "head_sha": "205a8e7f7dce94b839bda7f7d44a6678f7c62f27",
+      "head_sha": "bfc85bb2f0f74f8151b7f55b23b6ef145bc1a334",
       "branch": "main",
       "role": "control"
     },
@@ -14,7 +14,7 @@
       "repo": "legal-math-modeling",
       "url": "https://github.com/laubeing-droid/legal-math-modeling",
       "head_sha": "f4d665137e06696fc099d0e188ac0f4e63ee8411",
-      "branch": "main",
+      "branch": "master",
       "role": "formal"
     },
     {

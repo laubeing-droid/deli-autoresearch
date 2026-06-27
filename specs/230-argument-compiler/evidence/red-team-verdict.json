@@ -1,0 +1,14 @@
+{
+  "verdict": "PASS",
+  "lean_audit": {
+    "sorry_count": 0,
+    "blocking_theorems_proved": 2,
+    "compileArguments_sound": "PROVED",
+    "compileArguments_complete": "PROVED"
+  },
+  "runtime_audit": {
+    "full_suite_passed": 332,
+    "full_suite_failed": 0,
+    "argument_tests_passed": 5
+  }
+}

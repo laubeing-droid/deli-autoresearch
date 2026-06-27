@@ -1,0 +1,26 @@
+schema_version: "1.0"
+spec_id: "SPEC-200"
+title: "Unified Legal Schema"
+status: "COMPLETE"
+repositories:
+  - id: "control"
+    path: "."
+    access: "read_write"
+  - id: "formal"
+    path: "../legal-math-modeling"
+    access: "read_write"
+  - id: "runtime"
+    path: "../juris-calculus"
+    access: "read_write"
+dependencies: ["SPEC-100"]
+allowed_paths:
+  formal:
+    - "proofs/lean/juris_lean/JurisLean/LegalIds.lean"
+    - "proofs/lean/juris_lean/JurisLean/LegalSyntax.lean"
+    - "proofs/lean/juris_lean/JurisLean/LegalModel.lean"
+    - "proofs/lean/juris_lean/JurisLean/LegalWellFormed.lean"
+  runtime:
+    - "compiler_core/canonical_schema.py"
+    - "compiler_core/canonical_adapter.py"
+    - "schemas/legal-model.schema.json"
+    - "schemas/certificate.schema.json"

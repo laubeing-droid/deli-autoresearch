@@ -1,0 +1,22 @@
+schema_version: "1.0"
+spec_id: "SPEC-250"
+title: "Certificate Checker"
+status: "COMPLETE"
+repositories:
+  - id: "control"
+    path: "."
+    access: "read_write"
+  - id: "formal"
+    path: "../legal-math-modeling"
+    access: "read_write"
+  - id: "runtime"
+    path: "../juris-calculus"
+    access: "read_write"
+dependencies: ["SPEC-240"]
+allowed_paths:
+  formal:
+    - "proofs/lean/juris_lean/JurisLean/CertificateChecker.lean"
+  runtime:
+    - "compiler_core/certificate_checker.py"
+    - "tests/spec/test_certificate_checker.py"
+    - "tests/spec/test_certificate_mutations.py"

@@ -1,0 +1,20 @@
+schema_version: "1.0"
+spec_id: "SPEC-230"
+title: "Argument Compiler"
+status: "COMPLETE"
+repositories:
+  - id: "control"
+    path: "."
+    access: "read_write"
+  - id: "formal"
+    path: "../legal-math-modeling"
+    access: "read_write"
+  - id: "runtime"
+    path: "../juris-calculus"
+    access: "read_write"
+dependencies: ["SPEC-220"]
+allowed_paths:
+  formal:
+    - "proofs/lean/juris_lean/JurisLean/ArgumentCompiler.lean"
+  runtime:
+    - "tests/spec/test_argument_compiler.py"

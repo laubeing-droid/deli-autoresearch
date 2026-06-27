@@ -1,0 +1,20 @@
+{
+  "audit_id": "P5-G07",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T22:10:00Z",
+  "spec_id": "SPEC-240",
+  "scope": "Grounded & Unified Decision Projection — P5-G01 through P5-G06",
+  "checks": [
+    {"id": "P5-RT-001", "check": "decisionProjection defined (TAINTED→PROVED→REFUTED→UNDECIDED)", "verdict": "PASS", "evidence": "AttackDecision.lean:52-56 — 4-way if/else, fail-closed on ∉ args"},
+    {"id": "P5-RT-002", "check": "decision_status_mutually_exclusive proven (0 sorry)", "verdict": "PASS", "evidence": "AttackDecision.lean:63-82 — proven"},
+    {"id": "P5-RT-003", "check": "decision_status_coverage proven (0 sorry)", "verdict": "PASS", "evidence": "AttackDecision.lean:87-102 — ∃! s ≠ TAINTED, proven"},
+    {"id": "P5-RT-004", "check": "tainted_fail_closed proven (0 sorry)", "verdict": "PASS", "evidence": "AttackDecision.lean:107-115 — ∀ a ∈ args → ≠ TAINTED"},
+    {"id": "P5-RT-005", "check": "JC does not hardcode status by business-module branch", "verdict": "PASS", "evidence": "evaluator.py: no domain-specific status branches. DecisionStatus in types.py matches Lean."},
+    {"id": "P5-RT-006", "check": "JC status projection matches canonical spec", "verdict": "PASS", "evidence": "test_decision_projection.py 12/12 pass"},
+    {"id": "P5-RT-007", "check": "Fail-closed not bypassed at runtime", "verdict": "PASS", "evidence": "tainted_fail_closed + TAINTED on ∉ args"},
+    {"id": "P5-RT-008", "check": "Lean build succeeds", "verdict": "PASS", "evidence": "lake build JurisLean.AttackDecision → 2948 jobs, 0 sorry"}
+  ],
+  "overall_verdict": "PASS",
+  "blocking_issues": 0,
+  "recommended_next": "P6 (Certificate Checker)"
+}

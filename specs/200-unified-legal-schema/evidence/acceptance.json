@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-06-27T21:00:00Z",
+  "lean_build": {
+    "status": "PASS",
+    "modules": [
+      "JurisLean.LegalIds",
+      "JurisLean.LegalSyntax",
+      "JurisLean.LegalModel",
+      "JurisLean.LegalWellFormed"
+    ]
+  },
+  "python_tests": {
+    "status": "PASS",
+    "passed": 14,
+    "failed": 0,
+    "test_file": "tests/spec/test_canonical_schema.py"
+  },
+  "ci_gates": {
+    "field_loss_count": 0,
+    "id_conflation_count": 0,
+    "unknown_version_accepted": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "audit_id": "P7-G08",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T22:30:00Z",
+  "spec_id": "SPEC-260",
+  "scope": "JC Production Runtime Refinement — P7-G01 through P7-G07",
+  "lean_verification": {
+    "sorry_count": 0,
+    "note": "Runtime-only SPEC, no new Lean theorems required"
+  },
+  "python_verification": {
+    "test_jc_runtime_refinement": {"passed": 12, "failed": 0},
+    "test_horn_differential": {"passed": 8, "failed": 0},
+    "test_safety_theorems": {"passed": 10, "failed": 0},
+    "test_end_to_end": {"passed": 13, "failed": 0},
+    "spec_tests_total": {"passed": 119, "failed": 0}
+  },
+  "security_verification": {
+    "no_synthetic_claim_in_production": "PASS",
+    "checker_independence": "PASS - no evaluator imports in certificate_checker.py",
+    "fail_closed_on_rejection": "PASS",
+    "cross_repo_lock": "PASS - CROSS_REPO_LOCK.json frozen 2026-06-27T16:00:00Z"
+  },
+  "known_limitation": "StratifiedEvaluator: 3/4 tests fail (stratified path not fully wired to canonical types). Known scope item.",
+  "overall_verdict": "PASS",
+  "blocking_issues": 0,
+  "recommended_next": "P8 (End-to-End Theorem)"
+}

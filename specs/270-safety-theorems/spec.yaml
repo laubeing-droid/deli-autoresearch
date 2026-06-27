@@ -1,0 +1,9 @@
+id: 270
+title: "Safety Theorems"
+status: COMPLETE
+domain: formal-proof
+depends_on: [260]
+blocking: false
+owner: Claude Code
+created: 2026-06-27
+updated: 2026-06-27

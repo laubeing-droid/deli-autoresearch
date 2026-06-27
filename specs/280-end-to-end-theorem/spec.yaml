@@ -1,0 +1,9 @@
+id: 280
+title: "End-to-End Theorem"
+status: COMPLETE
+domain: formal-proof
+depends_on: [270]
+blocking: true
+owner: Claude Code
+created: 2026-06-27
+updated: 2026-06-27

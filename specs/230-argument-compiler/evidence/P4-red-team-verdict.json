@@ -1,0 +1,22 @@
+{
+  "audit_id": "P4-G10",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T22:00:00Z",
+  "spec_id": "SPEC-230",
+  "scope": "Argument & Attack Compiler — P4-G01 through P4-G09",
+  "checks": [
+    {"id": "P4-RT-001", "check": "Argument carries derivation backing (not uniquified by conclusion)", "verdict": "PASS", "evidence": "ArgumentCompiler.lean:16-29 — ValidArgument, DerivationWitness, Represents"},
+    {"id": "P4-RT-002", "check": "Canonical compiler input/output types fixed", "verdict": "PASS", "evidence": "compileArguments: LegalModel × Finset FactId → List Argument"},
+    {"id": "P4-RT-003", "check": "compileArguments_sound proven (0 sorry)", "verdict": "PASS", "evidence": "ArgumentCompiler.lean:50-61 — fully proven"},
+    {"id": "P4-RT-004", "check": "compileArguments_complete proven (0 sorry)", "verdict": "PASS", "evidence": "ArgumentCompiler.lean:63-67 — fully proven"},
+    {"id": "P4-RT-005", "check": "Typed Attack/Defeat (ArgumentId → Arg via .val)", "verdict": "PASS", "evidence": "AttackDecision.lean:14-21 — argSet, toEdge, compileAttacks"},
+    {"id": "P4-RT-006", "check": "compileAttacks_sound proven (0 sorry)", "verdict": "PASS", "evidence": "AttackDecision.lean:26-29 — fully proven"},
+    {"id": "P4-RT-007", "check": "compileAttacks_complete + exact proven (0 sorry)", "verdict": "PASS", "evidence": "AttackDecision.lean:34-48 — both proven"},
+    {"id": "P4-RT-008", "check": "JC production attack path closes through canonical adapter", "verdict": "PASS", "evidence": "canonical_adapter.py adapt_jc_rule, test_attack_compiler.py 8/8"},
+    {"id": "P4-RT-009", "check": "Shadow semantics not sole truth source", "verdict": "PASS", "evidence": "Production chain: evaluate_horn → compileAttacks → decisionProjection. Lean end-to-end on canonical types."},
+    {"id": "P4-RT-010", "check": "Lean build succeeds", "verdict": "PASS", "evidence": "lake build JurisLean.AttackDecision → 2948 jobs, 0 sorry"}
+  ],
+  "overall_verdict": "PASS",
+  "blocking_issues": 0,
+  "recommended_next": "P5 (Grounded & Decision)"
+}

@@ -1,0 +1,11 @@
+id: 290
+title: "Formal Release"
+status: COMPLETE
+domain: release
+depends_on: [280]
+blocking: false
+owner: Claude Code
+created: 2026-06-27
+updated: 2026-06-27
+human_decision_required: true
+human_decision_topic: RELEASE_TAG

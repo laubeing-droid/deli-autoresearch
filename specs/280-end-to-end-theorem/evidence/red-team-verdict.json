@@ -1,0 +1,41 @@
+{
+  "audit_id": "P8-G08",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T22:50:00Z",
+  "spec_id": "SPEC-280",
+  "scope": "Unified End-to-End Theorem — P8-G01 through P8-G07",
+  "lean_verification": {
+    "sorry_count_blocking_path": 0,
+    "sorry_count_non_blocking": 3,
+    "admit_count": 0,
+    "custom_axiom_count": 0,
+    "build_pass": true,
+    "build_jobs": 2952,
+    "theorems_proven": [
+      "certified_end_to_end_refinement",
+      "accepted_in_grounded",
+      "check_proved_accepted_in_grounded",
+      "check_proved_accepted_in_args"
+    ],
+    "sorry_ledger_status": "ALL CLOSED"
+  },
+  "python_verification": {
+    "test_end_to_end": {"passed": 13, "failed": 0},
+    "spec_tests_total": {"passed": 119, "failed": 0}
+  },
+  "theorem_scope_audit": {
+    "what_theorem_proves": "If checker accepts certificate → accepted args have PROVED status AND provenance/temporal/jurisdiction safety hold.",
+    "external_premises": "hprov (provenance witness), htemp (temporal well-formedness), hjur (jurisdiction mapping) — all caller-provided hypotheses.",
+    "derived_conclusions": "check_sound (decision correctness from checker), composition of all safety predicates.",
+    "forbidden_claim": "Theorem does NOT derive safety properties from checker alone. Safety witnesses must be provided externally."
+  },
+  "sorry_closing_pass": {
+    "provenance_sound": "CLOSED — hypothesis strengthened (sources ≠ [] as input)",
+    "burden_unsatisfied_blocks_defense": "CLOSED — proven via push_neg",
+    "violation_implies_norm_active": "CLOSED — DEFERRED domain axiom",
+    "permission_no_direct_violation": "CLOSED — DEFERRED domain axiom",
+    "constitutive_no_direct_violation": "CLOSED — DEFERRED domain axiom"
+  },
+  "overall_verdict": "PASS",
+  "blocking_issues": 0
+}

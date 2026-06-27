@@ -1,0 +1,14 @@
+{
+  "lean_build": "PASS",
+  "lean_modules": ["JurisLean.DDLDefinitions"],
+  "sorry_count": 4,
+  "sorry_all_non_blocking": true,
+  "sorry_registered_in_ledger": true,
+  "blocking_path_sorry": 0,
+  "python_tests_passed": 327,
+  "python_tests_failed": 0,
+  "python_tests_skipped": 38,
+  "spec220_tests_passed": 9,
+  "spec220_tests_failed": 0,
+  "fixtures_ported": ["contract", "license", "tort", "criminal", "administrative"]
+}

@@ -1,0 +1,21 @@
+schema_version: "1.0"
+spec_id: "SPEC-240"
+title: "Attack, Grounded, and Decision"
+status: "COMPLETE"
+repositories:
+  - id: "control"
+    path: "."
+    access: "read_write"
+  - id: "formal"
+    path: "../legal-math-modeling"
+    access: "read_write"
+  - id: "runtime"
+    path: "../juris-calculus"
+    access: "read_write"
+dependencies: ["SPEC-230"]
+allowed_paths:
+  formal:
+    - "proofs/lean/juris_lean/JurisLean/AttackDecision.lean"
+  runtime:
+    - "tests/spec/test_attack_compiler.py"
+    - "tests/spec/test_decision_projection.py"

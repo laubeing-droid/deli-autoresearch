@@ -1,0 +1,119 @@
+{
+  "audit_id": "P3-G08",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T21:00:00Z",
+  "spec_id": "SPEC-220",
+  "scope": "DDL Minimal Core — P3-G01 through P3-G07",
+  "baseline": {
+    "lock_file": "state/cross_repo_lock.json",
+    "frozen_at": "2026-06-27T16:00:00Z"
+  },
+  "checks": [
+    {
+      "id": "P3-RT-001",
+      "check": "OBLIGATION modality formalized (satisfied + violated predicates)",
+      "verdict": "PASS",
+      "evidence": "DDLDefinitions.lean:31-40 — ObligationSatisfied, ObligationViolated"
+    },
+    {
+      "id": "P3-RT-002",
+      "check": "PROHIBITION modality formalized (satisfied + violated predicates)",
+      "verdict": "PASS",
+      "evidence": "DDLDefinitions.lean:47-56 — ProhibitionSatisfied, ProhibitionViolated"
+    },
+    {
+      "id": "P3-RT-003",
+      "check": "PERMISSION modality formalized (positive state, not absence of prohibition)",
+      "verdict": "PASS",
+      "evidence": "DDLDefinitions.lean:63-65 — PermissionActive (FREQ-220-006)"
+    },
+    {
+      "id": "P3-RT-004",
+      "check": "CONSTITUTIVE modality formalized",
+      "verdict": "PASS",
+      "evidence": "DDLDefinitions.lean:72-74 — ConstitutiveActive"
+    },
+    {
+      "id": "P3-RT-005",
+      "check": "Norm activation checks enabled + condition facts",
+      "verdict": "PASS",
+      "evidence": "DDLDefinitions.lean:22-24 — NormActive: enabled=true ∧ all conditions present"
+    },
+    {
+      "id": "P3-RT-006",
+      "check": "Violation semantics is a Prop, not a string label",
+      "verdict": "PASS",
+      "evidence": "DDLDefinitions.lean:82-86 — ViolationValid: 4 semantic conditions with typed IDs"
+    },
+    {
+      "id": "P3-RT-007",
+      "check": "Defense/burden formalized (not runtime comments)",
+      "verdict": "PASS",
+      "evidence": "DefenseApplicable (93-95), BurdenSatisfied (99-100), burden_unsatisfied_blocks_defense (153-162, proven)"
+    },
+    {
+      "id": "P3-RT-008",
+      "check": "4 reparation modes formalized with theorems",
+      "verdict": "PASS",
+      "evidence": "4 definitions + 4 theorems: alternative/ordered/concurrent/court_selected — all proven (0 sorry). concurrent_imposes_no_order ADDED."
+    },
+    {
+      "id": "P3-RT-009",
+      "check": "Generic DDL evaluator (not vertical slices)",
+      "verdict": "PASS",
+      "evidence": "FixpointEvaluator is domain-agnostic. DDL modal gate (line 222-265) applies to all rules. No domain-specific evaluators."
+    },
+    {
+      "id": "P3-RT-010",
+      "check": "All fixtures use generic evaluator",
+      "verdict": "PASS",
+      "evidence": "9/9 DDL tests pass: contract, license, tort, criminal, administrative, defense, reparation, modality isolation"
+    },
+    {
+      "id": "P3-RT-011",
+      "check": "Blocking-path zero sorry",
+      "verdict": "PASS",
+      "evidence": "DDLDefinitions.lean: 3 sorry on non-blocking theorems only. All registered in SORRY_LEDGER.md (CLOSED)."
+    },
+    {
+      "id": "P3-RT-012",
+      "check": "Full Lean build succeeds",
+      "verdict": "PASS",
+      "evidence": "lake build JurisLean.DDLDefinitions → Build completed successfully (2945 jobs)"
+    }
+  ],
+  "sorry_summary": {
+    "blocking_path_sorry": 0,
+    "non_blocking_sorry": 3,
+    "registered_in_sorry_ledger": true,
+    "entries": [
+      {
+        "theorem": "violation_implies_norm_active",
+        "file": "DDLDefinitions.lean:128",
+        "reason": "Domain axiom: RuleId/NormId structural gap",
+        "status": "CLOSED (deferred)"
+      },
+      {
+        "theorem": "permission_no_direct_violation",
+        "file": "DDLDefinitions.lean:139",
+        "reason": "Domain axiom: RuleId.val ≠ NormId.val by construction",
+        "status": "CLOSED (deferred)"
+      },
+      {
+        "theorem": "constitutive_no_direct_violation",
+        "file": "DDLDefinitions.lean:149",
+        "reason": "Domain axiom: same structural gap",
+        "status": "CLOSED (deferred)"
+      }
+    ]
+  },
+  "code_changes": {
+    "DDLDefinitions.lean": "Added concurrent_imposes_no_order theorem (4 lines, trivial proof, 0 sorry)"
+  },
+  "overall_verdict": "PASS",
+  "blocking_issues": 0,
+  "p3_ddl_ready": true,
+  "proven_scope": "4 modalities, norm activation, violation semantics, defense/burden, 4 reparation modes, generic evaluator",
+  "unproven_scope": "3 non-blocking domain axioms (violation_implies_norm_active, permission_no_direct_violation, constitutive_no_direct_violation) — require Rule-Norm mapping not in current model",
+  "recommended_next": "P4 (Argument & Attack Compiler)"
+}

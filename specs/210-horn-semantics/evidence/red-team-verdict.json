@@ -1,0 +1,96 @@
+{
+  "audit_id": "P2-G08",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T20:00:00Z",
+  "spec_id": "SPEC-210",
+  "scope": "Pure Horn Core & Runtime Alignment — P2-G01 through P2-G07",
+  "baseline": {
+    "lock_file": "state/cross_repo_lock.json",
+    "frozen_at": "2026-06-27T16:00:00Z"
+  },
+  "checks": [
+    {
+      "id": "P2-RT-001",
+      "check": "Derives is inductive (not closure membership)",
+      "verdict": "PASS",
+      "evidence": "HornCanonical.lean:81-85 — inductive Derives with two constructors (initial, rule). NOT defined as a ∈ hornClosure."
+    },
+    {
+      "id": "P2-RT-002",
+      "check": "derives_sound proven (0 sorry)",
+      "verdict": "PASS",
+      "evidence": "HornCanonical.lean:93-110 — induction on Derives, uses hornClosure_extensive + hornClosure_closed"
+    },
+    {
+      "id": "P2-RT-003",
+      "check": "derives_complete proven (0 sorry)",
+      "verdict": "PASS",
+      "evidence": "HornCanonical.lean:140-176 — constructs derivables filter set, shows TH(derivables)=derivables, applies least-fixed-point"
+    },
+    {
+      "id": "P2-RT-004",
+      "check": "Minimal model equivalence (hornClosure_least + hornClosure_closed + horn_semantic_equivalence)",
+      "verdict": "PASS",
+      "evidence": "hornClosure_closed:54-60, hornClosure_least:184-188, horn_semantic_equivalence:196-200 — all proven, 0 sorry"
+    },
+    {
+      "id": "P2-RT-005",
+      "check": "JC Horn stage has no exception/defeat/rebuttal/priority",
+      "verdict": "PASS",
+      "evidence": "evaluator.py: _apply_rule_horn() (511-558) removes exception chain, PROHIBITION, rebuttal, constraint rules. evaluate_horn() (560-630) uses fact_to_rules_horn (premises only)."
+    },
+    {
+      "id": "P2-RT-006",
+      "check": "Horn single-step differential test exists and passes",
+      "verdict": "PASS",
+      "evidence": "test_horn_differential.py:130 — test_horn_single_step_differential (8/8 pass)"
+    },
+    {
+      "id": "P2-RT-007",
+      "check": "Horn closure differential test exists and passes",
+      "verdict": "PASS",
+      "evidence": "test_horn_differential.py:152 — test_horn_closure_differential + derived_bound convergence (8/8 pass)"
+    },
+    {
+      "id": "P2-RT-008",
+      "check": "Lean Horn build succeeds (0 sorry, 0 admit, 0 custom axiom)",
+      "verdict": "PASS",
+      "evidence": "lake build JurisLean.HornCanonical → Build completed successfully (2945 jobs)"
+    },
+    {
+      "id": "P2-RT-009",
+      "check": "Non-monotonicity risk eliminated",
+      "verdict": "PASS",
+      "evidence": "non-monotonicity-repro.md: claims only added never removed, fact_to_rules_horn excludes exception atoms, 5 monotonicity tests + 2 exception-defeat tests pass"
+    },
+    {
+      "id": "P2-RT-010",
+      "check": "JC Horn path aligned with canonical spec (monotone, positive)",
+      "verdict": "PASS",
+      "evidence": "evaluate_horn() implements Tarski fixed-point iteration with derived_bound. Claims monotonically grow. No negative premises."
+    }
+  ],
+  "lean_audit": {
+    "sorry_count": 0,
+    "admit_count": 0,
+    "custom_axiom_count": 0,
+    "blocking_theorems_proved": 8,
+    "blocking_theorems_required": 8,
+    "all_theorems_verified": true
+  },
+  "runtime_audit": {
+    "exception_defeat_in_horn": false,
+    "rebuttal_in_horn": false,
+    "priority_in_horn": false,
+    "monotonicity_test_passes": true,
+    "differential_test_passes": true,
+    "closure_differential_test_passes": true,
+    "full_horn_suite_passes": true,
+    "horn_tests_passed": 8,
+    "horn_tests_failed": 0
+  },
+  "overall_verdict": "PASS",
+  "blocking_issues": 0,
+  "p2_horn_ready": true,
+  "recommended_next": "P3 (Argument Compiler)"
+}

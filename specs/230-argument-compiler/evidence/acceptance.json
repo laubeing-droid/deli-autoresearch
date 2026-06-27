@@ -1,0 +1,11 @@
+{
+  "lean_build": "PASS",
+  "sorry_count": 0,
+  "admit_count": 0,
+  "custom_axiom_count": 0,
+  "blocking_theorems_proved": 2,
+  "python_tests_passed": 332,
+  "python_tests_failed": 0,
+  "spec230_tests_passed": 5,
+  "spec230_tests_failed": 0
+}

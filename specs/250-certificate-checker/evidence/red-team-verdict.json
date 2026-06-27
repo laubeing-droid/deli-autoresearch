@@ -1,0 +1,28 @@
+{
+  "audit_id": "P6-G10",
+  "auditor": "independent-red-team",
+  "audit_date": "2026-06-27T22:20:00Z",
+  "spec_id": "SPEC-250",
+  "scope": "Certificate & Independent Checker — P6-G01 through P6-G09",
+  "lean_verification": {
+    "sorry_count": 0,
+    "admit_count": 0,
+    "custom_axiom_count": 0,
+    "build_pass": true,
+    "build_jobs": 2949,
+    "theorems_proven": ["check_sound", "certificate_verifies"]
+  },
+  "python_verification": {
+    "test_certificate_checker": {"passed": 17, "failed": 0},
+    "test_certificate_mutations": {"passed": 11, "failed": 0},
+    "spec_tests_total": {"passed": 119, "failed": 0}
+  },
+  "security_verification": {
+    "evaluator_independence": "PASS - no evaluator imports in certificate_checker.py",
+    "mutation_rejection": "PASS - all 11 mutation tests reject tampered certificates",
+    "TAINTED_always_fails": "PASS - check() returns false for TAINTED status"
+  },
+  "overall_verdict": "PASS",
+  "blocking_issues": 0,
+  "recommended_next": "P7 (Runtime Refinement)"
+}
