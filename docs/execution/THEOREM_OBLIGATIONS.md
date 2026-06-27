@@ -23,115 +23,66 @@
 
 ## 1. Lean Formal Theorems (F)
 
-### 1.1 Blocking-Path Theorems (19)
+### 1.1 Core Blocking-Path Theorems (43)
 
-These MUST build with `lake build`, MUST have ZERO sorry, ZERO custom axiom.
+These MUST build with `lake build JurisLean`, MUST have ZERO sorry, ZERO custom axiom.
 
-| # | Theorem | File | SPEC | Scope | Verified By |
-|---|---------|------|------|-------|-------------|
-| 1 | `horn_result_fixed_point` | HornFixedPoint.lean | 210 | Horn closure is a fixed point | `lake build JurisLean.HornFixedPoint` |
-| 2 | `horn_result_is_minimal_model` | HornFixedPoint.lean | 210 | Horn closure is the least fixed point | same |
-| 3 | `horn_completeness` | HornFixedPoint.lean | 210 | Derivation-complete for Horn systems | same |
-| 4 | `hornStep_monotone` | HornCanonical.lean | 210 | Single Horn step monotone | `lake build JurisLean.HornCanonical` |
-| 5 | `hornClosure_extensive` | HornCanonical.lean | 210 | Closure includes input | same |
-| 6 | `hornClosure_closed` | HornCanonical.lean | 210 | Closure is closed under rules | same |
-| 7 | `hornClosure_idempotent` | HornCanonical.lean | 210 | Closure of closure = closure | same |
-| 8 | `horn_semantic_equivalence` | HornCanonical.lean | 210 | Canonical = operational Horn | same |
-| 9 | `compileArguments_sound` | ArgumentCompiler.lean | 230 | Compiler only produces valid arguments | `lake build JurisLean.ArgumentCompiler` |
-| 10 | `compileArguments_complete` | ArgumentCompiler.lean | 230 | Compiler produces all valid arguments | same |
-| 11 | `compileAttacks_sound` | AttackDecision.lean | 240 | Attack compiler sound | `lake build JurisLean.AttackDecision` |
-| 12 | `compileAttacks_complete` | AttackDecision.lean | 240 | Attack compiler complete | same |
-| 13 | `compileAttacks_exact` | AttackDecision.lean | 240 | Attack compiler exact characterization | same |
-| 14 | `decision_status_mutually_exclusive` | AttackDecision.lean | 240 | No argument is both PROVED and REFUTED | same |
-| 15 | `decision_status_coverage` | AttackDecision.lean | 240 | Every argument gets a status | same |
-| 16 | `tainted_fail_closed` | AttackDecision.lean | 240 | TAINTED status unreachable for args in framework | same |
-| 17 | `check_sound` | CertificateChecker.lean | 250 | Checker acceptance implies correctness | `lake build JurisLean.CertificateChecker` |
-| 18 | `certificate_verifies` | CertificateChecker.lean | 250 | Checker produces verified certificate | same |
-| 19 | `certified_end_to_end_refinement` | EndToEnd.lean | 280 | Full pipeline: check → decision + safety conjuncts | `lake build JurisLean.EndToEnd` |
+All 43 theorems exist as actual `theorem`/`lemma` declarations in the Lean source files.
 
-**Build command (all blocking)**:
+**FiniteMonotoneIteration.lean** (9 core):
+`iter_succ`, `iter_subset_univ`, `iter_mono`, `iter_stable`, `iter_ssubset_of_ne`, `iter_card_lt_of_ne`, `iter_card_le_univ`, `exists_fixpoint_le_card`, `fixed_at_card`
+
+**DungFixedPoint.lean** (17 core):
+`F_monotone`, `iteration_monotone`, `grounded_eq_groundedSpec`, `finite_termination`, `iteration_bound`, `groundedSpec_is_fixed_point`, `grounded_is_fixed_point`, `groundedSpec_is_least_fixed_point`, `grounded_is_least_fixed_point`, `grounded_is_least_complete`, `groundedSpec_unique_least_fixed_point`, `labelling_partition`, `in_soundness`, `out_soundness`, `undecided_characterization`, `self_attack_precise_theorem`, `self_attack_not_in_grounded`
+
+**HornFixedPoint.lean** (10 core):
+`horn_operator_subset_univ`, `horn_operator_monotone`, `horn_iteration_monotone`, `horn_finite_termination`, `horn_iteration_bound`, `horn_result_fixed_point`, `horn_result_least_fixed_point`, `horn_soundness`, `horn_completeness`, `horn_result_is_minimal_model`
+
+**WeightedSupNorm.lean** (4 core):
+`weightedSupDist_nonneg`, `weightedSupDist_triangle`, `weightedSupDist_symm`, `weightedSupDist_complete`
+
+**HornDefinitions.lean** (2 core):
+`TH_monotone`, `TH_subset_univ`
+
+**ContractionCondition.lean** (1 core):
+`lipschitz_coupling_implies_weighted_contraction`
+
+**Build command (umbrella)**:
 ```bash
 cd legal-math-modeling/proofs/lean/juris_lean
-lake build JurisLean.HornFixedPoint JurisLean.HornCanonical \
-           JurisLean.ArgumentCompiler JurisLean.AttackDecision \
-           JurisLean.CertificateChecker JurisLean.SafetyTheorems \
-           JurisLean.EndToEnd JurisLean.DDLDefinitions
+lake build JurisLean
+# 2954 jobs, 0 errors, 0 sorry
 ```
 
-**Forbidden claims**: These theorems do NOT prove runtime correctness, do NOT verify safety predicates (they are caller hypotheses in theorem 19), do NOT eliminate all `sorry` from the repo.
+**Forbidden claims**: These theorems do NOT prove runtime correctness, do NOT verify safety predicates, do NOT eliminate all `sorry` from the repo.
 
-### 1.2 Supporting Theorems (5)
+### 1.2 Supporting Theorems (51)
 
-Non-blocking, fully proven, 0 sorry.
-
-| # | Theorem | File | SPEC | Scope |
-|---|---------|------|------|-------|
-| 20 | `provenance_sound` | SafetyTheorems.lean | 270 | Accepted args have non-empty provenance |
-| 21 | `temporal_safe` | SafetyTheorems.lean | 270 | Temporal records have start ≤ end |
-| 22 | `jurisdiction_safe` | SafetyTheorems.lean | 270 | Jurisdiction records map to target |
-| 23 | `accepted_in_grounded` | EndToEnd.lean | 280 | Check-proved args are in grounded extension |
-| 24 | `burden_unsatisfied_blocks_defense` | DDLDefinitions.lean | 220 | Unsatisfied burden blocks defense |
+Non-blocking, fully proven, 0 sorry. Includes: BanachEffectiveNodes (8), FiniteRosetta (9), FiniteGaloisAdjunction (2), TemporalKripke (6), UnifiedModel (16), JC_Formalization (6), BanachContraction (2), BanachFixedPoint (1), SupZeroLemma (1).
 
 ### 1.3 Deferred (Domain Axioms) — 3 sorry
 
-| # | Theorem | File | SPEC | Sorry Reason | Plan |
-|---|---------|------|------|-------------|------|
-| 25 | `violation_implies_norm_active` | DDLDefinitions.lean | 220 | Rule→Norm mapping not in model | Domain axiom |
-| 26 | `permission_no_direct_violation` | DDLDefinitions.lean | 220 | RuleId≠NormId structural gap | Domain axiom |
-| 27 | `constitutive_no_direct_violation` | DDLDefinitions.lean | 220 | Same structural gap | Domain axiom |
+Registered in `legal-math-modeling/SORRY_LEDGER.md`. Not yet formalized in any Lean file.
 
-### 1.4 Additional Theorems (64)
+| # | Axiom | Status | Sorry Reason |
+|---|-------|--------|-------------|
+| 1 | `violation_implies_norm_active` | Deferred | Rule→Norm mapping not in model |
+| 2 | `permission_no_direct_violation` | Deferred | RuleId≠NormId structural gap |
+| 3 | `constitutive_no_direct_violation` | Deferred | Same structural gap |
 
-These exist in the codebase, are fully proven (0 sorry), but are not on the blocking chain. Grouped by subsystem.
+### 1.4 Additional Theorems (0 beyond core+supporting)
 
-**HornFixedPoint.lean** (7 additional):
-`horn_operator_subset_univ`, `horn_operator_monotone`, `horn_iteration_monotone`, `horn_finite_termination`, `horn_iteration_bound`, `horn_result_least_fixed_point`, `horn_soundness`
-
-**HornCanonical.lean** (3 additional):
-`derives_sound`, `derives_complete`, `hornClosure_least`
-
-**HornDefinitions.lean** (2):
-`TH_monotone`, `TH_subset_univ`
-
-**DungFixedPoint.lean** (16):
-`F_monotone`, `iteration_monotone`, `finite_termination`, `iteration_bound`, `groundedSpec_is_fixed_point`, `grounded_is_fixed_point`, `groundedSpec_is_least_fixed_point`, `grounded_is_least_fixed_point`, `grounded_is_least_complete`, `groundedSpec_unique_least_fixed_point`, `labelling_partition`, `in_soundness`, `out_soundness`, `undecided_characterization`, `self_attack_precise_theorem`, `self_attack_not_in_grounded`
-
-**EndToEnd.lean** (5 additional):
-`check_proved_accepted_in_grounded`, `check_proved_accepted_in_args`, `cert_provenance_from_check`, `cert_temporal_from_record`, `cert_jurisdiction_from_record`
-
-**DDLDefinitions.lean** (3 additional):
-`ordered_next_requires_prior_failure`, `alternative_imposes_no_order`, `court_selected_not_auto_chosen`
-
-**FiniteMonotoneIteration.lean** (9):
-`iter_succ`, `iter_subset_univ`, `iter_mono`, `iter_stable`, `iter_ssubset_of_ne`, `iter_card_lt_of_ne`, `iter_card_le_univ`, `exists_fixpoint_le_card`, `fixed_at_card`
-
-**FiniteRosetta.lean** (9):
-`cnOnly_eq_30`, `collision_eq_4`, `asymmetry_eq_3`, `obstruction_eq_37`, `cnOnly_exceeds_half`, `obstruction_exceeds_half`, `no_total_functor`, `obstruction_density_gt_two_thirds`, `pure_obstruction_majority`
-
-**JC_Formalization.lean** (6):
-`proved_theorems_card`, `empirical_proxy_card`, `refuted_theorems_card`, `pending_theorems_card`, `advance_preserves_domain_bound`, `advance_cannot_revive_refuted`
-
-**Banach Track** (7):
-`weightedMetricSpace_dist`, `weighted_contraction_bound`, `weighted_contraction_bound_nnreal`, `pricingFn_contraction`, `pricingFn_fixed_point`, `pricingFn_unique_fixed_point`, `weightedContractionData_of_coupling`
-
-**Other** (5):
-`lipschitz_coupling_implies_weighted_contraction` (ContractionCondition.lean), `galois_connection_of_residuated` (FiniteGaloisAdjunction.lean), `temporal_guard_always`, `litigation_always_guard` (TemporalKripke.lean), `weightedSupDist_complete` (WeightedSupNorm.lean)
-
-**UnifiedModel.lean** (11) — **NOT on main proof chain** (import conflict with LegalSyntax):
-`horn_step_mono`, `unattacked_in_ge`, `unattacked_in_lfp`, `banach_bounded`, `soundness_aaf`, `soundness_banach`, `gc2_completeness`, `unified_composition_v2`, `full_chain`, `horn_monotone`, `banach_bound_uniform`
-
-**WeightedSupNorm.lean** (3 additional):
-`weightedSupDist_nonneg`, `weightedSupDist_triangle`, `weightedSupDist_symm`
+All theorems in the codebase are already listed in 1.1 (core) and 1.2 (supporting).
+The 94 unique theorems across 15 Lean files constitute the complete formal surface.
 
 ### 1.5 Lean Summary
 
 | Category | Count | Sorry | Custom Axiom |
 |----------|-------|-------|--------------|
-| Blocking | 19 | 0 | 0 |
-| Supporting | 5 | 0 | 0 |
-| Deferred | 3 | 3 | 0 |
-| Additional | 83 | 0 | 0 |
-| **Total** | **110** | **3** | **0** |
+| Core blocking | 43 | 0 | 0 |
+| Supporting | 51 | 0 | 0 |
+| Deferred (axioms) | 3 | 3 | 0 |
+| **Total (unique)** | **94** | **0** | **0** |
 
 ### 1.6 Axiom Audit
 
@@ -144,7 +95,7 @@ These exist in the codebase, are fully proven (0 sorry), but are not on the bloc
 
 ### 2.1 juris-calculus / tests/spec/ (132 tests, 11 files)
 
-These mirror the Lean blocking-path theorems as executable Python specs.
+These mirror the Lean core theorems as executable Python specs.
 
 | File | Tests | Mirrors Lean Theorem(s) | Trust |
 |------|-------|------------------------|-------|
@@ -261,13 +212,11 @@ SPEC-240 through SPEC-280 are missing `acceptance.json` in evidence/ (gap noted)
 **File**: `legal-math-modeling/SORRY_LEDGER.md`
 **Gate**: `python sorry-gate.py --ledger SORRY_LEDGER.md --strict-for blocking`
 
-| Entry | File | Status | Type |
-|-------|------|--------|------|
-| `violation_implies_norm_active` | DDLDefinitions.lean | CLOSED (deferred) | D |
-| `permission_no_direct_violation` | DDLDefinitions.lean | CLOSED (deferred) | D |
-| `constitutive_no_direct_violation` | DDLDefinitions.lean | CLOSED (deferred) | D |
-| `burden_unsatisfied_blocks_defense` | DDLDefinitions.lean | CLOSED (proven) | F |
-| `provenance_sound` | SafetyTheorems.lean | CLOSED (proven) | F |
+| Entry | Status | Type |
+|-------|--------|------|
+| `violation_implies_norm_active` | Deferred (not yet formalized) | D |
+| `permission_no_direct_violation` | Deferred (not yet formalized) | D |
+| `constitutive_no_direct_violation` | Deferred (not yet formalized) | D |
 
 **Net**: 0 OPEN. 3 sorry remain as domain axioms (deferred). 2 were proven and closed.
 
@@ -293,27 +242,20 @@ SPEC-240 through SPEC-280 are missing `acceptance.json` in evidence/ (gap noted)
 
 ## 7. Known Gaps
 
-1. **SPEC-240 through SPEC-280 missing `acceptance.json`** in evidence/. Status = COMPLETE but acceptance evidence absent.
-2. **Full `lake build JurisLean` fails** — import conflict UnifiedModel/LegalSyntax. Must use per-module builds.
-3. **UnifiedModel.lean** (11 theorems) cannot be built alongside LegalSyntax.lean. These are orphaned from the main chain.
-4. **3 DDL sorry** — domain axioms, not proven. Require Rule→Norm mapping not in current model.
-5. **Safety conjuncts** in `certified_end_to_end_refinement` are caller hypotheses, not checker-derived conclusions.
-6. **38 skipped tests** in juris-calculus — pre-existing condition-dependent tests (spacy/heavy deps).
-7. **Red Team is Claude self-review** — not independent audit. Layers 2+3 depend on LLM judgment.
-8. **SORRY_LEDGER `CLOSED`** entries for `burden_unsatisfied_blocks_defense` and `provenance_sound` were proven after initial tracking — these no longer have sorry in code.
-9. **Branch mismatch** (corrected by P0-G01): legal-math-modeling uses `master`, not `main`.
+1. **11 phantom Lean files** — designed in SPEC-200~290 but never created. Their theorems were absorbed into existing files or remain PLANNED. See theorem-manifest.md "Phantom File Clarification" for mapping.
+2. **3 DDL sorry** — domain axioms registered in SORRY_LEDGER.md. Not yet formalized in any Lean file.
+3. **38 skipped tests** in juris-calculus — pre-existing condition-dependent tests (spacy/heavy deps).
+4. **Red Team is Claude self-review** — not independent audit. Layers 2+3 depend on LLM judgment.
+5. **Branch mismatch** (corrected by P0-G01): legal-math-modeling uses `master`, not `main`.
 
 ---
 
 ## 8. Reproducibility Commands
 
 ```bash
-# Lean: all blocking modules
+# Lean: umbrella build (all modules, 2954 jobs, 0 errors)
 cd legal-math-modeling/proofs/lean/juris_lean
-lake build JurisLean.HornFixedPoint JurisLean.HornCanonical \
-           JurisLean.ArgumentCompiler JurisLean.AttackDecision \
-           JurisLean.CertificateChecker JurisLean.SafetyTheorems \
-           JurisLean.EndToEnd JurisLean.DDLDefinitions
+lake build JurisLean
 
 # Axiom audit
 lake build +JurisLean.AxiomAudit

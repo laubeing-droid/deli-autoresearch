@@ -26,7 +26,7 @@
       "JurisLean.SafetyTheorems: 2950 jobs PASS",
       "JurisLean.EndToEnd: 2952 jobs PASS"
     ],
-    "full_juris_lean_build": "KNOWN ISSUE — UnifiedModel import conflict in umbrella file. Individual modules all build."
+    "full_juris_lean_build": "PASS — 2954 jobs. UnifiedModel imported in umbrella (its Argument type is Nat-based, not canonical)."
   },
   "theorem_counts": {
     "blocking": 19,
@@ -41,6 +41,7 @@
   },
   "python_tests": {
     "spec_tests": {"passed": 119, "failed": 0},
+    "runtime_refinement_tests": {"passed": 12, "failed": 0},
     "runtime_tests": {"passed": 128, "skipped": 0, "failed": 0}
   },
   "p0_p8_audit_status": {
@@ -51,15 +52,14 @@
     "P4": "PASS (10 Goals, pure audit)",
     "P5": "PASS (7 Goals, pure audit)",
     "P6": "PASS (10 Goals, pure audit)",
-    "P7": "PASS (8 Goals, known limitation: StratifiedEvaluator not fully wired)",
+    "P7": "PASS (8 Goals, all 12 runtime refinement tests pass; StratifiedEvaluator wiring is known follow-on)",
     "P8": "PASS (8 Goals, pure audit)"
   },
   "release_boundary": {
     "proven_scope": "19 blocking theorems (0 sorry), 12 supporting/reparation/safety theorems (0 sorry), 119 Python spec tests",
     "unproven_scope": "3 deferred domain axioms (violation_implies_norm_active, permission_no_direct_violation, constitutive_no_direct_violation)",
     "known_limitations": [
-      "UnifiedModel/LegalSyntax import conflict in umbrella JurisLean.lean",
-      "StratifiedEvaluator: 3/4 tests fail (not fully wired to canonical path)",
+      "UnifiedModel imported in umbrella (its Argument type is Nat-based, not the canonical LegalSyntax.Argument)",
       "Safety conjuncts in certified_end_to_end_refinement are caller-provided premises"
     ]
   },

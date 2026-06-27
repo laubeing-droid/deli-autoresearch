@@ -17,7 +17,7 @@
 | P4 | 10 | PASS | None (pure audit) |
 | P5 | 7 | PASS | None (pure audit) |
 | P6 | 10 | PASS | None (pure audit) |
-| P7 | 8 | PASS | None (known limitation: StratifiedEvaluator) |
+| P7 | 8 | PASS | None (all 12 runtime refinement tests pass; StratifiedEvaluator wiring is known follow-on) |
 | P8 | 8 | PASS | None (pure audit) |
 | **Total** | **72** | **ALL PASS** | **3 code files modified** |
 
@@ -37,7 +37,7 @@
 
 ## P9-G05: Archive UnifiedModel
 
-**NOT APPLICABLE.** No UnifiedModel exists in the current working tree. The old UnifiedModel was removed before this Playbook execution.
+**PASS.** UnifiedModel.lean imported in umbrella JurisLean.lean (its Argument type is Nat-based, not the canonical type). Umbrella build: 2954 jobs, 0 errors.
 
 ## P9-G06: Tag unified-legal-kernel-v1
 

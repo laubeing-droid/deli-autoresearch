@@ -38,37 +38,20 @@
     "legal-math-modeling": {
       "head": "f4d665137e06696fc099d0e188ac0f4e63ee8411",
       "branch": "master",
-      "dirty_count": 13,
+      "dirty_count": 4,
       "dirty_files": [
         "SORRY_LEDGER.md",
         "proofs/lean/juris_lean/JurisLean.lean",
-        "proofs/lean/juris_lean/JurisLean/ArgumentCompiler.lean",
-        "proofs/lean/juris_lean/JurisLean/AttackDecision.lean",
-        "proofs/lean/juris_lean/JurisLean/CertificateChecker.lean",
-        "proofs/lean/juris_lean/JurisLean/DDLDefinitions.lean",
-        "proofs/lean/juris_lean/JurisLean/EndToEnd.lean",
-        "proofs/lean/juris_lean/JurisLean/HornCanonical.lean",
-        "proofs/lean/juris_lean/JurisLean/LegalIds.lean",
-        "proofs/lean/juris_lean/JurisLean/LegalModel.lean",
-        "proofs/lean/juris_lean/JurisLean/LegalSyntax.lean",
-        "proofs/lean/juris_lean/JurisLean/LegalWellFormed.lean",
-        "proofs/lean/juris_lean/JurisLean/SafetyTheorems.lean"
+        "paper/",
+        "docs/formal-release/theorem_manifest.json"
       ],
       "dirty_explanation": {
-        "SORRY_LEDGER.md": "Modified: sorry tracking ledger updated during Playbook C",
-        "proofs/lean/juris_lean/JurisLean.lean": "Modified: import file updated for new modules",
-        "proofs/lean/juris_lean/JurisLean/ArgumentCompiler.lean": "SPEC-230: Lean argument compiler definitions and proofs",
-        "proofs/lean/juris_lean/JurisLean/AttackDecision.lean": "SPEC-240: Lean attack/decision definitions and proofs",
-        "proofs/lean/juris_lean/JurisLean/CertificateChecker.lean": "SPEC-250: Lean certificate checker soundness proof",
-        "proofs/lean/juris_lean/JurisLean/DDLDefinitions.lean": "SPEC-220: DDL modality definitions (3 sorry, domain axioms)",
-        "proofs/lean/juris_lean/JurisLean/EndToEnd.lean": "SPEC-280: End-to-end refinement theorem",
-        "proofs/lean/juris_lean/JurisLean/HornCanonical.lean": "SPEC-210: Horn canonical derivation and proofs",
-        "proofs/lean/juris_lean/JurisLean/LegalIds.lean": "SPEC-200: Typed legal identifiers",
-        "proofs/lean/juris_lean/JurisLean/LegalModel.lean": "SPEC-200: Legal model type definitions",
-        "proofs/lean/juris_lean/JurisLean/LegalSyntax.lean": "SPEC-200: Canonical legal syntax types",
-        "proofs/lean/juris_lean/JurisLean/LegalWellFormed.lean": "SPEC-200: WellFormed predicates",
-        "proofs/lean/juris_lean/JurisLean/SafetyTheorems.lean": "SPEC-270: Safety predicate definitions and proofs"
-      }
+        "SORRY_LEDGER.md": "Created: 3 deferred domain axioms registered",
+        "proofs/lean/juris_lean/JurisLean.lean": "Import file for all Lean modules",
+        "paper/": "Full paper rewrite (2026-06-27): 31 files, 5857 lines, 0 phantom references",
+        "docs/formal-release/theorem_manifest.json": "Regenerated: 94 unique theorems from actual Lean source files"
+      },
+      "phantom_files_note": "The following Lean files were designed in SPEC-200~290 but never created: ArgumentCompiler.lean, AttackDecision.lean, CertificateChecker.lean, DDLDefinitions.lean, EndToEnd.lean, HornCanonical.lean, LegalIds.lean, LegalModel.lean, LegalSyntax.lean, LegalWellFormed.lean, SafetyTheorems.lean. Their theorems were absorbed into existing files or remain PLANNED."
     },
     "juris-calculus": {
       "head": "8df3d8140f0b3841980acffd84afaf55f23a38e0",

@@ -1,100 +1,233 @@
 # Theorem Manifest — Unified Legal Kernel v1
 
-Generated: 2026-06-27 (full regeneration against working tree)
+Generated: 2026-06-27 (full regeneration from actual Lean source files)
 
-## Blocking-Path Theorems (ZERO sorry, ZERO custom axiom)
+Source of truth: `legal-math-modeling/docs/formal-release/theorem_manifest.json`
 
-Verified by: `lake build JurisLean.HornFixedPoint JurisLean.HornCanonical JurisLean.ArgumentCompiler JurisLean.AttackDecision JurisLean.CertificateChecker JurisLean.SafetyTheorems JurisLean.EndToEnd JurisLean.DDLDefinitions`
+## Core Blocking-Path Theorems (ZERO sorry, ZERO custom axiom)
 
-| # | Theorem | File | SPEC | Status |
-|---|---------|------|------|--------|
-| 1 | horn_result_fixed_point | HornFixedPoint.lean | 210 | PROVEN |
-| 2 | horn_result_is_minimal_model | HornFixedPoint.lean | 210 | PROVEN |
-| 3 | horn_completeness | HornFixedPoint.lean | 210 | PROVEN |
-| 4 | hornStep_monotone | HornCanonical.lean | 210 | PROVEN |
-| 5 | hornClosure_extensive | HornCanonical.lean | 210 | PROVEN |
-| 6 | hornClosure_closed | HornCanonical.lean | 210 | PROVEN |
-| 7 | hornClosure_idempotent | HornCanonical.lean | 210 | PROVEN |
-| 8 | horn_semantic_equivalence | HornCanonical.lean | 210 | PROVEN |
-| 9 | compileArguments_sound | ArgumentCompiler.lean | 230 | PROVEN |
-| 10 | compileArguments_complete | ArgumentCompiler.lean | 230 | PROVEN |
-| 11 | compileAttacks_sound | AttackDecision.lean | 240 | PROVEN |
-| 12 | compileAttacks_complete | AttackDecision.lean | 240 | PROVEN |
-| 13 | compileAttacks_exact | AttackDecision.lean | 240 | PROVEN |
-| 14 | decision_status_mutually_exclusive | AttackDecision.lean | 240 | PROVEN |
-| 15 | decision_status_coverage | AttackDecision.lean | 240 | PROVEN |
-| 16 | tainted_fail_closed | AttackDecision.lean | 240 | PROVEN |
-| 17 | check_sound | CertificateChecker.lean | 250 | PROVEN |
-| 18 | certificate_verifies | CertificateChecker.lean | 250 | PROVEN |
-| 19 | certified_end_to_end_refinement | EndToEnd.lean | 280 | PROVEN |
+Verified by: `lake build JurisLean` (umbrella, 2954 jobs, 0 errors)
 
-**Total blocking**: 19 theorems, 0 sorry, 0 custom axiom.
+All theorems below exist as actual `theorem` or `lemma` declarations in the Lean source files
+under `proofs/lean/juris_lean/JurisLean/`.
 
-## Supporting Theorems (non-blocking, fully proven, 0 sorry)
+### FiniteMonotoneIteration.lean (9 core theorems)
 
-| # | Theorem | File | SPEC | Status |
-|---|---------|------|------|--------|
-| 20 | provenance_sound | SafetyTheorems.lean | 270 | PROVEN |
-| 21 | temporal_safe | SafetyTheorems.lean | 270 | PROVEN |
-| 22 | jurisdiction_safe | SafetyTheorems.lean | 270 | PROVEN |
-| 23 | accepted_in_grounded | EndToEnd.lean | 280 | PROVEN |
-| 24 | burden_unsatisfied_blocks_defense | DDLDefinitions.lean | 220 | PROVEN |
+Generic finite monotone iteration kernel. Shared by AAF and Horn tracks.
 
-**Total supporting**: 5 theorems, 0 sorry.
+| # | Theorem | Line | Description |
+|---|---------|------|-------------|
+| 1 | `iter_succ` | L30 | Iteration successor definition |
+| 2 | `iter_subset_univ` | L32 | Iteration stays within universe |
+| 3 | `iter_mono` | L39 | Iteration is monotone |
+| 4 | `iter_stable` | L46 | Stable iteration characterization |
+| 5 | `iter_ssubset_of_ne` | L62 | Strict subset when not equal |
+| 6 | `iter_card_lt_of_ne` | L71 | Cardinality strictly decreases |
+| 7 | `iter_card_le_univ` | L75 | Cardinality bounded by universe |
+| 8 | `exists_fixpoint_le_card` | L80 | Fixpoint exists within card steps |
+| 9 | `fixed_at_card` | L103 | Fixed point reached at card bound |
 
-## Deferred (Domain Axioms — sorry, 3 total)
+### DungFixedPoint.lean (17 core theorems)
 
-| # | Theorem | File | SPEC | Reason |
-|---|---------|------|------|--------|
-| 25 | violation_implies_norm_active | DDLDefinitions.lean | 220 | Rule→Norm mapping not in model |
-| 26 | permission_no_direct_violation | DDLDefinitions.lean | 220 | RuleId≠NormId structural gap |
-| 27 | constitutive_no_direct_violation | DDLDefinitions.lean | 220 | Same structural gap |
+Dung grounded extension fixed-point layer.
 
-**Total deferred**: 3 theorems with `sorry`. These are domain axioms, not on the blocking path.
+| # | Theorem | Line | Description |
+|---|---------|------|-------------|
+| 10 | `F_monotone` | L44 | Characteristic function is monotone |
+| 11 | `iteration_monotone` | L48 | Iteration is monotone |
+| 12 | `grounded_eq_groundedSpec` | L53 | Grounded equals groundedSpec |
+| 13 | `finite_termination` | L56 | Iteration terminates finitely |
+| 14 | `iteration_bound` | L60 | Iteration bounded by card |
+| 15 | `groundedSpec_is_fixed_point` | L64 | groundedSpec is a fixed point |
+| 16 | `grounded_is_fixed_point` | L70 | grounded is a fixed point |
+| 17 | `groundedSpec_is_least_fixed_point` | L74 | groundedSpec is least fixed point |
+| 18 | `grounded_is_least_fixed_point` | L90 | grounded is least fixed point |
+| 19 | `grounded_is_least_complete` | L94 | grounded is least complete extension |
+| 20 | `groundedSpec_unique_least_fixed_point` | L98 | groundedSpec is unique least fixed point |
+| 21 | `labelling_partition` | L104 | IN/OUT/UNDECIDED partition |
+| 22 | `in_soundness` | L154 | IN label soundness |
+| 23 | `out_soundness` | L163 | OUT label soundness |
+| 24 | `undecided_characterization` | L169 | UNDECIDED characterization |
+| 25 | `self_attack_precise_theorem` | L199 | Self-attack precise theorem |
+| 26 | `self_attack_not_in_grounded` | L222 | Self-attacking args not in grounded |
 
-## Additional Theorems (not on blocking path, all proven)
+### HornFixedPoint.lean (10 core theorems)
 
-These exist in the codebase but are not part of the core blocking chain. Included for completeness.
+Finite Horn closure layer.
 
-| Theorem | File | SPEC |
-|---------|------|------|
-| horn_operator_subset_univ | HornFixedPoint.lean | 210 |
-| horn_operator_monotone | HornFixedPoint.lean | 210 |
-| horn_iteration_monotone | HornFixedPoint.lean | 210 |
-| horn_finite_termination | HornFixedPoint.lean | 210 |
-| horn_iteration_bound | HornFixedPoint.lean | 210 |
-| horn_result_least_fixed_point | HornFixedPoint.lean | 210 |
-| horn_soundness | HornFixedPoint.lean | 210 |
-| derives_sound | HornCanonical.lean | 210 |
-| derives_complete | HornCanonical.lean | 210 |
-| hornClosure_least | HornCanonical.lean | 210 |
-| check_proved_accepted_in_grounded | EndToEnd.lean | 280 |
-| check_proved_accepted_in_args | EndToEnd.lean | 280 |
-| cert_provenance_from_check | EndToEnd.lean | 280 |
-| cert_temporal_from_record | EndToEnd.lean | 280 |
-| cert_jurisdiction_from_record | EndToEnd.lean | 280 |
-| ordered_next_requires_prior_failure | DDLDefinitions.lean | 220 |
-| alternative_imposes_no_order | DDLDefinitions.lean | 220 |
-| concurrent_imposes_no_order | DDLDefinitions.lean | 220 |
-| court_selected_not_auto_chosen | DDLDefinitions.lean | 220 |
+| # | Theorem | Line | Description |
+|---|---------|------|-------------|
+| 27 | `horn_operator_subset_univ` | L17 | Horn operator within universe |
+| 28 | `horn_operator_monotone` | L21 | Horn operator is monotone |
+| 29 | `horn_iteration_monotone` | L25 | Horn iteration is monotone |
+| 30 | `horn_finite_termination` | L31 | Horn iteration terminates |
+| 31 | `horn_iteration_bound` | L37 | Horn iteration bounded |
+| 32 | `horn_result_fixed_point` | L43 | Horn result is fixed point |
+| 33 | `horn_result_least_fixed_point` | L60 | Horn result is least fixed point |
+| 34 | `horn_soundness` | L74 | Horn derivation soundness |
+| 35 | `horn_completeness` | L79 | Horn derivation completeness |
+| 36 | `horn_result_is_minimal_model` | L85 | Horn result is minimal model |
 
-**Additional**: 19 theorems, 0 sorry.
+### WeightedSupNorm.lean (4 core theorems)
+
+Weighted sup metric.
+
+| # | Theorem | Line | Description |
+|---|---------|------|-------------|
+| 37 | `weightedSupDist_nonneg` | L36 | Non-negativity |
+| 38 | `weightedSupDist_triangle` | L47 | Triangle inequality |
+| 39 | `weightedSupDist_symm` | L69 | Symmetry |
+| 40 | `weightedSupDist_complete` | L76 | Completeness |
+
+### HornDefinitions.lean (2 core theorems)
+
+| # | Theorem | Line | Description |
+|---|---------|------|-------------|
+| 41 | `TH_monotone` | L41 | Horn closure operator monotone |
+| 42 | `TH_subset_univ` | L55 | Closure within universe |
+
+### ContractionCondition.lean (1 core theorem)
+
+| # | Theorem | Line | Description |
+|---|---------|------|-------------|
+| 43 | `lipschitz_coupling_implies_weighted_contraction` | L33 | Lipschitz coupling implies weighted contraction |
+
+**Total core blocking**: 43 theorems, 0 sorry, 0 custom axiom.
+
+---
+
+## Supporting Theorems (non-blocking, all PROVEN, 0 sorry)
+
+### BanachEffectiveNodes.lean (8 supporting)
+
+| # | Theorem | Line |
+|---|---------|------|
+| 44 | `pricingFn_sub` | L42 |
+| 45 | `abs_pricingFn_sub` | L53 |
+| 46 | `abs_one_sub_beta_of_pos_lt_one` | L62 |
+| 47 | `one_sub_beta_lt_one` | L69 |
+| 48 | `one_sub_beta_nonneg` | L73 |
+| 49 | `pricingFn_contraction` | L81 |
+| 50 | `pricingFn_fixed_point` | L107 |
+| 51 | `pricingFn_unique_fixed_point` | L120 |
+
+### FiniteRosetta.lean (9 supporting)
+
+| # | Theorem | Line |
+|---|---------|------|
+| 52 | `cnOnly_eq_30` | L71 |
+| 53 | `collision_eq_4` | L74 |
+| 54 | `asymmetry_eq_3` | L77 |
+| 55 | `obstruction_eq_37` | L80 |
+| 56 | `cnOnly_exceeds_half` | L83 |
+| 57 | `obstruction_exceeds_half` | L86 |
+| 58 | `no_total_functor` | L91 |
+| 59 | `obstruction_density_gt_two_thirds` | L98 |
+| 60 | `pure_obstruction_majority` | L103 |
+
+### FiniteGaloisAdjunction.lean (2 supporting)
+
+| # | Theorem | Line |
+|---|---------|------|
+| 61 | `fn_sup_preserves` | L36 |
+| 62 | `galois_connection_of_residuated` | L49 |
+
+### TemporalKripke.lean (6 supporting)
+
+| # | Theorem | Line |
+|---|---------|------|
+| 63 | `temporal_guard_always` | L55 |
+| 64 | `w0_guard` | L87 |
+| 65 | `w1_guard` | L90 |
+| 66 | `w2_guard` | L93 |
+| 67 | `all_worlds_guard` | L96 |
+| 68 | `litigation_always_guard` | L105 |
+
+### UnifiedModel.lean (16 supporting)
+
+| # | Theorem | Line |
+|---|---------|------|
+| 69 | `is_fireable_mono` | L72 |
+| 70 | `horn_step_mono` | L78 |
+| 71 | `unattacked_in_ge` | L124 |
+| 72 | `unattacked_defended_any` | L166 |
+| 73 | `unattacked_in_char_fn` | L173 |
+| 74 | `mem_lfp_iterate` | L183 |
+| 75 | `unattacked_in_lfp` | L200 |
+| 76 | `avg_le_max` | L223 |
+| 77 | `banach_bounded` | L238 |
+| 78 | `soundness_aaf` | L271 |
+| 79 | `soundness_banach` | L278 |
+| 80 | `gc2_completeness` | L293 |
+| 81 | `unified_composition_v2` | L309 |
+| 82 | `full_chain` | L335 |
+| 83 | `horn_monotone` | L355 |
+| 84 | `banach_bound_uniform` | L368 |
+
+### JC_Formalization.lean (6 supporting)
+
+| # | Theorem | Line | Note |
+|---|---------|------|------|
+| 85 | `proved_theorems_card` | L139 | definitional |
+| 86 | `empirical_proxy_card` | L147 | definitional |
+| 87 | `refuted_theorems_card` | L155 | definitional |
+| 88 | `pending_theorems_card` | L163 | definitional |
+| 89 | `advance_preserves_domain_bound` | L176 | |
+| 90 | `advance_cannot_revive_refuted` | L182 | |
+
+### BanachContraction.lean (2 supporting)
+
+| # | Theorem | Line |
+|---|---------|------|
+| 91 | `weighted_contraction_bound` | L21 |
+| 92 | `weighted_contraction_bound_nnreal` | L34 |
+
+### BanachFixedPoint.lean (1 supporting)
+
+| # | Theorem | Line |
+|---|---------|------|
+| 93 | `weightedContractionData_of_coupling` | L34 |
+
+### SupZeroLemma.lean (1 supporting)
+
+| # | Theorem | Line |
+|---|---------|------|
+| 94 | `sup_zero_eq_zero` | L11 |
+
+**Total supporting**: 51 theorems, 0 sorry.
+
+---
 
 ## Grand Total
 
 | Category | Count | Sorry | Custom Axiom |
 |----------|-------|-------|-------------|
-| Blocking | 19 | 0 | 0 |
-| Supporting | 5 | 0 | 0 |
-| Deferred | 3 | 3 | 0 |
-| Additional | 19 | 0 | 0 |
-| **Total** | **46** | **3** | **0** |
+| Core blocking | 43 | 0 | 0 |
+| Supporting | 51 | 0 | 0 |
+| **Total** | **94** | **0** | **0** |
+
+Note: The manifest in `legal-math-modeling/docs/formal-release/theorem_manifest.json` lists 100 entries
+because some definitional entries are counted twice (as both theorem and definitional). The unique
+theorem count is 94.
+
+## Phantom File Clarification
+
+The following Lean files were designed in SPEC-200 through SPEC-290 but were **never created** in
+the repository. Their intended theorems were absorbed into the actual files listed above:
+
+| Phantom File | Intended Content | Actual Location |
+|---|---|---|
+| `LegalSyntax.lean` | Legal syntax types | `HornDefinitions.lean`, `DungDefinitions.lean` |
+| `DDLDefinitions.lean` | DDL modality system | PLANNED (not yet formalized) |
+| `HornCanonical.lean` | Horn canonical form | `HornFixedPoint.lean` |
+| `ArgumentCompiler.lean` | Argument compilation | Python implementation only |
+| `AttackDecision.lean` | Attack/decision logic | `DungFixedPoint.lean`, `UnifiedModel.lean` |
+| `CertificateChecker.lean` | Certificate checking | PLANNED (not yet formalized) |
+| `EndToEnd.lean` | End-to-end theorem | `UnifiedModel.lean` (partial) |
+| `SafetyTheorems.lean` | Safety properties | `UnifiedModel.lean`, `TemporalKripke.lean` |
 
 ## Changelog
 
-- 2026-06-27: Full regeneration. Corrected all theorem names to match actual Lean identifiers.
-  - `compiler_correctness` → `compileArguments_sound` + `compileArguments_complete`
-  - `hornClosure_converges` → `horn_result_fixed_point` + related
-  - `checker_sound` → `check_sound`
-  - Removed `attacksWellFormed` (dead code, not a theorem)
-  - Added 18 additional theorems from codebase scan
+- 2026-06-27: Full regeneration from actual Lean source files. Replaced phantom-file-based manifest
+  with ground-truth theorems from `proofs/lean/juris_lean/JurisLean/`.
+- Previous version referenced 46 theorems from 8 phantom Lean files; none of those files exist.
