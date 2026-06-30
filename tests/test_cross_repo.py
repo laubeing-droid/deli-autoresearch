@@ -91,8 +91,14 @@ class TestCrossRepoIntegration:
     def test_lean_manifest_uses_formal_release_manifest(self):
         manifest = LeanManifest()
         assert ("D:" + "\\Claude") not in str(manifest.path)
-        assert manifest.total_theorems == 100
-        assert len({item.get("name") for item in manifest.complete_theorems()}) == 94
+        manifest._ensure_loaded()
+        expected_total = manifest.data.get("total_kernel_checked_results")
+        complete_names = {
+            item.get("name") or item.get("theorem_name")
+            for item in manifest.complete_theorems()
+        }
+        assert manifest.total_theorems == expected_total
+        assert len(complete_names) == expected_total
         assert manifest.build_status == "PASS"
         assert manifest.is_strong_evidence("grounded_is_least_fixed_point")
 

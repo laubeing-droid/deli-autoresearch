@@ -75,15 +75,28 @@ class JsonlStore:
 
     # ---- lifecycle ----
 
+    def _process_lock(self) -> ProcessFileLock:
+        """Return the per-file cross-process lock used by open and append."""
+
+        return ProcessFileLock(
+            lock_path=self.path.with_suffix(".lock"),
+            meta_path=self.path.with_suffix(".lock.meta"),
+            scope="jsonl",
+            target=str(self.path),
+            owner_instance_id=self.writer_instance_id,
+            timeout_seconds=5,
+        )
+
     def open(self) -> None:
         """Ensure directory, recover tail, and load existing event_ids."""
         ensure_parent(self.path)
-        if not self.path.exists():
-            self.path.write_text("", encoding="utf-8")
-        if not self._tail_recovered:
-            self._recover_tail()
-            self._load_existing_event_ids()
-            self._tail_recovered = True
+        with self._process_lock():
+            fd = os.open(str(self.path), os.O_CREAT | os.O_APPEND | os.O_WRONLY)
+            os.close(fd)
+            if not self._tail_recovered:
+                self._recover_tail()
+                self._load_existing_event_ids()
+                self._tail_recovered = True
 
     def _recover_tail(self) -> None:
         """Inspect last line. If incomplete, quarantine and truncate."""
@@ -172,42 +185,28 @@ class JsonlStore:
         if not event_id:
             event_id = _new_event_id()
 
-        # Idempotency: reject duplicate event_id
-        if event_id in self._seen_event_ids:
-            return event_id  # already written — no-op
-
-        self._sequence += 1
-
-        # Enrich payload
-        record: dict[str, Any] = {
-            **payload,
-            "event_id": event_id,
-            "task_id": self.task_id,
-            "writer_instance_id": self.writer_instance_id,
-            "sequence_number": self._sequence,
-            "payload_checksum": _payload_checksum(payload),
-        }
-
-        # Serialize — must be single line, no embedded newlines
-        line = json.dumps(record, ensure_ascii=True, sort_keys=True) + "\n"
-        if "\n" in line[:-1]:
-            raise ValueError("JSONL record contains embedded newline — rejected")
-
-        line_bytes = line.encode("utf-8")
-
         # Acquire OS lock on the JSONL file
-        lock_dir = self.path.parent / "locks"
-        lock_dir.mkdir(parents=True, exist_ok=True)
-        lock = ProcessFileLock(
-            lock_path=self.path.with_suffix(".lock"),
-            meta_path=self.path.with_suffix(".lock.meta"),
-            scope="jsonl",
-            target=str(self.path),
-            owner_instance_id=self.writer_instance_id,
-            timeout_seconds=5,
-        )
+        lock = self._process_lock()
 
         with lock:
+            self._load_existing_event_ids()
+            if event_id in self._seen_event_ids:
+                return event_id  # already written — no-op
+
+            self._sequence = len(self._seen_event_ids) + 1
+            record: dict[str, Any] = {
+                **payload,
+                "event_id": event_id,
+                "task_id": self.task_id,
+                "writer_instance_id": self.writer_instance_id,
+                "sequence_number": self._sequence,
+                "payload_checksum": _payload_checksum(payload),
+            }
+            line = json.dumps(record, ensure_ascii=True, sort_keys=True) + "\n"
+            if "\n" in line[:-1]:
+                raise ValueError("JSONL record contains embedded newline — rejected")
+            line_bytes = line.encode("utf-8")
+
             fd = -1
             try:
                 fd = os.open(str(self.path), os.O_WRONLY | os.O_APPEND)
