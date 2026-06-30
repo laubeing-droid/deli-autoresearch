@@ -1,0 +1,37 @@
+sources:
+  - id: formal_theorem_manifest
+    title: legal-math theorem manifest
+    review_status: approved
+    kind: local_file
+    location: legal-math-modeling/docs/formal-release/theorem_manifest.json
+    license: CC BY 4.0
+    provenance: legal-math-modeling formal-release
+    trust_tier: official
+    allowed_tasks: [lean_manifest_backend, cross_repo_status]
+    forbidden_tasks: [open_web_fact_memory]
+    reviewer: maintainer
+    rationale: Kernel-checked formal release manifest.
+  - id: open_web_candidate
+    title: example unreviewed web candidate
+    review_status: proposed
+    kind: web
+    location: https://example.invalid/candidate
+    license: unknown
+    provenance: open-web candidate only
+    trust_tier: untrusted_candidate
+    allowed_tasks: [source_candidate]
+    forbidden_tasks: [verified_finding, formal_runtime_finding]
+    reviewer: ""
+    rationale: Open-web material must be reviewed before retrieval.
+  - id: model_only_claims
+    title: model-only claim stream
+    review_status: rejected
+    kind: model_generated
+    location: local-model-output
+    license: n/a
+    provenance: model output
+    trust_tier: untrusted_candidate
+    allowed_tasks: []
+    forbidden_tasks: [retrieval, verified_finding, formal_runtime_finding]
+    reviewer: maintainer
+    rationale: Model-generated text alone cannot support verified findings.

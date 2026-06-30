@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Deli Source Registry",
+  "type": "object",
+  "required": ["sources"],
+  "additionalProperties": false,
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+          "required": ["id", "review_status", "kind", "location", "trust_tier"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "minLength": 1 },
+            "title": { "type": "string" },
+            "review_status": { "type": "string", "enum": ["approved", "proposed", "rejected"] },
+            "kind": { "type": "string", "minLength": 1 },
+            "location": { "type": "string", "minLength": 1 },
+            "license": { "type": "string" },
+            "provenance": { "type": "string" },
+            "trust_tier": {
+              "type": "string",
+              "enum": ["primary", "official", "scholarly", "secondary", "untrusted_candidate"]
+            },
+            "allowed_tasks": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "forbidden_tasks": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "reviewer": { "type": "string" },
+            "rationale": { "type": "string" }
+          }
+      }
+    }
+  }
+}

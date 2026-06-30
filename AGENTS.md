@@ -32,7 +32,7 @@
 ## Build & Test
 
 ```powershell
-cd D:\Claude\数学证明自动研究
+cd D:\Codex\数学证明自动研究
 pytest tests/ -q -ra
 ```
 

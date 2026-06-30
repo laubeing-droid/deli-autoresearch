@@ -1,7 +1,7 @@
 """R1: Cross-repo integration tests — real end-to-end Deli <-> juris-calculus bridge."""
 import pathlib, sys, json, pytest
 
-sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
 from deli_autoresearch.juris_calculus_bridge import JurisCalculusBridge, BridgeResult
 from deli_autoresearch.juris_calculus_backend import JurisCalculusBackend
 from deli_autoresearch.agent_backend_codex import MockAgentBackend
@@ -90,7 +90,9 @@ class TestCrossRepoIntegration:
 
     def test_lean_manifest_uses_formal_release_manifest(self):
         manifest = LeanManifest()
-        assert manifest.total_theorems == 75
+        assert r"D:\Claude" not in str(manifest.path)
+        assert manifest.total_theorems == 100
+        assert len({item.get("name") for item in manifest.complete_theorems()}) == 94
         assert manifest.build_status == "PASS"
         assert manifest.is_strong_evidence("grounded_is_least_fixed_point")
 
@@ -331,7 +333,7 @@ class TestCrossRepoIntegration:
     def test_legal_proof_template_runs_batch_through_backend(self):
         """legal_proof template run_litigation_batch delegates to backend."""
         import sys, os
-        sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")
+        sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
         from deli_autoresearch.template_runtime import TemplateRuntime
         rt = TemplateRuntime()
         legal = rt.get("legal_proof")
@@ -352,7 +354,7 @@ class TestCrossRepoIntegration:
     def test_research_automation_ranks_breakthroughs(self):
         """P3 breakthrough scoring returns ranked candidates from jc."""
         import sys, os
-        sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")
+        sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
         from deli_autoresearch.research_automation import run_research_automation
         report = run_research_automation(juris_root=JURIS_ROOT)
         assert len(report.breakthroughs) >= 10
@@ -363,7 +365,7 @@ class TestCrossRepoIntegration:
     def test_research_automation_benchmark_replay_passes(self):
         """Standard benchmark cases all pass against current engine."""
         import sys, os
-        sys.path.insert(0, r"D:\Claude\数学证明自动研究\src")
+        sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
         from deli_autoresearch.research_automation import run_benchmark_replay
         result = run_benchmark_replay(juris_root=JURIS_ROOT)
         assert result["all_passed"]

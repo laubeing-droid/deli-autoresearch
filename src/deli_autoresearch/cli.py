@@ -14,6 +14,7 @@ from .state_store import StateStore
 from .task_assets import load_seed_directions
 from .template_runtime import TemplateRuntime
 from .heartbeat_service import HeartbeatService
+from .lean_manifest import discover_cross_repo_status
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -125,6 +126,7 @@ def main(argv: list[str] | None = None) -> int:
             "registry_exists": store.registry_path.exists(),
             "registered_tasks": len(store.read_registry().tasks),
             "backend": args.backend,
+            "cross_repo": discover_cross_repo_status(workspace),
         }
         print(json.dumps(report, ensure_ascii=True, indent=2))
         return 0
