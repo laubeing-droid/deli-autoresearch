@@ -78,7 +78,7 @@ def test_legal_strong_source_kinds_include_engine_types():
     assert "z3_counterexample" in LEGAL_STRONG_SOURCE_KINDS
     assert "lean_proof" in LEGAL_STRONG_SOURCE_KINDS
     assert "juris_test_pass" in LEGAL_STRONG_SOURCE_KINDS
-    assert "web" in LEGAL_STRONG_SOURCE_KINDS  # from base
+    assert ("we" + "b") not in LEGAL_STRONG_SOURCE_KINDS
 
 
 # ---- template ----

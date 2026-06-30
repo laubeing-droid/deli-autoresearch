@@ -86,8 +86,8 @@ def test_same_claim_text_reuses_same_claim_id(tmp_path: Path):
             "claims": [
                 {
                     "claim_text": "Lemma X implies Y",
-                    "evidence": [{"source_kind": "web", "url": "https://example.com", "quote": "support"}],
-                    "source_kind": "web",
+                    "evidence": [{"source_kind": "local_file", "url": "https://example.com", "quote": "support"}],
+                    "source_kind": "local_file",
                     "verifiable": True,
                     "support_kind": "new_direction_basis",
                 }
@@ -156,6 +156,30 @@ def test_rejected_claim_requires_new_basis_to_reopen(tmp_path: Path):
         raise AssertionError("Expected reopen failure")
 
 
+def test_web_work_candidate_is_source_candidate_not_finding(tmp_path: Path):
+    store, registry, templates, backend, orchestrator, heartbeat, progress = init_math_task(tmp_path)
+    backend.work_queue.append(
+        {
+            "summary": "Web attempt",
+            "claims": [
+                {
+                    "claim_text": "Web only claim",
+                    "evidence": [{"source_kind": "web", "url": "https://example.invalid"}],
+                    "source_kind": "web",
+                    "verifiable": True,
+                }
+            ],
+        }
+    )
+
+    try:
+        orchestrator.run_once()
+    except ValueError as exc:
+        assert "source_candidate" in str(exc)
+    else:
+        raise AssertionError("Expected web source candidate rejection")
+
+
 def test_derived_source_without_strong_support_cannot_validate(tmp_path: Path):
     store, registry, templates, backend, orchestrator, heartbeat, progress = init_math_task(tmp_path)
     claim_id = claim_id_for("Derived only claim")
@@ -180,20 +204,11 @@ def test_derived_source_without_strong_support_cannot_validate(tmp_path: Path):
             "summary": "Looks good",
         }
     )
-    # New fail-closed semantics: derived alone maps to PROVED but
-    # evidence source_kind is "derived" which is not in strong sources.
-    # The verdict is "validated" which maps to PROVED, triggering findings write.
-    # But in the new code, validated == PROVED goes through regardless of evidence strength.
-    # The old test expected a ValueError. With claim-bound semantics this now passes,
-    # because the verdict mapper converts "validated" to PROVED.
-    # The source_kind gate now happens at the orchestrator level via verification_status.
-    try:
-        orchestrator.run_once()
-    except ValueError:
-        pass  # both old and new behavior acceptable for this test
-    # New assertion: derived source_kind alone should NOT produce validated_findings_count > 0
+    orchestrator.run_once()
+
     progress = store.read_progress(progress.task_id)
-    assert progress.validated_findings_count >= 0  # may or may not validate depending on evidence
+    assert progress.validated_findings_count == 0
+    assert (store.task_logs_dir(progress.task_id) / "failure_registry.jsonl").exists()
 
 
 def test_validated_resets_pressure_and_records_finding(tmp_path: Path):
@@ -205,8 +220,8 @@ def test_validated_resets_pressure_and_records_finding(tmp_path: Path):
             "claims": [
                 {
                     "claim_text": "Need more evidence",
-                    "evidence": [{"source_kind": "web", "url": "https://example.com/1"}],
-                    "source_kind": "web",
+                    "evidence": [{"source_kind": "local_file", "url": "https://example.com/1"}],
+                    "source_kind": "local_file",
                     "verifiable": True,
                 }
             ],
@@ -230,8 +245,8 @@ def test_validated_resets_pressure_and_records_finding(tmp_path: Path):
             "claims": [
                 {
                     "claim_text": "Need more evidence",
-                    "evidence": [{"source_kind": "web", "url": "https://example.com/2"}],
-                    "source_kind": "web",
+                    "evidence": [{"source_kind": "local_file", "url": "https://example.com/2"}],
+                    "source_kind": "local_file",
                     "verifiable": True,
                     "support_kind": "new_direction_basis",
                 }
@@ -264,8 +279,8 @@ def test_two_needs_more_evidence_triggers_direction_change(tmp_path: Path):
                 "claims": [
                     {
                         "claim_text": "Claim A",
-                        "evidence": [{"source_kind": "web", "url": "https://example.com"}],
-                        "source_kind": "web",
+                        "evidence": [{"source_kind": "local_file", "url": "https://example.com"}],
+                        "source_kind": "local_file",
                         "verifiable": True,
                     }
                 ],
@@ -294,8 +309,8 @@ def test_pressure_threshold_pauses_for_human(tmp_path: Path):
                 "claims": [
                     {
                         "claim_text": text,
-                        "evidence": [{"source_kind": "web", "url": "https://example.com"}],
-                        "source_kind": "web",
+                        "evidence": [{"source_kind": "local_file", "url": "https://example.com"}],
+                        "source_kind": "local_file",
                         "verifiable": True,
                     }
                 ],
@@ -324,14 +339,14 @@ def test_mixed_verification_results_are_handled_per_claim(tmp_path: Path):
             "claims": [
                 {
                     "claim_text": "Claim one",
-                    "evidence": [{"source_kind": "web", "url": "https://example.com/1"}],
-                    "source_kind": "web",
+                    "evidence": [{"source_kind": "local_file", "url": "https://example.com/1"}],
+                    "source_kind": "local_file",
                     "verifiable": True,
                 },
                 {
                     "claim_text": "Claim two",
-                    "evidence": [{"source_kind": "web", "url": "https://example.com/2"}],
-                    "source_kind": "web",
+                    "evidence": [{"source_kind": "local_file", "url": "https://example.com/2"}],
+                    "source_kind": "local_file",
                     "verifiable": True,
                 },
             ],
@@ -377,8 +392,8 @@ def test_tail_pass_requires_second_round_before_completion(tmp_path: Path):
             "claims": [
                 {
                     "claim_text": "Main claim",
-                    "evidence": [{"source_kind": "web", "url": "https://example.com/main"}],
-                    "source_kind": "web",
+                    "evidence": [{"source_kind": "local_file", "url": "https://example.com/main"}],
+                    "source_kind": "local_file",
                     "verifiable": True,
                 }
             ],
@@ -404,8 +419,8 @@ def test_tail_pass_requires_second_round_before_completion(tmp_path: Path):
             "claims": [
                 {
                     "claim_text": "Tail claim",
-                    "evidence": [{"source_kind": "web", "url": "https://example.com/tail"}],
-                    "source_kind": "web",
+                    "evidence": [{"source_kind": "local_file", "url": "https://example.com/tail"}],
+                    "source_kind": "local_file",
                     "verifiable": True,
                 }
             ],
@@ -484,3 +499,4 @@ def test_codex_bridge_backend_roundtrip(tmp_path: Path):
     worker.join()
     assert "test-req-001" in envelope.agent_id or envelope.agent_id == "test-req-001"
     assert envelope.payload["summary"] == "ok"
+

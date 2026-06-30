@@ -1,7 +1,11 @@
 import json, sys, os
 from collections import Counter
+from pathlib import Path
 
-with open(r"D:\Claude\数学证明自动研究\spc_analysis\output\extracted_rules.json", encoding='utf-8') as f:
+WORKSPACE_ROOT = Path(os.environ.get("DELI_WORKSPACE_ROOT", r"D:\Codex\数学证明自动研究"))
+OUT_DIR = WORKSPACE_ROOT / "spc_analysis" / "output"
+
+with open(OUT_DIR / "extracted_rules.json", encoding='utf-8') as f:
     data = json.load(f)
 
 rules = data['rules']
@@ -18,7 +22,7 @@ for s, c in sources.most_common(8):
     print(f"  {s[:50]}: {c}")
 
 # Save filtered
-out_path = r"D:\Claude\数学证明自动研究\spc_analysis\output\filtered_horn_rules.json"
+out_path = OUT_DIR / "filtered_horn_rules.json"
 with open(out_path, 'w', encoding='utf-8') as f:
     json.dump({"total": len(filtered), "rules": filtered[:200]}, f, ensure_ascii=False, indent=2)
 print(f"\nSaved {min(len(filtered),200)} rules to {out_path}")

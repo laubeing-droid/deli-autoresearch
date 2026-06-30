@@ -46,7 +46,7 @@ def _worker_hold_lock(workspace_str, hold_seconds, result_queue):
     orch = Orchestrator(store, registry, templates, backend)
 
     claim_id = claim_id_for("mp-claim")
-    backend.work_queue.append({"summary": "mp", "claims": [{"claim_text": "mp-claim", "evidence": [{"source_kind": "web", "url": "http://x"}], "source_kind": "web", "verifiable": True}]})
+    backend.work_queue.append({"summary": "mp", "claims": [{"claim_text": "mp-claim", "evidence": [{"source_kind": "local_file", "url": "http://x"}], "source_kind": "local_file", "verifiable": True}]})
     backend.verification_queue.append({"claim_id": claim_id, "verdict": "validated", "evidence_strength": "strong", "summary": "ok"})
 
     # Hold lock for 2s so another worker can observe LOCK_HELD
@@ -271,6 +271,7 @@ def test_p0_1_07_full_test_suite_passes():
         cwd=_PROJ,
     )
     assert result.returncode == 0, f"Test suite failed:\n{result.stdout}\n{result.stderr}"
+
 
 
 

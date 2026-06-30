@@ -68,7 +68,8 @@ def test_p0_01_regression_passes_but_claim_not_auto_validated(tmp_path: Path):
     })
     orch.run_once()
     progress = store.read_progress("t1")
-    assert progress.validated_findings_count >= 0
+    assert progress.validated_findings_count == 0
+    assert (store.task_logs_dir("t1") / "failure_registry.jsonl").exists()
 
 
 # 2. Different claims must NOT share the same proof artifact
@@ -83,8 +84,8 @@ def test_p0_02_different_claims_cannot_share_same_artifact(tmp_path: Path):
     cid_b = claim_id_for("Claim B")
     backend.work_queue.append({
         "summary": "two claims", "claims": [
-            {"claim_text": "Claim A", "evidence": [{"source_kind": "web", "url": "http://a"}], "source_kind": "web", "verifiable": True},
-            {"claim_text": "Claim B", "evidence": [{"source_kind": "web", "url": "http://b"}], "source_kind": "web", "verifiable": True},
+            {"claim_text": "Claim A", "evidence": [{"source_kind": "local_file", "url": "http://a"}], "source_kind": "local_file", "verifiable": True},
+            {"claim_text": "Claim B", "evidence": [{"source_kind": "local_file", "url": "http://b"}], "source_kind": "local_file", "verifiable": True},
         ]
     })
     backend.verification_queue.extend([
@@ -110,8 +111,8 @@ def test_p0_03_digest_mismatch_must_reject(tmp_path: Path):
     backend.work_queue.append({
         "summary": "digest test", "claims": [{
             "claim_text": "Digest test",
-            "evidence": [{"source_kind": "web", "url": "http://x"}],
-            "source_kind": "web", "verifiable": True,
+            "evidence": [{"source_kind": "local_file", "url": "http://x"}],
+            "source_kind": "local_file", "verifiable": True,
         }]
     })
     backend.verification_queue.append({
@@ -162,9 +163,9 @@ def test_p0_06_two_orchestrators_no_corruption(tmp_path: Path):
     orch2 = Orchestrator(store, registry, templates, backend2)
     _init_task(store, registry, templates, "t6", tmp_path)
     cid = claim_id_for("Concurrent claim")
-    backend1.work_queue.append({"summary": "orch1", "claims": [{"claim_text": "Concurrent claim", "evidence": [{"source_kind": "web", "url": "http://x"}], "source_kind": "web", "verifiable": True}]})
+    backend1.work_queue.append({"summary": "orch1", "claims": [{"claim_text": "Concurrent claim", "evidence": [{"source_kind": "local_file", "url": "http://x"}], "source_kind": "local_file", "verifiable": True}]})
     backend1.verification_queue.append({"claim_id": cid, "verdict": "validated", "evidence_strength": "strong", "summary": "ok"})
-    backend2.work_queue.append({"summary": "orch2", "claims": [{"claim_text": "Concurrent claim", "evidence": [{"source_kind": "web", "url": "http://x"}], "source_kind": "web", "verifiable": True}]})
+    backend2.work_queue.append({"summary": "orch2", "claims": [{"claim_text": "Concurrent claim", "evidence": [{"source_kind": "local_file", "url": "http://x"}], "source_kind": "local_file", "verifiable": True}]})
     backend2.verification_queue.append({"claim_id": claim_id_for("Concurrent claim"), "verdict": "validated", "evidence_strength": "strong", "summary": "ok"})
     orch1.run_once()
     orch2.run_once()
@@ -185,7 +186,7 @@ def test_p0_07_heartbeat_no_rollback(tmp_path: Path):
     heartbeat = HeartbeatService(store, registry)
     _init_task(store, registry, templates, "t7", tmp_path)
     cid = claim_id_for("Heartbeat test")
-    backend.work_queue.append({"summary": "hb test", "claims": [{"claim_text": "Heartbeat test", "evidence": [{"source_kind": "web", "url": "http://x"}], "source_kind": "web", "verifiable": True}]})
+    backend.work_queue.append({"summary": "hb test", "claims": [{"claim_text": "Heartbeat test", "evidence": [{"source_kind": "local_file", "url": "http://x"}], "source_kind": "local_file", "verifiable": True}]})
     backend.verification_queue.append({"claim_id": cid, "verdict": "validated", "evidence_strength": "strong", "summary": "ok"})
     orch.run_once()
     pb = store.read_progress("t7")
@@ -248,13 +249,13 @@ def test_p0_10_tail_pass_no_valid_result_not_complete(tmp_path: Path):
     orch = Orchestrator(store, registry, templates, backend)
     _init_task(store, registry, templates, "t10", tmp_path)
     cid = claim_id_for("Main claim")
-    backend.work_queue.append({"summary": "main", "claims": [{"claim_text": "Main claim", "evidence": [{"source_kind": "web", "url": "http://x"}], "source_kind": "web", "verifiable": True}]})
+    backend.work_queue.append({"summary": "main", "claims": [{"claim_text": "Main claim", "evidence": [{"source_kind": "local_file", "url": "http://x"}], "source_kind": "local_file", "verifiable": True}]})
     backend.verification_queue.append({"claim_id": cid, "verdict": "validated", "evidence_strength": "strong", "summary": "ok"})
     orch.run_once()
     p1 = store.read_progress("t10")
     assert p1.completion_stage == "tail_pass_pending"
     cid2 = claim_id_for("Tail claim")
-    backend.work_queue.append({"summary": "tail", "claims": [{"claim_text": "Tail claim", "evidence": [{"source_kind": "web", "url": "http://y"}], "source_kind": "web", "verifiable": True}]})
+    backend.work_queue.append({"summary": "tail", "claims": [{"claim_text": "Tail claim", "evidence": [{"source_kind": "local_file", "url": "http://y"}], "source_kind": "local_file", "verifiable": True}]})
     backend.verification_queue.append({"claim_id": cid2, "verdict": "needs_more_evidence", "evidence_strength": "weak", "summary": "unknown", "verification_status": VERIFICATION_STATUS_UNKNOWN})
     orch.run_once()
     p2 = store.read_progress("t10")
@@ -278,9 +279,9 @@ def test_p0_11_priority_ordering(tmp_path: Path):
     store.write_registry(reg)
     c_low = claim_id_for("Low claim")
     c_high = claim_id_for("High claim")
-    backend.work_queue.append({"summary": "high first", "claims": [{"claim_text": "High claim", "evidence": [{"source_kind": "web", "url": "http://h"}], "source_kind": "web", "verifiable": True}]})
+    backend.work_queue.append({"summary": "high first", "claims": [{"claim_text": "High claim", "evidence": [{"source_kind": "local_file", "url": "http://h"}], "source_kind": "local_file", "verifiable": True}]})
     backend.verification_queue.append({"claim_id": c_high, "verdict": "validated", "evidence_strength": "strong", "summary": "ok"})
-    backend.work_queue.append({"summary": "low second", "claims": [{"claim_text": "Low claim", "evidence": [{"source_kind": "web", "url": "http://l"}], "source_kind": "web", "verifiable": True}]})
+    backend.work_queue.append({"summary": "low second", "claims": [{"claim_text": "Low claim", "evidence": [{"source_kind": "local_file", "url": "http://l"}], "source_kind": "local_file", "verifiable": True}]})
     backend.verification_queue.append({"claim_id": c_low, "verdict": "validated", "evidence_strength": "strong", "summary": "ok"})
     results = orch.run_once()
     task_ids = [r["task_id"] for r in results if not r.get("skipped")]
@@ -297,7 +298,7 @@ def test_p0_12_pivot_determinism(tmp_path: Path):
     _init_task(store, registry, templates, "t12", tmp_path)
     cid = claim_id_for("Pivot claim")
     for i in range(3):
-        backend.work_queue.append({"summary": f"pivot {i}", "claims": [{"claim_text": "Pivot claim", "evidence": [{"source_kind": "web", "url": f"http://{i}"}], "source_kind": "web", "verifiable": True}]})
+        backend.work_queue.append({"summary": f"pivot {i}", "claims": [{"claim_text": "Pivot claim", "evidence": [{"source_kind": "local_file", "url": f"http://{i}"}], "source_kind": "local_file", "verifiable": True}]})
         backend.verification_queue.append({"claim_id": cid, "verdict": "rejected", "evidence_strength": "weak", "summary": f"no {i}"})
         orch.run_once()
     directions = store.read_directions("t12")
@@ -343,3 +344,4 @@ def test_p0_15_all_original_tests_still_pass():
     assert v.is_terminal
     assert not v.wont_validate
     assert v.to_dict()["verification_status"] == VERIFICATION_STATUS_PROVED
+

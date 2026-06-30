@@ -1,8 +1,10 @@
 """Extract Horn-like rules from SPC adjudication rules OCR data."""
 import json, os, re, glob, sys
+from pathlib import Path
 
 DATA_DIR = r"D:\同步网盘\软件开发\权威裁判规则数据库\output\全文json"
-OUT_DIR = r"D:\Claude\数学证明自动研究\spc_analysis\output"
+WORKSPACE_ROOT = Path(os.environ.get("DELI_WORKSPACE_ROOT", r"D:\Codex\数学证明自动研究"))
+OUT_DIR = WORKSPACE_ROOT / "spc_analysis" / "output"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 files = sorted(glob.glob(os.path.join(DATA_DIR, "*ocr*.json")))

@@ -43,6 +43,12 @@ class TrialHarness:
         claim_id: str,
         outcome: str,
         evidence: list[dict[str, Any]] | None = None,
+        parent_id: str = "",
+        mutation_type: str = "",
+        objective: str = "",
+        metrics: dict[str, float] | None = None,
+        promotion_reason: str = "",
+        discard_reason: str = "",
     ) -> TrialDecision:
         evidence = evidence or []
         has_strong_evidence = self._has_strong_evidence(evidence)
@@ -53,6 +59,12 @@ class TrialHarness:
             "outcome": outcome,
             "evidence": evidence,
             "has_strong_evidence": has_strong_evidence,
+            "parent_id": parent_id,
+            "mutation_type": mutation_type,
+            "objective": objective,
+            "metrics": dict(metrics or {}),
+            "promotion_reason": promotion_reason,
+            "discard_reason": discard_reason,
         }
         self._append(record)
         history = self._read_history()

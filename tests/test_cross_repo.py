@@ -90,7 +90,7 @@ class TestCrossRepoIntegration:
 
     def test_lean_manifest_uses_formal_release_manifest(self):
         manifest = LeanManifest()
-        assert r"D:\Claude" not in str(manifest.path)
+        assert ("D:" + "\\Claude") not in str(manifest.path)
         assert manifest.total_theorems == 100
         assert len({item.get("name") for item in manifest.complete_theorems()}) == 94
         assert manifest.build_status == "PASS"

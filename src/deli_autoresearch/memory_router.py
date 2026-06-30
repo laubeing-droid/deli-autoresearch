@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .constants import STRONG_SOURCE_KINDS
+from .constants import VERIFIED_EVIDENCE_SOURCE_KINDS
 from .models import utc_now_iso
 
 
@@ -15,7 +15,8 @@ LEDGER_FILES = {
     "verified_finding": "findings.jsonl",
     "rejected_claim": "rejected_claims.jsonl",
     "source_candidate": "source_candidates.jsonl",
-    "failure": "failures.jsonl",
+    "failure": "failure_registry.jsonl",
+    "skill_improvement": "skill_changes.jsonl",
 }
 
 
@@ -33,7 +34,7 @@ class MemoryRouter:
 
     def __init__(self, ledger_root: str | Path, *, strong_source_kinds: set[str] | None = None) -> None:
         self.ledger_root = Path(ledger_root)
-        self.strong_source_kinds = strong_source_kinds or set(STRONG_SOURCE_KINDS)
+        self.strong_source_kinds = strong_source_kinds or set(VERIFIED_EVIDENCE_SOURCE_KINDS)
 
     def route(self, payload: dict[str, Any]) -> RoutingResult:
         event_type = str(payload.get("event_type", "")).strip()
@@ -47,7 +48,7 @@ class MemoryRouter:
             self._append("verified_finding", payload)
             return RoutingResult(LEDGER_FILES["verified_finding"], True, "routed verified finding")
 
-        if event_type in {"rejected_claim", "source_candidate", "failure"}:
+        if event_type in {"rejected_claim", "source_candidate", "failure", "skill_improvement"}:
             self._append(event_type, payload)
             return RoutingResult(LEDGER_FILES[event_type], True, f"routed {event_type}")
 

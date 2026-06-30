@@ -15,6 +15,7 @@ from .task_assets import load_seed_directions
 from .template_runtime import TemplateRuntime
 from .heartbeat_service import HeartbeatService
 from .lean_manifest import discover_cross_repo_status
+from .source_registry import SourceRegistry
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -22,6 +23,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--workspace", default=".", help="Workspace root")
     parser.add_argument("--backend", choices=["mock", "codex-bridge", "juris-calculus"], default="mock")
     parser.add_argument("--backend-timeout-seconds", type=int, default=300)
+    parser.add_argument(
+        "--source-registry",
+        default="",
+        help="Source registry path. Defaults to config/source_registry.example.yml when present.",
+    )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     init_task = subparsers.add_parser("init-task")
@@ -52,10 +58,23 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def make_services(workspace: Path, *, backend_name: str = "mock", backend_timeout_seconds: int = 300):
+def _default_source_registry_path(workspace: Path) -> Path | None:
+    path = workspace / "config" / "source_registry.example.yml"
+    return path if path.exists() else None
+
+
+def make_services(
+    workspace: Path,
+    *,
+    backend_name: str = "mock",
+    backend_timeout_seconds: int = 300,
+    source_registry_path: str | Path | None = None,
+):
     store = StateStore(workspace)
     registry = RegistryManager(store)
     templates = TemplateRuntime()
+    registry_path = Path(source_registry_path).resolve() if source_registry_path else _default_source_registry_path(workspace)
+    source_registry = SourceRegistry.from_file(registry_path) if registry_path and registry_path.exists() else None
     if backend_name == "mock":
         backend = MockAgentBackend()
     elif backend_name == "codex-bridge":
@@ -67,7 +86,7 @@ def make_services(workspace: Path, *, backend_name: str = "mock", backend_timeou
         backend = JurisCalculusBackend(inner, JURIS_CALCULUS_ROOT)
     else:
         raise ValueError(f"Unknown backend: {backend_name}")
-    orchestrator = Orchestrator(store, registry, templates, backend)
+    orchestrator = Orchestrator(store, registry, templates, backend, source_registry=source_registry)
     heartbeat = HeartbeatService(store, registry)
     return store, registry, templates, orchestrator, heartbeat, backend
 
@@ -80,6 +99,7 @@ def main(argv: list[str] | None = None) -> int:
         workspace,
         backend_name=args.backend,
         backend_timeout_seconds=args.backend_timeout_seconds,
+        source_registry_path=args.source_registry or None,
     )
     store.ensure_runtime()
 
@@ -121,13 +141,21 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(progress.to_dict(), ensure_ascii=True, indent=2))
         return 0
     if args.command == "doctor":
+        source_registry_path = args.source_registry or str(_default_source_registry_path(workspace) or "")
         report = {
             "runtime_exists": store.runtime_root.exists(),
             "registry_exists": store.registry_path.exists(),
             "registered_tasks": len(store.read_registry().tasks),
             "backend": args.backend,
+            "source_bounded_mode": bool(source_registry_path),
+            "source_registry_path": source_registry_path,
             "cross_repo": discover_cross_repo_status(workspace),
         }
+        store.runtime_root.mkdir(parents=True, exist_ok=True)
+        (store.runtime_root / "cross_repo_status.json").write_text(
+            json.dumps(report["cross_repo"], ensure_ascii=True, indent=2, sort_keys=True),
+            encoding="utf-8",
+        )
         print(json.dumps(report, ensure_ascii=True, indent=2))
         return 0
     if args.command == "bridge-status":
@@ -156,3 +184,7 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(runner.run(Path(args.scenario)), ensure_ascii=True, indent=2))
         return 0
     raise AssertionError("unreachable")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

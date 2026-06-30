@@ -10,6 +10,7 @@ sources:
     allowed_tasks: [lean_manifest_backend, cross_repo_status]
     forbidden_tasks: [open_web_fact_memory]
     reviewer: maintainer
+    notes: ""
     rationale: Kernel-checked formal release manifest.
   - id: open_web_candidate
     title: example unreviewed web candidate
@@ -22,6 +23,7 @@ sources:
     allowed_tasks: [source_candidate]
     forbidden_tasks: [verified_finding, formal_runtime_finding]
     reviewer: ""
+    notes: proposed web source cannot support findings
     rationale: Open-web material must be reviewed before retrieval.
   - id: model_only_claims
     title: model-only claim stream
@@ -34,4 +36,18 @@ sources:
     allowed_tasks: []
     forbidden_tasks: [retrieval, verified_finding, formal_runtime_finding]
     reviewer: maintainer
+    notes: rejected source stream
     rationale: Model-generated text alone cannot support verified findings.
+  - id: stale_for_regression
+    title: deprecated source example
+    review_status: deprecated
+    kind: web
+    location: https://example.invalid/stale
+    license: unknown
+    provenance: deprecated regression fixture
+    trust_tier: untrusted_candidate
+    allowed_tasks: []
+    forbidden_tasks: [retrieval, verified_finding, formal_runtime_finding]
+    reviewer: maintainer
+    notes: deprecated entries stay visible but fail closed
+    rationale: Deprecated sources must not be used for retrieval or findings.

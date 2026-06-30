@@ -22,7 +22,7 @@
 
 ## Verification Commands (Reproducible)
 
-All commands must be run from the project root: `D:\Claude\deli_autoresearch_codex_implementation_playbook`
+All commands must be run from the project root: `D:\Codex\deli_autoresearch_codex_implementation_playbook`
 
 ```bash
 # Lean build (all blocking-path modules)
@@ -33,7 +33,7 @@ lake build JurisLean.HornFixedPoint JurisLean.HornCanonical JurisLean.ArgumentCo
 lake build +JurisLean.AxiomAudit
 
 # Sorry gate
-cd D:\Claude\deli_autoresearch_codex_implementation_playbook
+cd D:\Codex\deli_autoresearch_codex_implementation_playbook
 python deli-autoresearch/scripts/sorry-gate.py --ledger legal-math-modeling/SORRY_LEDGER.md --strict-for blocking
 
 # Python tests

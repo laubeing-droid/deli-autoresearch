@@ -8,6 +8,7 @@ def test_retrieval_policy_allows_only_approved_sources():
             SourceRecord("approved_source", "approved"),
             SourceRecord("proposed_source", "proposed"),
             SourceRecord("rejected_source", "rejected"),
+            SourceRecord("deprecated_source", "deprecated"),
         ]
     )
     policy = RetrievalPolicy(registry)
@@ -15,6 +16,8 @@ def test_retrieval_policy_allows_only_approved_sources():
     assert policy.decide("approved_source").allowed is True
     assert policy.decide("proposed_source").allowed is False
     assert policy.decide("rejected_source").allowed is False
+    assert policy.decide("deprecated_source").allowed is False
+    assert "deprecated" in policy.decide("deprecated_source").reason
     assert policy.decide("missing_source").allowed is False
     assert policy.filter_retrievable(
         ["approved_source", "proposed_source", "missing_source"]

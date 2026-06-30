@@ -14,7 +14,7 @@
           "properties": {
             "id": { "type": "string", "minLength": 1 },
             "title": { "type": "string" },
-            "review_status": { "type": "string", "enum": ["approved", "proposed", "rejected"] },
+            "review_status": { "type": "string", "enum": ["approved", "proposed", "rejected", "deprecated"] },
             "kind": { "type": "string", "minLength": 1 },
             "location": { "type": "string", "minLength": 1 },
             "license": { "type": "string" },
@@ -32,6 +32,7 @@
               "items": { "type": "string" }
             },
             "reviewer": { "type": "string" },
+            "notes": { "type": "string" },
             "rationale": { "type": "string" }
           }
       }

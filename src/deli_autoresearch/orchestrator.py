@@ -29,18 +29,32 @@ from .models import (
     new_uuid,
     utc_now_iso,
 )
+from .disclosure_gate import build_report_row
+from .memory_router import MemoryRouter
 from .registry_manager import RegistryManager
+from .retrieval_policy import RetrievalPolicy
+from .source_registry import SourceRegistry
 from .state_store import StateStore
 from .template_runtime import TemplateRuntime
 from .utils import claim_id_for, normalize_claim_text
 
 
 class Orchestrator:
-    def __init__(self, store: StateStore, registry: RegistryManager, templates: TemplateRuntime, backend) -> None:
+    def __init__(
+        self,
+        store: StateStore,
+        registry: RegistryManager,
+        templates: TemplateRuntime,
+        backend,
+        *,
+        source_registry: SourceRegistry | None = None,
+    ) -> None:
         self.store = store
         self.registry = registry
         self.templates = templates
         self.backend = backend
+        self.source_registry = source_registry
+        self.retrieval_policy = RetrievalPolicy(source_registry) if source_registry else None
         self._instance_id = f"orchestrator_{new_uuid()}"
 
     # ------------------------------------------------------------------
@@ -322,7 +336,7 @@ class Orchestrator:
         strong_items = [
             e for e in candidate.evidence
             if isinstance(e, dict)
-            and e.get("source_kind") in {"code", "experiment", "local_file", "web"}
+            and e.get("source_kind") in {"code", "experiment", "local_file", "source_span", "human_review"}
         ]
         return len(strong_items) > 0
 
@@ -345,6 +359,46 @@ class Orchestrator:
         verif_status = verdict.verification_status
 
         if verif_status == VERIFICATION_STATUS_PROVED:
+            finding_payload = self._build_finding_payload(
+                task_id, progress, claim, candidate, verdict, verif_status
+            )
+            report_row = build_report_row(finding_payload)
+            finding_payload.update(report_row.to_dict())
+            if not report_row.allowed_disclosure:
+                failure = dict(finding_payload)
+                failure["event_type"] = "failure"
+                failure["failure_reason"] = report_row.blocked_reason
+                MemoryRouter(self.store.task_logs_dir(task_id)).route(failure)
+                verdict.verification_status = VERIFICATION_STATUS_NEEDS_MORE_EVIDENCE
+                verdict.verdict = "needs_more_evidence"
+                progress.claim_stall_pressure += 0.5
+                progress.direction_stall_pressure += 0.5
+                progress.task_stall_pressure += 0.5
+                progress.consecutive_needs_more_evidence += 1
+                claim.status = "needs_more_evidence"
+                claim.history.append({
+                    "ts": utc_now_iso(),
+                    "event": "finding_blocked",
+                    "reason": report_row.blocked_reason,
+                })
+                return
+
+            routing = MemoryRouter(self.store.task_logs_dir(task_id)).route(finding_payload)
+            if not routing.accepted:
+                verdict.verification_status = VERIFICATION_STATUS_NEEDS_MORE_EVIDENCE
+                verdict.verdict = "needs_more_evidence"
+                progress.claim_stall_pressure += 0.5
+                progress.direction_stall_pressure += 0.5
+                progress.task_stall_pressure += 0.5
+                progress.consecutive_needs_more_evidence += 1
+                claim.status = "needs_more_evidence"
+                claim.history.append({
+                    "ts": utc_now_iso(),
+                    "event": "finding_rejected_by_memory_router",
+                    "reason": routing.reason,
+                })
+                return
+
             progress.validated_findings_count += 1
             progress.claim_stall_pressure = 0.0
             progress.direction_stall_pressure = 0.0
@@ -352,26 +406,6 @@ class Orchestrator:
             progress.consecutive_needs_more_evidence = 0
             progress.last_progress_at = utc_now_iso()
             claim.status = "validated"
-            # Use a stable event_id for findings idempotency
-            finding_eid = f"finding_{verdict.claim_id}_{progress.iteration}"
-            self.store.append_jsonl(
-                self.store.findings_path(task_id),
-                {
-                    "ts": utc_now_iso(),
-                    "claim_id": verdict.claim_id,
-                    "claim": claim.claim_text,
-                    "evidence": candidate.evidence,
-                    "verifiable": candidate.verifiable,
-                    "source_kind": candidate.source_kind,
-                    "verification_summary": verdict.summary,
-                    "evidence_strength": verdict.evidence_strength,
-                    "verification_status": verif_status,
-                    "backend_name": verdict.backend_name,
-                    "backend_version": verdict.backend_version,
-                    "artifact_refs": verdict.artifact_refs,
-                },
-                event_id=finding_eid,
-            )
             return
 
         if verif_status == VERIFICATION_STATUS_REFUTED:
@@ -617,6 +651,18 @@ class Orchestrator:
         if callable(validator):
             errors.extend(validator(payload))
 
+        if payload.get("source_kind") == "web":
+            errors.append("web source_kind must route as source_candidate, not a claim finding")
+
+        for index, evidence in enumerate(payload.get("evidence") or []):
+            if not isinstance(evidence, dict):
+                continue
+            if evidence.get("source_kind") == "web":
+                errors.append(f"evidence[{index}] web source must route as source_candidate")
+            source_id = evidence.get("source_id")
+            if source_id and self.retrieval_policy and not self.retrieval_policy.decide(str(source_id)).allowed:
+                errors.append(f"evidence[{index}] source_id is not approved: {source_id}")
+
         if getattr(template, "name", "") == "legal_proof":
             formal_payload = payload.get("formal_payload")
             if not isinstance(formal_payload, dict) or not formal_payload:
@@ -636,3 +682,72 @@ class Orchestrator:
             raise ValueError(
                 "work candidate failed template contract: " + "; ".join(errors)
             )
+
+    def _build_finding_payload(
+        self,
+        task_id: str,
+        progress: Progress,
+        claim: ClaimRecord,
+        candidate,
+        verdict: VerificationResult,
+        verif_status: str,
+    ) -> dict[str, Any]:
+        metadata = self._first_evidence_metadata(candidate.evidence)
+        return {
+            "event_type": "verified_finding",
+            "ts": utc_now_iso(),
+            "task_id": task_id,
+            "iteration": progress.iteration,
+            "claim_id": verdict.claim_id,
+            "claim": claim.claim_text,
+            "claim_text": claim.claim_text,
+            "evidence": candidate.evidence,
+            "verifiable": candidate.verifiable,
+            "source_kind": candidate.source_kind,
+            "source_id": metadata["source_id"],
+            "source_span": metadata["source_span"],
+            "evidence_path": metadata["evidence_path"],
+            "verifier": verdict.backend_name or "verification_agent",
+            "verifier_status": verif_status,
+            "verification_summary": verdict.summary,
+            "evidence_strength": verdict.evidence_strength,
+            "verification_status": verif_status,
+            "backend_name": verdict.backend_name,
+            "backend_version": verdict.backend_version,
+            "backend_input_digest": verdict.payload_digest,
+            "backend_output_digest": verdict.request_digest,
+            "artifact_refs": verdict.artifact_refs,
+        }
+
+    @staticmethod
+    def _first_evidence_metadata(evidence: list[dict[str, Any]]) -> dict[str, str]:
+        fallback = {"source_id": "", "source_span": "", "evidence_path": ""}
+        for item in evidence:
+            if not isinstance(item, dict):
+                continue
+            source_id = str(
+                item.get("source_id")
+                or item.get("source")
+                or item.get("source_kind")
+                or ""
+            )
+            evidence_path = str(
+                item.get("evidence_path")
+                or item.get("locator")
+                or item.get("path")
+                or item.get("url")
+                or item.get("test_name")
+                or item.get("manifest_path")
+                or ""
+            )
+            source_span = str(item.get("source_span") or item.get("span") or "")
+            metadata = {
+                "source_id": source_id,
+                "source_span": source_span,
+                "evidence_path": evidence_path,
+            }
+            if evidence_path or source_span:
+                return metadata
+            if not fallback["source_id"]:
+                fallback = metadata
+        return fallback

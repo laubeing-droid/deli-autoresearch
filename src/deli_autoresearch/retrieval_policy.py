@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 
-from .source_registry import APPROVED, PROPOSED, REJECTED, SourceRegistry
+from .source_registry import APPROVED, DEPRECATED, PROPOSED, REJECTED, SourceRegistry
 
 
 @dataclass(frozen=True)
@@ -50,6 +50,8 @@ class RetrievalPolicy:
             reason = "source is proposed but not approved"
         elif status == REJECTED:
             reason = "source is rejected"
+        elif status == DEPRECATED:
+            reason = "source is deprecated"
         else:
             reason = "source is not registered"
         return RetrievalDecision(

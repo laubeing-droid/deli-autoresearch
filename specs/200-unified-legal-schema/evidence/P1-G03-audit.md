@@ -44,7 +44,7 @@ No code changes were required.
 Command:
 
 ```powershell
-cd D:\Claude\deli_autoresearch_codex_implementation_playbook\legal-math-modeling\proofs\lean\juris_lean
+cd D:\Codex\deli_autoresearch_codex_implementation_playbook\legal-math-modeling\proofs\lean\juris_lean
 lake build JurisLean.LegalModel JurisLean.LegalWellFormed
 ```
 

@@ -34,6 +34,14 @@ def test_source_registry_reads_all_statuses(tmp_path):
                         "location": "model",
                         "trust_tier": "untrusted_candidate",
                     },
+                    {
+                        "id": "old",
+                        "review_status": "deprecated",
+                        "kind": "web",
+                        "location": "https://example.invalid/old",
+                        "trust_tier": "untrusted_candidate",
+                        "notes": "kept for audit trail",
+                    },
                 ]
             }
         ),
@@ -45,9 +53,12 @@ def test_source_registry_reads_all_statuses(tmp_path):
     assert registry.is_approved("formal")
     assert registry.status("candidate") == "proposed"
     assert registry.status("bad") == "rejected"
+    assert registry.status("old") == "deprecated"
+    assert registry.get("old").notes == "kept for audit trail"
     assert registry.status("missing") == "unregistered"
     assert registry.get("formal").trust_tier == "official"
     assert registry.get("formal").allowed_tasks == ("lean_manifest_backend",)
+    assert [record.source_id for record in registry.approved_sources()] == ["formal"]
 
 
 def test_source_registry_fails_closed_on_invalid_status(tmp_path):
@@ -67,5 +78,6 @@ def test_source_registry_reads_example_yaml():
     assert registry.is_approved("formal_theorem_manifest")
     assert registry.status("open_web_candidate") == "proposed"
     assert registry.status("model_only_claims") == "rejected"
+    assert registry.status("stale_for_regression") == "deprecated"
     assert registry.get("formal_theorem_manifest").trust_tier == "official"
     assert "verified_finding" in registry.get("open_web_candidate").forbidden_tasks

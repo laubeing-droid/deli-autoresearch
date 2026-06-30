@@ -19,9 +19,9 @@ def test_verified_finding_requires_strong_evidence(tmp_path):
     )
 
     assert result.accepted is False
-    assert result.destination == "failures.jsonl"
+    assert result.destination == "failure_registry.jsonl"
     assert not (tmp_path / "findings.jsonl").exists()
-    failures = _read_jsonl(tmp_path / "failures.jsonl")
+    failures = _read_jsonl(tmp_path / "failure_registry.jsonl")
     assert failures[0]["failure_reason"] == "verified_finding lacks strong evidence"
 
 
@@ -47,7 +47,26 @@ def test_rejected_candidate_and_failure_have_distinct_ledgers(tmp_path):
     router.route({"event_type": "rejected_claim", "claim": "bad"})
     router.route({"event_type": "source_candidate", "url": "https://example.invalid"})
     router.route({"event_type": "failure", "failure_reason": "timeout"})
+    router.route({"event_type": "skill_improvement", "change": "template replay passed"})
 
     assert (tmp_path / "rejected_claims.jsonl").exists()
     assert (tmp_path / "source_candidates.jsonl").exists()
-    assert (tmp_path / "failures.jsonl").exists()
+    assert (tmp_path / "failure_registry.jsonl").exists()
+    assert (tmp_path / "skill_changes.jsonl").exists()
+
+
+def test_open_web_is_candidate_not_strong_finding(tmp_path):
+    router = MemoryRouter(tmp_path)
+
+    result = router.route(
+        {
+            "event_type": "verified_finding",
+            "claim": "web-only",
+            "evidence": [{"source_kind": "web", "url": "https://example.invalid"}],
+        }
+    )
+
+    assert result.accepted is False
+    assert not (tmp_path / "findings.jsonl").exists()
+    failures = _read_jsonl(tmp_path / "failure_registry.jsonl")
+    assert failures[0]["claim"] == "web-only"

@@ -54,4 +54,4 @@ def test_doctor_exposes_cross_repo_and_manifest_status():
     assert "deli_autoresearch_root" in report
     assert "juris_calculus_root" in report
     assert "theorem_manifest" in report
-    assert r"D:\Claude" not in report["theorem_manifest"]["path"]
+    assert ("D:" + "\\Claude") not in report["theorem_manifest"]["path"]

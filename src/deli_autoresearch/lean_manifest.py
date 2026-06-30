@@ -6,6 +6,7 @@ from dataclasses import dataclass
 import json
 import os
 from pathlib import Path
+import subprocess
 from typing import Any
 
 
@@ -141,13 +142,35 @@ def discover_cross_repo_status(workspace: str | Path | None = None) -> dict[str,
     deli_root = _repo_root()
     resolution = resolve_lean_manifest_path(workspace=workspace)
     legal_root = resolution.path.parents[2] if resolution.path else None
-    juris_root = Path(JURIS_CALCULUS_ROOT)
+    if legal_root is None:
+        env_legal = os.environ.get(LEGAL_MATH_MODELING_ENV, "").strip()
+        legal_root = Path(env_legal).resolve() if env_legal else None
+    juris_root = Path(os.environ.get("JURIS_CALCULUS_ROOT", JURIS_CALCULUS_ROOT)).resolve()
+    deli_snapshot = _git_snapshot(deli_root)
+    legal_snapshot = _git_snapshot(legal_root) if legal_root else _missing_repo_snapshot("")
+    juris_snapshot = _git_snapshot(juris_root)
     return {
         "deli_autoresearch_root": str(deli_root),
         "legal_math_modeling_root": str(legal_root) if legal_root else "",
         "legal_math_modeling_env": os.environ.get(LEGAL_MATH_MODELING_ENV, ""),
         "juris_calculus_root": str(juris_root),
         "juris_calculus_exists": juris_root.exists(),
+        "deli_autoresearch": {
+            **deli_snapshot,
+            "pytest_status": "not_run",
+            "test_entrypoint_exists": (deli_root / "pyproject.toml").exists(),
+            "legacy_claude_path_present": _tracked_text_contains(deli_root, "D:" + "\\Claude"),
+        },
+        "legal_math_modeling": {
+            **legal_snapshot,
+            "lean_build_status": "not_run",
+            "manifest_status": "exists" if resolution.exists else "missing",
+        },
+        "juris_calculus": {
+            **juris_snapshot,
+            "pytest_status": "not_run",
+            "spec_shadow_status": "not_run",
+        },
         "theorem_manifest": {
             "path": str(resolution.path) if resolution.path else "",
             "source": resolution.source,
@@ -156,6 +179,48 @@ def discover_cross_repo_status(workspace: str | Path | None = None) -> dict[str,
             "candidates": resolution.candidates,
         },
     }
+
+
+def _missing_repo_snapshot(root: str) -> dict[str, Any]:
+    return {"root": root, "branch": "", "head": "", "dirty": "missing", "exists": False}
+
+
+def _git_snapshot(root: Path) -> dict[str, Any]:
+    root = root.resolve()
+    if not root.exists():
+        return _missing_repo_snapshot(str(root))
+    return {
+        "root": str(root),
+        "branch": _git_output(root, "branch", "--show-current"),
+        "head": _git_output(root, "rev-parse", "HEAD"),
+        "dirty": "dirty" if _git_output(root, "status", "--porcelain") else "clean",
+        "exists": True,
+    }
+
+
+def _git_output(root: Path, *args: str) -> str:
+    try:
+        return subprocess.check_output(
+            ["git", "-C", str(root), *args],
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+    except (OSError, subprocess.CalledProcessError):
+        return ""
+
+
+def _tracked_text_contains(root: Path, needle: str) -> bool:
+    files = _git_output(root, "ls-files")
+    if not files:
+        return False
+    for relative in files.splitlines():
+        path = root / relative
+        try:
+            if needle in path.read_text(encoding="utf-8", errors="ignore"):
+                return True
+        except OSError:
+            continue
+    return False
 
 
 class LeanManifest:

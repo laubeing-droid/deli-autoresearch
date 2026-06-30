@@ -1,9 +1,13 @@
 """Run extracted SPC Horn rules through juris-calculus grounded_extension."""
 import json, sys, os
-sys.path.insert(0, r"D:\Codex\juris-calculus")
+from pathlib import Path
+
+JC_ROOT = Path(os.environ.get("JURIS_CALCULUS_ROOT", r"D:\Codex\juris-calculus"))
+WORKSPACE_ROOT = Path(os.environ.get("DELI_WORKSPACE_ROOT", r"D:\Codex\数学证明自动研究"))
+sys.path.insert(0, str(JC_ROOT))
 from compiler_core.argumentation import grounded_extension
 
-OUT_DIR = r"D:\Claude\数学证明自动研究\spc_analysis\output"
+OUT_DIR = str(WORKSPACE_ROOT / "spc_analysis" / "output")
 with open(os.path.join(OUT_DIR, "filtered_horn_rules.json"), encoding='utf-8') as f:
     data = json.load(f)
 

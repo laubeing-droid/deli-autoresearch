@@ -11,7 +11,8 @@ from typing import Any
 APPROVED = "approved"
 PROPOSED = "proposed"
 REJECTED = "rejected"
-VALID_STATUSES = {APPROVED, PROPOSED, REJECTED}
+DEPRECATED = "deprecated"
+VALID_STATUSES = {APPROVED, PROPOSED, REJECTED, DEPRECATED}
 
 
 @dataclass(frozen=True)
@@ -20,6 +21,7 @@ class SourceRecord:
 
     source_id: str
     review_status: str
+    title: str = ""
     kind: str = ""
     location: str = ""
     trust_tier: str = ""
@@ -28,6 +30,7 @@ class SourceRecord:
     allowed_tasks: tuple[str, ...] = ()
     forbidden_tasks: tuple[str, ...] = ()
     reviewer: str = ""
+    notes: str = ""
     rationale: str = ""
 
     @classmethod
@@ -41,6 +44,7 @@ class SourceRecord:
         return cls(
             source_id=source_id,
             review_status=status,
+            title=str(payload.get("title", "")),
             kind=str(payload.get("kind", "")),
             location=str(payload.get("location") or payload.get("locator") or ""),
             trust_tier=str(payload.get("trust_tier", "")),
@@ -49,6 +53,7 @@ class SourceRecord:
             allowed_tasks=_coerce_string_tuple(payload.get("allowed_tasks", ())),
             forbidden_tasks=_coerce_string_tuple(payload.get("forbidden_tasks", ())),
             reviewer=str(payload.get("reviewer", "")),
+            notes=str(payload.get("notes", "")),
             rationale=str(payload.get("rationale", "")),
         )
 
@@ -81,7 +86,7 @@ class SourceRegistry:
         return self.status(source_id) == APPROVED
 
     def approved_sources(self) -> list[SourceRecord]:
-        return [record for record in self._records.values() if record.status == APPROVED]
+        return [record for record in self._records.values() if record.review_status == APPROVED]
 
     def to_dict(self) -> dict[str, Any]:
         return {"sources": [record.to_dict() for record in self._records.values()]}

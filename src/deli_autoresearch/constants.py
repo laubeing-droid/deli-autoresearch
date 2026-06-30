@@ -60,7 +60,17 @@ WONT_VALIDATE_STATUSES = {
     VERIFICATION_STATUS_ERROR,
 }
 
-STRONG_SOURCE_KINDS = {"web", "local_file", "code", "experiment"}
+STRONG_SOURCE_KINDS = {"local_file", "code", "experiment", "source_span", "human_review"}
+FORMAL_BACKEND_SOURCE_KINDS = {
+    "z3_counterexample",
+    "lean_proof",
+    "juris_test_pass",
+    "banach_norm_test",
+    "spec_shadow",
+    "ocr_alignment",
+    "citation_upgrade",
+}
+VERIFIED_EVIDENCE_SOURCE_KINDS = STRONG_SOURCE_KINDS | FORMAL_BACKEND_SOURCE_KINDS
 BASE_SOURCE_KINDS = {
     "web",
     "local_file",
@@ -68,6 +78,11 @@ BASE_SOURCE_KINDS = {
     "derived",
     "experiment",
     "model_generated",
+    "source_span",
+    "human_review",
+    "spec_shadow",
+    "ocr_alignment",
+    "citation_upgrade",
     "z3_counterexample",
     "lean_proof",
     "juris_test_pass",
@@ -106,10 +121,6 @@ LEGAL_DIRECTION_TYPES = {
 
 ALL_DIRECTION_TYPES = BASE_DIRECTION_TYPES | LEGAL_DIRECTION_TYPES
 
-LEGAL_STRONG_SOURCE_KINDS = STRONG_SOURCE_KINDS | {
-    "z3_counterexample",
-    "lean_proof",
-    "juris_test_pass",
-}
+LEGAL_STRONG_SOURCE_KINDS = VERIFIED_EVIDENCE_SOURCE_KINDS
 
 JURIS_CALCULUS_ROOT = r"D:\Codex\juris-calculus"
