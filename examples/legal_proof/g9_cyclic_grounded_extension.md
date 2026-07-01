@@ -18,7 +18,7 @@ Dung (1995) grounded extension with correct three-valued labelling:
 
 # Verification Engine
 juris-calculus compiler_core.argumentation.grounded_extension
-Source: D:\Codex\juris-calculus\源码
+Source: <juris-calculus-root>/源码
 
 # Known Lemmas
 - Dung (1995): grounded extension is the least fixed point of the

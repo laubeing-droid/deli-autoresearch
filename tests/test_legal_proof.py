@@ -11,6 +11,7 @@ from deli_autoresearch.constants import (
     ALL_DIRECTION_TYPES,
     LEGAL_STRONG_SOURCE_KINDS,
     STATUS_PAUSED_FOR_HUMAN,
+    resolve_juris_calculus_root,
 )
 from deli_autoresearch.juris_calculus_bridge import JurisCalculusBridge, RegressionReport
 from deli_autoresearch.juris_calculus_backend import JurisCalculusBackend
@@ -21,7 +22,7 @@ from deli_autoresearch.template_runtime import TemplateRuntime
 from deli_autoresearch.utils import claim_id_for
 
 
-JURIS_ROOT = Path(r"D:\Codex\juris-calculus")
+JURIS_ROOT = resolve_juris_calculus_root()
 
 
 # ---- helpers ----

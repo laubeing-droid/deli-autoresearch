@@ -261,7 +261,7 @@ lake build JurisLean
 lake build +JurisLean.AxiomAudit
 
 # Sorry gate
-cd D:\Codex\数学证明
+cd <workspace-root>
 python deli-autoresearch/scripts/sorry-gate.py \
   --ledger legal-math-modeling/SORRY_LEDGER.md --strict-for blocking
 

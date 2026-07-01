@@ -2,7 +2,7 @@ import json, sys, os
 from collections import Counter
 from pathlib import Path
 
-WORKSPACE_ROOT = Path(os.environ.get("DELI_WORKSPACE_ROOT", r"D:\Codex\数学证明自动研究"))
+WORKSPACE_ROOT = Path(os.environ.get("DELI_WORKSPACE_ROOT", Path(__file__).resolve().parents[1])).resolve()
 OUT_DIR = WORKSPACE_ROOT / "spc_analysis" / "output"
 
 with open(OUT_DIR / "extracted_rules.json", encoding='utf-8') as f:

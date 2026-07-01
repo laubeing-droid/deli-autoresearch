@@ -16,7 +16,7 @@ from deli_autoresearch.constants import (
     VERIFICATION_STATUS_BACKEND_UNAVAILABLE, VERIFICATION_STATUS_NOT_RUN,
     VERIFICATION_STATUS_PROVED, VERIFICATION_STATUS_REFUTED,
     VERIFICATION_STATUS_TIMEOUT, VERIFICATION_STATUS_UNKNOWN,
-    WONT_VALIDATE_STATUSES,
+    WONT_VALIDATE_STATUSES, resolve_juris_calculus_root,
 )
 from deli_autoresearch.models import (
     VerificationResult, WorkClaimCandidate, Progress,
@@ -27,7 +27,7 @@ from deli_autoresearch.state_store import StateStore
 from deli_autoresearch.template_runtime import TemplateRuntime
 from deli_autoresearch.utils import claim_id_for
 
-JURIS_ROOT = Path(r"D:\Codex\juris-calculus")
+JURIS_ROOT = resolve_juris_calculus_root()
 
 
 def _init_task(store, registry, templates, task_id, tmp_path):

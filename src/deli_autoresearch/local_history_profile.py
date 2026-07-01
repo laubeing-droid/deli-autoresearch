@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
+from .constants import resolve_minnan_profile_root
 
-MINNAN_PROFILE_ROOT = r"D:\Codex\闽南文史ALLinAI"
+MINNAN_PROFILE_ROOT = str(resolve_minnan_profile_root())
 
 REQUIRED_DIRECTORIES = (
     "config",
@@ -34,7 +35,7 @@ CLAIM_EVIDENCE_REQUIREMENTS = {
 class LocalHistoryProfile:
     """Fail-closed profile: web material can only create candidates by default."""
 
-    root: str = MINNAN_PROFILE_ROOT
+    root: str = field(default_factory=lambda: str(resolve_minnan_profile_root()))
     open_web_fact_ingestion: bool = False
     required_directories: tuple[str, ...] = REQUIRED_DIRECTORIES
     claim_evidence_requirements: dict[str, tuple[str, ...]] | None = None

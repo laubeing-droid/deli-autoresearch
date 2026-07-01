@@ -10,13 +10,14 @@ from deli_autoresearch.certificate_payload import GroundedExtensionCertificate
 from deli_autoresearch.independent_checker import IndependentCheckerRegistry
 from deli_autoresearch.lean_manifest import LeanManifest
 from deli_autoresearch.lean_refinement import LeanRefinementBridge
+from deli_autoresearch.constants import resolve_juris_calculus_root
 from deli_autoresearch.models import (
     VERIFICATION_STATUS_PROVED, VERIFICATION_STATUS_REFUTED,
     VERIFICATION_STATUS_NEEDS_MORE_EVIDENCE, VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
     VERIFICATION_STATUS_ERROR,
 )
 
-JURIS_ROOT = r"D:\Codex\juris-calculus"
+JURIS_ROOT = str(resolve_juris_calculus_root())
 
 
 class TestCrossRepoIntegration:

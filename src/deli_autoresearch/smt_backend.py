@@ -7,14 +7,10 @@ Z3 unavailable, timeout, or unknown NEVER produce "validated".
 from __future__ import annotations
 
 import sys
-from pathlib import Path
 from typing import Any
 
-_juris_root = Path(r"D:\Codex\juris-calculus")
-if str(_juris_root) not in sys.path:
-    sys.path.insert(0, str(_juris_root))
-
 from .agent_backend_codex import BackendEnvelope, CodexAgentBackend, MockAgentBackend
+from .constants import resolve_juris_calculus_root
 from .models import (
     VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
     VERIFICATION_STATUS_ERROR,
@@ -25,6 +21,10 @@ from .models import (
     hash_digest,
     new_uuid,
 )
+
+_juris_root = resolve_juris_calculus_root()
+if _juris_root.exists() and str(_juris_root) not in sys.path:
+    sys.path.insert(0, str(_juris_root))
 
 try:
     import z3  # type: ignore

@@ -2,7 +2,7 @@
 
 This document is the operational boundary for Deli research tasks that touch
 legal formalization, juris-calculus runtime evidence, or future local-history
-projects such as `D:\Codex\闽南文史ALLinAI`.
+projects such as `<minnan-profile-root>`.
 
 ## Core Rule
 
@@ -48,7 +48,7 @@ sources and objective verification backends can promote a claim into findings.
 
 ## Local-History Boundary
 
-For `D:\Codex\闽南文史ALLinAI`, web search defaults to off. Allowed work is
+For `<minnan-profile-root>`, web search defaults to off. Allowed work is
 OCR alignment, source indexing, conflict detection, candidate extraction, and
 human-review question generation over approved material. A local-history fact
 requires an approved source span before it can be written as a finding.

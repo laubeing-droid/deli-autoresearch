@@ -1,6 +1,9 @@
-"""Shared constants for the local framework."""
+"""Shared constants and repository path discovery for the local framework."""
 
 from __future__ import annotations
+
+import os
+from pathlib import Path
 
 RUNTIME_DIRNAME = "runtime"
 TASKS_DIRNAME = "tasks"
@@ -123,4 +126,57 @@ ALL_DIRECTION_TYPES = BASE_DIRECTION_TYPES | LEGAL_DIRECTION_TYPES
 
 LEGAL_STRONG_SOURCE_KINDS = VERIFIED_EVIDENCE_SOURCE_KINDS
 
-JURIS_CALCULUS_ROOT = r"D:\Codex\juris-calculus"
+DELI_AUTORESEARCH_ROOT_ENV = "DELI_AUTORESEARCH_ROOT"
+DELI_WORKSPACE_ROOT_ENV = "DELI_WORKSPACE_ROOT"
+JURIS_CALCULUS_ROOT_ENV = "JURIS_CALCULUS_ROOT"
+MINNAN_PROFILE_ROOT_ENV = "MINNAN_PROFILE_ROOT"
+
+
+def repo_root() -> Path:
+    """Return this repository root without depending on the current directory."""
+
+    return Path(__file__).resolve().parents[2]
+
+
+def resolve_workspace_root() -> Path:
+    """Resolve the Deli workspace root from env, falling back to this checkout."""
+
+    for env_name in (DELI_AUTORESEARCH_ROOT_ENV, DELI_WORKSPACE_ROOT_ENV):
+        value = os.environ.get(env_name, "").strip()
+        if value:
+            return Path(value).expanduser().resolve()
+    return repo_root()
+
+
+def _resolve_env_or_sibling(env_name: str, sibling_name: str) -> Path:
+    value = os.environ.get(env_name, "").strip()
+    if value:
+        return Path(value).expanduser().resolve()
+    return (resolve_workspace_root().parent / sibling_name).resolve()
+
+
+def resolve_juris_calculus_root() -> Path:
+    """Resolve juris-calculus from env or the sibling repository layout."""
+
+    return _resolve_env_or_sibling(JURIS_CALCULUS_ROOT_ENV, "juris-calculus")
+
+
+def require_juris_calculus_root() -> Path:
+    """Return juris-calculus root or raise a fail-closed configuration error."""
+
+    root = resolve_juris_calculus_root()
+    if not root.exists():
+        raise FileNotFoundError(
+            f"{JURIS_CALCULUS_ROOT_ENV} must point to an existing juris-calculus checkout; "
+            f"probed {root}"
+        )
+    return root
+
+
+def resolve_minnan_profile_root() -> Path:
+    """Resolve the Minnan source-bounded profile root from env or sibling layout."""
+
+    return _resolve_env_or_sibling(MINNAN_PROFILE_ROOT_ENV, "闽南文史ALLinAI")
+
+
+JURIS_CALCULUS_ROOT = str(resolve_juris_calculus_root())

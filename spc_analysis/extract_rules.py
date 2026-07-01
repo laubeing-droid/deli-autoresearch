@@ -2,12 +2,19 @@
 import json, os, re, glob, sys
 from pathlib import Path
 
-DATA_DIR = r"D:\同步网盘\软件开发\权威裁判规则数据库\output\全文json"
-WORKSPACE_ROOT = Path(os.environ.get("DELI_WORKSPACE_ROOT", r"D:\Codex\数学证明自动研究"))
+def _spc_ocr_dir() -> Path:
+    value = os.environ.get("SPC_OCR_JSON_DIR", "").strip()
+    if not value:
+        raise SystemExit("SPC_OCR_JSON_DIR must point to the SPC OCR JSON directory.")
+    return Path(value).expanduser().resolve()
+
+
+DATA_DIR = _spc_ocr_dir()
+WORKSPACE_ROOT = Path(os.environ.get("DELI_WORKSPACE_ROOT", Path(__file__).resolve().parents[1])).resolve()
 OUT_DIR = WORKSPACE_ROOT / "spc_analysis" / "output"
 os.makedirs(OUT_DIR, exist_ok=True)
 
-files = sorted(glob.glob(os.path.join(DATA_DIR, "*ocr*.json")))
+files = sorted(glob.glob(str(DATA_DIR / "*ocr*.json")))
 
 # Patterns for rule extraction from Chinese legal text
 CLAUSE_PAT = re.compile(r'第[一二三四五六七八九十百千\d]+条')

@@ -1,8 +1,8 @@
 ============================= test session starts =============================
-platform win32 -- Python 3.12.5, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\being\AppData\Local\Programs\Python\Python312\python.exe
+platform win32 -- Python 3.12.5, pytest-9.0.3, pluggy-1.6.0 -- <python-executable>
 cachedir: .pytest_cache
 hypothesis profile 'default'
-rootdir: D:\Codex\deli_autoresearch_codex_implementation_playbook\deli-autoresearch
+rootdir: <repo-root>
 configfile: pyproject.toml
 plugins: anyio-4.13.0, hypothesis-6.155.2
 collecting ... collected 9 items

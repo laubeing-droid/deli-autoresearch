@@ -1,7 +1,7 @@
 # Phase A: Trusted Research Infrastructure Re-Audit
 
 **Date**: 2026-06-23
-**Repository**: Deli AutoResearch (`D:\Codex\数学证明自动研究`)
+**Repository**: Deli AutoResearch (`<deli-autoresearch-root>`)
 **Scope**: Revalidate every Phase 0/0.1 capability against current code and real subprocess tests.
 
 ## A1. Capability Verification (20 items)

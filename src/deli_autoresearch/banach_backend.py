@@ -6,16 +6,10 @@ Verifies actual matrices/operators from formal payload, not fixed regression sui
 from __future__ import annotations
 
 import sys
-from pathlib import Path
 from typing import Any
 
-_juris_root = Path(r"D:\Codex\juris-calculus")
-if str(_juris_root) not in sys.path:
-    sys.path.insert(0, str(_juris_root))
-
-from compiler_core.banach_verifier import BanachVerifier  # noqa: E402
-
 from .agent_backend_codex import BackendEnvelope, CodexAgentBackend, MockAgentBackend
+from .constants import resolve_juris_calculus_root
 from .models import (
     VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
     VERIFICATION_STATUS_PROVED,
@@ -23,6 +17,17 @@ from .models import (
     hash_digest,
     new_uuid,
 )
+
+_juris_root = resolve_juris_calculus_root()
+if _juris_root.exists() and str(_juris_root) not in sys.path:
+    sys.path.insert(0, str(_juris_root))
+
+try:
+    from compiler_core.banach_verifier import BanachVerifier  # type: ignore  # noqa: E402
+    _BANACH_IMPORT_ERROR = ""
+except Exception as exc:  # pragma: no cover - exercised when the sibling repo is absent
+    BanachVerifier = None  # type: ignore[assignment]
+    _BANACH_IMPORT_ERROR = str(exc)
 
 
 class BanachBackend:
@@ -34,7 +39,7 @@ class BanachBackend:
 
     def __init__(self, inner_backend: CodexAgentBackend | MockAgentBackend) -> None:
         self.inner = inner_backend
-        self.verifier = BanachVerifier()
+        self.verifier = BanachVerifier() if BanachVerifier is not None else None
 
     def run_work(self, task_id: str, prompt: dict[str, Any]) -> BackendEnvelope:
         return self.inner.run_work(task_id, prompt)
@@ -49,6 +54,23 @@ class BanachBackend:
         self, task_id: str, prompt: dict[str, Any]
     ) -> BackendEnvelope:
         claim_id = prompt.get("claim_id", "")
+        if self.verifier is None:
+            return BackendEnvelope(
+                agent_id=f"banach_engine_{claim_id}",
+                payload={
+                    "claim_id": claim_id,
+                    "verdict": "needs_more_evidence",
+                    "evidence_strength": "weak",
+                    "summary": f"Banach verifier unavailable: {_BANACH_IMPORT_ERROR or 'juris-calculus root not found'}",
+                    "verification_status": VERIFICATION_STATUS_BACKEND_UNAVAILABLE,
+                    "claim_digest": prompt.get("claim_digest", ""),
+                    "payload_digest": hash_digest(prompt.get("formal_payload", {})),
+                    "request_id": prompt.get("request_id", new_uuid()),
+                    "backend_name": "banach",
+                    "backend_version": "not available",
+                    "supporting_evidence": [],
+                },
+            )
         formal_payload = prompt.get("formal_payload", {})
         payload_digest = hash_digest(formal_payload)
         request_id = prompt.get("request_id", new_uuid())
@@ -149,6 +171,13 @@ class BanachBackend:
 
     def run_health_check(self) -> dict[str, Any]:
         """Run fixed regression — only BACKEND_HEALTHY or BACKEND_UNHEALTHY."""
+        if self.verifier is None:
+            return {
+                "backend_name": "banach",
+                "healthy": False,
+                "status": "BACKEND_UNHEALTHY",
+                "error": _BANACH_IMPORT_ERROR or "juris-calculus root not found",
+            }
         report = self.verifier.run_full_regression()
         return {
             "backend_name": "banach",

@@ -2,7 +2,7 @@
 
 ## Lean Proof Coverage
 - **Status**: NOT YET DEPLOYED
-- **Location**: D:\Codex\数学证明\legal-math-modeling\proofs\lean\juris_lean
+- **Location**: <legal-math-modeling-root>/proofs/lean/juris_lean
 - **Covered**: 0 of 13 G9A theorems formally verified in Lean
 - **Planned**: characteristic_function_monotone, grounded_iteration_monotone, finite_grounded_termination, grounded_iteration_bound, grounded_is_fixed_point, grounded_is_least_fixed_point, grounded_is_least_complete_extension, grounded_unique, grounded_labelling_partition, in_soundness, out_soundness, undecided_characterization, self_attack_supported
 

@@ -11,9 +11,10 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+from .constants import resolve_juris_calculus_root
 from .juris_calculus_bridge import JurisCalculusBridge
 
-JURIS_ROOT = r"D:\Codex\juris-calculus"
+JURIS_ROOT = str(resolve_juris_calculus_root())
 
 
 @dataclass
@@ -131,9 +132,9 @@ def _run_one_case(
 def run_batch_litigation(
     cases: list[BatchLitigationCase],
     *,
-    juris_root: str = JURIS_ROOT,
+    juris_root: str | None = None,
 ) -> BatchReport:
-    bridge = JurisCalculusBridge(juris_root)
+    bridge = JurisCalculusBridge(juris_root or JURIS_ROOT)
     report = BatchReport()
     for case in cases:
         result = _run_one_case(bridge, case)

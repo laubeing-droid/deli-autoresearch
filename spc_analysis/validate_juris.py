@@ -2,8 +2,8 @@
 import json, sys, os
 from pathlib import Path
 
-JC_ROOT = Path(os.environ.get("JURIS_CALCULUS_ROOT", r"D:\Codex\juris-calculus"))
-WORKSPACE_ROOT = Path(os.environ.get("DELI_WORKSPACE_ROOT", r"D:\Codex\数学证明自动研究"))
+WORKSPACE_ROOT = Path(os.environ.get("DELI_WORKSPACE_ROOT", Path(__file__).resolve().parents[1])).resolve()
+JC_ROOT = Path(os.environ.get("JURIS_CALCULUS_ROOT", WORKSPACE_ROOT.parent / "juris-calculus")).resolve()
 sys.path.insert(0, str(JC_ROOT))
 from compiler_core.argumentation import grounded_extension
 

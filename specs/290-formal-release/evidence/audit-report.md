@@ -386,7 +386,7 @@ SPEC-290/evidence/ 目录下：
 
 ### 8.1 P0：审计对象与当前 `legal-math-modeling` 树不匹配
 
-我对当前 `D:\Codex\数学证明\legal-math-modeling\proofs\lean\juris_lean\JurisLean` 做了符号和文件核对。当前目录中存在的核心文件包括：
+我对当前 `<legal-math-modeling-root>/proofs/lean/juris_lean/JurisLean` 做了符号和文件核对。当前目录中存在的核心文件包括：
 
 - `HornDefinitions.lean`
 - `HornFixedPoint.lean`
@@ -458,7 +458,7 @@ ModuleNotFoundError: No module named 'compiler_core'
 在显式设置：
 
 ```bash
-PYTHONPATH=D:\Codex\juris-calculus
+PYTHONPATH=<juris-calculus-root>
 pytest -q -ra
 ```
 
@@ -568,12 +568,12 @@ pytest -q -ra
 
 GPT 复核者检查的路径是：
 ```
-D:\Codex\数学证明\legal-math-modeling\proofs\lean\juris_lean\JurisLean\
+<legal-math-modeling-root>/proofs/lean/juris_lean/JurisLean/
 ```
 
 **正确路径**（本项目三仓结构所在位置）：
 ```
-D:\Codex\deli_autoresearch_codex_implementation_playbook\legal-math-modeling\proofs\lean\juris_lean\JurisLean\
+<legal-math-modeling-root>/proofs/lean/juris_lean/JurisLean/
 ```
 
 两个路径指向**不同的本地副本**。经 `ls` 命令确认，正确路径下存在全部 36 个 .lean 文件，包括 GPT 声称"不存在"的所有文件：
@@ -589,17 +589,17 @@ D:\Codex\deli_autoresearch_codex_implementation_playbook\legal-math-modeling\pro
 
 ### 9.2 P0 8.2：测试数字不匹配 — **误判**
 
-GPT 复核者从项目根目录 `D:\Codex\deli_autoresearch_codex_implementation_playbook` 运行 pytest，该目录不是 Python 包根目录，导致 pytest 收集行为不同。
+GPT 复核者从项目根目录 `<workspace-root>` 运行 pytest，该目录不是 Python 包根目录，导致 pytest 收集行为不同。
 
 **正确运行方式**（报告中隐含的前提，但未显式声明——这是报告的缺陷）：
 
 ```bash
 # deli-autoresearch
-cd D:\Codex\deli_autoresearch_codex_implementation_playbook\deli-autoresearch
+cd <deli-autoresearch-root>
 pytest -q
 
 # juris-calculus
-cd D:\Codex\deli_autoresearch_codex_implementation_playbook\juris-calculus
+cd <juris-calculus-root>
 pytest -q
 ```
 
@@ -643,7 +643,7 @@ Build completed successfully (2960 jobs).
 
 ### 9.5 P1 8.5：当前 `legal-math-modeling` 的主叙事已变 — **误判**
 
-GPT 复核者引用的 `JC_Formalization.lean` 中的条目（T1_GaloisConnection, T5_TemporalKripke 等）来自路径 `D:\Codex\数学证明\legal-math-modeling`，**不是本项目的仓库**。
+GPT 复核者引用的 `JC_Formalization.lean` 中的条目（T1_GaloisConnection, T5_TemporalKripke 等）来自路径 `<legal-math-modeling-root>`，**不是本项目的仓库**。
 
 本项目的 `JC_Formalization.lean` 确实存在，但它的 `CoreTheorem` 枚举是为 Banach Track 设计的独立分类体系，与 SPEC-210~280 的定理编号体系**并行存在但不冲突**。这是两套不同的定理命名空间：
 - SPEC 系列：`hornClosure_converges`, `check_sound`, `certified_end_to_end_refinement` 等

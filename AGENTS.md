@@ -32,7 +32,7 @@
 ## Build & Test
 
 ```powershell
-cd D:\Codex\数学证明自动研究
+cd <deli-autoresearch-root>
 pytest tests/ -q -ra
 ```
 

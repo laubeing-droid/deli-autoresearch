@@ -87,7 +87,7 @@ def resolve_lean_manifest_path(
 ) -> ManifestResolution:
     """Resolve theorem_manifest.json using explicit path, env root, then probes.
 
-    The resolver never falls back to the legacy D:\\Claude hard-coded path. A
+    The resolver never falls back to the legacy Claude-root hard-coded path. A
     missing result is reported as fail-closed so callers do not silently verify
     against stale formal evidence.
     """

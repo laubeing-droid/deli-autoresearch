@@ -1,6 +1,8 @@
 import json, os, sys, time
-sys.path.insert(0, r"D:\Codex\数学证明自动研究\src")
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
 from deli_autoresearch.state_store import StateStore
 from deli_autoresearch.file_lock import ProcessFileLock, LockHeldError
 ws, owner, hold = sys.argv[1], sys.argv[2], float(sys.argv[3])

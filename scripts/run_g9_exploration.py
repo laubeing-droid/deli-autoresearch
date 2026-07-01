@@ -22,14 +22,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="G9 exploration runner")
     parser.add_argument(
         "--juris-root",
-        default=r"D:\Codex\juris-calculus",
-        help="Path to juris-calculus source root",
+        default="",
+        help="Path to juris-calculus source root. Defaults to env or sibling checkout.",
     )
     parser.add_argument("--workspace", default=".", help="AutoResearch workspace root")
     args = parser.parse_args()
 
     workspace = Path(args.workspace).resolve()
-    juris_root = Path(args.juris_root).resolve()
 
     # --- Step 1: Direct bridge regression ---
     print("=== Step 1: juris-calculus bridge regression ===")
@@ -38,8 +37,10 @@ def main() -> int:
     if str(src_dir) not in sys.path:
         sys.path.insert(0, str(src_dir))
 
+    from deli_autoresearch.constants import resolve_juris_calculus_root
     from deli_autoresearch.juris_calculus_bridge import JurisCalculusBridge
 
+    juris_root = Path(args.juris_root).resolve() if args.juris_root else resolve_juris_calculus_root()
     bridge = JurisCalculusBridge(juris_root)
     report = bridge.run_full_regression()
     print(f"  Total: {report.total}, Passed: {report.passed}, Failed: {report.failed}")

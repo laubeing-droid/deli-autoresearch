@@ -10,6 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+from .constants import resolve_juris_calculus_root
 from .juris_calculus_bridge import JurisCalculusBridge
 from .batch_litigation import (
     BatchLitigationCase,
@@ -17,7 +18,7 @@ from .batch_litigation import (
     run_batch_litigation,
 )
 
-JURIS_ROOT = r"D:\Codex\juris-calculus"
+JURIS_ROOT = str(resolve_juris_calculus_root())
 
 
 @dataclass
@@ -51,9 +52,10 @@ class ResearchAutomationReport:
 
 def rank_breakthroughs(
     *,
-    juris_root: str = JURIS_ROOT,
+    juris_root: str | None = None,
 ) -> list[BreakthroughRanking]:
     import importlib, sys
+    juris_root = juris_root or JURIS_ROOT
     if juris_root not in sys.path:
         sys.path.insert(0, juris_root)
     mod = importlib.import_module("compiler_core.breakthrough_candidates")
@@ -74,9 +76,10 @@ def rank_breakthroughs(
 
 def build_capability_map(
     *,
-    juris_root: str = JURIS_ROOT,
+    juris_root: str | None = None,
 ) -> list[CapabilityMap]:
     import importlib, sys
+    juris_root = juris_root or JURIS_ROOT
     if juris_root not in sys.path:
         sys.path.insert(0, juris_root)
     mod = importlib.import_module("compiler_core.breakthrough_candidates")
@@ -123,9 +126,10 @@ STANDARD_BENCHMARK_CASES = [
 
 def run_benchmark_replay(
     *,
-    juris_root: str = JURIS_ROOT,
+    juris_root: str | None = None,
     cases: list[BatchLitigationCase] | None = None,
 ) -> dict[str, Any]:
+    juris_root = juris_root or JURIS_ROOT
     if cases is None:
         cases = list(STANDARD_BENCHMARK_CASES)
     report = run_batch_litigation(cases, juris_root=juris_root)
@@ -151,8 +155,9 @@ def run_benchmark_replay(
 
 def run_research_automation(
     *,
-    juris_root: str = JURIS_ROOT,
+    juris_root: str | None = None,
 ) -> ResearchAutomationReport:
+    juris_root = juris_root or JURIS_ROOT
     breakthroughs = rank_breakthroughs(juris_root=juris_root)
     capability_map = build_capability_map(juris_root=juris_root)
     benchmark = run_benchmark_replay(juris_root=juris_root)
