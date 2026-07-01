@@ -1,90 +1,69 @@
-# PLANS.md -- Execution State
+# Execution State
 
-## Current
+This file is a human-readable planning snapshot. The authoritative state remains on disk under `specs/`, `state/`, `runtime/`, and git history.
 
+## Current Snapshot
+
+```text
+status: MAINTENANCE_AND_RELEASE_HARDENING
+last_verified_commit: b6d56b25ab2fa293529f20df0dff8037bbe0f4b3
+branch_state: main...origin/main [ahead 4]
+local_test_baseline: 158 passed
+pre_release_status: BLOCKED_EXTERNAL_VULNERABILITY_DB
 ```
-status: IN_PROGRESS
-last_verified_commit: b35dbb1
-phase: Phase 4 - function extension deepening (COMPLETE)
-test_baseline: 87 passed
-```
 
-## Track Status
+The local code/test/disclosure gates are green. External vulnerability database lookup is not green because `pip-audit` timed out against the remote advisory service through the configured local proxy.
 
-### Track A: Formal Core Release (COMPLETE)
+## Completed Tracks
 
-- legal-math-modeling formal-core release closed (5f4d635)
-- GitHub Actions clean build passed
-- AxiomAudit independent build passed
-- Scan guards: 0 sorry, 0 admit, 0 custom axiom, 0 theorem : True
-- Theorem manifest: 39 core + 43 extended + 32 supporting = 75 total
+### Track A: Source-Bounded Control Plane
 
-### Track B: Banach (DEFERRED)
+- Source registry and retrieval policy are implemented.
+- Open-web and model-generated material remain candidate-only by default.
+- Memory routing sends weak or incomplete evidence to failure/candidate streams.
+- Disclosure gate prevents weak evidence from being published as a finding.
 
-- Worktree removed. Archive only: archive/banach-track-b-d23e8f2
-- Route audit complete (subagent Mencius): scaling isomorphism path confirmed
-- Mathlib ContractingWith API: fixedPoint, fixedPoint_unique,
-  tendsto_iterate_fixedPoint, apriori/aposteriori error bounds
-- 2 new theorems needed: weighted metric completeness via Lipschitz
-  equivalence, Lw <= qw -> ContractingWith q T
-- Not blocking mainline
+### Track B: Cross-Repo Verification Bridges
 
-### Track C: Data Protocols (DEFERRED)
+- Deli can call juris-calculus runtime checks through a local backend adapter.
+- Lean theorem manifest discovery routes through `LEGAL_MATH_MODELING_ROOT` or workspace probes.
+- Missing external engines fail closed.
+- `doctor` emits machine-readable cross-repo status under ignored runtime output.
 
-- 38-constant calibration, DP adjacency, robust regression protocols
-- Schema defined; real data acquisition pending
+### Track C: Litigation And Research Automation
 
-### Phase 4: Functionality Deepening (DELIVERED)
+- `legal_proof` template supports Horn/AAF grounded-extension verification flows.
+- Batch litigation helpers connect Deli cases to juris-calculus certificates and traces.
+- Research automation ranks breakthrough candidates, builds capability maps, and replays benchmarks.
 
-Priority: litigation capability > litigation automation > research automation
+### Track D: Pre-Release Hygiene
 
-P1 (litigation capability) delivered:
+- Tracked machine-specific paths were removed from source, tests, scripts, docs, examples, and historical evidence.
+- Private SPC OCR input now requires `SPC_OCR_JSON_DIR`.
+- Public docs use placeholders and environment variables instead of local machine paths.
 
-- incremental grounded correctness fixes
-- minimal defense witness / shortest defense chain
-- defense_paths, proof_depth, minimal_witnesses on LabelCertificate
-- cross-repo litigation certificate bridge (jc -> Deli)
-- minimal support / rebuttal sets
-- rule change impact analysis
-- missing evidence checklist
+## Verification Gates
 
-P2 (litigation automation) delivered:
-
-- legal_proof template batch litigation tasks
-- jc certificate / proof trace / SCC witness auto-feedback to Deli
-
-P3 (research automation) delivered:
-
-- breakthrough scoring automation
-- multi-task registry scheduling
-- benchmark replay and capability map
-
-## Cross-Repo Verification Gates
-
-| Gate | Status | Evidence |
-|------|--------|----------|
-| legal-math-modeling clean build | PASS | GitHub Actions run + local lake build |
-| legal-math-modeling axiom audit | PASS | lake build +JurisLean.AxiomAudit |
-| Deli full tests | PASS | 87 passed |
-| jc full tests | PASS | 241 passed (juris-calculus@c18b478) |
-| incremental grounded equivalence | PASS | 6 tests with full-recompute cross-check |
-| litigation certificate minimal witness | PASS | cross-repo bridge verified |
-
-## Cross-Repo Reference Heads
-
-| Repo | Branch | HEAD |
+| Gate | Current status | Evidence |
 | --- | --- | --- |
-| legal-math-modeling | master | 5f4d635 |
-| juris-calculus | main | c18b478 |
-| deli-autoresearch | main | b35dbb1 |
+| Full Deli pytest | PASS | `python -m pytest -q` -> `158 passed` |
+| Source-bounded subset | PASS | source registry, retrieval policy, memory router, trial harness, search frontier, verification backend, disclosure gate, local-history profile |
+| Path resolver regression | PASS | Banach, cross-repo bridge, legal proof bridge tests |
+| Compile check | PASS | `python -m compileall -q src scripts spc_analysis` |
+| Disclosure scans | PASS | no tracked matches for Windows absolute paths, legacy Claude root, Codex root, private sync root, local proxy literal |
+| Isolated editable install | PASS | temporary venv install and `pip check` |
+| External vulnerability DB | BLOCKED | `pip-audit` timed out against remote advisory service |
 
-## Next
+## Next Work
 
-Repository is in maintenance/refinement mode:
+1. Re-run external vulnerability audit when the advisory service is reachable through the configured proxy.
+2. Keep public docs aligned with the source-bounded and fail-closed model.
+3. Expand examples only when the verifier path is deterministic and covered by tests.
+4. Keep commercial data, private rule libraries, lawyer workflows, litigation strategy, and private benchmarks outside the public auditable kernel.
 
-1. Keep cross-repo bridge synced with juris-calculus and legal-math-modeling
-2. Expand legal_proof template examples
-3. Add CI workflow
-4. Improve docs and publishing guidance
+## Non-Goals
 
-Banach remains a separate independent track, not blocking functionality deepening.
+- No push, tag, release, or GitHub visibility change from this local state file.
+- No claim that LLM output is a verified fact.
+- No claim that empirical runs are formal proofs.
+- No weakening of checker acceptance standards or attack/exception/priority semantics.

@@ -1,83 +1,85 @@
 # Template Authoring Guide
 
-## The Five Required Interfaces
+Templates adapt Deli's research loop to a domain. A template should narrow the contract, not bypass the global runtime rules.
 
-Every template must implement five interfaces. These are the contract
-between the orchestrator and the domain.
+## Required Interfaces
 
-### 1. build_task_spec_schema()
+### `build_task_spec_schema()`
 
-Returns a dict with required_sections: the Markdown headings a task spec
-must contain. The general_research base requires goal, scope, and
-constraints. Domain templates extend with domain-specific headings.
+Return the Markdown sections that a task spec must contain. The base research template requires broad task context; domain templates add domain-specific sections.
 
-Example (legal_proof): adds target_semantics, attack_graph_class,
-verification_engine, known_lemmas, mvm_breakthrough.
+Example: a legal proof template can require target semantics, attack graph class, verification engine, known lemmas, and breakthrough objective.
 
-### 2. seed_directions()
+### `seed_directions()`
 
-Returns a list of Direction objects that seed the initial strategy pool.
-These are the first directions the orchestrator will try. Each Direction
-has: strategy_type (must be in the template's registered types), summary
-(human-readable), rationale, origin_iteration (always 0).
+Return the initial strategy pool as `Direction` objects.
 
-Rule: the initial_direction() method should return the single most
-promising starting point. seed_directions() returns the full pool
-(initial + alternatives).
+Each direction needs:
 
-### 3. generate_next_direction(tried_directions, progress, trigger)
+- `strategy_type`;
+- `summary`;
+- `rationale`;
+- `origin_iteration`.
 
-Called when a structural pivot is required (stall pressure >= 2).
-Receives all previously attempted directions and the current progress
-state. Must return a Direction with a strategy_type NOT in
-tried_directions.
+`initial_direction()` should return the strongest starting point. `seed_directions()` should return that direction plus meaningful alternatives.
 
-The trigger parameter indicates what caused the pivot: stall_pressure_2,
-stall_pressure_3, stalled_at_max_iterations, etc.
+### `generate_next_direction(tried_directions, progress, trigger)`
 
-### 4. template_stall_rules(progress, verification_results)
+Return a new direction when stall pressure forces a structural pivot.
 
-Returns a list of warning strings. This is where domain-specific stall
-detection lives. The base kernel handles universal rules (pressure
-thresholds). Templates add domain-specific ones.
+The new direction must use a `strategy_type` that has not already been tried for the current pivot set. Otherwise the orchestrator can loop without changing the search shape.
 
-Example (legal_proof): if all verification results are
-needs_more_evidence with only model_generated evidence, flag
-semantic_collapse_risk — the work agent is producing trivial claims.
+### `template_stall_rules(progress, verification_results)`
 
-### 5. completion_policy(task_spec)
+Return domain-specific warnings. Global pressure thresholds remain in the runtime; the template adds domain knowledge.
 
-Returns a CompletionPolicy with:
-- target_validated_findings: how many validated findings before the
-  task is considered complete
-- max_iterations: hard stop after this many iterations regardless
-- require_tail_pass: if True, the final iteration must produce no
-  new validated findings (convergence check)
+Example: if repeated candidates are only model-generated and never add source-backed or backend-backed evidence, flag semantic collapse risk.
 
-### Also: validate_work_candidate() and validate_finding_rules()
+### `completion_policy(task_spec)`
 
-These are the structural validators. validate_work_candidate ensures
-the work agent's output conforms to the claim-bound contract (e.g.,
-legal_proof requires formal_payload with claims, attacks,
-verification_type). validate_finding_rules enforces domain-specific
-evidence standards.
+Return:
 
-## Design Principles
+- `target_validated_findings`;
+- `max_iterations`;
+- `require_tail_pass`.
 
-1. Start from general_research. Inherit its stall/pivot machinery.
-   Only override what your domain genuinely requires.
+Use conservative defaults. A tail pass is useful when the domain needs evidence that the loop has stopped finding new validated claims.
 
-2. Direction types are the vocabulary of your domain. Invest in
-   naming them well — the orchestrator enforces that a structural
-   pivot MUST change strategy_type, so having meaningful
-   categories is the difference between productive pivots and
-   random walk.
+## Structural Validators
 
-3. Completion policies should be conservative. Four iterations
-   with target_validated_findings=3 is a reasonable default for
-   domains with deterministic verification. Increase max_iterations
-   only when verification latency is high.
+### `validate_work_candidate(candidate)`
 
-4. The claim-bound contract (formal_payload) is the single most
-   important design decision. It determines what the verification
-   agent can actually check. Make it as structured as possible.
+Reject candidates that cannot be verified. A domain template should require the payload fields that its backend actually checks.
+
+For claim-bound legal proof work, this usually means a structured `formal_payload` with claims, attacks, and verification type.
+
+### `validate_finding_rules(finding)`
+
+Reject findings that lack required source or backend evidence. This validator is the template's last chance to prevent a domain-specific weak result from entering the finding stream.
+
+## Design Rules
+
+1. Start from the general template and override only domain-specific behavior.
+2. Make `strategy_type` names meaningful; pivot quality depends on them.
+3. Treat formal payload design as the core contract with verification.
+4. Prefer deterministic checks over natural-language reviewer judgment.
+5. Let missing external engines fail closed.
+6. Never make model output a verified finding by template policy.
+
+## Testing A Template
+
+Add tests for:
+
+- task-spec schema requirements;
+- seed direction shape;
+- pivot direction uniqueness;
+- invalid candidate rejection;
+- weak evidence rejection;
+- completion policy;
+- at least one successful end-to-end mock run.
+
+Run:
+
+```powershell
+python -m pytest -q
+```

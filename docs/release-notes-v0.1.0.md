@@ -1,25 +1,34 @@
 # Deli AutoResearch v0.1.0
 
-Initial public release of `Deli AutoResearch`.
+Initial local release of `Deli AutoResearch`.
 
-## Highlights
+## Scope
 
-- Long-horizon proof research orchestration runtime
-- Explicit claim, evidence, finding, and direction tracking
-- Independent work / verification separation
-- Stall-pressure and forced pivot logic
-- Tail-pass completion policy
-- Task asset loading from `examples/`
-- Replay benchmark support
-- `codex-bridge` backend for multi-session execution
+This release introduced the filesystem-backed research orchestration runtime:
 
-## Included Assets
+- explicit task registry and per-task state;
+- claim, evidence, finding, and direction lifecycle records;
+- independent work and verification phases;
+- stall-pressure and structural pivot logic;
+- tail-pass completion policy;
+- reusable task assets under `examples/`;
+- replay benchmark support;
+- `codex-bridge` request/response backend for multi-session execution.
 
-- Math proof task templates and examples
-- Regression benchmark for the sum-of-odds induction scenario
-- Publishing, contributing, and license documentation
+## Boundary
+
+The release did not claim:
+
+- formal proof of arbitrary legal or mathematical outcomes;
+- verified facts from model output alone;
+- public inclusion of private legal workflows, private benchmark sets, or commercial rule assets.
 
 ## Validation
 
-- `python -m pytest -q`
-- `13 passed`
+The historical v0.1.0 validation command was:
+
+```powershell
+python -m pytest -q
+```
+
+For the current validation baseline, read `PLANS.md` and the latest report under `docs/audit/`.

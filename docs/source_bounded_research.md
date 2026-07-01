@@ -1,29 +1,26 @@
 # Source-Bounded Research Mode
 
-This document is the operational boundary for Deli research tasks that touch
-legal formalization, juris-calculus runtime evidence, or future local-history
-projects such as `<minnan-profile-root>`.
+Deli is a source-bounded autonomous research harness. A model, search tool, or external agent may propose a candidate. Only approved sources and objective verification backends can promote that candidate into a finding.
 
-## Core Rule
+## Admission Rule
 
-Deli is a source-bounded autonomous research harness, not an open-web autonomous
-researcher. A model or web search may propose candidates, but only approved
-sources and objective verification backends can promote a claim into findings.
+A publishable finding needs at least one of:
+
+- an approved source span from the source registry;
+- a formal or deterministic backend result;
+- a human-reviewed anchor recorded as evidence.
+
+Open-web material, `derived` content, and `model_generated` content are never sufficient by themselves.
 
 ## Required Flow
 
-1. Register every source in `config/source_registry.example.yml` or a task-local
-   registry with the same schema.
-2. Use `SourceRegistry` and `RetrievalPolicy` before reading material.
-3. Route open-web results as `source_candidate`; never route them as
-   `verified_finding`.
-4. Record every positive and negative trial through `TrialHarness`.
-5. Use `SearchFrontier` to keep multiple bounded directions with lineage,
-   promotion reasons, and discard reasons.
-6. Route memory through `MemoryRouter`; a `verified_finding` without strong
-   evidence must become a failure record.
-7. Report the claim, source, verifier, and disclosure status before publishing
-   any research output.
+1. Register sources in `config/source_registry.example.yml` or a task-local registry with the same schema.
+2. Ask `SourceRegistry` and `RetrievalPolicy` before reading material.
+3. Route open-web output as `source_candidate`.
+4. Record positive and negative trials through `TrialHarness`.
+5. Use `SearchFrontier` to track bounded directions, lineage, promotion reasons, and discard reasons.
+6. Route accepted, rejected, candidate, and failure records through `MemoryRouter`.
+7. Pass disclosure checks before any research output is treated as publishable.
 
 ## Implementation Map
 
@@ -32,23 +29,27 @@ sources and objective verification backends can promote a claim into findings.
 | Source registry | `src/deli_autoresearch/source_registry.py` |
 | Retrieval admission | `src/deli_autoresearch/retrieval_policy.py` |
 | Trial feedback | `src/deli_autoresearch/trial_harness.py` |
+| Frontier management | `src/deli_autoresearch/search_frontier.py` |
 | Memory routing | `src/deli_autoresearch/memory_router.py` |
-| Population frontier | `src/deli_autoresearch/search_frontier.py` |
+| Disclosure gate | `src/deli_autoresearch/disclosure_gate.py` |
+| Verification backend contracts | `src/deli_autoresearch/verification_backends.py` |
+| Local-history profile | `src/deli_autoresearch/local_history_profile.py` |
 | Registry schema | `schemas/source_registry.schema.json` |
-| Registry example | `config/source_registry.example.yml` |
 
 ## Fail-Closed Conditions
 
-- Unregistered source requested for retrieval.
-- Proposed or rejected source requested for retrieval.
-- Open-web material requested as a finding.
-- `verified_finding` lacks strong source or formal backend evidence.
-- Two consecutive trials add no strong evidence.
-- Three repeated failures hit the same claim.
+Deli must not write a verified finding when:
+
+- the source is unregistered;
+- the source is only proposed or rejected;
+- the source is open-web material without an approved anchor;
+- evidence lacks `source_id` plus `source_span` or `evidence_path`;
+- the backend returns unknown, timeout, unavailable, truncated, or not run;
+- a candidate relies only on `derived` or `model_generated` content;
+- repeated trials produce no strong evidence.
 
 ## Local-History Boundary
 
-For `<minnan-profile-root>`, web search defaults to off. Allowed work is
-OCR alignment, source indexing, conflict detection, candidate extraction, and
-human-review question generation over approved material. A local-history fact
-requires an approved source span before it can be written as a finding.
+For local-history projects, web search defaults to off. Allowed work includes OCR alignment, source indexing, conflict detection, candidate extraction, and human-review question generation over approved material. A local-history fact requires an approved source span before it can become a finding.
+
+The profile root is resolved from `MINNAN_PROFILE_ROOT` or sibling-repository discovery. The root itself must not be committed as a machine-specific default path.

@@ -14,3 +14,10 @@
 - Cross-repo runtime roots must resolve through `DELI_AUTORESEARCH_ROOT`, `DELI_WORKSPACE_ROOT`, `JURIS_CALCULUS_ROOT`, `MINNAN_PROFILE_ROOT`, or sibling repository discovery. Missing external engines must fail closed instead of validating a claim.
 - SPC analysis scripts must take private OCR data from `SPC_OCR_JSON_DIR`; the private data root must not be committed as a default path.
 - Deli currently declares no runtime dependencies in `pyproject.toml`; isolated editable install plus `pip check` is the local supply-chain baseline when external vulnerability database queries time out.
+
+## 2026-07-01 documentation rewrite baseline
+
+- Public support docs should describe Deli as a source-bounded orchestration kernel, not as a one-shot prover or open-web autonomous researcher.
+- Reader-facing docs must not embed local path/proxy literals even inside example scan commands; use placeholders and explain that maintainers substitute local strings before running scans.
+- Counts, commit ids, and release readiness claims belong in `PLANS.md` or `docs/audit/` and must be updated in the same commit as the docs that cite them.
+- Historical release notes should preserve their scope and point to current audit/planning files for present validation baselines.

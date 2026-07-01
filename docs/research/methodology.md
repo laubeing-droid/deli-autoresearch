@@ -1,44 +1,81 @@
-# Deli AutoResearch: Methodology
+# Deli AutoResearch Methodology
 
-## What Makes Deli a Research Method
+Deli is a research-control method implemented as a Python runtime. Its main job is to keep long-running research stateful, auditable, and bounded by verification.
 
-Deli governs long-horizon autonomous research through a state machine with
-non-negotiable protocols: single-writer model, fresh session per round,
-three-state verification verdict, stall/pivot pressure accounting.
+## Research Loop
 
-## The Stall/Pivot State Machine
+Each round follows the same shape:
 
-| Verification Result | Stall Pressure | Action |
-|---------------------|---------------|--------|
-| validated | reset to 0 | Finding recorded |
-| needs_more_evidence | +0.5 | Retry; >=2 consecutive -> exit claim |
-| rejected | +1 | Move to next claim or pivot |
+1. Select an active task and direction.
+2. Ask the work agent for strict JSON candidates.
+3. Validate candidate structure and source class.
+4. Run independent verification.
+5. Route the result through memory and disclosure gates.
+6. Update stall pressure and decide whether to continue, pivot, complete, or pause for human attention.
 
-Pressure >= 2 forces structural pivot (strategy_type must change).
-Pressure >= 4 marks needs_human_attention (paused_for_human).
+## Verdict Semantics
+
+| Verdict | Meaning | Runtime effect |
+| --- | --- | --- |
+| `validated` | Candidate passed the required evidence or backend gate | Finding may be recorded if disclosure also passes |
+| `rejected` | Candidate conflicts with evidence, backend, or contract | Claim is rejected and stall pressure increases |
+| `needs_more_evidence` | Candidate is not refuted, but support is insufficient | Candidate remains bounded; repeated weak evidence forces exit |
+
+No other verdict is part of the control plane.
+
+## Stall And Pivot Rules
+
+| Verification result | Stall pressure | Action |
+| --- | --- | --- |
+| `validated` | reset | record finding and continue or enter tail pass |
+| `needs_more_evidence` | `+0.5` | continue briefly; repeated weak evidence exits the claim |
+| `rejected` | `+1` | move to another claim or direction |
+
+Pressure at or above `2` forces a structural pivot. The next direction must use a different `strategy_type`.
+
+Pressure at or above `4` marks the task as needing human attention and pauses it.
 
 ## Claim Lifecycle
 
-claim (proposed) -> hypothesis (under investigation, hypotheses.jsonl)
--> finding (verified, findings.jsonl) — only if source is strong
-(web, local_file, code, experiment), not derived/model_generated alone.
+```text
+candidate -> claim -> verification request -> verdict -> routed memory record
+```
 
-## Orchestrator Principle
+A claim becomes a finding only when:
 
-The orchestrator does process arbitration only. It asks:
-- What was the verdict?
-- What is the stall pressure?
-- Has a structural pivot been triggered?
+- the verifier produces an admissible result;
+- the source class is strong enough;
+- memory routing accepts it as a verified finding;
+- disclosure policy does not block it.
 
-It never evaluates claim content quality.
+Weak candidates are not silently discarded. They go to candidate, rejection, or failure records so the research trail remains inspectable.
 
-## Template System
+## Orchestrator Boundary
 
-Templates adapt Deli to domains via: build_task_spec_schema, seed_directions,
-generate_next_direction, template_stall_rules, validate_work_candidate,
-validate_finding_rules, completion_policy.
+The orchestrator arbitrates process. It does not judge content quality. It asks:
 
-## Key Design Constraints
+- Is the candidate structurally valid?
+- Is the source class admissible?
+- What verdict did verification return?
+- Did the task hit a stall or pivot threshold?
+- Is a tail pass required?
 
-Single writer, fresh session per round, no database, file system as truth,
-fail-closed semantics, human intervention limited to injecting new directions.
+Domain content belongs in templates, verification backends, source registries, and human decisions.
+
+## Template Boundary
+
+Templates provide domain-specific structure through:
+
+- task-spec schema;
+- seed directions;
+- next-direction generation;
+- domain stall rules;
+- work-candidate validation;
+- finding validation;
+- completion policy.
+
+Templates may make a domain stricter. They must not weaken global fail-closed rules.
+
+## Evidence Boundary
+
+Deli supports empirical tests, formal manifests, source spans, human review, and deterministic backend artifacts. It does not convert experience, LLM output, or web snippets into formal proof.

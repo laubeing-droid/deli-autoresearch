@@ -2,188 +2,172 @@
 
 [![CI](https://github.com/laubeing-droid/deli-autoresearch/actions/workflows/ci.yml/badge.svg)](https://github.com/laubeing-droid/deli-autoresearch/actions/workflows/ci.yml)
 
-`Deli AutoResearch` is a long-horizon proof research framework for running multi-round mathematical proof exploration with explicit state, verification, pivot rules, and tail-pass completion.
+`Deli AutoResearch` is a filesystem-backed orchestration framework for long-horizon proof and source-bounded research. It coordinates work agents, verification backends, explicit evidence routing, stall/pivot control, and tail-pass completion.
 
-It is not a one-shot prover. It is a proof-process orchestrator.
+It is not a one-shot prover and it is not an open-web autonomous researcher. Deli lets candidates be proposed, but findings are admitted only through source and verification gates.
 
-## What It Does
+## Current Baseline
 
-- Tracks proof work as explicit runtime state under `runtime/`
-- Treats claims, evidence, findings, and directions as first-class objects
-- Separates `work` from `verification`
-- Enforces pivot rules when progress stalls
-- Supports completion policies with an explicit tail pass
-- Loads reusable task assets and seed directions from `examples/`
-- Supports replay benchmarks for regression testing
-- Supports a real multi-session bridge backend through filesystem request/response envelopes
+- Python: `>=3.12`
+- Runtime dependencies: none declared in `pyproject.toml`
+- Current full local test command: `python -m pytest -q`
+- Current pre-release audit report: `docs/audit/pre-release-audit-2026-07-01.md`
+- Live runtime state: ignored under `runtime/`
 
-## Project Shape
+## Core Guarantees
 
-- `src/deli_autoresearch/`
-  Core runtime, CLI, orchestrator, heartbeat service, templates, and bridge backend
-- `examples/`
-  Reusable proof-task assets
-- `benchmarks/`
-  Replay scenarios for regression testing
-- `tests/`
-  Unit and integration coverage for orchestration behavior
+- Single writer: only the controller updates task state and runtime streams.
+- Strict separation: work candidates and verification verdicts are different objects.
+- Three verdicts only: `validated`, `rejected`, `needs_more_evidence`.
+- Fail closed: truncation, unknown backend status, missing source span, or weak evidence cannot become a finding.
+- Candidate-only LLM/web output: `derived`, `model_generated`, and open-web material cannot stand alone as verified findings.
+- Source-bounded routing: approved source spans, formal backend output, or human-reviewed anchors are required before publication.
+
+## Repository Map
+
+| Path | Purpose |
+| --- | --- |
+| `src/deli_autoresearch/` | Runtime, CLI, orchestrator, templates, source policy, memory routing, verification adapters |
+| `tests/` | Unit and integration coverage for lifecycle, gates, backends, and cross-repo adapters |
+| `config/source_registry.example.yml` | Example registry for source-bounded retrieval |
+| `schemas/` | Machine-readable contracts for source registry and spec run results |
+| `examples/` | Reusable task specs and seed directions |
+| `benchmarks/` | Replay scenarios |
+| `docs/` | Public operational, research, publishing, and audit documentation |
+| `specs/` | Spec-driven implementation history and evidence |
+| `state/` | Tracked human decisions and cross-repo coordination locks |
+| `runtime/` | Ignored live runtime state |
 
 ## Install
 
-```bash
-pip install -e .
+```powershell
+python -m pip install -e .
 ```
 
-Installed CLI entrypoint:
+Run the CLI through the installed entrypoint:
 
-```bash
-deli-autoresearch doctor
+```powershell
+deli-autoresearch --workspace . doctor
 ```
 
 Or run directly from source:
 
-```bash
-PYTHONPATH=src
+```powershell
+$env:PYTHONPATH = "src"
 python -m deli_autoresearch.cli --workspace . doctor
 ```
 
 ## Quick Start
 
-Initialize a proof task:
+Initialize a math proof task:
 
-```bash
+```powershell
 deli-autoresearch --workspace . init-task --task-id proof-001 --template math_proof --task-spec-file examples/math_proof/induction/sum_of_odds/task_spec.md
 ```
 
-Equivalent source-mode command:
+Run one mock orchestrator pass:
 
-```bash
-PYTHONPATH=src
-python -m deli_autoresearch.cli --workspace . init-task --task-id proof-001 --template math_proof --task-spec-file examples/math_proof/induction/sum_of_odds/task_spec.md
+```powershell
+deli-autoresearch --workspace . --backend mock run-orchestrator-once
 ```
 
-Run one local orchestrator pass with the bridge backend:
+Run one filesystem bridge pass:
 
-```bash
+```powershell
 deli-autoresearch --workspace . --backend codex-bridge run-orchestrator-once
 ```
 
-Equivalent source-mode command:
+Inspect pending bridge requests and returned responses:
 
-```bash
-PYTHONPATH=src
-python -m deli_autoresearch.cli --workspace . --backend codex-bridge run-orchestrator-once
-```
-
-Inspect pending bridge work:
-
-```bash
+```powershell
 deli-autoresearch --workspace . --backend codex-bridge bridge-status --show-files
 ```
 
-Equivalent source-mode command:
+Run a replay benchmark:
 
-```bash
-PYTHONPATH=src
-python -m deli_autoresearch.cli --workspace . --backend codex-bridge bridge-status --show-files
+```powershell
+deli-autoresearch --workspace . run-benchmark --scenario benchmarks/sum_of_odds_tail_pass.json
 ```
 
 ## Runtime Model
 
-The runtime is filesystem-backed.
+The runtime is intentionally file-backed.
 
-- `runtime/registry.json`
-  Global task registry and scheduler-facing metadata
-- `runtime/tasks/<task_id>/state/`
-  Per-task progress, claims, directions, and task spec
-- `runtime/tasks/<task_id>/logs/`
-  Work, verification, heartbeat, findings, and iteration logs
-- `runtime/bridge/requests/`
-  Requests for external work/verification sessions
-- `runtime/bridge/responses/`
-  Returned JSON results for those requests
+| Runtime path | Meaning |
+| --- | --- |
+| `runtime/registry.json` | Scheduler-facing task registry |
+| `runtime/tasks/<task_id>/state/` | Progress, claims, directions, and task spec |
+| `runtime/tasks/<task_id>/logs/` | Work, verification, findings, failures, heartbeat, and iteration logs |
+| `runtime/bridge/requests/` | Strict JSON requests for external work or verification sessions |
+| `runtime/bridge/responses/` | Strict JSON responses keyed by request or agent id |
+| `runtime/cross_repo_status.json` | Machine-readable status written by `doctor` |
 
-Runtime directories are intentionally ignored by git.
+Runtime data is local state and must not be committed.
 
-## Proof Task Assets
+## Source-Bounded Research
 
-The repository includes reusable math-proof assets:
+Deli can process model output and web discoveries, but those objects are candidates. A publishable finding must pass through the source registry, retrieval policy, trial harness, memory router, disclosure gate, and an accepted evidence class.
 
-- `examples/math_proof/induction/sum_of_odds/`
-- `examples/math_proof/combinatorics/triangular_numbers/`
-- `examples/math_proof/inequalities/am_gm_n2/`
+Read:
 
-If a task spec sits beside `seed_directions.json`, those directions are loaded automatically during initialization.
+- `docs/source_bounded_research.md`
+- `docs/research/methodology.md`
+- `docs/research/formal-trust-boundary.md`
 
-## Multi-Session Bridge
+## Cross-Repo Adapters
 
-`codex-bridge` is the real execution path for multi-session work.
+Deli can call adjacent formal/runtime repositories through environment variables or sibling-repo discovery:
 
-One session runs the orchestrator. Other sessions consume files written under:
+| Variable | Purpose |
+| --- | --- |
+| `DELI_AUTORESEARCH_ROOT` | Explicit Deli workspace root |
+| `DELI_WORKSPACE_ROOT` | Alternate Deli workspace root for scripts |
+| `JURIS_CALCULUS_ROOT` | juris-calculus runtime/kernel checkout |
+| `LEGAL_MATH_MODELING_ROOT` | Lean theorem manifest and formal-spec companion repo |
+| `MINNAN_PROFILE_ROOT` | Local-history source-bounded profile root |
+| `SPC_OCR_JSON_DIR` | Private SPC OCR input directory for analysis scripts |
 
-- `runtime/bridge/requests/*.json`
+If a required external engine cannot be found, Deli must report backend unavailability rather than validate the claim.
 
-Each request contains:
+## Verification
 
-- `instruction`
-- `prompt`
-- `agent_id`
-- `kind`
+Run the local suite:
 
-Responders must write strict JSON to:
-
-- `runtime/bridge/responses/<agent_id>.json`
-
-## Replay Benchmarks
-
-Run the built-in tail-pass regression scenario:
-
-```bash
-deli-autoresearch --workspace . run-benchmark --scenario benchmarks/sum_of_odds_tail_pass.json
-```
-
-Equivalent source-mode command:
-
-```bash
-PYTHONPATH=src
-python -m deli_autoresearch.cli --workspace . run-benchmark --scenario benchmarks/sum_of_odds_tail_pass.json
-```
-
-## Development
-
-Run tests:
-
-```bash
+```powershell
 python -m pytest -q
 ```
 
-Print CLI help:
+Compile source and helper scripts:
 
-```bash
-PYTHONPATH=src
-python -c "import sys; sys.path.insert(0, 'src'); from deli_autoresearch.cli import build_parser; build_parser().print_help()"
+```powershell
+python -m compileall -q src scripts spc_analysis
 ```
 
-## Status
+Run source-bounded gates directly:
 
-Current implementation includes:
+```powershell
+python -m pytest tests/test_source_registry.py tests/test_retrieval_policy.py tests/test_memory_router.py tests/test_trial_harness.py tests/test_search_frontier.py tests/test_verification_backends.py tests/test_disclosure_gate.py tests/test_local_history_profile.py -q
+```
 
-- Explicit claim lifecycle tracking
-- Strong/weak evidence handling
-- Independent verification flow
-- Stall pressure and forced pivot logic
-- Tail-pass completion
-- Task asset loading
-- Replay benchmark support
+Run pre-release disclosure scans before publishing:
+
+```powershell
+git grep -n -E '[A-Z]:\\' -- .
+git grep -n -F '<legacy-local-root-token>' -- .
+git grep -n -F '<local-proxy-endpoint>' -- .
+```
+
+Replace the placeholder tokens with the local strings being audited. These scans should return no matches in tracked files. Do not treat external vulnerability scans as passed unless the vulnerability database query completes.
+
+## Documentation
+
+- `docs/README.md`: documentation index
+- `docs/publishing.md`: local pre-publication checklist
+- `docs/claude-code-operations.md`: spec-driven operations guide
+- `docs/research/template-authoring-guide.md`: template contract
+- `CHANGELOG.md`: project changes
+- `PLANS.md`: current local execution state
 
 ## Naming
 
-`Deli AutoResearch` emphasizes the system's role as a structured autonomous research orchestrator rather than a one-shot proof generator.
-
-## Research Methodology
-
-Deli is a research method, not just a tool:
-
-- [Methodology](docs/research/methodology.md) -- stall/pivot state machine, claim lifecycle, orchestrator principle
-- [Case Study: Legal Formalization](docs/research/case-study-legal-formalization.md) -- applying Deli to mathematical proof exploration
-- [Template Authoring Guide](docs/research/template-authoring-guide.md) -- how to create domain-specific research templates
+`Deli AutoResearch` names the orchestration layer. It is the process controller that keeps research bounded, stateful, and auditable.

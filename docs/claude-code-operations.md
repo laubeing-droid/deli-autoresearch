@@ -1,116 +1,97 @@
 # Claude Code Operations Guide
 
-## Starting a Session
+This repository includes a spec-driven Claude Code control surface. It is useful for structured local execution, but the repository state on disk remains authoritative.
 
-```bash
-cd deli-autoresearch
+## Startup
+
+Start from the repository root:
+
+```powershell
 claude
 ```
 
-Claude Code automatically loads:
-- `CLAUDE.md` (root instructions)
-- `.claude/rules/` (6 scoped rules)
-- `.claude/skills/` (11 lifecycle skills)
-- `.claude/agents/` (7 role-separated agents)
-- `.claude/hooks/` (7 enforcement hooks via settings.json)
+Claude Code reads:
 
-## Skills Reference
+- `CLAUDE.md`;
+- `.claude/rules/`;
+- `.claude/skills/`;
+- `.claude/agents/`;
+- `.claude/hooks/`;
+- tracked spec files under `specs/`;
+- tracked decisions under `state/decisions/`.
 
-### /spec-init `<spec-id>` `<title>`
-Create a new spec directory with empty files and DRAFT status.
+Do not rely on conversation memory as the source of truth.
 
-### /spec-status
-Display status of all specs. Shows: spec-id, title, status, task progress.
+## Spec Lifecycle
 
-### /spec-requirements `<spec-id>`
-Analyze repositories and produce structured requirements.md with numbered REQ IDs.
+```text
+requirements -> design -> tasks -> execute -> verify -> red-team -> complete/rework/blocked
+```
 
-### /spec-design `<spec-id>`
-Produce design.md with architecture, interfaces, models, error semantics.
+Do not implement from an unapproved draft spec.
 
-### /spec-tasks `<spec-id>`
-Compile requirements and design into atomic tasks with dependency DAG.
+## Commands
 
-### /spec-execute `<spec-id>` `<task-id>`
-Execute one task in a worktree. Creates worktree, runs implementation agent, pushes to spec branch.
+| Command | Purpose |
+| --- | --- |
+| `/spec-init <spec-id> <title>` | Create a spec directory in draft state |
+| `/spec-status` | Read spec status from disk |
+| `/spec-requirements <spec-id>` | Draft numbered requirements |
+| `/spec-design <spec-id>` | Draft architecture and contracts |
+| `/spec-tasks <spec-id>` | Convert requirements/design into atomic tasks |
+| `/spec-execute <spec-id> <task-id>` | Execute one scoped task |
+| `/spec-verify <spec-id> <task-id>` | Verify scope, CI/test evidence, and acceptance |
+| `/spec-red-team <spec-id> <task-id>` | Run adversarial review |
+| `/spec-decide <spec-id> <topic> "<text>"` | Record a human decision |
+| `/spec-resume` | Resume from disk state |
+| `/spec-report` | Generate a spec progress report |
 
-### /spec-verify `<spec-id>` `<task-id>`
-Verify task completion: CI green, acceptance checks, file scope, sorry ledger.
+## Hook Intent
 
-### /spec-red-team `<spec-id>` `<task-id>`
-Three-layer defense: CI mechanical checks → semantic analysis (RT-001~RT-008) → adversarial verification (3 agents).
+Hooks are guardrails, not proof engines.
 
-### /spec-resume
-Resume from disk state. Scans status.json files, finds next actionable task.
+| Hook | Intent |
+| --- | --- |
+| `block-dangerous-command` | Block destructive git or filesystem operations |
+| `enforce-file-scope` | Keep edits within approved paths |
+| `enforce-spec-state` | Prevent writes when the spec state forbids them |
+| `protect-theorem-statement` | Block forbidden proof weakening |
+| `record-evidence` | Record command evidence |
+| `validate-subagent-output` | Check role output shape |
+| `validate-stop` | Warn on abandoned in-progress tasks |
 
-### /spec-decide `<spec-id>` `<topic>` `"<text>"`
-Record a human decision. Only records, never decides.
+## Local Verification
 
-### /spec-report
-Generate progress report across all specs.
+```powershell
+python -m pytest -q
+python -m compileall -q src scripts spc_analysis
+python scripts/validate-spec-completeness.py
+python scripts/check-dependency-dag.py
+python scripts/validate-evidence.py
+```
 
-## Hooks Behavior
+Formal proof checks belong to the formal repository and CI. Deli may read manifests and backend results, but it must not present agent text as a formal proof.
 
-| Hook | Trigger | Behavior |
-|------|---------|----------|
-| block-dangerous-command | Bash | Blocks git reset --hard, force push, rm -rf, etc. |
-| enforce-file-scope | Write/Edit | Checks file is within allowed paths |
-| enforce-spec-state | Write/Edit | Checks spec allows writes |
-| protect-theorem-statement | Write/Edit | Blocks sorry/admit in blocking theorems |
-| record-evidence | Write/Edit | Logs changes to commands.jsonl |
-| validate-subagent-output | SubagentStop | Checks agent output matches role contract |
-| validate-stop | Stop | Warns if IN_PROGRESS task abandoned |
+## Worktrees
 
-Override: Hooks return JSON with `permissionDecision: "deny"` to block.
+Use worktrees only for scoped spec tasks:
 
-## CI Workflows
-
-| Workflow | Trigger | Purpose |
-|----------|---------|---------|
-| ci.yml | push/PR | pytest |
-| formal-proof.yml | .lean changes | lake build + sorry gate + axiom audit |
-| runtime-tests.yml | .py/.yaml changes | JC runtime tests |
-| spec-integrity.yml | push/PR | spec completeness + dependency DAG |
-| safety-gates.yml | push to main | LICENSE protection + theorem strength |
-
-## Worktree Lifecycle
-
-```bash
-# Create worktree for a task
+```powershell
 python scripts/worktree-create.py --spec SPEC-210 --task TASK-210-005
-
-# Work in .worktrees/210/210-005/
-# Push to spec/210/210-005 branch
-# CI runs on push
-
-# Cleanup after merge
-python scripts/worktree-cleanup.py --spec SPEC-210
-
-# Cleanup stale worktrees (> 7 days)
-python scripts/worktree-cleanup.py --stale 7 --dry-run
-python scripts/worktree-cleanup.py --stale 7
+python scripts/worktree-cleanup.py --spec SPEC-210 --dry-run
 ```
 
-## Validation Scripts
+Before deleting any worktree, verify the resolved path stays inside the repository worktree area.
 
-```bash
-python scripts/validate-spec-completeness.py    # Check spec files exist
-python scripts/check-dependency-dag.py          # No circular dependencies
-python scripts/validate-sorry-ledger.py          # 18 blocking theorems listed
-python scripts/validate-evidence.py              # Evidence files present
-python scripts/sorry-gate.py --ledger SORRY_LEDGER.md --strict-for blocking
-python scripts/theorem-hash-gate.py --expected-dir specs/*/evidence/hashes/
-```
+## Stop Conditions
 
-## Sorry Gate
+Stop and require a human decision when a task involves:
 
-Blocking-path theorems (18 total) SHALL NOT use `sorry`.
-Non-blocking theorems MAY use `sorry` if registered in `SORRY_LEDGER.md`.
-
-```bash
-# Check all sorrys (must have ledger entry)
-python scripts/sorry-gate.py --ledger SORRY_LEDGER.md
-
-# Strict mode (zero tolerance for blocking path)
-python scripts/sorry-gate.py --ledger SORRY_LEDGER.md --strict-for blocking
-```
+- license changes;
+- repository visibility;
+- release tags;
+- default-branch merges;
+- patent-review material;
+- ambiguous legal semantics;
+- migration of commercial rule assets;
+- changes to checker acceptance or verified-finding semantics.
